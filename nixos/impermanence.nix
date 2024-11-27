@@ -2,7 +2,7 @@
   fileSystems."/" = {
     device = "none";
     fsType = "tmpfs";
-    options = [ "defaults" "size=25%" "mode=755" ];
+    options = [ "defaults" "size=50%" "mode=755" ];
   };
 
   fileSystems."/persistent" = {
@@ -43,13 +43,14 @@
         { directory = ".ssh"; mode = "0700"; }
         { directory = ".nixops"; mode = "0700"; }
         { directory = ".local/share/keyrings"; mode = "0700"; }
+        ".config/fcitx5"
+        ".config/nekoray"
         ".local/share/direnv"
+        ".local/share/zoxide"
         ".vim/undodir"
         ".mozilla/firefox/IAmW"
-        ".config/fcitx5"
       ];
       files = [
-        # Add files that may not be managed by HM
         ".zsh_history"
         ".local/share/nvim/file_frecency.bin"
       ];

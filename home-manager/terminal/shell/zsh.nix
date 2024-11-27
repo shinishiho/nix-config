@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   programs.zsh = {
     enable = true;
 
@@ -9,10 +9,19 @@
 
     initExtra = ''
     setopt correct
+    export MAMBA_EXE='${pkgs.micromamba}/bin/micromamba';
+    export MAMBA_ROOT_PREFIX='/home/w/Downloads/micromamba';
+    __mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__mamba_setup"
+    else
+        alias micromamba="$MAMBA_EXE"  # Fallback on help from mamba activate
+    fi
+    unset __mamba_setup
     '';
 
     completionInit = ''
-      zstyle ':completion:*' matcher-list '\' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+      zstyle ':completion:*' matcher-list ''' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
       autoload -Uz compinit && compinit
     '';
 

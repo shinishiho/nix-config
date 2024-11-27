@@ -4,17 +4,7 @@
 		{
 			mode = "n";
 			key = "-";
-			action = {
-          __raw = ''
-            function()
-              local oil = require("oil")
-
-              oil.open_float()
-              vim.wait(100, function() end)
-              oil.open_preview()
-            end
-          '';
-        };
+			action = "<cmd>Oil<CR>";
 		}
 		{
 			mode = "v";

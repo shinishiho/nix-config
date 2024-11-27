@@ -17,6 +17,7 @@
       regex
       toml
 			typescript
+      verilog
       vim
       vimdoc
       xml

@@ -65,10 +65,25 @@
     bind k select-pane -U
     bind l select-pane -R
     bind -n C-Tab next-window
-    bind x if-shell "$is_vim" 'send-keys C-w x' 'killp'
+    bind -n C-S-Tab previous-window
 
+    bind-key -r -T prefix C-k resize-pane -U 10
+    bind-key -r -T prefix C-j resize-pane -D 10
+    bind-key -r -T prefix C-h resize-pane -L 10
+    bind-key -r -T prefix C-l resize-pane -R 10
+
+    bind-key -r -T prefix C-S-k resize-pane -U
+    bind-key -r -T prefix C-S-j resize-pane -D
+    bind-key -r -T prefix C-S-h resize-pane -L
+    bind-key -r -T prefix C-S-l resize-pane -R
+    bind x killp
+
+    bind r source-file ~/.config/tmux/tmux.conf \; display "Reloaded!"
+
+    is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
+      | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|l?n?vim?x?|fzf)(diff)?$'"
     bind s if-shell "$is_vim" 'send-keys C-w s' 'split-window -v -c "#{pane_current_path}"'
-    bind v if-shell "$is_vim" 'send-keys C-w v' 'split-window -v -c "#{pane_current_path}"'
+    bind v if-shell "$is_vim" 'send-keys C-w v' 'split-window -h -c "#{pane_current_path}"'
     '';
   };
 }

@@ -1,40 +1,51 @@
 {
-  programs.nixvim = {
-		opts = {
-			guicursor = "";
-			mouse = "";
+    programs.nixvim = {
+        opts = {
+            guicursor = "";
+            mouse = "";
 
-			number = true;
-			relativenumber = true;
+            number = true;
+            relativenumber = true;
 
-			tabstop = 2;
-			softtabstop = 2;
-			shiftwidth = 2;
-			expandtab = true;
+            tabstop = 2;
+            softtabstop = 2;
+            shiftwidth = 2;
+            expandtab = true;
 
-			smartindent = true;
+            smartindent = true;
 
-			wrap = false;
+            wrap = false;
 
-			swapfile = false;
-			backup = false;
-			undodir = "/home/w/.vim/undodir"; # Hardcoded lmao
-			undofile = true;
+            swapfile = false;
+            backup = false;
+            undodir = "/home/w/.vim/undodir"; # Hardcoded lmao
+            undofile = true;
 
-			hlsearch = false;
-			incsearch = true;
+            hlsearch = false;
+            incsearch = true;
 
-			termguicolors = true;
+            termguicolors = true;
 
-			scrolloff = 8;
-			signcolumn = "yes";
-			isfname = "@-@";
+            scrolloff = 8;
+            signcolumn = "yes";
+            isfname = "@-@";
 
-			updatetime = 50;
+            updatetime = 50;
 
-			cursorline = true;
+            cursorline = true;
 
-			conceallevel = 2;
-		};
-  };
+            conceallevel = 2;
+        };
+
+        files = {
+            "after/ftplugin/cpp.lua" = {
+                opts = {
+                    expandtab = true;
+                    shiftwidth = 4;
+                    softtabstop = 4;
+                    tabstop = 4;
+                };
+            };
+        };
+    };
 }

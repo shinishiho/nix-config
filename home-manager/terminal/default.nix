@@ -9,15 +9,18 @@
   home.packages = with pkgs; [
     ani-cli
     cmatrix
-    cava
+    distrobox
     fastfetch
     fd
     gcc
     gotop
     jq
+    mosh
     pipes-rs
-    python3 
+    python3
     ripgrep
+    trickle
+    uv
 
     (writeShellScriptBin "mountCloud" ''
       ${pkgs.coreutils}/bin/mkdir /home/w/Cloud

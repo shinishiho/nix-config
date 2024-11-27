@@ -15,9 +15,7 @@
         "<C-l>" = false;
         "<C-h>" = false;
         "<C-r>" = "actions.refresh";
-        "<ESC>" = "actions.close";
         "y." = "actions.copy_entry_path";
-        "h" = "actions.parent";
       };
 
       float.preview_split = "right";

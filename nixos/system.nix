@@ -7,6 +7,8 @@
     ];
   };
 
+  hardware.opentabletdriver.enable = true;
+
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
   };
@@ -53,6 +55,12 @@
   };
 
   programs.xwayland.enable = true;
+  security.sudo.extraConfig = "Defaults env_keep += \"HTTP_PROXY HTTPS_PROXY\"";
+
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+  };
 
   environment.systemPackages = with pkgs; [
     acpi

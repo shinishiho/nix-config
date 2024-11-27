@@ -10,7 +10,6 @@
         "mako"
         "fcitx5"
         "kitty tmux"
-        "safeeyes"
         "swaybg -c 000000"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
@@ -199,7 +198,6 @@
         "float,class:^(com.github.unrud.VideoDownloader)$"
         "float,class:^(io.gitlab.adhami3310.Impression)$"
         "float,class:^(io.missioncenter.MissionCenter)$"
-        "float,class:safeeyes"
       ];
 
       layerrule = [

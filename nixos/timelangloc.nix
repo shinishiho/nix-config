@@ -4,14 +4,15 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {
-    LC_ADDRESS = "vi_VN";
-    LC_IDENTIFICATION = "vi_VN";
-    LC_MEASUREMENT = "vi_VN";
-    LC_MONETARY = "vi_VN";
-    LC_NAME = "vi_VN";
-    LC_NUMERIC = "vi_VN";
-    LC_PAPER = "vi_VN";
-    LC_TELEPHONE = "vi_VN";
-    LC_TIME = "vi_VN";
+    LC_ADDRESS = "en_US.UTF-8";
+    LC_IDENTIFICATION = "en_US.UTF-8";
+    LC_MEASUREMENT = "en_US.UTF-8";
+    LC_MONETARY = "en_US.UTF-8";
+    LC_MESSAGES = "en_US.UTF-8";
+    LC_NAME = "en_US.UTF-8";
+    LC_NUMERIC = "en_US.UTF-8";
+    LC_PAPER = "en_US.UTF-8";
+    LC_TELEPHONE = "en_US.UTF-8";
+    LC_TIME = "en_US.UTF-8";
   };
 }

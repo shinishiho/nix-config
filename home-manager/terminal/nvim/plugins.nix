@@ -7,6 +7,7 @@
     #./plugins/harpoon.nix
     #./plugins/linter.nix
     ./plugins/lsp.nix
+    ./plugins/obsidian.nix
     ./plugins/oil.nix
     ./plugins/noice.nix
     ./plugins/snippets.nix
@@ -15,7 +16,10 @@
     ./plugins/trouble.nix
 	];
 
-  home.packages = with pkgs; [ luajitPackages.magick ];
+  home.packages = with pkgs; [
+    luajitPackages.magick
+    verible
+  ];
 
 	programs.nixvim.plugins = {
     barbecue.enable = true;

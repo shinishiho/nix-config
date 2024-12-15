@@ -1,5 +1,6 @@
 {
   imports = [
+    ./cava.nix
     ./fastfetch.nix
   ];
 

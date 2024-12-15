@@ -1,16 +1,10 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
+{ inputs, pkgs, ... }: {
   imports = [
     inputs.nixvim.homeManagerModules.default
 
     ./apps
-    ./wm
+    #./wm
+    ./de
     ./terminal
   ];
 
@@ -37,5 +31,5 @@
 
   systemd.user.startServices = "sd-switch";
 
-  home.stateVersion = "24.05";
+  home.stateVersion = "24.11";
 }

@@ -50,6 +50,7 @@
         duckduckgo-privacy-essentials
         multi-account-containers
         privacy-redirect
+        foxyproxy-standard
         ublock-origin
       ];
 

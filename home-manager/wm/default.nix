@@ -9,10 +9,12 @@
 
   home.packages = with pkgs; [
     grim
-    safeeyes
     slurp
     swaybg
     swappy
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-hyprland
     wl-clipboard
+    wlsunset
   ];
 }

@@ -15,6 +15,7 @@
     acpid.enable = true;
     printing.enable = true;
 
+    power-profiles-daemon.enable = false;
     tlp = {
       enable = true;
       settings = {
@@ -30,7 +31,6 @@
 
         START_CHARGE_THRESH_BAT0 = 40;
         STOP_CHARGE_THRESH_BAT0 = 80;
-
       };
     };
 
@@ -42,6 +42,10 @@
       };
     };
 
+    flatpak = {
+      enable = true;
+    };
+
     davfs2 = {
       enable = true;
       settings = {
@@ -50,9 +54,52 @@
         };
       };
     };
+
+    xserver = {
+      enable = true;
+      desktopManager.gnome.enable = true;
+      displayManager.gdm.enable = true;
+    };
+
+    udev.extraHwdb = ''
+      evdev:atkbd:*
+        KEYBOARD_KEY_3a=esc
+    '';
   };
 
-  programs.xwayland.enable = true;
+  environment.gnome.excludePackages = (with pkgs; [
+    gnome-photos
+    gnome-tour
+    gnome-maps
+    gnome-contacts
+    gnome-weather
+    gnome-calculator
+    gnome-calendar
+    gnome-text-editor
+    simple-scan
+    xterm
+    gedit # text editor
+    cheese # webcam tool
+    gnome-music
+    gnome-terminal
+    epiphany # web browser
+    geary # email reader
+    evince # document viewer
+    gnome-characters
+    totem # video player
+    tali # poker game
+    iagno # go game
+    hitori # sudoku game
+    atomix # puzzle game
+    ]);
+
+  security.sudo.extraConfig = "Defaults env_keep += \"HTTP_PROXY HTTPS_PROXY\"";
+  security.polkit.enable = true;
+
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+  };
 
   environment.systemPackages = with pkgs; [
     acpi
@@ -61,12 +108,9 @@
   ];
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [
-      "CascadiaCode"
-      "JetBrainsMono"
-      "Mononoki"
-      ];
-    })
+    nerd-fonts.mononoki
+    nerd-fonts.jetbrains-mono
+    cascadia-code
     maple-mono-NF
     material-design-icons
     noto-fonts-cjk-sans

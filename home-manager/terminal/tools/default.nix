@@ -4,14 +4,14 @@
     ./git.nix
     ./gpg.nix
     ./ssh.nix
-    ./yazi.nix
+    #./yazi.nix
   ];
 
   programs = {
     eza = {
       enable = true;
       git = true;
-      icons = true;
+      icons = "auto";
     };
 
     zoxide = {

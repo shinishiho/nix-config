@@ -2,7 +2,7 @@
   fileSystems."/" = {
     device = "none";
     fsType = "tmpfs";
-    options = [ "defaults" "size=25%" "mode=755" ];
+    options = [ "defaults" "size=50%" "mode=755" ];
   };
 
   fileSystems."/persistent" = {
@@ -26,6 +26,7 @@
     directories = [
       "/var/log"
       "/var/lib/bluetooth"
+      "/var/lib/flatpak"
       "/var/lib/nixos"
       "/var/lib/systemd/coredump"
       "/etc/NetworkManager/system-connections"
@@ -43,13 +44,21 @@
         { directory = ".ssh"; mode = "0700"; }
         { directory = ".nixops"; mode = "0700"; }
         { directory = ".local/share/keyrings"; mode = "0700"; }
-        ".local/share/direnv"
-        ".vim/undodir"
-        ".mozilla/firefox/IAmW"
         ".config/fcitx5"
+        ".config/nekoray"
+        ".cache/flatpak"
+        ".local/share/flatpak"
+        ".local/share/direnv"
+        ".local/share/zoxide"
+        ".local/share/zed"
+        ".vim/undodir"
+        ".var/app/io.github.zen_browser.zen/.zen"
+        ".var/app/io.itch.itch"
+        ".steam"
+        ".thunderbird"
+        ".zen"
       ];
       files = [
-        # Add files that may not be managed by HM
         ".zsh_history"
         ".local/share/nvim/file_frecency.bin"
       ];

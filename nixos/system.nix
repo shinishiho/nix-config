@@ -7,6 +7,8 @@
     ];
   };
 
+  hardware.opentabletdriver.enable = true;
+
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
   };
@@ -95,6 +97,7 @@
 
   security.sudo.extraConfig = "Defaults env_keep += \"HTTP_PROXY HTTPS_PROXY\"";
   security.polkit.enable = true;
+  programs.xwayland.enable = true;
 
   virtualisation.podman = {
     enable = true;

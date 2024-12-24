@@ -26,7 +26,6 @@
     directories = [
       "/var/log"
       "/var/lib/bluetooth"
-      "/var/lib/flatpak"
       "/var/lib/nixos"
       "/var/lib/systemd/coredump"
       "/etc/NetworkManager/system-connections"
@@ -44,16 +43,11 @@
         { directory = ".ssh"; mode = "0700"; }
         { directory = ".nixops"; mode = "0700"; }
         { directory = ".local/share/keyrings"; mode = "0700"; }
-        ".config/fcitx5"
         ".config/nekoray"
-        ".cache/flatpak"
-        ".local/share/flatpak"
         ".local/share/direnv"
         ".local/share/zoxide"
         ".local/share/zed"
         ".vim/undodir"
-        ".var/app/io.github.zen_browser.zen/.zen"
-        ".var/app/io.itch.itch"
         ".steam"
         ".thunderbird"
         ".zen"
@@ -61,6 +55,7 @@
       files = [
         ".zsh_history"
         ".local/share/nvim/file_frecency.bin"
+        ".config/goa-1.0/accounts.conf"
       ];
     };
   };

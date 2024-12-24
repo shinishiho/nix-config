@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ inputs, pkgs, ... }: {
   imports = [
     #./firefox.nix
     ./mpv.nix
@@ -8,10 +8,10 @@
     #./vscode.nix
   ];
 
-  home.packages = with pkgs; [
-    eagle
-    gnome-software
-    nekoray
-    parsec-bin
+  home.packages = [
+    pkgs.nekoray
+    pkgs.parsec-bin
+    pkgs.gparted
+    inputs.zen-browser.packages.${pkgs.system}.default
   ];
 }

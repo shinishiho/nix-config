@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   time.timeZone = "Asia/Ho_Chi_Minh";
 
   i18n.defaultLocale = "en_US.UTF-8";
@@ -14,5 +14,11 @@
     LC_PAPER = "en_US.UTF-8";
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
+  };
+
+  i18n.inputMethod = {
+    enable = true;
+    type = "ibus";
+    ibus.engines = with pkgs.ibus-engines; [ bamboo ];
   };
 }

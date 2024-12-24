@@ -9,24 +9,21 @@
   home.packages = with pkgs; [
     ani-cli
     cmatrix
-    distrobox
     fastfetch
     fd
     gcc
-    gotop
+    gtop
+    iotop
+    iw
     jq
     mosh
+    nethogs
+    pciutils
     pipes-rs
     python3
     ripgrep
     trickle
     uv
-
-    (writeShellScriptBin "mountCloud" ''
-      ${pkgs.coreutils}/bin/mkdir /home/w/Cloud
-      ${pkgs.coreutils}/bin/chmod 600 /etc/davfs2/secrets
-      ${pkgs.mount}/bin/mount -t davfs https://nextcloud.iamw.top/remote.php/dav/files/admin /home/w/Cloud -o rw,uid=w
-    '')
   ];
 
   programs = {

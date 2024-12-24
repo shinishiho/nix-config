@@ -7,34 +7,12 @@
     ];
   };
 
-  hardware.opentabletdriver.enable = true;
-
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
   };
 
   services = {
-    acpid.enable = true;
     printing.enable = true;
-
-    power-profiles-daemon.enable = false;
-    tlp = {
-      enable = true;
-      settings = {
-        CPU_SCALING_GOVERNOR_ON_AC = "performance";
-        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-        CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
-        CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
-
-        CPU_MIN_PERF_ON_AC = 0;
-        CPU_MAX_PERF_ON_AC = 100;
-        CPU_MIN_PERF_ON_BAT = 0;
-        CPU_MAX_PERF_ON_BAT = 50;
-
-        START_CHARGE_THRESH_BAT0 = 40;
-        STOP_CHARGE_THRESH_BAT0 = 80;
-      };
-    };
 
     openssh = {
       enable = true;
@@ -42,10 +20,6 @@
         PermitRootLogin = "no";
         PasswordAuthentication = false;
       };
-    };
-
-    flatpak = {
-      enable = true;
     };
 
     davfs2 = {
@@ -67,53 +41,76 @@
       evdev:atkbd:*
         KEYBOARD_KEY_3a=esc
     '';
+
+    usbmuxd = {
+      enable = true;
+      package = pkgs.usbmuxd2;
+    };
   };
 
-  environment.gnome.excludePackages = (with pkgs; [
-    gnome-photos
-    gnome-tour
-    gnome-maps
-    gnome-contacts
-    gnome-weather
+  security.sudo = {
+    extraConfig = "Defaults pwfeedback";
+  };
+
+  environment.systemPackages  = with pkgs; [
+    gnome-tweaks
+  ];
+
+  environment.gnome.excludePackages = with pkgs; [
+    orca
+    evince
+    # file-roller
+    geary
+    gnome-disk-utility
+    # seahorse
+    # sushi
+    # sysprof
+    #
+    # gnome-shell-extensions
+    #
+    # adwaita-icon-theme
+    # nixos-background-info
+    gnome-backgrounds
+    # gnome-bluetooth
+    # gnome-color-manager
+    # gnome-control-center
+    # gnome-shell-extensions
+    gnome-tour # GNOME Shell detects the .desktop file on first log-in.
+    gnome-user-docs
+    # glib # for gsettings program
+    # gnome-menus
+    # gtk3.out # for gtk-launch program
+    # xdg-user-dirs # Update user dirs as described in https://freedesktop.org/wiki/Software/xdg-user-dirs/
+    # xdg-user-dirs-gtk # Used to create the default bookmarks
+    #
+    # baobab
+    epiphany
+    gnome-text-editor
     gnome-calculator
     gnome-calendar
-    gnome-text-editor
-    simple-scan
-    xterm
-    gedit # text editor
-    cheese # webcam tool
+    # gnome-characters
+    # gnome-clocks
+    gnome-console
+    gnome-contacts
+    gnome-font-viewer
+    gnome-logs
+    gnome-maps
     gnome-music
-    gnome-terminal
-    epiphany # web browser
-    geary # email reader
-    evince # document viewer
-    gnome-characters
-    totem # video player
-    tali # poker game
-    iagno # go game
-    hitori # sudoku game
-    atomix # puzzle game
-    ]);
-
-  security.sudo.extraConfig = "Defaults env_keep += \"HTTP_PROXY HTTPS_PROXY\"";
-  security.polkit.enable = true;
-  programs.xwayland.enable = true;
-
-  virtualisation.podman = {
-    enable = true;
-    dockerCompat = true;
-  };
-
-  environment.systemPackages = with pkgs; [
-    acpi
-    brightnessctl
-    wget
+    gnome-system-monitor
+    gnome-weather
+    # loupe
+    # nautilus
+    gnome-connections
+    simple-scan
+    snapshot
+    totem
+    gnome-software
   ];
 
   fonts.packages = with pkgs; [
     nerd-fonts.mononoki
     nerd-fonts.jetbrains-mono
-    cascadia-code
+    nerd-fonts.caskaydia-cove
     maple-mono-NF
     material-design-icons
     noto-fonts-cjk-sans

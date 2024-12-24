@@ -8,7 +8,7 @@
 
     userSettings = {
       features = {
-        inline_completion_provider = "supermaven";
+        inline_completion_provider = "copilot";
       };
 
       assistant = {

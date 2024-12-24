@@ -6,7 +6,8 @@
 }:
 {
   users.mutableUsers = false;
-  
+
+  programs.zsh.enable = true;
   users.users = {
     w = {
       initialPassword = "iamw";
@@ -16,7 +17,6 @@
       ];
       extraGroups = [ "networkmanager" "wheel" "video" "davfs2" ];
       shell = pkgs.zsh;
-      ignoreShellProgramCheck = true;
     };
   };
 
@@ -32,5 +32,4 @@
   services.displayManager.autoLogin.user = "w";
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
-
 }

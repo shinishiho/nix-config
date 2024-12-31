@@ -1,15 +1,26 @@
+let
+gyate = builtins.path {
+  name = "gyate";
+  path = ./gyate;
+};
+in
 {
   programs.fastfetch = {
     enable = true;
     settings = {
+      logo = {
+        source = "\$(find '${gyate}' -name '*.png' | sort -R | head -n 1)";
+      };
+
       display = {
-        separator = "  = ";
+        separator = " : ";
       };
 
       modules = [
       {
         type = "custom";
-        format = "\u001b[36m    コンピューター";
+        format = " 󰄛  コンピューター";
+        outputColor = "blue";
       }
       {
         type = "custom";
@@ -27,22 +38,22 @@
       }
       {
         type = "packages";
-        key = "   Packages";
+        key = "  󰏗 Packages";
         keyColor = "green";
       }
       {
         type = "display";
-        key = "   Display";
+        key = "  󰍹 Display";
         keyColor = "green";
       }
       {
         type = "wm";
-        key = "   WM";
+        key = "  󱗃 WM";
         keyColor = "yellow";
       }
       {
         type = "terminal";
-        key = "   Terminal";
+        key = "  >_ Terminal";
         keyColor = "yellow";
       }
       {
@@ -61,13 +72,13 @@
       {
         type = "cpu";
         format = "{1}";
-        key = "   CPU";
+        key = "   CPU";
         keyColor = "blue";
       }
       {
         type = "gpu";
         format = "{2}";
-        key = "   GPU";
+        key = "  󰊴 GPU";
         keyColor = "blue";
       }
       {
@@ -78,8 +89,19 @@
       }
       {
         type = "memory";
-        key = "  ﬙ Memory";
+        key = "    Memory";
         keyColor = "magenta";
+      }
+      {
+        type = "command";
+        key = "  󱦟 OS Age ";
+        keyColor = "red";
+        text = "birth_install=$(stat -c %W /nix); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days";
+      }
+      {
+        type = "uptime";
+        key = "  󱫐 Uptime ";
+        keyColor = "red";
       }
       {
         type = "custom";

@@ -19,8 +19,11 @@
       options = [ "--cmd cd" ];
     };
 
-    btop = {
+    fzf = {
       enable = true;
+      tmux.enableShellIntegration = true;
     };
+    # btop.enable = true;
+
   };
 }

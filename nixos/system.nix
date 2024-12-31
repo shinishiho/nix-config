@@ -42,6 +42,8 @@
         KEYBOARD_KEY_3a=esc
     '';
 
+    udev.extraRules = "KERNEL==\"uinput\", MODE=\"0660\", GROUP=\"uinput\", OPTIONS+=\"static_node=uinput\"'";
+
     usbmuxd = {
       enable = true;
       package = pkgs.usbmuxd2;
@@ -115,6 +117,14 @@
     material-design-icons
     noto-fonts-cjk-sans
   ];
+
+  programs.weylus = {
+    enable = true;
+    users = [ "w" ];
+    openFirewall = true;
+  };
+
+  programs.adb.enable = true;
 
   system.stateVersion = "unstable";
 }

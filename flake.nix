@@ -18,6 +18,9 @@
 
     zen-browser.url = "github:youwen5/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
+
+    nix-software-center.url = "github:shinishiho/nix-software-center";
+    nix-software-center.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {

@@ -51,9 +51,9 @@
           };
         };
         env = {
-          TERM = "alacritty";
+          TERM = "kitty";
         };
-        font_family = "FiraCode Nerd Font";
+        font_family = "CaskaydiaCove Nerd Font";
         font_features = null;
         font_size = 15;
         line_height = "comfortable";

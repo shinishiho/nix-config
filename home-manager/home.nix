@@ -22,6 +22,11 @@
     homeDirectory = "/home/w";
   };
 
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    fcitx5.addons = [ pkgs.fcitx5-bamboo ];
+  };
+
   programs.home-manager.enable = true;
 
   systemd.user.startServices = "sd-switch";

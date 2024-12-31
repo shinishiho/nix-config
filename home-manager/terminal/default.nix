@@ -7,31 +7,19 @@
   ];
 
   home.packages = with pkgs; [
-    ani-cli
     cmatrix
     fastfetch
     fd
-    gcc
-    gtop
-    iotop
-    iw
+    gcc14
+    gotop
     jq
-    mosh
-    nethogs
-    pciutils
+    miraclecast
     pipes-rs
     python3
     ripgrep
     trickle
+    ueberzugpp
     uv
+    yt-dlp
   ];
-
-  programs = {
-
-    fzf = {
-      enable = true;
-      tmux.enableShellIntegration = true;
-    };
-
-  };
 }

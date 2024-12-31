@@ -12,7 +12,7 @@
     settings = {
       window_padding_width = 5;
       enable_audio_bell = false;
-      background = "#000000";
+      # background = "#000000";
     };
 
     keybindings = {

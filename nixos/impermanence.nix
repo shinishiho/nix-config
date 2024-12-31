@@ -44,10 +44,15 @@
         { directory = ".nixops"; mode = "0700"; }
         { directory = ".local/share/keyrings"; mode = "0700"; }
         ".config/nekoray"
+        ".config/goa-1.0"
+        ".config/fcitx5"
         ".local/share/direnv"
         ".local/share/zoxide"
         ".local/share/zed"
+        ".local/share/Steam"
+        ".local/share/tubefeeder"
         ".vim/undodir"
+        ".aria2"
         ".steam"
         ".thunderbird"
         ".zen"
@@ -55,7 +60,6 @@
       files = [
         ".zsh_history"
         ".local/share/nvim/file_frecency.bin"
-        ".config/goa-1.0/accounts.conf"
       ];
     };
   };

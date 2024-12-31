@@ -1,8 +1,9 @@
 {
   imports = [
+    # ./blackbox.nix
     ./kitty.nix
     ./starship.nix
-    ./tmux.nix
+    # ./tmux.nix
     ./zsh.nix
   ];
 

@@ -9,15 +9,6 @@
 
     initExtra = ''
     setopt correct
-    export MAMBA_EXE='${pkgs.micromamba}/bin/micromamba';
-    export MAMBA_ROOT_PREFIX='/home/w/Downloads/micromamba';
-    __mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
-    if [ $? -eq 0 ]; then
-        eval "$__mamba_setup"
-    else
-        alias micromamba="$MAMBA_EXE"  # Fallback on help from mamba activate
-    fi
-    unset __mamba_setup
     '';
 
     completionInit = ''
@@ -36,6 +27,8 @@
 
       f = "fastfetch";
       c = "nvim";
+
+      yt = "ytfzf -t -T kitty --ytdl-pref='bv[height=1080][vcodec^=av01]+ba/bv[height=1080][vcodec^=vp09]+ba/bv[height=1080]+ba/best'";
 
       gc = "sudo nix-collect-garbage && sudo nix-collect-garbage -d";
       sw = "sudo nixos-rebuild switch --flake .#iamw --impure";

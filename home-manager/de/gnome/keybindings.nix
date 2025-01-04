@@ -16,12 +16,12 @@
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1".command = "gnome-control-center";
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1".name = "Settings";
 
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2".binding = "<Super>t";
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2".command = "kitty";
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2".binding = "<Super>Return";
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2".command = "ghostty";
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2".name = "Terminal";
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3".binding = "<Shift><Control>Escape";
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3".command = "kitty gotop";
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3".command = "ghostty gotop";
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3".name = "System Monitor";
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4".binding = "<Super>e";

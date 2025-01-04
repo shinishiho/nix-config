@@ -19,9 +19,11 @@
 
     ./audio.nix
     ./boot.nix
+    ./gnome.nix
     ./impermanence.nix
     ./networking.nix
     ./system.nix
+    ./systemapps.nix
     ./timelangloc.nix
     ./user.nix
 

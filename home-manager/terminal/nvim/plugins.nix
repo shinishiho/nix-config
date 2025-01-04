@@ -3,7 +3,7 @@
 		./plugins/cloak.nix
 		./plugins/colorscheme.nix
     ./plugins/column.nix
-		./plugins/coderunner.nix
+		# ./plugins/coderunner.nix
     #./plugins/harpoon.nix
     #./plugins/linter.nix
     ./plugins/lsp.nix

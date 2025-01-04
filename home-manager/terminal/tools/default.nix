@@ -1,10 +1,10 @@
 {
   imports = [
-    ./aria2.nix
+    # ./aria2.nix
     ./git.nix
     ./gpg.nix
     ./ssh.nix
-    #./yazi.nix
+    # ./yazi.nix
   ];
 
   programs = {

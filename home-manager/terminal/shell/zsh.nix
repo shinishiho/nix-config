@@ -26,9 +26,7 @@
       fk = "fuck";
 
       f = "fastfetch";
-      c = "nvim";
-
-      yt = "ytfzf -t -T kitty --ytdl-pref='bv[height=1080][vcodec^=av01]+ba/bv[height=1080][vcodec^=vp09]+ba/bv[height=1080]+ba/best'";
+      v = "nvim";
 
       gc = "sudo nix-collect-garbage && sudo nix-collect-garbage -d";
       sw = "sudo nixos-rebuild switch --flake .#iamw --impure";

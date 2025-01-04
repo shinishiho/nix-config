@@ -52,7 +52,7 @@
         ".local/share/Steam"
         ".local/share/tubefeeder"
         ".vim/undodir"
-        ".aria2"
+        ".parsec"
         ".steam"
         ".thunderbird"
         ".zen"

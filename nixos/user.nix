@@ -7,8 +7,6 @@
 {
   users.mutableUsers = false;
 
-  programs.zsh.enable = true;
-  programs.steam.enable = true;
   users.users = {
     w = {
       initialPassword = "iamw";

@@ -3,16 +3,19 @@
     enable = true;
     font = {
       name = "CaskaydiaCove Nerd Font";
-      size = 12;
+      size = 15;
     };
 
     themeFile = "Catppuccin-Mocha";
     shellIntegration.enableZshIntegration = true;
 
     settings = {
-      window_padding_width = 5;
+      background = "#000000";
+      background_opacity = 0.6;
       enable_audio_bell = false;
-      # background = "#000000";
+      hide_window_decoration = true;
+      wayland_titlebar_color = "background";
+      window_padding_width = 5;
     };
 
     keybindings = {

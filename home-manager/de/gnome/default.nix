@@ -1,26 +1,24 @@
-{ pkgs, ... } :
+{ pkgs, ... }:
 let
-orchis-themes = pkgs.callPackage ./orchis-themes.nix {};
+  orchis-themes = pkgs.callPackage ../../../pkgs/orchis-themes.nix {};
 in
-{
+  {
   imports = [
     ./dconf.nix
     ./extensions
     ./keybindings.nix
+    ./startups.nix
   ];
 
   home.sessionVariables = {
-    GTK_THEME = "Orchis-Red-Dark-Dracula";
+    QT_QPA_PLATFORM = "wayland";
   };
 
   home.packages = with pkgs; [
     bibata-cursors
     dconf-editor
     gnome-network-displays
-    (marble-shell-theme.override {
-      additionalInstallationTweaks = [ "-Pnp" ];
-    })
-    (orchis-themes.override {
+    (orchis-theme.override {
       border-radius = 8;
       tweaks = [ "black" "macos" "dracula" ];
     })

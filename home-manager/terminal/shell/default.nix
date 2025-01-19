@@ -1,10 +1,8 @@
 {
   imports = [
-    # ./blackbox.nix
-    # ./kitty.nix
-    ./ghostty.nix
+    ./kitty.nix
     ./starship.nix
-    # ./tmux.nix
+    ./tmux.nix
     ./zsh.nix
   ];
 

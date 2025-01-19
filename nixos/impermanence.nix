@@ -38,7 +38,9 @@
     ];
     users.w = {
       directories = [
-        "Downloads"
+        "VGU"
+        "nix-config"
+        "Misc"
         { directory = ".gnupg"; mode = "0700"; }
         { directory = ".ssh"; mode = "0700"; }
         { directory = ".nixops"; mode = "0700"; }
@@ -48,9 +50,7 @@
         ".config/fcitx5"
         ".local/share/direnv"
         ".local/share/zoxide"
-        ".local/share/zed"
         ".local/share/Steam"
-        ".local/share/tubefeeder"
         ".vim/undodir"
         ".parsec"
         ".steam"

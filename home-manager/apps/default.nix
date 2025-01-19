@@ -4,20 +4,20 @@
     ./mpv.nix
     # ./obs.nix
     #./thunderbird.nix
-    ./zed.nix
+    # ./zed.nix
     #./vscode.nix
   ];
 
+  services.easyeffects = {
+    enable = true;
+  };
+
   home.packages = with pkgs; [
+    code-cursor
     gparted
-    libreoffice
     meld
     nekoray
     parsec-bin
-    persepolis
-    pipeline
-    upscayl
-    warp
     wike
     inputs.zen-browser.packages.${pkgs.system}.default
     inputs.nix-software-center.packages.${pkgs.system}.nix-software-center

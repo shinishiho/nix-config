@@ -17,11 +17,6 @@
     };
   };
 
-  nixpkgs.overlays = [
-    (import ../overlays/trickle.nix)
-    (import ../overlays/fastfetch.nix)
-  ];
-
   home = {
     username = "w";
     homeDirectory = "/home/w";

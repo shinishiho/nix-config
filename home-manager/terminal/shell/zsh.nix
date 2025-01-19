@@ -30,6 +30,7 @@
 
       gc = "sudo nix-collect-garbage && sudo nix-collect-garbage -d";
       sw = "sudo nixos-rebuild switch --flake .#iamw --impure";
+      bye = "gnome-session-quit --logout --no-prompt";
 
       ".." = "cd ..";
       "..." = "cd ../..";

@@ -1,4 +1,5 @@
-{ pkgs, ... } : {
+{ pkgs, ... }:
+{
   fonts.packages = with pkgs; [
     nerd-fonts.mononoki
     nerd-fonts.jetbrains-mono
@@ -15,8 +16,17 @@
       openFirewall = true;
     };
 
+    appimage = {
+      enable = true;
+      binfmt = true;
+    };
+
     adb.enable = true;
     zsh.enable = true;
     steam.enable = true;
   };
+
+  environment.systemPackages = [
+    pkgs.portaudio
+  ];
 }

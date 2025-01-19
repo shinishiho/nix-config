@@ -2,6 +2,7 @@
   imports = [
     ./misc
     ./nvim
+    ./scripts
     ./shell
     ./tools
   ];
@@ -16,7 +17,6 @@
     pipes-rs
     python3
     ripgrep
-    trickle
     typioca
     ueberzugpp
     uv

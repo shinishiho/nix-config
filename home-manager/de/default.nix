@@ -3,7 +3,7 @@
     ./gnome
   ];
 
-  home.packages = [
-    pkgs.wl-clipboard
+  home.packages = with pkgs; [
+    wl-clipboard
   ];
 }

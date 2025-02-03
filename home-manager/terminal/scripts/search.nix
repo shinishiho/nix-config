@@ -28,6 +28,9 @@
         hm)
           url="https://home-manager-options.extranix.com/?query=$encoded_query&release=master"
         ;;
+        gpt)
+          url="https://x.liaox.ai/?model=gpt-4o&q=$encoded_query"
+        ;;
         wiki)
           url="https://en.wikipedia.org/w/index.php?search=$encoded_query"
           ${pkgs.wike}/bin/wike -u "$url"

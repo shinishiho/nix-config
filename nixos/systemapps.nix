@@ -9,6 +9,8 @@
     noto-fonts-cjk-sans
   ];
 
+  virtualisation.docker.enable = true;
+
   programs = {
     weylus = {
       enable = true;

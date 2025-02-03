@@ -15,7 +15,10 @@
 
       "org/gnome/desktop/sound".allow-volume-above-100-percent = true;
 
-      "org/gnome/mutter".dynamic-workspaces = true;
+      "org/gnome/mutter" = {
+        dynamic-workspaces = true;
+        workspaces-only-on-primary = true;
+      };
 
       "org/gnome/desktop/background" = {
         picture-uri-dark = "file://${./wallpapers/bg_dark.jpg}";

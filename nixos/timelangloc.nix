@@ -1,5 +1,6 @@
 {
   time.timeZone = "Asia/Ho_Chi_Minh";
+  time.hardwareClockInLocalTime = true;
 
   i18n.defaultLocale = "en_US.UTF-8";
 

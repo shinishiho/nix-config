@@ -9,6 +9,11 @@
 
     initExtra = ''
     setopt correct
+
+    if [[ "$(tty)" = /dev/tty2 && $SHLVL -eq 1 ]]; then
+      labwc
+      exit
+    fi
     '';
 
     completionInit = ''

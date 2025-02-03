@@ -20,6 +20,7 @@
     typioca
     ueberzugpp
     uv
+    yewtube
     yt-dlp
   ];
 }

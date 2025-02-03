@@ -11,7 +11,7 @@
       workspaces = [
         {
           name = "W";
-          path = "~/Downloads/W";
+          path = "~/Misc/W";
         }
       ];
 

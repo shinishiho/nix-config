@@ -3,7 +3,7 @@
     inputs.nixvim.homeManagerModules.default
 
     ./apps
-    #./wm
+    ./wm
     ./de
     ./terminal
   ];

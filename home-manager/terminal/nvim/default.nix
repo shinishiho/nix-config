@@ -1,4 +1,5 @@
-{ inputs, pkgs, ... } : {
+{ inputs, pkgs, ... }:
+{
   imports = [
     ./keymap.nix
     ./opts.nix

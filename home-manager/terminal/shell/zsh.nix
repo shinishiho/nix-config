@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.zsh = {
     enable = true;
 
@@ -8,12 +9,12 @@
     historySubstringSearch.enable = true;
 
     initExtra = ''
-    setopt correct
+      setopt correct
 
-    if [[ "$(tty)" = /dev/tty2 && $SHLVL -eq 1 ]]; then
-      labwc
-      exit
-    fi
+      if [[ "$(tty)" = /dev/tty2 && $SHLVL -eq 1 ]]; then
+        labwc
+        exit
+      fi
     '';
 
     completionInit = ''
@@ -23,7 +24,7 @@
 
     shellAliases = {
       ls = "eza -1";
-       l = "eza -lh";
+      l = "eza -lh";
       ll = "eza -lha --sort=name --group-directories-first";
       ld = "eza -lhD";
 

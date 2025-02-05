@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   imports = [
     ./misc
     ./nvim
@@ -14,6 +15,8 @@
     gcc14
     gotop
     jq
+    nixd
+    nixfmt-rfc-style
     pipes-rs
     python3
     ripgrep

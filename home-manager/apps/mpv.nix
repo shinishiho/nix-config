@@ -1,4 +1,4 @@
-{ pkgs, ... } :
+{ pkgs, ... }:
 let
   mpvScripts = with pkgs.mpvScripts; [
     uosc
@@ -24,7 +24,7 @@ let
   };
 
 in
-  {
+{
   programs.mpv = {
     enable = true;
     scripts = mpvScripts;

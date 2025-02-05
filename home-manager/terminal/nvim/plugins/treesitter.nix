@@ -1,22 +1,23 @@
-{ pkgs, ... }: {
-	programs.nixvim.plugins.treesitter = {
-		enable = true;
-		grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+{ pkgs, ... }:
+{
+  programs.nixvim.plugins.treesitter = {
+    enable = true;
+    grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
       bash
-			cpp
-			css
-			html
-			javascript
+      cpp
+      css
+      html
+      javascript
       json
       lua
       make
       markdown
       markdown_inline
       nix
-			python
+      python
       regex
       toml
-			typescript
+      typescript
       verilog
       vim
       vimdoc
@@ -24,9 +25,9 @@
       yaml
     ];
 
-		settings = {
-			highlight.enable = true;
-			indent.enable = true;
-		};
-	};
+    settings = {
+      highlight.enable = true;
+      indent.enable = true;
+    };
+  };
 }

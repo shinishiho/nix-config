@@ -1,9 +1,10 @@
-{ pkgs, ... }: {
-	imports = [
-		./plugins/cloak.nix
-		./plugins/colorscheme.nix
+{ pkgs, ... }:
+{
+  imports = [
+    ./plugins/cloak.nix
+    ./plugins/colorscheme.nix
     ./plugins/column.nix
-		# ./plugins/coderunner.nix
+    # ./plugins/coderunner.nix
     #./plugins/harpoon.nix
     #./plugins/linter.nix
     ./plugins/lsp.nix
@@ -11,27 +12,27 @@
     ./plugins/oil.nix
     ./plugins/noice.nix
     ./plugins/snippets.nix
-		./plugins/telescope.nix
-		./plugins/treesitter.nix
+    ./plugins/telescope.nix
+    ./plugins/treesitter.nix
     ./plugins/trouble.nix
-	];
+  ];
 
   home.packages = with pkgs; [
     luajitPackages.magick
     verible
   ];
 
-	programs.nixvim.plugins = {
+  programs.nixvim.plugins = {
     barbecue.enable = true;
-		fugitive.enable = true;
+    fugitive.enable = true;
     image.enable = true;
     indent-blankline.enable = true;
     leap.enable = true;
     markdown-preview.enable = true;
-		nvim-autopairs.enable = true;
+    nvim-autopairs.enable = true;
     rainbow-delimiters.enable = true;
-		tmux-navigator.enable = true;
-		undotree.enable = true;
+    tmux-navigator.enable = true;
+    undotree.enable = true;
     web-devicons.enable = true;
-	};
+  };
 }

@@ -1,13 +1,14 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.nixvim.extraPlugins = [
     (pkgs.vimUtils.buildVimPlugin {
-     name = "code-runner";
-     src = pkgs.fetchFromGitHub {
-     owner = "CRAG666";
-     repo = "code_runner.nvim";
-     rev = "dcedccbf969a0f3bc00db446172b4966e83101dd";
-     hash = "sha256-xxW0ymsPmxLE45Z/TPTiah8K7SOYti78UyVTza3Z21g=";
-     };
+      name = "code-runner";
+      src = pkgs.fetchFromGitHub {
+        owner = "CRAG666";
+        repo = "code_runner.nvim";
+        rev = "dcedccbf969a0f3bc00db446172b4966e83101dd";
+        hash = "sha256-xxW0ymsPmxLE45Z/TPTiah8K7SOYti78UyVTza3Z21g=";
+      };
     })
   ];
 

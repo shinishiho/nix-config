@@ -87,7 +87,10 @@
             run = "arrow 100%";
           }
           {
-            on = [ "g" "g" ];
+            on = [
+              "g"
+              "g"
+            ];
             run = "arrow -99999999";
           }
           {
@@ -128,7 +131,10 @@
           }
           {
             on = "<Space>";
-            run = [ "select --state=none" "arrow 1" ];
+            run = [
+              "select --state=none"
+              "arrow 1"
+            ];
           }
           {
             on = "v";
@@ -247,43 +253,73 @@
             run = "plugin fzf";
           }
           {
-            on = [ "m" "s" ];
+            on = [
+              "m"
+              "s"
+            ];
             run = "linemode size";
           }
           {
-            on = [ "m" "p" ];
+            on = [
+              "m"
+              "p"
+            ];
             run = "linemode permissions";
           }
           {
-            on = [ "m" "c" ];
+            on = [
+              "m"
+              "c"
+            ];
             run = "linemode ctime";
           }
           {
-            on = [ "m" "m" ];
+            on = [
+              "m"
+              "m"
+            ];
             run = "linemode mtime";
           }
           {
-            on = [ "m" "o" ];
+            on = [
+              "m"
+              "o"
+            ];
             run = "linemode owner";
           }
           {
-            on = [ "m" "n" ];
+            on = [
+              "m"
+              "n"
+            ];
             run = "linemode none";
           }
           {
-            on = [ "c" "c" ];
+            on = [
+              "c"
+              "c"
+            ];
             run = "copy path";
           }
           {
-            on = [ "c" "d" ];
+            on = [
+              "c"
+              "d"
+            ];
             run = "copy dirname";
           }
           {
-            on = [ "c" "f" ];
+            on = [
+              "c"
+              "f"
+            ];
             run = "copy filename";
           }
           {
-            on = [ "c" "n" ];
+            on = [
+              "c"
+              "n"
+            ];
             run = "copy name_without_ext";
           }
           {
@@ -307,71 +343,140 @@
             run = "find_arrow --previous";
           }
           {
-            on = [ "," "m" ];
-            run = [ "sort modified --reverse=no" "linemode mtime" ];
+            on = [
+              ","
+              "m"
+            ];
+            run = [
+              "sort modified --reverse=no"
+              "linemode mtime"
+            ];
           }
           {
-            on = [ "," "M" ];
-            run = [ "sort modified --reverse" "linemode mtime" ];
+            on = [
+              ","
+              "M"
+            ];
+            run = [
+              "sort modified --reverse"
+              "linemode mtime"
+            ];
           }
           {
-            on = [ "," "c" ];
-            run = [ "sort created --reverse=no" "linemode ctime" ];
+            on = [
+              ","
+              "c"
+            ];
+            run = [
+              "sort created --reverse=no"
+              "linemode ctime"
+            ];
           }
           {
-            on = [ "," "C" ];
-            run = [ "sort created --reverse" "linemode ctime" ];
+            on = [
+              ","
+              "C"
+            ];
+            run = [
+              "sort created --reverse"
+              "linemode ctime"
+            ];
           }
           {
-            on = [ "," "e" ];
+            on = [
+              ","
+              "e"
+            ];
             run = "sort extension --reverse=no";
           }
           {
-            on = [ "," "E" ];
+            on = [
+              ","
+              "E"
+            ];
             run = "sort extension --reverse";
           }
           {
-            on = [ "," "a" ];
+            on = [
+              ","
+              "a"
+            ];
             run = "sort alphabetical --reverse=no";
           }
           {
-            on = [ "," "A" ];
+            on = [
+              ","
+              "A"
+            ];
             run = "sort alphabetical --reverse";
           }
           {
-            on = [ "," "n" ];
+            on = [
+              ","
+              "n"
+            ];
             run = "sort natural --reverse=no";
           }
           {
-            on = [ "," "N" ];
+            on = [
+              ","
+              "N"
+            ];
             run = "sort natural --reverse";
           }
           {
-            on = [ "," "s" ];
-            run = [ "sort size --reverse=no" "linemode size" ];
+            on = [
+              ","
+              "s"
+            ];
+            run = [
+              "sort size --reverse=no"
+              "linemode size"
+            ];
           }
           {
-            on = [ "," "S" ];
-            run = [ "sort size --reverse" "linemode size" ];
+            on = [
+              ","
+              "S"
+            ];
+            run = [
+              "sort size --reverse"
+              "linemode size"
+            ];
           }
           {
-            on = [ "," "r" ];
+            on = [
+              ","
+              "r"
+            ];
             run = "sort random --reverse=no";
           }
           {
-            on = [ "g" "h" ];
+            on = [
+              "g"
+              "h"
+            ];
             run = "cd ~";
           }
           {
-            on = [ "g" "c" ];
+            on = [
+              "g"
+              "c"
+            ];
             run = "cd ~/.config";
           }
           {
-            on = [ "g" "d" ];
+            on = [
+              "g"
+              "d"
+            ];
             run = "cd ~/Downloads";
           }
           {
-            on = [ "g" "<Space>" ];
+            on = [
+              "g"
+              "<Space>"
+            ];
             run = "cd --interactive";
           }
           {
@@ -425,7 +530,8 @@
           {
             on = "{";
             run = "tab_swap -1";
-          } {
+          }
+          {
             on = "}";
             run = "tab_swap 1";
           }
@@ -568,11 +674,17 @@
           }
           {
             on = "I";
-            run = [ "move -999" "insert" ];
+            run = [
+              "move -999"
+              "insert"
+            ];
           }
           {
             on = "A";
-            run = [ "move 999" "insert --append" ];
+            run = [
+              "move 999"
+              "insert --append"
+            ];
           }
           {
             on = "v";
@@ -580,7 +692,11 @@
           }
           {
             on = "V";
-            run = [ "move -999" "visual" "move 999" ];
+            run = [
+              "move -999"
+              "visual"
+              "move 999"
+            ];
           }
           {
             on = "h";
@@ -688,7 +804,10 @@
           }
           {
             on = "D";
-            run = [ "delete --cut" "move 999" ];
+            run = [
+              "delete --cut"
+              "move 999"
+            ];
           }
           {
             on = "c";
@@ -696,11 +815,17 @@
           }
           {
             on = "C";
-            run = [ "delete --cut --insert" "move 999" ];
+            run = [
+              "delete --cut --insert"
+              "move 999"
+            ];
           }
           {
             on = "x";
-            run = [ "delete --cut" "move 1 --in-operating" ];
+            run = [
+              "delete --cut"
+              "move 1 --in-operating"
+            ];
           }
           {
             on = "y";
@@ -796,7 +921,10 @@
           }
           {
             on = "<Enter>";
-            run = [ "close --submit" "close_input --submit" ];
+            run = [
+              "close --submit"
+              "close_input --submit"
+            ];
           }
           {
             on = "<A-k>";

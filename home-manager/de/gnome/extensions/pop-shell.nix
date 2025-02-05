@@ -1,4 +1,5 @@
-{ pkgs, ... } : {
+{ pkgs, ... }:
+{
   programs.gnome-shell.extensions = [ { package = pkgs.gnomeExtensions.pop-shell; } ];
 
   dconf.settings."org/gnome/shell/extensions/pop-shell" = {
@@ -15,16 +16,16 @@
     enable = true;
     target = ".config/pop-shell/config.json";
     text = ''
-{
-  "float": [
-    {
-      "class": "^waydroid.*$",
-      "title": ""
-    }
-  ],
-  "skiptaskbarhidden": [],
-  "log_on_focus": false
-}
+      {
+        "float": [
+          {
+            "class": "^waydroid.*$",
+            "title": ""
+          }
+        ],
+        "skiptaskbarhidden": [],
+        "log_on_focus": false
+      }
     '';
   };
 }

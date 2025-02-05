@@ -1,7 +1,7 @@
 {
-	programs.nixvim.plugins.oil = {
-		enable = true;
-		settings = {
+  programs.nixvim.plugins.oil = {
+    enable = true;
+    settings = {
       columns = [
         "icon"
         "size"
@@ -20,5 +20,5 @@
 
       float.preview_split = "right";
     };
-	};
+  };
 }

@@ -43,7 +43,6 @@
       esac
 
       xdg-open "$url"
-      ''
-    )
+    '')
   ];
 }

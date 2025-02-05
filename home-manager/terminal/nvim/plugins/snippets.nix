@@ -22,8 +22,8 @@
         sh = [ "shelldoc" ];
       };
 
-      fromVscode = [ {} ];
-      fromSnipmate = [ {} ];
+      fromVscode = [ { } ];
+      fromSnipmate = [ { } ];
     };
 
     friendly-snippets.enable = true;

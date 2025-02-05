@@ -1,6 +1,6 @@
 {
-    imports = [
-        #./hyprland
-        ./labwc
-    ];
+  imports = [
+    #./hyprland
+    ./labwc
+  ];
 }

@@ -1,7 +1,8 @@
 {
   device ? throw "Set this to your disk device, e.g. /dev/sda",
   ...
-}: {
+}:
+{
   disko.devices = {
     disk.main = {
       inherit device;
@@ -32,11 +33,17 @@
                 subvolumes = {
                   "/nix" = {
                     mountpoint = "/nix";
-                    mountOptions = [ "compress=zstd" "noatime" ];
+                    mountOptions = [
+                      "compress=zstd"
+                      "noatime"
+                    ];
                   };
                   "/persistent" = {
                     mountpoint = "/persistent";
-                    mountOptions = [ "compress=zstd" "noatime" ];
+                    mountOptions = [
+                      "compress=zstd"
+                      "noatime"
+                    ];
                   };
                 };
               };

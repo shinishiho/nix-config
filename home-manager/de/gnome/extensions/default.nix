@@ -1,4 +1,5 @@
-{ pkgs, ... } : {
+{ pkgs, ... }:
+{
   imports = [
     ./auto-power-profile.nix
     ./battery-health-charging.nix

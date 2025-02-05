@@ -1,7 +1,14 @@
-{pkgs, lib, ... }:{
+{ pkgs, lib, ... }:
+{
   programs.zed-editor = {
     enable = true;
-    extensions = ["nix" "toml" "make" "catppuccin" "latex"];
+    extensions = [
+      "nix"
+      "toml"
+      "make"
+      "catppuccin"
+      "latex"
+    ];
     extraPackages = with pkgs; [
       nixd
     ];
@@ -46,7 +53,12 @@
         dock = "bottom";
         detect_venv = {
           on = {
-            directories = [".env" "env" ".venv" "venv"];
+            directories = [
+              ".env"
+              "env"
+              ".venv"
+              "venv"
+            ];
             activate_script = "default";
           };
         };

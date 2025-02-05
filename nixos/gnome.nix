@@ -1,4 +1,5 @@
-{ pkgs, ... } : {
+{ pkgs, ... }:
+{
   services = {
     xserver = {
       enable = true;
@@ -14,7 +15,7 @@
     '';
   };
 
-  environment.systemPackages  = with pkgs; [
+  environment.systemPackages = with pkgs; [
     turtle
   ];
 

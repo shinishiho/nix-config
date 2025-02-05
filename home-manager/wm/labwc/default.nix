@@ -1,10 +1,10 @@
-{ pkgs, ... }: {
-    imports = [
-        ./labwc.nix
-    ];
+{ pkgs, ... }:
+{
+  imports = [
+    ./labwc.nix
+  ];
 
-    home.packages = with pkgs; [
-        labwc
-    ];
+  home.packages = with pkgs; [
+    labwc
+  ];
 }
-

@@ -1,4 +1,5 @@
-{ pkgs, ... } : {
+{ pkgs, ... }:
+{
   programs.gnome-shell.extensions = [ { package = pkgs.gnomeExtensions.dash-to-dock; } ];
 
   dconf.settings."org/gnome/shell/extensions/dash-to-dock" = {

@@ -3,7 +3,10 @@
   dconf = {
     enable = true;
     settings = {
-      "org/gnome/desktop/wm/keybindings".close = ["<Super>q" "<Alt>F4"];
+      "org/gnome/desktop/wm/keybindings".close = [
+        "<Super>q"
+        "<Alt>F4"
+      ];
       "org/gnome/desktop/wm/preferences".focus-mode = "sloppy";
       "org/gnome/desktop/peripherals/touchpad".speed = 1.0;
 

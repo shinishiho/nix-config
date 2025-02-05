@@ -1,11 +1,12 @@
-{ inputs, pkgs, ... }: {
+{ inputs, pkgs, ... }:
+{
   imports = [
     #./firefox.nix
     ./mpv.nix
     # ./obs.nix
     #./thunderbird.nix
     # ./zed.nix
-    #./vscode.nix
+    ./vscode.nix
   ];
 
   services.easyeffects = {
@@ -13,6 +14,7 @@
   };
 
   home.packages = with pkgs; [
+    caprine
     gparted
     meld
     nekoray

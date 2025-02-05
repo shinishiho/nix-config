@@ -1,8 +1,8 @@
 { pkgs, ... }:
 let
-  orchis-themes = pkgs.callPackage ../../../pkgs/orchis-themes.nix {};
+  orchis-themes = pkgs.callPackage ../../../pkgs/orchis-themes.nix { };
 in
-  {
+{
   imports = [
     ./dconf.nix
     ./extensions
@@ -20,7 +20,11 @@ in
     gnome-network-displays
     (orchis-theme.override {
       border-radius = 8;
-      tweaks = [ "black" "macos" "dracula" ];
+      tweaks = [
+        "black"
+        "macos"
+        "dracula"
+      ];
     })
   ];
 }

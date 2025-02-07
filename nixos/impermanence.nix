@@ -32,6 +32,7 @@
       "/var/lib/bluetooth"
       "/var/lib/nixos"
       "/var/lib/systemd/coredump"
+      "/var/lib/docker"
       "/etc/NetworkManager/system-connections"
       {
         directory = "/var/lib/colord";
@@ -82,6 +83,7 @@
         ".steam"
         ".thunderbird"
         ".vscode"
+        ".config/Code/User"
         ".zen"
       ];
       files = [

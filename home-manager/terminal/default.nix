@@ -10,6 +10,8 @@
 
   home.packages = with pkgs; [
     cmatrix
+    distrobox
+    distrobox-tui
     fastfetch
     fd
     gcc14
@@ -18,6 +20,7 @@
     nixd
     nixfmt-rfc-style
     pipes-rs
+    playwright-driver.browsers
     python3
     ripgrep
     typioca

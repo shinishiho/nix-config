@@ -3,9 +3,9 @@
   imports = [
     #./firefox.nix
     ./mpv.nix
-    # ./obs.nix
+    #./obs.nix
     #./thunderbird.nix
-    # ./zed.nix
+    #./zed.nix
     ./vscode.nix
   ];
 

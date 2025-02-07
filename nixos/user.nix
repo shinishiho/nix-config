@@ -15,11 +15,11 @@
         # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
       ];
       extraGroups = [
-        "networkmanager"
-        "wheel"
-        "video"
-        "davfs2"
         "adbusers"
+        "docker"
+        "networkmanager"
+        "video"
+        "wheel"
       ];
       shell = pkgs.zsh;
     };

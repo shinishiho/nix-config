@@ -8,6 +8,15 @@
   ];
 
   programs = {
+    bun = {
+      enable = true;
+    };
+
+    fzf = {
+      enable = true;
+      tmux.enableShellIntegration = true;
+    };
+    
     eza = {
       enable = true;
       git = true;
@@ -19,11 +28,6 @@
       options = [ "--cmd cd" ];
     };
 
-    fzf = {
-      enable = true;
-      tmux.enableShellIntegration = true;
-    };
     # btop.enable = true;
-
   };
 }

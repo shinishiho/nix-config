@@ -18,6 +18,8 @@
     userSettings = {
       "workbench.colorTheme" = "Catppuccin Mocha";
       "workbench.iconTheme" = "catppuccin-mocha";
+      "github.copilot.selectedCompletionModel" = "gpt-4o-copilot";
+      "github.copilot.nextEditSuggestions.enabled" = true;
     };
   };
 }

@@ -60,7 +60,7 @@
 
     notify = {
       enable = true;
-      backgroundColour = "#000000";
+      settings.background_colour = "#000000";
     };
   };
 }

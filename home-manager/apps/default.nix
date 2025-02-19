@@ -19,8 +19,8 @@
     meld
     nekoray
     parsec-bin
+    texliveBasic
+    vivaldi
     wike
-    inputs.zen-browser.packages.${pkgs.system}.default
-    inputs.nix-software-center.packages.${pkgs.system}.nix-software-center
   ];
 }

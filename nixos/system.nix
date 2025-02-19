@@ -26,7 +26,7 @@
     udev.extraRules = "KERNEL==\"uinput\", MODE=\"0660\", GROUP=\"uinput\", OPTIONS+=\"static_node=uinput\"'";
 
     usbmuxd = {
-      enable = true;
+      enable = false;
       package = pkgs.usbmuxd2;
     };
   };
@@ -37,5 +37,5 @@
     extraConfig = "Defaults pwfeedback";
   };
 
-  system.stateVersion = "unstable";
+  system.stateVersion = "25.05";
 }

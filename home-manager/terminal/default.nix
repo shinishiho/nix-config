@@ -19,6 +19,7 @@
     jq
     nixd
     nixfmt-rfc-style
+    nodejs_20
     pipes-rs
     playwright-driver.browsers
     python3

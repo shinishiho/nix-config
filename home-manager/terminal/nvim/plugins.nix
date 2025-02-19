@@ -32,6 +32,7 @@
     nvim-autopairs.enable = true;
     rainbow-delimiters.enable = true;
     tmux-navigator.enable = true;
+    twilight.enable = true;
     undotree.enable = true;
     web-devicons.enable = true;
   };

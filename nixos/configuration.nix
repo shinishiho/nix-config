@@ -1,22 +1,15 @@
 {
   inputs,
-  outputs,
   lib,
   config,
-  pkgs,
   ...
 }:
 {
   imports = [
-    # If you want to use modules your own flake exports (from modules/nixos):
-    # outputs.nixosModules.example
-
-    # Or modules from other flakes (such as nixos-hardware):
-    # inputs.hardware.nixosModules.common-cpu-amd
-    # inputs.hardware.nixosModules.common-ssd
     inputs.disko.nixosModules.default
-    inputs.home-manager.nixosModules.home-manager
     inputs.impermanence.nixosModules.impermanence
+    inputs.lanzaboote.nixosModules.lanzaboote
+    inputs.home-manager.nixosModules.home-manager
 
     ./audio.nix
     ./boot.nix

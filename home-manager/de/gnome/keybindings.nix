@@ -9,7 +9,7 @@
     ];
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0".binding = "<Super>f";
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0".command = "zen";
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0".command = "vivaldi";
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0".name = "Browser";
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1".binding = "<Super>i";

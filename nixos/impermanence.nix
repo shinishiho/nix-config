@@ -30,9 +30,10 @@
     directories = [
       "/var/log"
       "/var/lib/bluetooth"
-      "/var/lib/nixos"
-      "/var/lib/systemd/coredump"
       "/var/lib/docker"
+      "/var/lib/nixos"
+      "/var/lib/sbctl"
+      "/var/lib/systemd/coredump"
       "/etc/NetworkManager/system-connections"
       {
         directory = "/var/lib/colord";
@@ -72,9 +73,11 @@
           directory = ".local/share/keyrings";
           mode = "0700";
         }
-        ".config/nekoray"
-        ".config/goa-1.0"
+        ".config/Code/User"
         ".config/fcitx5"
+        ".config/goa-1.0"
+        ".config/nekoray"
+        ".config/vivaldi"
         ".local/share/direnv"
         ".local/share/zoxide"
         ".local/share/Steam"
@@ -83,12 +86,12 @@
         ".steam"
         ".thunderbird"
         ".vscode"
-        ".config/Code/User"
-        ".zen"
+        #".zen"
       ];
       files = [
         ".zsh_history"
         ".local/share/nvim/file_frecency.bin"
+        ".modal.toml"
       ];
     };
   };

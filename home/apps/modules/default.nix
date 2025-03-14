@@ -6,6 +6,7 @@
     ./firefox.nix
     ./mpv.nix
     ./obs.nix
+    ./parsec.nix
     ./thunderbird.nix
     ./vscode.nix
     ./zed.nix

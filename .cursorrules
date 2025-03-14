@@ -1,0 +1,33 @@
+# AI Agent Instructions for NixOS Configuration Project
+
+## Project Overview
+This project is a NixOS configuration that manages system and home settings using the Nix package manager and Home Manager. It includes configurations for:
+
+- Desktop environments (Hyprland window manager)
+- Applications (browsers, media players, development tools)
+- System services and utilities
+- UI customization (themes, cursors, notifications)
+
+## Key Components
+- **Home Manager modules**: Organized in directories like `home/apps/modules/`
+- **Desktop configurations**: Found in `home/desktop/` with specific settings for Hyprland, Rofi, Mako
+- **Theme customization**: Includes cursor themes, UI colors, and notification styling
+
+## Common Tasks
+- Adding new application configurations
+- Customizing desktop appearance
+- Configuring system services
+- Managing persistent data
+
+## Style Guidelines
+- Follow existing module structure for new additions
+- Maintain consistent formatting in configuration files
+- Use descriptive names for options and variables
+- Document non-obvious configuration choices with comments
+
+## Testing and Validation
+- After making any modifications, commit with: `git commit -am "IAmW $(date +%d%m%Y)"`
+- For same-day changes: `git commit --amend -m "IAmW $(date +%d%m%Y)"`
+- Validate configuration with `nix flake check` after committing
+- Test build with `nixos-rebuild build` before switching to catch errors early
+

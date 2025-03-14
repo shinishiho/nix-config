@@ -11,7 +11,6 @@
         ".config/fcitx5"
         ".config/goa-1.0"
         ".config/nekoray"
-        ".config/vivaldi"
         ".local/share/direnv"
         ".local/share/keyrings"
         {
@@ -20,7 +19,6 @@
         }
         ".local/share/zoxide"
         ".vim/undodir"
-        ".parsec"
         ".steam"
       ];
       files = [

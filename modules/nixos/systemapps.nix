@@ -4,12 +4,12 @@
     nerd-fonts.mononoki
     nerd-fonts.jetbrains-mono
     nerd-fonts.caskaydia-cove
-    maple-mono-NF
+    maple-mono.NF
     material-design-icons
     noto-fonts-cjk-sans
   ];
 
-  virtualisation.docker.enable = false;
+  # virtualisation.waydroid.enable = true;
 
   programs = {
     weylus = {
@@ -24,7 +24,7 @@
     };
 
     adb.enable = true;
-    zsh.enable = true;
+    fish.enable = true;
     steam.enable = true;
     fuse.userAllowOther = true;
   };

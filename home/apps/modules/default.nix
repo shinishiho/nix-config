@@ -10,6 +10,5 @@
     ./thunderbird.nix
     ./vscode.nix
     ./zed.nix
-    # Add more module imports here as you create them
   ];
 } 

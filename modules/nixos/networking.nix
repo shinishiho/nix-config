@@ -1,23 +1,10 @@
 { pkgs, ... }:
 {
-  # Common networking configuration that can be reused across systems
   networking = {
-    # Network Manager is enabled by default
-    networkmanager = {
-      # DNS settings are moved to host-specific configuration
-    };
-
-    # Firewall settings are moved to host-specific configuration
-    firewall = {
-      # Default is to enable the firewall with no open ports
-      enable = true;
-    };
-
     resolvconf.enable = pkgs.lib.mkForce false;
     dhcpcd.extraConfig = "nohook resolv.conf";
   };
 
-  # DNS services
   services.dnscrypt-proxy2 = {
     enable = true;
     settings = {
@@ -38,7 +25,6 @@
     };
   };
 
-  # Avahi service discovery
   services.avahi = {
     enable = true;
     nssmdns4 = true;
@@ -52,6 +38,5 @@
     };
   };
 
-  # systemd-resolved
   services.resolved.enable = true;
 }

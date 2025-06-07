@@ -1,4 +1,8 @@
 {
+  pkgs,
+  ...
+}:
+{
   imports = [
     ./git.nix
     ./gpg.nix
@@ -16,10 +20,14 @@
       tmux.enableShellIntegration = true;
     };
 
+    nix-index-database.comma.enable = true;
+    nix-index.enable = true;
+    nh.enable = true;
+
     jq = {
       enable = true;
     };
-    
+
     eza = {
       enable = true;
       git = true;
@@ -33,4 +41,8 @@
 
     # btop.enable = true;
   };
+
+  home.packages = with pkgs; [
+    duf
+  ];
 }

@@ -1,4 +1,3 @@
-{ pkgs, ... }:
 {
   programs.zsh = {
     enable = true;
@@ -8,7 +7,7 @@
     enableCompletion = true;
     historySubstringSearch.enable = true;
 
-    initExtra = ''
+    initContent = ''
       setopt correct
 
       if [[ "$(tty)" = /dev/tty2 && $SHLVL -eq 1 ]]; then
@@ -29,9 +28,8 @@
       ld = "eza -lhD";
 
       clr = "clear";
-      fk = "fuck";
 
-      f = "fastfetch";
+      ff = "fastfetch";
       v = "nvim";
 
       gc = "sudo nix-collect-garbage && sudo nix-collect-garbage -d";

@@ -22,7 +22,7 @@ in
 
     home.persistence."/persistent/home/w" = {
       directories = [
-        ".config/vivaldi"
+        ".config/chromium"
       ];
     };
   };

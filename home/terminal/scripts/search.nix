@@ -5,7 +5,7 @@
       #!/run/current-system/sw/bin/bash
 
       if [ "$#" -lt 2 ]; then
-        echo "Usage: $0 <service: yt|gh|nix|wiki> <search query>"
+        echo "Usage: $0 <service: d|yt|gh|nix|hm|wiki> <search query>"
         exit 1
       fi
 
@@ -16,6 +16,9 @@
       encoded_query=$(echo "$query" | jq -sRr @uri)
 
       case "$service" in
+        d)
+          url="https://duckduckgo.com/?q=$encoded_query"
+        ;;
         yt)
           url="https://www.youtube.com/results?search_query=$encoded_query"
         ;;

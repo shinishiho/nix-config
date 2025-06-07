@@ -3,9 +3,13 @@
   programs.git = {
     enable = true;
     userEmail = "59284549+shinishiho@users.noreply.github.com";
-    userName = "w";
+    userName = "ShiniShiho";
 
     lfs.enable = true;
+    extraConfig = {
+      init.defaultBranch = "main";
+      pull.rebase = false;
+    };
   };
 
   programs.gh = {

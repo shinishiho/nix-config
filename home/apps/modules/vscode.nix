@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   inherit (lib) mkEnableOption mkIf;
@@ -24,6 +29,7 @@ in
             github.copilot-chat
             vscodevim.vim
             saoudrizwan.claude-dev
+            james-yu.latex-workshop
           ];
 
           userSettings = {
@@ -43,4 +49,4 @@ in
       ];
     };
   };
-} 
+}

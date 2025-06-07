@@ -1,0 +1,39 @@
+{
+  pkgs,
+  inputs,
+  ...
+}:
+let
+  pkgs-unstable = inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+in {
+  imports = [
+    inputs.nixos-hardware.nixosModules.common-cpu-intel
+    inputs.nixos-hardware.nixosModules.common-pc-ssd
+    inputs.nixos-hardware.nixosModules.common-pc-laptop
+
+    inputs.nixos-hardware.nixosModules.asus-battery
+  ];
+
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+  };
+
+  hardware.graphics = {
+    enable = true;
+    package = pkgs-unstable.mesa;
+
+    enable32Bit = true;
+    package32 = pkgs-unstable.pkgsi686Linux.mesa;
+
+    extraPackages = with pkgs; [
+      intel-media-driver
+      intel-ocl
+    ];
+  };
+
+  hardware.asus.battery.chargeUpto = 60;
+
+  services.printing.enable = true;
+
+  #services.udev.extraRules = "KERNEL==\"uinput\", MODE=\"0660\", GROUP=\"uinput\", OPTIONS+=\"static_node=uinput\"'";
+}

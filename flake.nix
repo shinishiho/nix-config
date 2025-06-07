@@ -15,52 +15,67 @@
 
     nixvim.url = "github:nix-community/nixvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+
+    hyprland.url = "github:hyprwm/Hyprland";
+
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    agenix.url = "github:ryantm/agenix";
   };
 
-  outputs = { self, nixpkgs, ... }@inputs:
+  outputs =
+    { self, nixpkgs, ... }@inputs:
     let
       inherit (self) outputs;
-      supportedSystems = [ "x86_64-linux" "aarch64-linux" "aarch64-darwin" "x86_64-darwin" ];
+      supportedSystems = [
+        "x86_64-linux"
+        "aarch64-linux"
+        "aarch64-darwin"
+        "x86_64-darwin"
+      ];
       forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
-      
-      # Function to create system-specific pkgs
-      mkPkgs = system: import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-        overlays = [ 
-          (import ./pkgs)
-          # Add other overlays here
-        ];
-      };
 
-      # Helper function to create a NixOS configuration
-      mkNixosConfig = { system, hostname, username ? "w" }: 
+      # Function to create system-specific pkgs
+      mkPkgs =
+        system:
+        import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+          overlays = [
+            (import ./pkgs)
+            # Add other overlays here
+          ];
+        };
+
+      mkNixosConfig =
+        {
+          system,
+          hostname,
+          username,
+        }:
         nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = { inherit inputs outputs; };
           modules = [
-            # Host-specific configuration
             ./hosts/nixos/${hostname}
 
-            # Common NixOS modules
-            ./modules/nixos
-            ./modules/shared
-
-            # Home-manager configuration
             inputs.home-manager.nixosModules.home-manager
             {
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                extraSpecialArgs = { 
+                extraSpecialArgs = {
                   inherit inputs outputs;
                   platform = "linux";
                 };
-                users.${username} = { ... }: {
+                users.${username} = {
                   imports = [
-                    ./modules/home-manager.nix
-                    ./home
+                    ./home/platforms/nixos/users/${username}
                   ];
                 };
               };
@@ -68,8 +83,12 @@
           ];
         };
 
-      # Helper function to create a Darwin configuration
-      mkDarwinConfig = { system, hostname, username ? "w" }:
+      mkDarwinConfig =
+        {
+          system,
+          hostname,
+          username,
+        }:
         nixpkgs.lib.darwinSystem {
           inherit system;
           specialArgs = { inherit inputs outputs; };
@@ -87,16 +106,18 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                extraSpecialArgs = { 
+                extraSpecialArgs = {
                   inherit inputs outputs;
                   platform = "darwin";
                 };
-                users.${username} = { ... }: {
-                  imports = [
-                    ./modules/home-manager.nix
-                    ./home
-                  ];
-                };
+                users.${username} =
+                  { ... }:
+                  {
+                    imports = [
+                      ./modules/home-manager.nix
+                      ./home
+                    ];
+                  };
               };
             }
           ];
@@ -107,17 +128,16 @@
         # Custom packages available through flake
         inherit (mkPkgs system) orchis-theme;
       });
-      
+
       # overlays = import ./pkgs;
-      
-      # NixOS configurations
+
       nixosConfigurations = {
-        # Linux x86_64 systems
         iamw = mkNixosConfig {
           system = "x86_64-linux";
           hostname = "iamw";
+          username = "w";
         };
-        
+
         # Add more NixOS configurations here
         # example-aarch64 = mkNixosConfig {
         #   system = "aarch64-linux";

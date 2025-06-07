@@ -5,6 +5,6 @@
   ];
 
   programs = {
-    thefuck.enable = true;
+    pay-respects.enable = true;
   };
 }

@@ -1,8 +1,6 @@
 {
   inputs,
   lib,
-  config,
-  device ? throw "Set this to your disk device, e.g. /dev/sda",
   ...
 }:
 {
@@ -11,13 +9,22 @@
     inputs.impermanence.nixosModules.impermanence
     inputs.home-manager.nixosModules.home-manager
 
-    # Use the default.nix from modules which imports all NixOS modules
-    ../../../modules/nixos
-    ../../../modules/shared
+    ../../../modules/nixos/audio.nix
+    ../../../modules/nixos/boot.nix
+    ../../../modules/nixos/gnome.nix
+    ../../../modules/nixos/networking.nix
+    ../../../modules/nixos/nixpkgs.nix
+    ../../../modules/nixos/system.nix
+    ../../../modules/nixos/systemapps.nix
+    ../../../modules/nixos/timelangloc.nix
 
-    # Host-specific configurations
-    ./host-specific.nix
     ./hardware-configuration.nix
-    (import ./disko.nix { inherit device; })
+    ./disko.nix
+    ./filesystems.nix
+    ./misc.nix
+    ./networking.nix
+    ./user.nix
   ];
+
+  system.stateVersion = "25.11";
 }

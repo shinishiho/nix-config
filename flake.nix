@@ -39,30 +39,25 @@
         "x86_64-darwin"
       ];
       forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
-
-      # Function to create system-specific pkgs
-      mkPkgs =
-        system:
-        import nixpkgs {
+    in
+    {
+      packages = forAllSystems (system: {
+        # Custom packages available through flake
+        inherit (import nixpkgs {
           inherit system;
           config.allowUnfree = true;
-          overlays = [
-            (import ./pkgs)
-            # Add other overlays here
-          ];
-        };
+          overlays = [ (import ./pkgs) ];
+        }) orchis-theme;
+      });
 
-      mkNixosConfig =
-        {
-          system,
-          hostname,
-          username,
-        }:
-        nixpkgs.lib.nixosSystem {
-          inherit system;
+      # overlays = import ./pkgs;
+
+      nixosConfigurations = {
+        iamw = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
           specialArgs = { inherit inputs outputs; };
           modules = [
-            ./hosts/nixos/${hostname}
+            ./hosts/nixos/iamw
 
             inputs.home-manager.nixosModules.home-manager
             {
@@ -73,9 +68,9 @@
                   inherit inputs outputs;
                   platform = "linux";
                 };
-                users.${username} = {
+                users.w = {
                   imports = [
-                    ./home/platforms/nixos/users/${username}
+                    ./home/platforms/nixos/users/w
                   ];
                 };
               };
@@ -83,74 +78,45 @@
           ];
         };
 
-      mkDarwinConfig =
-        {
-          system,
-          hostname,
-          username,
-        }:
-        nixpkgs.lib.darwinSystem {
-          inherit system;
-          specialArgs = { inherit inputs outputs; };
-          modules = [
-            # Host-specific configuration
-            ./hosts/darwin/${hostname}
-
-            # Common Darwin modules
-            ./modules/darwin
-            ./modules/shared
-
-            # Home-manager configuration
-            inputs.home-manager.darwinModules.home-manager
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                extraSpecialArgs = {
-                  inherit inputs outputs;
-                  platform = "darwin";
-                };
-                users.${username} =
-                  { ... }:
-                  {
-                    imports = [
-                      ./modules/home-manager.nix
-                      ./home
-                    ];
-                  };
-              };
-            }
-          ];
-        };
-    in
-    {
-      packages = forAllSystems (system: {
-        # Custom packages available through flake
-        inherit (mkPkgs system) orchis-theme;
-      });
-
-      # overlays = import ./pkgs;
-
-      nixosConfigurations = {
-        iamw = mkNixosConfig {
-          system = "x86_64-linux";
-          hostname = "iamw";
-          username = "w";
-        };
-
         # Add more NixOS configurations here
-        # example-aarch64 = mkNixosConfig {
+        # example-aarch64 = nixpkgs.lib.nixosSystem {
         #   system = "aarch64-linux";
-        #   hostname = "example-aarch64";
+        #   specialArgs = { inherit inputs outputs; };
+        #   modules = [
+        #     ./hosts/nixos/example-aarch64
+        #     # ... other modules
+        #   ];
         # };
       };
 
       # Darwin configurations (when you're ready to add them)
       darwinConfigurations = {
         # Uncomment and customize when adding macOS systems
-        # macbook = mkDarwinConfig {
+        # macbook = nixpkgs.lib.darwinSystem {
         #   system = "aarch64-darwin";
-        #   hostname = "macbook";
+        #   specialArgs = { inherit inputs outputs; };
+        #   modules = [
+        #     ./hosts/darwin/macbook
+        #     ./modules/darwin
+        #     ./modules/shared
+        #     inputs.home-manager.darwinModules.home-manager
+        #     {
+        #       home-manager = {
+        #         useGlobalPkgs = true;
+        #         useUserPackages = true;
+        #         extraSpecialArgs = {
+        #           inherit inputs outputs;
+        #           platform = "darwin";
+        #         };
+        #         users.username = {
+        #           imports = [
+        #             ./modules/home-manager.nix
+        #             ./home
+        #           ];
+        #         };
+        #       };
+        #     }
+        #   ];
         # };
       };
     };

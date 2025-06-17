@@ -25,6 +25,7 @@
   home.packages = with pkgs; [
     gparted
     meld
+    parsec-bin
     proton-pass
     signal-desktop
   ];

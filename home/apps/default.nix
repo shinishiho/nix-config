@@ -1,38 +1,17 @@
-{
-  pkgs,
-  ...
-}:
+# Application modules with platform awareness
+{ platform ? "linux", ... }:
+
 {
   imports = [
-    ./modules
+    ./zed
+
+    ./chromium.nix
+    ./firefox.nix
+    ./mpv.nix
+    ./obs.nix
+    ./parsec.nix
+    ./thunderbird.nix
   ];
-
-  chromium = {
-    enable = true;
-    flavor = pkgs.ungoogled-chromium;
-  };
-  cursor.enable = false;
-  easyeffects.enable = false;
-  firefox.enable = false;
-  mpv.enable = true;
-  obs.enable = false;
-  parsec.enable = false;
-  thunderbird.enable = false;
-  vscode.enable = true;
-  zed.enable = false;
-
-  # Other applications that don't have dedicated modules yet
-  home.packages = with pkgs; [
-    gparted
-    meld
-    parsec-bin
-    proton-pass
-    signal-desktop
-  ];
-
-  i18n.inputMethod = {
-    enable = true;
-    type = "fcitx5";
-    fcitx5.addons = [ pkgs.fcitx5-bamboo ];
-  };
-}
+  
+  _module.args = { inherit platform; };
+} 

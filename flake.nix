@@ -5,6 +5,10 @@
     nixpkgs.url = "github:nixos/nixpkgs/master";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/master";
 
+    nix-darwin.url = "github:nix-darwin/nix-darwin/master";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
+
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -26,10 +30,21 @@
     };
 
     agenix.url = "github:ryantm/agenix";
+
+    # Homebrew Taps
+
+    homebrew-core = {
+      url = "github:homebrew/homebrew-core";
+      flake = false;
+    };
+    homebrew-cask = {
+      url = "github:homebrew/homebrew-cask";
+      flake = false;
+    };
   };
 
   outputs =
-    { self, nixpkgs, ... }@inputs:
+    { self, nixpkgs, nix-darwin, ... }@inputs:
     let
       inherit (self) outputs;
       supportedSystems = [
@@ -39,6 +54,9 @@
         "x86_64-darwin"
       ];
       forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
+
+      # Import our library functions
+      lib = import ./lib { inherit inputs nixpkgs; lib = nixpkgs.lib; };
     in
     {
       packages = forAllSystems (system: {
@@ -50,74 +68,54 @@
         }) orchis-theme;
       });
 
+      # Development shell for maintaining this flake
+      devShells = forAllSystems (system:
+        let
+          pkgs = nixpkgs.legacyPackages.${system};
+        in
+        {
+          default = pkgs.mkShell {
+            name = "nix-config";
+            buildInputs = with pkgs; [
+              nixd # Nix language server
+              nil # Another Nix language server
+              nixpkgs-fmt # Nix formatter
+              deadnix # Find dead Nix code
+              statix # Lints and suggestions for Nix
+            ];
+            shellHook = ''
+              echo "🚀 Welcome to the nix-config development environment!"
+              echo "Available tools:"
+              echo "  - nixd/nil: Language servers for Nix"
+              echo "  - nixpkgs-fmt: Format Nix files"
+              echo "  - deadnix: Find unused Nix code"
+              echo "  - statix: Lint Nix files"
+            '';
+          };
+        });
+
       # overlays = import ./pkgs;
 
       nixosConfigurations = {
-        iamw = nixpkgs.lib.nixosSystem {
+        iamw = lib.mkNixosConfig {
           system = "x86_64-linux";
-          specialArgs = { inherit inputs outputs; };
-          modules = [
-            ./hosts/nixos/iamw
-
-            inputs.home-manager.nixosModules.home-manager
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                extraSpecialArgs = {
-                  inherit inputs outputs;
-                  platform = "linux";
-                };
-                users.w = {
-                  imports = [
-                    ./home/platforms/nixos/users/w
-                  ];
-                };
-              };
-            }
-          ];
+          hostname = "iamw";
         };
 
-        # Add more NixOS configurations here
-        # example-aarch64 = nixpkgs.lib.nixosSystem {
+        # Add more NixOS configurations here using the helper function
+        # example-aarch64 = lib.mkNixosConfig {
         #   system = "aarch64-linux";
-        #   specialArgs = { inherit inputs outputs; };
-        #   modules = [
-        #     ./hosts/nixos/example-aarch64
-        #     # ... other modules
-        #   ];
+        #   hostname = "example-aarch64";
+        #   username = "differentuser"; # optional
         # };
       };
 
-      # Darwin configurations (when you're ready to add them)
+      # Darwin configurations
       darwinConfigurations = {
-        # Uncomment and customize when adding macOS systems
-        # macbook = nixpkgs.lib.darwinSystem {
-        #   system = "aarch64-darwin";
-        #   specialArgs = { inherit inputs outputs; };
-        #   modules = [
-        #     ./hosts/darwin/macbook
-        #     ./modules/darwin
-        #     ./modules/shared
-        #     inputs.home-manager.darwinModules.home-manager
-        #     {
-        #       home-manager = {
-        #         useGlobalPkgs = true;
-        #         useUserPackages = true;
-        #         extraSpecialArgs = {
-        #           inherit inputs outputs;
-        #           platform = "darwin";
-        #         };
-        #         users.username = {
-        #           imports = [
-        #             ./modules/home-manager.nix
-        #             ./home
-        #           ];
-        #         };
-        #       };
-        #     }
-        #   ];
-        # };
+        iamw-m1 = lib.mkDarwinConfig {
+          system = "aarch64-darwin";
+          hostname = "iamw-m1";
+        };
       };
     };
 }

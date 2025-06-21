@@ -16,18 +16,19 @@ The configuration is organized as follows:
 │   └── darwin/         # Darwin (macOS) host configurations
 │       └── template/   # Template for Darwin hosts
 ├── home/               # Home-manager configurations
-│   ├── default.nix     # Main home-manager configuration
 │   ├── apps/           # Application configurations
-│   ├── desktop/        # Desktop environment configurations
-│   ├── terminal/       # Terminal configurations
-│   ├── shared/         # Shared configurations (platform-agnostic)
+│   ├── terminal/       # Terminal configurations (shell, tools, misc, scripts)
 │   └── platforms/      # Platform-specific configurations
-│       ├── linux/      # Linux-specific home configurations
+│       ├── nixos/      # NixOS-specific home configurations
+│       │   ├── desktop/    # Desktop environments (gnome, hyprland, etc.)
+│       │   ├── dev/        # Development tools and environments
+│       │   ├── productivity/ # Productivity tools
+│       │   └── users/      # User-specific configurations
 │       └── darwin/     # Darwin-specific home configurations
-├── modules/            # Shared NixOS and Darwin modules
+│           └── users/      # User-specific configurations
+├── modules/            # System-level modules
 │   ├── nixos/          # NixOS-specific modules
-│   ├── darwin/         # Darwin-specific modules
-│   └── shared/         # Shared modules (platform-agnostic)
+│   └── darwin/         # Darwin-specific modules
 └── pkgs/               # Custom packages
 ```
 
@@ -41,13 +42,13 @@ The configuration is organized as follows:
 ```nix
 nixosConfigurations = {
   # Existing systems
-  iamw = mkNixosConfig {
+  iamw = lib.mkNixosConfig {
     system = "x86_64-linux";
     hostname = "iamw";
   };
   
   # Your new system
-  new-system = mkNixosConfig {
+  new-system = lib.mkNixosConfig {
     system = "x86_64-linux"; # or "aarch64-linux"
     hostname = "new-system";
     username = "your-username"; # Optional, defaults to "w"
@@ -62,7 +63,7 @@ nixosConfigurations = {
 
 ```nix
 darwinConfigurations = {
-  macbook = mkDarwinConfig {
+  macbook = lib.mkDarwinConfig {
     system = "aarch64-darwin"; # or "x86_64-darwin"
     hostname = "macbook";
     username = "your-username"; # Optional, defaults to "w"

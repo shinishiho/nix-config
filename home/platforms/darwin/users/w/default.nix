@@ -1,12 +1,11 @@
 {
   inputs,
-  platform ? "linux",
+  platform ? "darwin",
   ...
 }:
 {
   imports = [
     inputs.nixvim.homeManagerModules.default
-    inputs.impermanence.homeManagerModules.impermanence
     inputs.nix-index-database.hmModules.nix-index
     inputs.agenix.homeManagerModules.default
 
@@ -14,20 +13,11 @@
     ../../../../home.nix
     
     # Applications and development tools
-    ../../../../apps/editors/zeditor
+    # ../../../../apps/editors/zeditor
     ../../../../dev
-    
-    # Desktop environments
-    ../../desktop/gnome
-    ../../desktop/labwc
-    ../../desktop/hyprland
-    # ../../desktop/hyde
 
-    # Productivity
-    ../../productivity/rclone.nix
-
-    # NixOS-specific
-    ./impermanence.nix
+    # Platform-specific applications
+    ../../gaming/maa
   ];
 
   # Pass platform to all imported modules
@@ -37,7 +27,7 @@
 
   home = {
     username = "w";
-    homeDirectory = "/home/w";
+    homeDirectory = "/Users/w";
     stateVersion = "25.11";
   };
 }

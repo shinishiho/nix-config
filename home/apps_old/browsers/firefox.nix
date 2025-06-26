@@ -1,12 +1,12 @@
-{ config, lib, pkgs, platform ? "linux", ... }:
-
-with lib;
-
-let
-  cfg = config.my-apps.browsers.firefox;
-in
 {
-  config = mkIf cfg.enable ({
+  config,
+  lib,
+  pkgs,
+  platform ? "linux",
+  ...
+}:
+{
+  config = ({
     programs.firefox = {
       enable = true;
       profiles."IAmW" = {
@@ -138,4 +138,4 @@ in
       };
     };
   });
-}
+} 

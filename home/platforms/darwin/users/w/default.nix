@@ -12,12 +12,11 @@
     # Shared configurations
     ../../../../home.nix
     
+    # Applications
+    ../../../../apps
+    
     # Applications and development tools
-    # ../../../../apps/editors/zeditor
     ../../../../dev
-
-    # Platform-specific applications
-    ../../gaming/maa
   ];
 
   # Pass platform to all imported modules

@@ -1,12 +1,12 @@
-{ config, lib, pkgs, platform ? "linux", ... }:
-
-with lib;
-
-let
-  cfg = config.my-apps.editors.cursor;
-in
 {
-  config = mkIf cfg.enable ({
+  config,
+  lib,
+  pkgs,
+  platform ? "linux",
+  ...
+}:
+{
+  config = ({
     home.packages = with pkgs; [
       code-cursor
     ];
@@ -18,4 +18,4 @@ in
       ];
     };
   });
-}
+} 

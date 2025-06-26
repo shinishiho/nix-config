@@ -1,14 +1,12 @@
 { config, lib, pkgs, platform ? "linux", ... }:
 
+with lib;
+
 let
-  inherit (lib) mkEnableOption mkIf optionalAttrs;
+  cfg = config.my-apps.communication.thunderbird;
 in
 {
-  options.thunderbird = {
-    enable = mkEnableOption "Thunderbird configuration";
-  };
-
-  config = mkIf config.thunderbird.enable ({
+  config = mkIf cfg.enable ({
     programs.thunderbird = {
       enable = true;
 
@@ -19,11 +17,11 @@ in
         };
       };
     };
-  } // optionalAttrs (platform == "linux") {
+  } // lib.optionalAttrs (platform == "linux") {
     home.persistence."/persistent/home/w" = {
       directories = [
         ".thunderbird"
       ];
     };
   });
-} 
+}

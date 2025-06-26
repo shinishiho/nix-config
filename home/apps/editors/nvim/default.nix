@@ -1,4 +1,10 @@
-{ inputs, pkgs, ... }:
+{ config, lib, platform ? "linux", ... }:
+
+with lib;
+
+let
+  cfg = config.my-apps.editors.nvim;
+in
 {
   imports = [
     ./keymap.nix
@@ -6,17 +12,19 @@
     ./plugins.nix
   ];
 
-  programs.nixvim = {
-    enable = true;
-    defaultEditor = true;
-    vimdiffAlias = true;
-    viAlias = true;
-    vimAlias = true;
-    withNodeJs = true;
+  config = mkIf cfg.enable {
+    programs.nixvim = {
+        enable = true;
+        defaultEditor = true;
+        vimdiffAlias = true;
+        viAlias = true;
+        vimAlias = true;
+        withNodeJs = true;
 
-    globals = {
-      mapleader = " ";
-      #markdown_folding = 1;
+        globals = {
+        mapleader = " ";
+        #markdown_folding = 1;
+        };
     };
   };
 }

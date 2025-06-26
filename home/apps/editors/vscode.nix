@@ -3,19 +3,20 @@
 with lib;
 
 let
-  cfg = config.my-apps.browsers.chromium;
+  cfg = config.my-apps.editors.vscode;
 in
 {
   config = mkIf cfg.enable ({
-    programs.chromium = {
+    programs.vscode = {
       enable = true;
-      package = pkgs.ungoogled-chromium;
+      package = pkgs.vscode;
     };
   } // lib.optionalAttrs (platform == "linux") {
     home.persistence = {
       "/persistent/home/w" = {
         directories = [
-          ".config/chromium"
+          ".config/Code/User"
+          ".vscode"
         ];
       };
     };

@@ -3,19 +3,18 @@
 with lib;
 
 let
-  cfg = config.my-apps.browsers.chromium;
+  cfg = config.my-apps.gaming.parsec;
 in
 {
   config = mkIf cfg.enable ({
-    programs.chromium = {
-      enable = true;
-      package = pkgs.ungoogled-chromium;
-    };
+    home.packages = with pkgs; [
+      parsec-bin
+    ];
   } // lib.optionalAttrs (platform == "linux") {
     home.persistence = {
       "/persistent/home/w" = {
         directories = [
-          ".config/chromium"
+          ".parsec"
         ];
       };
     };

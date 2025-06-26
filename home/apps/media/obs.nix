@@ -3,19 +3,23 @@
 with lib;
 
 let
-  cfg = config.my-apps.browsers.chromium;
+  cfg = config.my-apps.media.obs;
 in
 {
   config = mkIf cfg.enable ({
-    programs.chromium = {
+    programs.obs-studio = {
       enable = true;
-      package = pkgs.ungoogled-chromium;
+      plugins = with pkgs.obs-studio-plugins; [
+        wlrobs
+        obs-backgroundremoval
+        obs-pipewire-audio-capture
+      ];
     };
   } // lib.optionalAttrs (platform == "linux") {
     home.persistence = {
       "/persistent/home/w" = {
         directories = [
-          ".config/chromium"
+          ".config/obs-studio"
         ];
       };
     };

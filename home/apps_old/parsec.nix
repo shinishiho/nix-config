@@ -1,11 +1,12 @@
-{ config, lib, pkgs, platform ? "linux", ... }:
-
 {
-  options.parsec = {
-    enable = lib.mkEnableOption "Parsec";
-  };
-
-  config = lib.mkIf config.parsec.enable ({
+  config,
+  lib,
+  pkgs,
+  platform ? "linux",
+  ...
+}:
+{
+  config = ({
     home.packages = with pkgs; [
       parsec-bin
     ];

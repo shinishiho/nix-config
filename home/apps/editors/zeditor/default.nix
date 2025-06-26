@@ -1,24 +1,28 @@
-{
-  lib,
-  platform ? "linux",
-  ...
-}:
+{ config, lib, platform ? "linux", ... }:
+
+with lib;
+
+let
+  cfg = config.my-apps.editors.zeditor;
+in
 {
   imports = [
-    ./settings.nix
-    ./keymap.nix
+      ./settings.nix
+      ./keymap.nix
   ];
 
-  programs.zed-editor = ({
-    enable = true;
-    extensions = [
-      "nix"
-      "toml"
-      "make"
-      "catppuccin"
-      "latex"
-      "catppuccin-icons"
-    ];
+  config = mkIf cfg.enable ({
+    programs.zed-editor = {
+      enable = true;
+      extensions = [
+        "nix"
+        "toml"
+        "make"
+        "catppuccin"
+        "latex"
+        "catppuccin-icons"
+      ];
+    };
   } // lib.optionalAttrs (platform == "linux") {
     home.persistence = {
       "/persistent/home/w" = {

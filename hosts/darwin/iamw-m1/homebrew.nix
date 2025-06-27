@@ -24,7 +24,6 @@
 
     casks = [
       "zen"
-      "visual-studio-code"
     ];
   };
 }

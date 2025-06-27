@@ -24,6 +24,34 @@
 
   programs.home-manager.enable = true;
 
+  my-apps = {
+    editors = {
+      zeditor.enable = false;
+      cursor.enable = false;
+      vscode.enable = true;
+      nvim.enable = false;
+    };
+
+    browsers = {
+      chromium.enable = false;
+      firefox.enable = false;
+    };
+
+    media = {
+      mpv.enable = false;
+      obs.enable = false;
+    };
+
+    gaming = {
+      parsec.enable = false;
+      maa.enable = true;
+    };
+
+    communication = {
+      thunderbird.enable = false;
+    };
+  };
+
   home = {
     username = "w";
     homeDirectory = "/Users/w";

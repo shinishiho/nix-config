@@ -1,11 +1,12 @@
 # Application modules with options-based configuration
-{ config, lib, platform ? "linux", ... }:
+{
+  lib,
+  platform ? "linux",
+  ...
+}:
 
 with lib;
 
-let
-  cfg = config.my-apps;
-in
 {
   imports = [
     ./editors

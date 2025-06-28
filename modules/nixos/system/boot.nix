@@ -1,30 +1,42 @@
 {
+  config,
+  lib,
   pkgs,
   ...
 }:
+
+with lib;
+
+let
+  cfg = config.my-modules.nixos.system.boot;
+in
 {
-  boot = {
-    loader.systemd-boot.enable = true;
-    loader.systemd-boot.consoleMode = "max";
-    loader.efi.canTouchEfiVariables = true;
+  config = mkIf cfg.enable {
+    boot = {
+      loader = {
+        systemd-boot.enable = true;
+        systemd-boot.consoleMode = "max";
+        efi.canTouchEfiVariables = true;
+      };
 
-    initrd.systemd.enable = true;
-    kernelPackages = pkgs.linuxPackages_zen;
+      initrd.systemd.enable = true;
+      kernelPackages = pkgs.linuxPackages_zen;
 
-    consoleLogLevel = 0;
-    kernelParams = [
-      "quiet"
-      "udev.log_level=0"
-    ];
-
-    plymouth = {
-      enable = true;
-      theme = "circuit";
-      themePackages = with pkgs; [
-        (adi1090x-plymouth-themes.override {
-          selected_themes = [ "circuit" ];
-        })
+      consoleLogLevel = 0;
+      kernelParams = [
+        "quiet"
+        "udev.log_level=0"
       ];
+
+      plymouth = {
+        enable = true;
+        theme = "circuit";
+        themePackages = with pkgs; [
+          (adi1090x-plymouth-themes.override {
+            selected_themes = [ "circuit" ];
+          })
+        ];
+      };
     };
   };
 }

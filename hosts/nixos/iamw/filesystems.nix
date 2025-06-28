@@ -1,28 +1,30 @@
 {
-  fileSystems."/" = {
-    device = "none";
-    fsType = "tmpfs";
-    options = [
-      "defaults"
-      "size=50%"
-      "mode=755"
-    ];
-  };
+  fileSystems = {
+    "/" = {
+      device = "none";
+      fsType = "tmpfs";
+      options = [
+        "defaults"
+        "size=50%"
+        "mode=755"
+      ];
+    };
 
-  fileSystems."/persistent" = {
-    neededForBoot = true;
-    fsType = "btrfs";
-    options = [ "subvol=persistent" ];
-  };
+    "/persistent" = {
+      neededForBoot = true;
+      fsType = "btrfs";
+      options = [ "subvol=persistent" ];
+    };
 
-  fileSystems."/nix" = {
-    fsType = "btrfs";
-    options = [ "subvol=nix" ];
-  };
+    "/nix" = {
+      fsType = "btrfs";
+      options = [ "subvol=nix" ];
+    };
 
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-partlabel/disk-main-ESP";
-    fsType = "vfat";
+    "/boot" = {
+      device = "/dev/disk/by-partlabel/disk-main-ESP";
+      fsType = "vfat";
+    };
   };
 
   environment.persistence."/persistent" = {

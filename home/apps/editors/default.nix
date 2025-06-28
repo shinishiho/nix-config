@@ -1,10 +1,8 @@
-{ config, lib, pkgs, platform ? "linux", ... }:
+{
+  platform ? "linux",
+  ...
+}:
 
-with lib;
-
-let
-  cfg = config.my-apps.editors;
-in
 {
   imports = [
     ./nvim

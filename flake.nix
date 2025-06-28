@@ -44,9 +44,8 @@
   };
 
   outputs =
-    { self, nixpkgs, nix-darwin, ... }@inputs:
+    { nixpkgs, ... }@inputs:
     let
-      inherit (self) outputs;
       supportedSystems = [
         "x86_64-linux"
         "aarch64-linux"
@@ -56,17 +55,23 @@
       forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
 
       # Import our library functions
-      lib = import ./lib { inherit inputs nixpkgs; lib = nixpkgs.lib; };
+      lib = import ./lib { inherit inputs nixpkgs; inherit (nixpkgs) lib; };
     in
     {
-      packages = forAllSystems (system: {
-        # Custom packages available through flake
-        inherit (import nixpkgs {
-          inherit system;
-          config.allowUnfree = true;
-          overlays = [ (import ./pkgs) ];
-        }) orchis-theme;
-      });
+      packages = forAllSystems (system: 
+        let
+          pkgs = import nixpkgs {
+            inherit system;
+            config.allowUnfree = true;
+            overlays = [ (import ./pkgs) ];
+          };
+        in
+        {
+          # Custom packages available through flake
+          # Only expose orchis-theme on Linux systems since it's desktop-specific
+        } // nixpkgs.lib.optionalAttrs (nixpkgs.lib.hasPrefix "linux" system || system == "x86_64-linux" || system == "aarch64-linux") {
+          inherit (pkgs) orchis-theme;
+        });
 
       # Development shell for maintaining this flake
       devShells = forAllSystems (system:

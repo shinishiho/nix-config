@@ -1,4 +1,10 @@
-{ config, lib, pkgs, platform ? "linux", ... }:
+{
+  config,
+  lib,
+  pkgs,
+  platform ? "linux",
+  ...
+}:
 
 with lib;
 
@@ -87,7 +93,6 @@ in
 
 
         #------------------------------ Mall ------------------------------#
-        # Mall before 7:00
         [[tasks]]
         type = "Mall"
 
@@ -95,7 +100,7 @@ in
         shopping = false
 
         [[tasks.variants]]
-        condition = { type = "Time", end = "07:00:00" }
+        condition = { type = "Time", start = "18:00:00", end = "21:00:00" }
         params = { credit_fight = true, select_formation = 4 }
 
 

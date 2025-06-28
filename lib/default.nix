@@ -1,11 +1,15 @@
 # Shared library functions and utilities
-{ inputs, nixpkgs, lib }:
+{
+  inputs,
+  lib,
+  nixpkgs,
+}:
 
 {
   # Helper function to create NixOS configurations
   mkNixosConfig = { system, hostname, username ? "w" }: nixpkgs.lib.nixosSystem {
     inherit system;
-    specialArgs = { inherit inputs; outputs = inputs.self.outputs; };
+    specialArgs = { inherit inputs; inherit (inputs.self) outputs; };
     modules = [
       ../hosts/nixos/${hostname}
       inputs.home-manager.nixosModules.home-manager
@@ -15,12 +19,12 @@
           useUserPackages = true;
           extraSpecialArgs = {
             inherit inputs;
-            outputs = inputs.self.outputs;
+            inherit (inputs.self) outputs;
             platform = "linux";
           };
           users.${username} = {
             imports = [
-              ../home/platforms/nixos/users/${username}
+              ../home/users/nixos.nix
             ];
           };
         };
@@ -31,7 +35,7 @@
   # Helper function to create Darwin configurations
   mkDarwinConfig = { system, hostname, username ? "w" }: inputs.nix-darwin.lib.darwinSystem {
     inherit system;
-    specialArgs = { inherit inputs; outputs = inputs.self.outputs; };
+    specialArgs = { inherit inputs; inherit (inputs.self) outputs; };
     modules = [
       ../hosts/darwin/${hostname}
       inputs.home-manager.darwinModules.home-manager
@@ -41,12 +45,12 @@
           useUserPackages = true;
           extraSpecialArgs = {
             inherit inputs;
-            outputs = inputs.self.outputs;
+            inherit (inputs.self) outputs;
             platform = "darwin";
           };
           users.${username} = {
             imports = [
-              ../home/platforms/darwin/users/${username}
+              ../home/users/darwin.nix
             ];
           };
         };

@@ -5,7 +5,9 @@
 }:
 {
   imports = [
-    ./shared
+    ./shell
+    ./terminal
+    ./utilities
   ];
   
   xdg = {

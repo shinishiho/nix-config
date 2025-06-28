@@ -1,4 +1,10 @@
-{ config, lib, pkgs, platform ? "linux", ... }:
+{
+  config,
+  lib,
+  pkgs,
+  platform ? "linux",
+  ...
+}:
 
 with lib;
 
@@ -73,60 +79,61 @@ in
           "datareporting.policy.firstRunURL" = "";
         };
 
-        search.engines = {
-          "Nix Packages" = {
-            urls = [
-              {
-                template = "https://search.nixos.org/packages";
-                params = [
-                  {
-                    name = "type";
-                    value = "packages";
-                  }
-                  {
-                    name = "query";
-                    value = "{searchTerms}";
-                  }
-                ];
-              }
-            ];
+        search = {
+          engines = {
+            "Nix Packages" = {
+              urls = [
+                {
+                  template = "https://search.nixos.org/packages";
+                  params = [
+                    {
+                      name = "type";
+                      value = "packages";
+                    }
+                    {
+                      name = "query";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
 
-            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-            definedAliases = [ "@np" ];
+              icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+              definedAliases = [ "@np" ];
+            };
+
+            "NixOS Wiki" = {
+              urls = [ { template = "https://wiki.nixos.org/index.php?search={searchTerms}"; } ];
+              iconUpdateURL = "https://wiki.nixos.org/favicon.png";
+              updateInterval = 24 * 60 * 60 * 1000; # every day
+              definedAliases = [ "@nw" ];
+            };
+
+            "Home Manager Options" = {
+              urls = [
+                {
+                  template = "https://home-manager-options.extranix.com";
+                  params = [
+                    {
+                      name = "query";
+                      value = "{searchTerms}";
+                    }
+                    {
+                      name = "release";
+                      value = "master";
+                    }
+                  ];
+                }
+              ];
+
+              icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+              definedAliases = [ "@hm" ];
+            };
           };
-
-          "NixOS Wiki" = {
-            urls = [ { template = "https://wiki.nixos.org/index.php?search={searchTerms}"; } ];
-            iconUpdateURL = "https://wiki.nixos.org/favicon.png";
-            updateInterval = 24 * 60 * 60 * 1000; # every day
-            definedAliases = [ "@nw" ];
-          };
-
-          "Home Manager Options" = {
-            urls = [
-              {
-                template = "https://home-manager-options.extranix.com";
-                params = [
-                  {
-                    name = "query";
-                    value = "{searchTerms}";
-                  }
-                  {
-                    name = "release";
-                    value = "master";
-                  }
-                ];
-              }
-            ];
-
-            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-            definedAliases = [ "@hm" ];
-          };
+          default = "DuckDuckGo";
+          privateDefault = "DuckDuckGo";
+          force = true;
         };
-
-        search.default = "DuckDuckGo";
-        search.privateDefault = "DuckDuckGo";
-        search.force = true;
       };
     };
   } // lib.optionalAttrs (platform == "linux") {

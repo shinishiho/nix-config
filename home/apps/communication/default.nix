@@ -1,10 +1,9 @@
-{ config, lib, pkgs, platform ? "linux", ... }:
+{
+  pkgs,
+  platform ? "linux",
+  ...
+}:
 
-with lib;
-
-let
-  cfg = config.my-apps.communication;
-in
 {
   imports = [
     ./thunderbird.nix
@@ -12,4 +11,8 @@ in
   
   # Pass platform to all imported modules
   _module.args = { inherit platform; };
+
+  home.packages = with pkgs; [
+    signal-desktop-bin
+  ];
 }

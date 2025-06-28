@@ -1,4 +1,10 @@
-{ config, lib, pkgs, platform ? "linux", ... }:
+{
+  config,
+  lib,
+  pkgs,
+  platform ? "linux",
+  ...
+}:
 
 with lib;
 

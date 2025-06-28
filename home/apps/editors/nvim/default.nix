@@ -1,4 +1,8 @@
-{ config, lib, platform ? "linux", ... }:
+{
+  config,
+  lib,
+  ...
+}:
 
 with lib;
 

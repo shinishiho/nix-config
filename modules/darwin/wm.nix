@@ -159,6 +159,14 @@ in
           }
           {
             "if" = {
+              app-id = "com.google.ios.youtube";
+            };
+            run = [
+              "move-node-to-workspace 5"
+            ];
+          }
+          {
+            "if" = {
               app-id = "com.YoStarEN.Arknights";
             };
             run = [

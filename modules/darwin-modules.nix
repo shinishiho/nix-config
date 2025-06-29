@@ -19,6 +19,9 @@ with lib;
       wm = {
         enable = mkEnableOption "AeroSpace window manager";
       };
+      goodies = {
+        enable = mkEnableOption "Additional goodies and packages";
+      };
     };
 
     shared = {

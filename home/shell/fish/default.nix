@@ -1,4 +1,10 @@
 {
+  config,
+  lib,
+  ...
+}:
+
+{
   imports = [
     ./aliases.nix
     ./plugins.nix
@@ -12,6 +18,14 @@
   programs.fish = {
     enable = true;
 
-    shellInitLast = "set -g fish_key_bindings fish_vi_key_bindings";
+    shellInitLast = ''
+      set -g fish_key_bindings fish_vi_key_bindings
+      ${lib.optionalString config.programs.zellij.enable ''
+        if set -q ZELLIJ
+        else
+          zellij
+        end
+      ''}
+    '';
   };
 }

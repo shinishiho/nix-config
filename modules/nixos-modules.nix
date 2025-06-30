@@ -12,21 +12,25 @@ with lib;
     ./nixos
   ];
 
-  options.my-modules = {
+  options.myModules = {
     nixos = {
       desktop = {
+        displayManager = {
+          enable = mkEnableOption "Display manager configuration";
+        };
         gnome = {
           enable = mkEnableOption "GNOME desktop environment";
         };
       };
       hardware = {
-        enable = mkEnableOption "Hardware configuration";
         audio = {
           enable = mkEnableOption "Audio configuration with PipeWire";
         };
+        bluetooth = {
+          enable = mkEnableOption "Bluetooth configuration";
+        };
       };
       services = {
-        enable = mkEnableOption "System services";
         networking = {
           enable = mkEnableOption "Networking configuration";
         };
@@ -35,7 +39,6 @@ with lib;
         };
       };
       system = {
-        enable = mkEnableOption "NixOS system configuration";
         boot = {
           enable = mkEnableOption "Boot configuration";
         };
@@ -57,6 +60,9 @@ with lib;
     shared = {
       fonts = {
         enable = mkEnableOption "Shared font configuration";
+      };
+      gaming = {
+        enable = mkEnableOption "Shared gaming configuration";
       };
     };
   };

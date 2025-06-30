@@ -12,7 +12,7 @@
 
   networking.hostName = "NakXKri";
 
-  my-modules = {
+  myModules = {
     shared.fonts.enable = true;
     darwin = {
       system.enable = true;

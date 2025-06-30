@@ -40,11 +40,11 @@ _:
     # ====================
     # Modern Tool Replacements
     # ====================
-    cat = "bat";
-    grep = "rg";
-    find = "fd";
-    ps = "procs";
-    du = "dust";
+    # cat = "bat";
+    # grep = "rg";
+    # find = "fd";
+    # ps = "procs";
+    # du = "dust";
     
     # ====================
     # Development & Editing

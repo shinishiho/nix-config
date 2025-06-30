@@ -8,7 +8,7 @@
 with lib;
 
 let
-  cfg = config.my-modules.nixos.system.boot;
+  cfg = config.myModules.nixos.system.boot;
 in
 {
   config = mkIf cfg.enable {

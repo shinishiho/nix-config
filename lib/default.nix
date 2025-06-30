@@ -1,4 +1,3 @@
-# Shared library functions and utilities
 {
   inputs,
   lib,

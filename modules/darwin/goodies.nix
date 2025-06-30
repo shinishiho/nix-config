@@ -8,7 +8,7 @@
 with lib;
 
 let
-  cfg = config.my-modules.darwin.goodies;
+  cfg = config.myModules.darwin.goodies;
 in
 {
   config = mkIf cfg.enable {

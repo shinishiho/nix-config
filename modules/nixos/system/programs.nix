@@ -7,7 +7,7 @@
 with lib;
 
 let
-  cfg = config.my-modules.nixos.system.programs;
+  cfg = config.myModules.nixos.system.programs;
 in
 {
   config = mkIf cfg.enable {
@@ -24,8 +24,6 @@ in
       };
 
       adb.enable = true;
-      fish.enable = true;
-      steam.enable = true;
       fuse.userAllowOther = true;
     };
   };

@@ -14,10 +14,6 @@ in {
     inputs.nixos-hardware.nixosModules.asus-battery
   ];
 
-  environment.sessionVariables = {
-    NIXOS_OZONE_WL = "1";
-  };
-
   hardware.graphics = {
     enable = true;
     package = pkgs-unstable.mesa;
@@ -33,7 +29,11 @@ in {
 
   hardware.asus.battery.chargeUpto = 60;
 
-  services.printing.enable = true;
+  services = {
+    power-profiles-daemon.enable = true;
+    upower.enable = true;
+    printing.enable = true;
+  };
 
   #services.udev.extraRules = "KERNEL==\"uinput\", MODE=\"0660\", GROUP=\"uinput\", OPTIONS+=\"static_node=uinput\"'";
 }

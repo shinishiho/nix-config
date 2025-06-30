@@ -8,23 +8,13 @@
 with lib;
 
 let
-  cfg = config.my-modules.nixos.desktop.gnome;
+  cfg = config.myModules.nixos.desktop.gnome;
 in
 {
   config = mkIf cfg.enable {
     services = {
-      xserver = {
-        enable = true;
-        desktopManager.gnome.enable = true;
-        displayManager.gdm.enable = true;
-      };
-
+      desktopManager.gnome.enable = true;
       gnome.sushi.enable = true;
-
-      udev.extraHwdb = ''
-        evdev:atkbd:*
-          KEYBOARD_KEY_3a=esc
-      '';
     };
 
     programs.nautilus-open-any-terminal = {

@@ -1,4 +1,5 @@
 {
+  lib,
   inputs,
   platform ? "linux",
   ...
@@ -17,7 +18,7 @@
     ../apps
     
     # Desktop environments
-    ../desktop/gnome
+    # ../desktop/gnome
     ../desktop/labwc
     ../desktop/hyprland
     # ../desktop/hyde
@@ -35,7 +36,7 @@
       zeditor.enable = false;
       cursor.enable = false;
       vscode.enable = true;
-      nvim.enable = false;
+      nvim.enable = true;
     };
 
     browsers = {
@@ -50,7 +51,7 @@
 
     gaming = {
       parsec.enable = true;
-      maa.enable = true;
+      maa.enable = false;
     };
 
     communication = {
@@ -63,6 +64,6 @@
   home = {
     username = "w";
     homeDirectory = "/home/w";
-    stateVersion = "25.11";
+    stateVersion = lib.mkForce "25.11";
   };
 }

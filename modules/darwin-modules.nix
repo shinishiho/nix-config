@@ -11,7 +11,7 @@ with lib;
     ./darwin
   ];
 
-  options.my-modules = {
+  options.myModules = {
     darwin = {
       system = {
         enable = mkEnableOption "Darwin system defaults";
@@ -27,6 +27,9 @@ with lib;
     shared = {
       fonts = {
         enable = mkEnableOption "Shared font configuration";
+      };
+      gaming = {
+        enable = mkEnableOption "Shared gaming configuration";
       };
     };
   };

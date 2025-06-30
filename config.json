@@ -1,0 +1,80 @@
+{
+  "bar.customModules.storage.paths": [
+    "/"
+  ],
+  "theme.font.name": "CaskaydiaCove Nerd Font Propo",
+  "theme.font.style": "italic",
+  "theme.font.label": "CaskaydiaCove Nerd Font Propo Semi-Light Italic",
+  "theme.bar.floating": false,
+  "bar.autoHide": "never",
+  "theme.bar.buttons.enableBorders": false,
+  "theme.bar.enableShadow": false,
+  "theme.osd.enable": true,
+  "menus.volume.raiseMaximumVolume": true,
+  "menus.clock.weather.enabled": false,
+  "bar.layouts": {
+    "0": {
+      "left": [
+        "dashboard",
+        "workspaces",
+        "windowtitle"
+      ],
+      "middle": [
+        "clock",
+        "notifications"
+      ],
+      "right": [
+        "media",
+        "volume",
+        "netstat",
+        "bluetooth",
+        "battery",
+        "systray"
+      ]
+    },
+    "1": {
+      "left": [
+        "dashboard",
+        "workspaces",
+        "windowtitle"
+      ],
+      "middle": [
+        "media"
+      ],
+      "right": [
+        "volume",
+        "clock",
+        "notifications"
+      ]
+    },
+    "2": {
+      "left": [
+        "dashboard",
+        "workspaces",
+        "windowtitle"
+      ],
+      "middle": [
+        "media"
+      ],
+      "right": [
+        "volume",
+        "clock",
+        "notifications"
+      ]
+    }
+  },
+  "theme.bar.buttons.dashboard.enableBorder": false,
+  "theme.bar.transparent": true,
+  "theme.font.size": "1rem",
+  "bar.customModules.netstat.dynamicIcon": true,
+  "bar.customModules.netstat.label": true,
+  "bar.customModules.netstat.rateUnit": "MiB",
+  "bar.customModules.netstat.labelType": "full",
+  "theme.bar.buttons.modules.power.enableBorder": false,
+  "bar.customModules.netstat.leftClick": "menu:network",
+  "theme.bar.buttons.modules.kbLayout.enableBorder": false,
+  "menus.power.showLabel": true,
+  "menus.power.lowBatteryNotification": true,
+  "menus.clock.time.military": true,
+  "menus.clock.time.hideSeconds": true
+}

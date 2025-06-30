@@ -8,7 +8,7 @@
 with lib;
 
 let
-  cfg = config.my-modules.shared.fonts;
+  cfg = config.myModules.shared.fonts;
 in
 {
   config = mkIf cfg.enable {

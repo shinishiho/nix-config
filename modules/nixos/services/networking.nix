@@ -8,7 +8,7 @@
 with lib;
 
 let
-  cfg = config.my-modules.nixos.services.networking;
+  cfg = config.myModules.nixos.services.networking;
 in
 {
   config = mkIf cfg.enable {

@@ -1,5 +1,6 @@
 {
   lib,
+  wallpapers,
   ...
 }:
 {
@@ -27,8 +28,8 @@
       };
 
       "org/gnome/desktop/background" = {
-        picture-uri-dark = "file://${./wallpapers/bg_dark.jpg}";
-        picture-uri = "file://${./wallpapers/bg_light.jpg}";
+        picture-uri-dark = "file://${wallpapers.dark}";
+        picture-uri = "file://${wallpapers.light}";
       };
 
       "org/gnome/settings-daemon/plugins/color" = {

@@ -8,7 +8,7 @@
 with lib;
 
 let
-  cfg = config.my-modules.darwin.wm;
+  cfg = config.myModules.darwin.wm;
 in
 {
   config = mkIf cfg.enable {

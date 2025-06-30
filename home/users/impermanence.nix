@@ -9,7 +9,6 @@
         ".nixops"
         ".config/fcitx5"
         ".config/goa-1.0"
-        ".config/nekoray"
         ".local/share/direnv"
         ".local/share/keyrings"
         {
@@ -23,6 +22,7 @@
       ];
       files = [
         # ".zsh_history"
+        ".local/share/fish/fish_history"
         ".local/share/nvim/file_frecency.bin"
         ".modal.toml"
       ];

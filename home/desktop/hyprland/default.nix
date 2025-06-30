@@ -5,7 +5,8 @@
 {
   imports = [
     ./hypr
-    ./mako.nix
+    ./hyprpanel.nix
+    # ./mako.nix
     ./rofi.nix
   ];
 
@@ -20,12 +21,18 @@
   };
 
   home.packages = with pkgs; [
+    brightnessctl
     grim
+    grimblast
+    hyprpicker
+    hyprsunset
+    matugen
+    pywal
     slurp
-    swaybg
     swappy
+    swww
     xdg-desktop-portal-gtk
+    wf-recorder
     wl-clipboard
-    wlsunset
   ];
 }

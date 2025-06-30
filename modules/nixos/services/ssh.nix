@@ -7,7 +7,7 @@
 with lib;
 
 let
-  cfg = config.my-modules.nixos.services.ssh;
+  cfg = config.myModules.nixos.services.ssh;
 in
 {
   config = mkIf cfg.enable {
@@ -19,6 +19,11 @@ in
           PasswordAuthentication = false;
         };
       };
+    };
+
+    programs.gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
     };
   };
 }

@@ -21,6 +21,10 @@
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
 
     hyprland.url = "github:hyprwm/Hyprland";
+    hyprpanel = {
+      url = "github:Jas-SinghFSU/HyprPanel";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
@@ -30,17 +34,6 @@
     };
 
     agenix.url = "github:ryantm/agenix";
-
-    # Homebrew Taps
-
-    homebrew-core = {
-      url = "github:homebrew/homebrew-core";
-      flake = false;
-    };
-    homebrew-cask = {
-      url = "github:homebrew/homebrew-cask";
-      flake = false;
-    };
   };
 
   outputs =
@@ -63,7 +56,9 @@
           pkgs = import nixpkgs {
             inherit system;
             config.allowUnfree = true;
-            overlays = [ (import ./pkgs) ];
+            overlays = [
+              (import ./pkgs)
+            ];
           };
         in
         {

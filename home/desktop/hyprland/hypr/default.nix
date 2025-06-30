@@ -1,6 +1,7 @@
 {
   inputs,
   pkgs,
+  wallpapers,
   ...
 }:
 {
@@ -8,6 +9,7 @@
     ./keybindings.nix
     ./peripherals.nix
     ./style.nix
+    ./workspaces.nix
   ];
 
   wayland.windowManager.hyprland = {
@@ -17,12 +19,11 @@
 
     settings = {
       exec-once = [
-        "mako"
-        "fcitx5"
-        "kitty tmux"
-        "swaybg -c 000000"
-        "wl-paste --type text --watch cliphist store"
-        "wl-paste --type image --watch cliphist store"
+        "${pkgs.fcitx5}/bin/fcitx5"
+        "${pkgs.swaybg}/bin/swaybg -i ${wallpapers.dark}"
+        "${pkgs.wl-clipboard}/bin/wl-paste --type text --watch cliphist store"
+        "${pkgs.wl-clipboard}/bin/wl-paste --type image --watch cliphist store"
+        "${pkgs.hyprpanel}/bin/hyprpanel"
       ];
 
       env = [

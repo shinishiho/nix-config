@@ -5,6 +5,7 @@
 }:
 {
   imports = [
+    ./assets
     ./shell
     ./terminal
     ./utilities

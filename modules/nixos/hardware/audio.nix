@@ -8,7 +8,7 @@
 with lib;
 
 let
-  cfg = config.my-modules.nixos.hardware.audio;
+  cfg = config.myModules.nixos.hardware.audio;
 in
 {
   config = mkIf cfg.enable {

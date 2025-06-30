@@ -12,12 +12,12 @@ let
   cfg = config.my-apps.gaming.maa;
 in
 {
-  config = mkIf cfg.enable ({
-    home.packages = with pkgs; [
+  config.home = mkIf cfg.enable ({
+    packages = with pkgs; [
       maa-cli
     ];
 
-    home.file = {
+    file = {
       ".config/maa/cli.toml".text = ''
         # MaaCore install and update  configurations
         [core]
@@ -154,10 +154,10 @@ in
       '';
     };
   } // lib.optionalAttrs (platform == "linux") {
-    home.persistence = {
+    persistence = {
       "/persistent/home/w" = {
         directories = [
-          # ".local/share/maa"
+          ".local/share/maa"
         ];
       };
     };

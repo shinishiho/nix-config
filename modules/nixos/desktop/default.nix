@@ -1,22 +1,18 @@
-{
-  config,
-  lib,
-  ...
-}:
+_:
 
-with lib;
-
-let
-  cfg = config.my-modules.nixos.desktop;
-in
 {
   imports = [
+    ./displayManager.nix
     ./gnome.nix
+    # ./hydenix.nix
   ];
 
-  config = mkMerge [
-    (mkIf cfg.gnome.enable {
-      # GNOME configuration will be loaded from gnome.nix
-    })
-  ];
+  services.udev.extraHwdb = ''
+    evdev:atkbd:*
+      KEYBOARD_KEY_3a=esc
+  '';
+
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+  };
 }

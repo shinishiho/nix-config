@@ -4,7 +4,7 @@
 
     input = {
       kb_layout = "us";
-      kb_options = "caps:swapescape";
+      # kb_options = "caps:swapescape";
       follow_mouse = 1;
 
       touchpad = {

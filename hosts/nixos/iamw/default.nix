@@ -1,4 +1,5 @@
 {
+  lib,
   inputs,
   ...
 }:
@@ -18,22 +19,25 @@
   ];
 
   # Enable the modules that were previously imported directly
-  my-modules = {
-    shared.fonts.enable = true;
-    
+  myModules = {
+    shared = {
+      fonts.enable = true;
+      gaming.enable = true;
+    };
+
     nixos = {
-      desktop.gnome.enable = true;
+      desktop = {
+        displayManager.enable = true;
+        gnome.enable = false;
+      };
       hardware = {
-        enable = true;
         audio.enable = true;
       };
       services = {
-        enable = true;
         networking.enable = true;
         ssh.enable = true;
       };
       system = {
-        enable = true;
         boot.enable = true;
         locale.enable = true;
         nix.enable = true;
@@ -43,5 +47,5 @@
     };
   };
 
-  system.stateVersion = "25.11";
+  system.stateVersion = lib.mkForce "25.11";
 }

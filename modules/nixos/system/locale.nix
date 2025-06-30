@@ -7,7 +7,7 @@
 with lib;
 
 let
-  cfg = config.my-modules.nixos.system.locale;
+  cfg = config.myModules.nixos.system.locale;
 in
 {
   config = mkIf cfg.enable {

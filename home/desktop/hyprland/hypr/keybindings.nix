@@ -20,14 +20,14 @@
         "$mod, Backspace, exec, $scrPath/logoutlaunch.sh"
 
         # Application shortcuts
-        "Alt, Return, exec, $term"
-        "$mod, E, exec, $file"
-        "$mod, C, exec, $editor"
-        "$mod, F, exec, $browser"
+        "Alt, Return, exec, uwsm app -- $term"
+        "$mod, E, exec, uwsm app -- $file"
+        "$mod, C, exec, uwsm app -- $editor"
+        "$mod, F, exec, uwsm app -- $browser"
 
         # Rofi menus
-        "$mod, space, exec, pkill -x rofi || rofi -show drun"
-        "Alt, space, exec, pkill -x rofi || rofi -show drun"
+        "$mod, space, exec, pkill -x rofi || rofi -show drun -run-command \"uwsm app -- {cmd}\""
+        "Alt, space, exec, pkill -x rofi || rofi -show drun -run-command \"uwsm app -- {cmd}\""
         "$mod, Tab, exec, pkill -x rofi || $scrPath/rofilaunch.sh w"  # launch window switcher
         "$mod+Shift, E, exec, pkill -x rofi || $scrPath/rofilaunch.sh f"  # launch file explorer
 
@@ -105,7 +105,7 @@
         "$mod+Shift, Down, resizeactive, 0 30"
       ];
 
-      bindl = [
+      bindel = [
         ", XF86AudioLowerVolume, exec, hyprpanel vol -5"
         ", XF86AudioRaiseVolume, exec, hyprpanel vol +5"
         # ", XF86AudioMute, exec, hyprpanel volume toggle"

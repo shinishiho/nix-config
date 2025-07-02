@@ -8,6 +8,7 @@
     ./hyprpanel.nix
     # ./mako.nix
     ./rofi.nix
+    ./wallust.nix
   ];
 
   # home.file.".icons/default".source = "${pkgs.bibata-cursors}/share/icons/Bibata-Modern-Classic";

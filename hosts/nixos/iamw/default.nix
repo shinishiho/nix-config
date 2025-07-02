@@ -29,9 +29,11 @@
       desktop = {
         displayManager.enable = true;
         gnome.enable = false;
+        hyprland.enable = true;
       };
       hardware = {
         audio.enable = true;
+        bluetooth.enable = true;
       };
       services = {
         networking.enable = true;

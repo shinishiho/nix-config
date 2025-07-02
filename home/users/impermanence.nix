@@ -16,13 +16,16 @@
           method = "symlink";
         }
         ".local/share/zoxide"
+        ".local/share/fish"
         ".miktex"
         ".vim/undodir"
         ".steam"
       ];
       files = [
         # ".zsh_history"
-        ".local/share/fish/fish_history"
+        ".config/hypr/colors.conf"
+        ".config/wallpaper/active"
+        ".config/wallpaper/current"
         ".local/share/nvim/file_frecency.bin"
         ".modal.toml"
       ];

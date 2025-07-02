@@ -18,19 +18,31 @@ in
         # autoLogin.user = "w";
 
         sddm = {
-          enable = false;
+          enable = true;
           package = pkgs.kdePackages.sddm;
           wayland = {
             enable = true;
           };
 
+          theme = "${
+            (
+              pkgs.sddm-astronaut.override {
+                embeddedTheme = "pixel_sakura";
+              }
+            )
+          }/share/sddm/themes/sddm-astronaut-theme";
+
           extraPackages = with pkgs; [
-            sddm-astronaut
+            (
+              sddm-astronaut.override {
+                embeddedTheme = "pixel_sakura";
+              }
+            )
           ];
         };
 
         gdm = {
-          enable = true;
+          enable = false;
         };
       };
     };

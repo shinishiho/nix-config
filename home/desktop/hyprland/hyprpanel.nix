@@ -90,7 +90,7 @@
   "menus.clock.time.hideSeconds": true,
   "menus.clock.weather.location": "Ho Chi Minh",
   "menus.clock.weather.unit": "metric",
-  "theme.matugen": false,
+  "theme.matugen": true,
   "theme.bar.menus.monochrome": false,
   "bar.workspaces.show_icons": false,
   "bar.workspaces.show_numbered": false,
@@ -135,7 +135,10 @@
   "bar.notifications.hideCountWhenZero": true,
   "bar.notifications.show_total": true,
   "menus.media.displayTimeTooltip": true,
-  "menus.media.displayTime": true
+  "menus.media.displayTime": true,
+  "wallpaper.enable": false,
+  "wallpaper.image": "/home/w/.config/wallpaper/active",
+  "theme.matugen_settings.mode": "dark"
 }
 '';
 }

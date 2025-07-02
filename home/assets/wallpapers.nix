@@ -5,23 +5,23 @@
 }:
 let
   wallpapers = {
-    dark = ./wallpapers/bg_dark.jpg;
-    light = ./wallpapers/bg_light.jpg;
+    dark = ./wallpapers/w_dark.jpg;
+    light = ./wallpapers/w_light.jpg;
+    angelina = ./wallpapers/angelina.jpg;
+    beans = ./wallpapers/beans.png;
+    burning_cherry = ./wallpapers/burning_cherry.jpeg;
+    cat_lofi_cafe = ./wallpapers/cat_lofi_cafe.jpg;
+    chainsaw_makima = ./wallpapers/chainsaw_makima.png;
+    flying_out = ./wallpapers/flying_out.png;
+    jormungandr = ./wallpapers/jormungandr.jpg;
+    lowpoly_street = ./wallpapers/lowpoly_street.png;
+    reindeer_forest = ./wallpapers/reindeer_forest.jpg;
+    tokyo_pink = ./wallpapers/tokyo_pink.png;
+    waifu_angel = ./wallpapers/waifu_angel.jpg;
+    waifu_pink = ./wallpapers/waifu_pink.png;
   };
 in
 {
   # Make wallpapers available to other modules
   _module.args.wallpapers = wallpapers;
-
-  # Install wallpapers to user's local share directory
-  home.file = {
-    ".local/share/wallpapers/bg_dark.jpg".source = wallpapers.dark;
-    ".local/share/wallpapers/bg_light.jpg".source = wallpapers.light;
-  };
-
-  # Define wallpaper paths as environment variables for scripts
-  home.sessionVariables = {
-    WALLPAPER_DARK = "$HOME/.local/share/wallpapers/bg_dark.jpg";
-    WALLPAPER_LIGHT = "$HOME/.local/share/wallpapers/bg_light.jpg";
-  };
 }

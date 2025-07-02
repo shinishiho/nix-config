@@ -3,9 +3,8 @@
   inputs,
   ...
 }:
-let
-  pkgs-unstable = inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
-in {
+
+{
   imports = [
     inputs.nixos-hardware.nixosModules.common-cpu-intel
     inputs.nixos-hardware.nixosModules.common-pc-ssd
@@ -15,12 +14,6 @@ in {
   ];
 
   hardware.graphics = {
-    enable = true;
-    package = pkgs-unstable.mesa;
-
-    enable32Bit = true;
-    package32 = pkgs-unstable.pkgsi686Linux.mesa;
-
     extraPackages = with pkgs; [
       intel-media-driver
       intel-ocl

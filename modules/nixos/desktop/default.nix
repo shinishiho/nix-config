@@ -4,7 +4,7 @@ _:
   imports = [
     ./displayManager.nix
     ./gnome.nix
-    # ./hydenix.nix
+    ./hyprland.nix
   ];
 
   services.udev.extraHwdb = ''
@@ -15,4 +15,6 @@ _:
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
   };
+
+  hardware.graphics.enable = true;
 }

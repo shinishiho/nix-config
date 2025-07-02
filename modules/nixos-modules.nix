@@ -1,4 +1,3 @@
-# NixOS-specific modules entry point
 {
   lib,
   ...
@@ -20,6 +19,9 @@ with lib;
         };
         gnome = {
           enable = mkEnableOption "GNOME desktop environment";
+        };
+        hyprland = {
+          enable = mkEnableOption "Hyprland desktop environment";
         };
       };
       hardware = {

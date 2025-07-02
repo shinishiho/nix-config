@@ -5,7 +5,7 @@
       "$term" = "kitty";
       "$editor" = "code";
       "$file" = "dolphin";
-      "$browser" = "firefox";
+      "$browser" = "zen-twilight";
 
       bind = [
         # Window/Session actions
@@ -28,6 +28,7 @@
         # Rofi menus
         "$mod, space, exec, pkill -x rofi || rofi -show drun -run-command \"uwsm app -- {cmd}\""
         "Alt, space, exec, pkill -x rofi || rofi -show drun -run-command \"uwsm app -- {cmd}\""
+        "$mod+Shift, W, exec, set-wallpaper select # launch wallpaper select menu"
         "$mod, Tab, exec, pkill -x rofi || $scrPath/rofilaunch.sh w"  # launch window switcher
         "$mod+Shift, E, exec, pkill -x rofi || $scrPath/rofilaunch.sh f"  # launch file explorer
 
@@ -95,6 +96,9 @@
         "$mod+Alt, 8, movetoworkspacesilent, 8"
         "$mod+Alt, 9, movetoworkspacesilent, 9"
         "$mod+Alt, 0, movetoworkspacesilent, 10"
+
+        # Screenshots
+        ", Print, exec, GRIMBLAST_HIDE_CURSOR=1 grimblast copysave area"
       ];
 
       binde = [
@@ -138,7 +142,6 @@
       bind = $mod+Shift, R, exec, pkill -x rofi || $scrPath/wallbashtoggle.sh -m # launch wallbash mode select menu
       bind = $mod+Shift, T, exec, pkill -x rofi || $scrPath/themeselect.sh # launch theme select menu
       bind = $mod+Shift, A, exec, pkill -x rofi || $scrPath/rofiselect.sh # launch select menu
-      bind = $mod+Shift, W, exec, pkill -x rofi || $scrPath/swwwallselect.sh # launch wallpaper select menu
       bind = $mod, V, exec, pkill -x rofi || $scrPath/cliphist.sh c # launch clipboard
       bind = $mod, K, exec, $scrPath/keyboardswitch.sh # switch keyboard layout
       bind = $mod, slash, exec, pkill -x rofi || $scrPath/keybinds_hint.sh c # launch keybinds hint

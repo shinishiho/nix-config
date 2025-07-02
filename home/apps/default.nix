@@ -39,6 +39,9 @@ with lib;
       firefox = {
         enable = mkEnableOption "Firefox";
       };
+      zen = {
+        enable = mkEnableOption "Zen Browser";
+      };
     };
 
     media = {

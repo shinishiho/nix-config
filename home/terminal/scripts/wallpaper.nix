@@ -46,19 +46,20 @@ let
         
         echo "Setting wallpaper: $wallpaper_path"
 
-        # Set wallpaper with swww
-        ${pkgs.swww}/bin/swww img "$wallpaper_path"
-        ${pkgs.hyprpanel}/bin/hyprpanel setWallpaper "$wallpaper_path"
-
-        # Run wallust for color scheme generation
-        ${pkgs.wallust}/bin/wallust run "$wallpaper_path"
-        
         # Save current wallpaper path to state file
         echo "$wallpaper_path" > "$STATE_FILE"
         
         # Create symlink to active wallpaper
         rm -f "$SYMLINK_FILE"
         ln -s "$wallpaper_path" "$SYMLINK_FILE"
+        
+        # Set wallpaper with swww
+        ${pkgs.swww}/bin/swww img "$wallpaper_path" --transition-bezier .43,1.19,1,.4 --transition-type "grow" --transition-duration "0.4" --transition-fps "60" --invert-y --transition-pos "$(hyprctl cursorpos | grep -E '^[0-9]' || echo "0,0")" &
+        
+        ${pkgs.hyprpanel}/bin/hyprpanel setWallpaper "$wallpaper_path"
+
+        # Run wallust for color scheme generation
+        ${pkgs.wallust}/bin/wallust run "$wallpaper_path"
         
         echo "Wallpaper set successfully!"
     }
@@ -76,7 +77,25 @@ let
     
     # Function to get a random wallpaper
     get_random_wallpaper() {
-        local random_index=$((RANDOM % ''${#WALLPAPERS[@]}))
+        local array_size=''${#WALLPAPERS[@]}
+        local random_index
+        
+        # Use multiple sources for better randomness
+        if command -v shuf >/dev/null 2>&1; then
+            # Use shuf if available (most robust)
+            random_index=$(seq 0 $((array_size - 1)) | shuf -n 1)
+        elif [[ -r /dev/urandom ]]; then
+            # Use /dev/urandom for better entropy
+            random_index=$(od -An -N2 -tu2 /dev/urandom | tr -d ' ' | head -1)
+            random_index=$((random_index % array_size))
+        else
+            # Fallback: combine multiple RANDOM calls and current time for better distribution
+            local seed1=$RANDOM
+            local seed2=$RANDOM
+            local timestamp=$(date +%N 2>/dev/null || echo $(($(date +%s) % 1000000)))
+            random_index=$(( (seed1 * seed2 + timestamp) % array_size ))
+        fi
+        
         echo "''${WALLPAPERS[$random_index]}"
     }
     
@@ -90,14 +109,12 @@ let
         local wallpapers_list
         wallpapers_list=$(list_wallpapers)
         
-        # Create arrays to store display names and paths
-        local display_names=()
-        local wallpaper_paths=()
-        local rofi_input=""
         local current_wallpaper
         current_wallpaper=$(get_current_wallpaper)
         
-        while IFS= read -r wallpaper; do
+        # Generate rofi input with proper format using a function
+        generate_rofi_entry() {
+            local wallpaper="$1"
             local basename_wallpaper
             basename_wallpaper=$(basename "$wallpaper")
             
@@ -106,27 +123,22 @@ let
                 basename_wallpaper="● $basename_wallpaper"
             fi
             
-            display_names+=("$basename_wallpaper")
-            wallpaper_paths+=("$wallpaper")
-            rofi_input+="$basename_wallpaper"$'\n'
-        done <<< "$wallpapers_list"
+            # Format: displayName:::realpath:::pathtopreview\0icon\x1fpathtopreview
+            printf "%s:::%s:::%s\0icon\x1f%s\n" "$basename_wallpaper" "$wallpaper" "$wallpaper" "$wallpaper"
+        }
         
-        # Remove trailing newline
-        rofi_input=$(echo -e "$rofi_input" | head -c -1)
-        
-        # Use rofi to select wallpaper
+        # Use rofi to select wallpaper with enhanced display
         local selected
-        selected=$(echo -e "$rofi_input" | ${pkgs.rofi-wayland}/bin/rofi -dmenu -i -p "Select Wallpaper" -no-custom)
+        selected=$(
+            while IFS= read -r wallpaper; do
+                generate_rofi_entry "$wallpaper"
+            done <<< "$wallpapers_list" | ${pkgs.rofi-wayland}/bin/rofi -dmenu -display-column-separator ":::" -theme ~/.config/rofi/selector.rasi -display-columns 1 -i -p "Select Wallpaper" -no-custom -select $(basename "$(get_current_wallpaper)")
+        )
         
         if [[ -n "$selected" ]]; then
-            # Find the index of the selected display name
-            local selected_path=""
-            for i in "''${!display_names[@]}"; do
-                if [[ "''${display_names[$i]}" == "$selected" ]]; then
-                    selected_path="''${wallpaper_paths[$i]}"
-                    break
-                fi
-            done
+            # Extract the real path from the selected entry (second field)
+            local selected_path
+            selected_path=$(echo "$selected" | cut -d':' -f4)  # Get the realpath part
             
             if [[ -n "$selected_path" ]] && [[ -f "$selected_path" ]]; then
                 set_wallpaper "$selected_path"

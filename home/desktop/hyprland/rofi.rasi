@@ -57,7 +57,7 @@ inputbar {
     children:                    [ "entry" ];
     expand:                      false;
     background-color:            @main-bg;
-    background-image:            url("~/.config/wallpaper/active", none);
+    background-image:            url("~/.config/wallpaper/active", height);
     border-radius:               1em 0em 0em 1em;
 }
 entry {

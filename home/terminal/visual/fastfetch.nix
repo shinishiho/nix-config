@@ -1,3 +1,8 @@
+{
+  pkgs,
+  ...
+}:
+
 let
   gyate = builtins.path {
     name = "gyate";
@@ -9,122 +14,95 @@ in
     enable = true;
     settings = {
       logo = {
-        source = "\$(fd . '${gyate}' | sort -R | head -n 1)";
-        height = 32;
-        type = "kitty-direct";
+        source = "\$(${pkgs.fd}/bin/fd . '${gyate}' | sort -R | head -n 1)";
+        height = 10;
+        type = "kitty";
       };
 
       display = {
-        separator = " : ";
+        separator = " => ";
+        color = {
+          separator = "1";
+        };
+        constants = [
+          "──────────────"
+        ];
+        key = {
+          type = "both";
+          paddingLeft = 2;
+        };
       };
 
       modules = [
         {
           type = "custom";
-          format = " 󰄛  コンピューター";
+          format = "┌{$1} 󰄛  コンピューター {$1}┐";
           outputColor = "blue";
         }
         {
-          type = "custom";
-          format = "┌──────────────────────────────────────────┐";
-        }
-        {
-          type = "chassis";
-          key = "  󰇺 Chassis";
-          format = "{1} {2} {3}";
-        }
-        {
           type = "os";
-          key = "  󰣇 OS";
-          format = "{2}";
+          key = "OS       ";
+          format = "{pretty-name}";
           keyColor = "red";
         }
         {
           type = "kernel";
-          key = "   Kernel";
-          format = "{2}";
+          key = "Kernel   ";
+          format = "{release}";
           keyColor = "red";
         }
         {
           type = "packages";
-          key = "  󰏗 Packages";
+          key = "Packages ";
           keyColor = "green";
         }
         {
           type = "display";
-          key = "  󰍹 Display";
-          format = "{1}x{2} @ {3}Hz [{7}]";
+          key = "Display  ";
+          format = "{width}x{height} @ {refresh-rate}Hz [{type}]";
           keyColor = "green";
         }
         {
           type = "wm";
-          key = "  󱗃 WM";
-          format = "{2}";
+          key = "WM       ";
+          format = "{pretty-name}";
           keyColor = "yellow";
         }
         {
           type = "terminal";
-          key = "  >_ Terminal";
+          key = "Terminal ";
           keyColor = "yellow";
         }
         {
-          type = "custom";
-          format = "└──────────────────────────────────────────┘";
-        }
-        "break"
-        {
-          type = "title";
-          key = "  ";
-          format = "{6} {7} {8}";
-        }
-        {
-          type = "custom";
-          format = "┌──────────────────────────────────────────┐";
+          type = "shell";
+          key = "Shell    ";
+          keyColor = "magenta";
         }
         {
           type = "cpu";
-          format = "{1} @ {7}";
-          key = "   CPU";
-          keyColor = "blue";
-        }
-        {
-          type = "gpu";
-          format = "{1} {2}";
-          key = "  󰊴 GPU";
-          keyColor = "blue";
-        }
-        {
-          type = "gpu";
-          format = "{3}";
-          key = "   GPU Driver";
+          format = "{vendor} [{cores-physical}C/{cores-logical}T] @{freq-max}";
+          key = "CPU      ";
           keyColor = "magenta";
+        }
+        {
+          type = "gpu";
+          format = "{name} [{core-count}C] @{frequency}";
+          key = "GPU      ";
+          keyColor = "blue";
         }
         {
           type = "memory";
-          key = "    Memory";
-          keyColor = "magenta";
-        }
-        {
-          type = "disk";
-          key = "  󱦟 OS Age ";
-          folders = "/";
-          keyColor = "red";
-          format = "{days} days";
-        }
-        {
-          type = "uptime";
-          key = "  󱫐 Uptime ";
-          keyColor = "red";
+          key = "Memory   ";
+          keyColor = "blue";
         }
         {
           type = "custom";
-          format = "└──────────────────────────────────────────┘";
+          format = "└{$1}────────────────────{$1}┘";
         }
         "break"
         {
           type = "colors";
           paddingLeft = 2;
-          symbol = "circle";
         }
         "break"
       ];

@@ -10,6 +10,7 @@
     inputs.impermanence.homeManagerModules.impermanence
     inputs.nix-index-database.hmModules.nix-index
     inputs.agenix.homeManagerModules.default
+    inputs.zen-browser.homeModules.twilight
 
     # Shared configurations
     ../home.nix
@@ -42,6 +43,7 @@
     browsers = {
       chromium.enable = true;
       firefox.enable = false;
+      zen.enable = true;
     };
 
     media = {

@@ -20,13 +20,16 @@
 
     settings = {
       exec-once = [
-        "${pkgs.uwsm}/bin/uwsm app -- ${pkgs.swww}/bin/swww-daemon"
         "${pkgs.uwsm}/bin/uwsm app -- ${pkgs.fcitx5}/bin/fcitx5"
+        "${pkgs.uwsm}/bin/uwsm app -- ${pkgs.swww}/bin/swww-daemon"
         "${pkgs.uwsm}/bin/uwsm app -- ${pkgs.hyprpanel}/bin/hyprpanel"
         "${pkgs.uwsm}/bin/uwsm app -- ${pkgs.wl-clipboard}/bin/wl-paste --type text --watch cliphist store"
         "${pkgs.uwsm}/bin/uwsm app -- ${pkgs.wl-clipboard}/bin/wl-paste --type image --watch cliphist store"
         # Abomination
-        "sleep 1; set-wallpaper init"
+        "sleep 1 && set-wallpaper init && ${pkgs.hyprpanel}/bin/hyprpanel restart"
+
+        # Dark mode
+        "${pkgs.glib}/bin/gsettings set org.gnome.desktop.interface color-scheme \"prefer-dark\""
       ];
 
       env = [

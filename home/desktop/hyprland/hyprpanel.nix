@@ -138,7 +138,10 @@
   "menus.media.displayTime": true,
   "wallpaper.enable": false,
   "wallpaper.image": "/home/w/.config/wallpaper/active",
-  "theme.matugen_settings.mode": "dark"
+  "theme.matugen_settings.mode": "dark",
+  "menus.dashboard.shortcuts.left.shortcut1.command": "set-wallpaper init",
+  "menus.dashboard.shortcuts.left.shortcut1.tooltip": "Roll a Wallpaper",
+  "menus.dashboard.shortcuts.left.shortcut1.icon": ""
 }
 '';
 }

@@ -6,7 +6,6 @@
   imports = [
     ./hypr
     ./hyprpanel.nix
-    # ./mako.nix
     ./rofi.nix
     ./wallust.nix
   ];

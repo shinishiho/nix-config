@@ -24,8 +24,6 @@
       files = [
         # ".zsh_history"
         ".config/hypr/colors.conf"
-        ".config/wallpaper/active"
-        ".config/wallpaper/current"
         ".local/share/nvim/file_frecency.bin"
         ".modal.toml"
       ];

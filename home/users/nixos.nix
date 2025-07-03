@@ -41,7 +41,7 @@
     };
 
     browsers = {
-      chromium.enable = true;
+      chromium.enable = false;
       firefox.enable = false;
       zen.enable = true;
     };

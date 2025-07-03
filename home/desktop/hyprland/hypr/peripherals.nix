@@ -4,7 +4,7 @@
 
     input = {
       kb_layout = "us";
-      # kb_options = "caps:swapescape";
+      kb_options = "ctrl:swap_lwin_lctl";
       follow_mouse = 1;
 
       touchpad = {
@@ -21,7 +21,7 @@
     };
 
     gestures = {
-      workspace_swipe = true;
+      workspace_swipe = false;
       workspace_swipe_fingers = 3;
     };
   };

@@ -26,11 +26,10 @@
         "$mod, F, exec, uwsm app -- $browser"
 
         # Rofi menus
-        "$mod, space, exec, pkill -x rofi || rofi -show drun -run-command \"uwsm app -- {cmd}\""
-        "Alt, space, exec, pkill -x rofi || rofi -show drun -run-command \"uwsm app -- {cmd}\""
-        "$mod+Shift, W, exec, set-wallpaper select # launch wallpaper select menu"
-        "$mod, Tab, exec, pkill -x rofi || $scrPath/rofilaunch.sh w"  # launch window switcher
-        "$mod+Shift, E, exec, pkill -x rofi || $scrPath/rofilaunch.sh f"  # launch file explorer
+        "$mod, space, exec, pkill -x rofi || rofi -show combi -combi-modes \"run,drun\" -run-command \"uwsm app -- {cmd}\""
+        "Alt, space, exec, pkill -x rofi || rofi -show combi -combi-modes \"run,drun\" -run-command \"uwsm app -- {cmd}\""
+        "$mod+Shift, W, exec, set-wallpaper select"
+        "$mod, Tab, exec, pkill -x rofi || rofi -show window"
 
         # Move/Change window focus
         "$mod, Left, movefocus, l"

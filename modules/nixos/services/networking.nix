@@ -15,6 +15,10 @@ in
     networking = {
       resolvconf.enable = pkgs.lib.mkForce false;
       dhcpcd.extraConfig = "nohook resolv.conf";
+      nameservers = [
+        "127.0.0.1"
+        "::1"
+      ];
     };
 
     services = {

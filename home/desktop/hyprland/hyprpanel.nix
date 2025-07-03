@@ -6,6 +6,7 @@
 {
   home.packages = with pkgs; [
     hyprpanel
+    matugen
   ];
 
   home.file.".config/hyprpanel/config.json".text = ''
@@ -137,11 +138,14 @@
   "menus.media.displayTimeTooltip": true,
   "menus.media.displayTime": true,
   "wallpaper.enable": false,
-  "wallpaper.image": "/home/w/.config/wallpaper/active",
+  "wallpaper.image": "/nix/store/cyzxg5il5dnmhjs031li0mbzlswmnpgx-waifu_pink.png",
   "theme.matugen_settings.mode": "dark",
   "menus.dashboard.shortcuts.left.shortcut1.command": "set-wallpaper init",
   "menus.dashboard.shortcuts.left.shortcut1.tooltip": "Roll a Wallpaper",
-  "menus.dashboard.shortcuts.left.shortcut1.icon": ""
+  "menus.dashboard.shortcuts.left.shortcut1.icon": "",
+  "menus.dashboard.directories.left.directory2.command": "bash -c \"xdg-open $HOME/W/Videos/\"",
+  "menus.dashboard.directories.left.directory1.command": "bash -c \"xdg-open $HOME/W/Downloads/\"",
+  "menus.dashboard.powermenu.avatar.image": "/home/w/.config/wallpaper/active"
 }
 '';
 }

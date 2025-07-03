@@ -72,7 +72,7 @@ in
         # On any side story open, fight given side story stage
         [[tasks.variants]]
         condition = { type = "OnSideStory", client = "YoStarEN" }
-        params = { stage = "RS-7", series = 0 }
+        params = { stage = "HS-9", series = 0 }
 
         # Otherwise, fight PR-A-2 on Monday, PR-B-2 on Tuesday, PR-D-2 on Wednesday,
         # PR-C-1 on Thursday, 1-7 for the rest of the week

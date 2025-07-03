@@ -1,10 +1,6 @@
 {
   networking = {
     hostName = "iamw";
-    nameservers = [
-      "127.0.0.1"
-      "::1"
-    ];
     networkmanager = {
       enable = true;
       wifi.macAddress = "random";

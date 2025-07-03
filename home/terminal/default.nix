@@ -1,4 +1,8 @@
 {
+  platform ? "linux",
+  ...
+}:
+{
   imports = [
     ./visual
     ./scripts
@@ -8,4 +12,7 @@
     ./tmux.nix
     ./zellij.nix
   ];
+  
+  # Pass platform to all imported modules
+  _module.args = { inherit platform; };
 }

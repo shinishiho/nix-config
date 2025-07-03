@@ -17,6 +17,9 @@ with lib;
         displayManager = {
           enable = mkEnableOption "Display manager configuration";
         };
+        gaming = {
+          enable = mkEnableOption "Linux gaming configuration";
+        };
         gnome = {
           enable = mkEnableOption "GNOME desktop environment";
         };
@@ -62,9 +65,6 @@ with lib;
     shared = {
       fonts = {
         enable = mkEnableOption "Shared font configuration";
-      };
-      gaming = {
-        enable = mkEnableOption "Shared gaming configuration";
       };
     };
   };

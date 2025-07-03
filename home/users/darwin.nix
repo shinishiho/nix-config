@@ -8,6 +8,7 @@
     inputs.nixvim.homeManagerModules.default
     inputs.nix-index-database.hmModules.nix-index
     inputs.agenix.homeManagerModules.default
+    inputs.zen-browser.homeModules.twilight
 
     # Shared configurations
     ../home.nix

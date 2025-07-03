@@ -28,9 +28,6 @@ with lib;
       fonts = {
         enable = mkEnableOption "Shared font configuration";
       };
-      gaming = {
-        enable = mkEnableOption "Shared gaming configuration";
-      };
     };
   };
 }

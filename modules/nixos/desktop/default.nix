@@ -3,6 +3,7 @@ _:
 {
   imports = [
     ./displayManager.nix
+    ./gaming.nix
     ./gnome.nix
     ./hyprland.nix
   ];

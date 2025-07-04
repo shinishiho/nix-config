@@ -1,9 +1,9 @@
 {
   config,
   lib,
+  inputs,
   pkgs,
   platform ? "linux",
-  inputs,
   ...
 }:
 
@@ -13,6 +13,10 @@ let
   cfg = config.my-apps.browsers.zen;
 in
 {
+  imports = [
+    inputs.zen-browser.homeModules.twilight
+  ];
+
   config = mkIf cfg.enable ({
     programs.zen-browser = {
       enable = true;

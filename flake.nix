@@ -26,7 +26,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    # nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nixos-hardware.url = "github:shinishiho/nixos-hardware/patch-1";
 
     nix-index-database = {
       url = "github:nix-community/nix-index-database";

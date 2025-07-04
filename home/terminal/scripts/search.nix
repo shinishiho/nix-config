@@ -5,7 +5,7 @@
 {
   home.packages = with pkgs; [
     (writeShellScriptBin "s" ''
-      #!/run/current-system/sw/bin/bash
+    #!${pkgs.bash}/bin/bash
 
       if [ "$#" -lt 2 ]; then
         echo "Usage: $0 <service: d|yt|gh|nixpkgs|nixos|hm|nix-darwin|wiki> <search query>"

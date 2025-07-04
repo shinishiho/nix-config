@@ -20,7 +20,7 @@
 
     settings = {
       exec-once = [
-        "${pkgs.uwsm}/bin/uwsm app -- ${pkgs.fcitx5}/bin/fcitx5"
+        "${pkgs.uwsm}/bin/uwsm app -- fcitx5"
         "${pkgs.uwsm}/bin/uwsm app -- ${pkgs.swww}/bin/swww-daemon"
         "${pkgs.uwsm}/bin/uwsm app -- ${pkgs.hyprpanel}/bin/hyprpanel"
         "${pkgs.uwsm}/bin/uwsm app -- ${pkgs.wlsunset}/bin/wlsunset -s 20:00 -S 07:00"

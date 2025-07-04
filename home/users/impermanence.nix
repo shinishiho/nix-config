@@ -1,4 +1,13 @@
 {
+  inputs,
+  ...
+}:
+
+{
+  imports = [
+    inputs.impermanence.homeManagerModules.impermanence
+  ];
+
   home.persistence = {
     "/persistent/home/w" = {
       directories = [

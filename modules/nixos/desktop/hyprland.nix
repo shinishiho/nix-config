@@ -28,5 +28,9 @@ in
       enable32Bit = true;
       package32 = pkgs-unstable.pkgsi686Linux.mesa;
     };
+
+    environment.systemPackages = with pkgs; [
+      adwaita-icon-theme
+    ];
   };
 }

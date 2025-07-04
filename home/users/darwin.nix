@@ -10,14 +10,11 @@
     inputs.agenix.homeManagerModules.default
     inputs.zen-browser.homeModules.twilight
 
-    # Shared configurations
     ../home.nix
     
-    # Applications
     ../apps
   ];
 
-  # Pass platform to all imported modules
   _module.args = { inherit platform; };
 
   programs.home-manager.enable = true;

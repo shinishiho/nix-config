@@ -23,10 +23,8 @@ in
       };
     };
   } // lib.optionalAttrs (platform == "linux") {
-    home.persistence."/persistent/home/w" = {
-      directories = [
-        ".thunderbird"
-      ];
-    };
+    home.persistence."/persistent/home/w".directories = [
+      ".thunderbird"
+    ];
   });
 }

@@ -4,7 +4,7 @@
 
     input = {
       kb_layout = "us";
-      kb_options = "ctrl:swap_lwin_lctl";
+      # kb_options = "ctrl:swap_lwin_lctl";
       follow_mouse = 1;
 
       touchpad = {

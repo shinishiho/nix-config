@@ -22,14 +22,14 @@
   myModules = {
     shared = {
       fonts.enable = true;
-      gaming.enable = true;
     };
 
     nixos = {
       desktop = {
         displayManager.enable = true;
+        gaming.enable = true;
         gnome.enable = false;
-        hyprland.enable = true;
+        # hyprland.enable = true;
       };
       hardware = {
         audio.enable = true;
@@ -41,7 +41,10 @@
       };
       system = {
         boot.enable = true;
-        locale.enable = true;
+        locale = {
+          enable = true;
+          fcitx5.enable = true;
+        };
         nix.enable = true;
         programs.enable = true;
         security.enable = true;

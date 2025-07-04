@@ -76,15 +76,6 @@
         ts_ls.enable = true;
         lua_ls.enable = true;
       };
-
-      postConfig = ''
-        require('lspconfig').verible.setup{
-        cmd = {'verible-verilog-ls', '--rules_config_search'},
-        singe_file_support = true,
-        on_attach = _M.lspOnAttach,
-        capabilities = __lspCapabilities(),
-        }
-      '';
     };
 
     lspkind.enable = true;

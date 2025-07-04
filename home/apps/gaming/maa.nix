@@ -154,12 +154,8 @@ in
       '';
     };
   } // lib.optionalAttrs (platform == "linux") {
-    persistence = {
-      "/persistent/home/w" = {
-        directories = [
-          ".local/share/maa"
-        ];
-      };
-    };
+    persistence."/persistent/home/w".directories = [
+      ".local/share/maa"
+    ];
   });
 }

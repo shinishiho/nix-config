@@ -8,7 +8,7 @@
 with lib;
 
 let
-  cfg = config.myModules.shared.gaming;
+  cfg = config.myModules.nixos.desktop.gaming;
 in
 {
   config = mkIf cfg.enable {

@@ -49,6 +49,9 @@ with lib;
         };
         locale = {
           enable = mkEnableOption "Locale configuration";
+          fcitx5 = {
+            enable = mkEnableOption "Fcitx5 input method configuration";
+          };
         };
         nix = {
           enable = mkEnableOption "Nix configuration";

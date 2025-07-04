@@ -1,4 +1,5 @@
 {
+  lib,
   pkgs,
   platform ? "linux",
   ...
@@ -12,7 +13,13 @@
   # Pass platform to all imported modules
   _module.args = { inherit platform; };
 
-  home.packages = with pkgs; [
-    signal-desktop-bin
-  ];
+  home = ({
+    packages = with pkgs; [
+      signal-desktop-bin
+    ];
+  } // lib.optionalAttrs (platform == "linux") {
+    persistence."/persistent/home/w".directories = [
+      ".config/Signal"
+    ];
+  });
 }

@@ -143,6 +143,12 @@
   "menus.dashboard.shortcuts.left.shortcut1.command": "set-wallpaper init",
   "menus.dashboard.shortcuts.left.shortcut1.tooltip": "Roll a Wallpaper",
   "menus.dashboard.shortcuts.left.shortcut1.icon": "",
+  "menus.dashboard.shortcuts.left.shortcut3.command": "charge-upto 60",
+  "menus.dashboard.shortcuts.left.shortcut3.tooltip": "Limit Battery Charge",
+  "menus.dashboard.shortcuts.left.shortcut3.icon": "󱈏",
+  "menus.dashboard.shortcuts.left.shortcut4.command": "charge-upto 100",
+  "menus.dashboard.shortcuts.left.shortcut4.tooltip": "Charge Battery to Full",
+  "menus.dashboard.shortcuts.left.shortcut4.icon": "󰂅",
   "menus.dashboard.directories.left.directory2.command": "bash -c \"xdg-open $HOME/W/Videos/\"",
   "menus.dashboard.directories.left.directory1.command": "bash -c \"xdg-open $HOME/W/Downloads/\"",
   "menus.dashboard.powermenu.avatar.image": "/home/w/.config/wallpaper/active"

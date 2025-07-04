@@ -29,7 +29,7 @@
         displayManager.enable = true;
         gaming.enable = true;
         gnome.enable = false;
-        # hyprland.enable = true;
+        hyprland.enable = true;
       };
       hardware = {
         audio.enable = true;

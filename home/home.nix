@@ -1,5 +1,6 @@
 {
   lib,
+  pkgs,
   platform ? "linux",
   ...
 }:
@@ -11,5 +12,12 @@
     ./utilities
   ];
 
-  _module.args = { inherit platform; };
+  xdg = {
+    enable = true;
+  } // lib.optionalAttrs (platform == "linux") {
+    userDirs = {
+      enable = true;
+      createDirectories = true;
+    };
+  };
 }

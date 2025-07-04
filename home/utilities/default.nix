@@ -1,9 +1,4 @@
 {
-  platform ? "linux",
-  ...
-}:
-
-{
   imports = [
     ./archives.nix
     ./development.nix
@@ -12,8 +7,6 @@
     ./nix-tools.nix
     # ./rclone.nix
     ./security.nix
-    ./xdg.nix
+    # ./xdg.nix
   ];
-
-  _module.args = { inherit platform; };
 }

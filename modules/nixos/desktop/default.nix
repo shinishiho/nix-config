@@ -22,6 +22,4 @@ _:
       "/share/applications"
     ];
   };
-
-  hardware.graphics.enable = true;
 }

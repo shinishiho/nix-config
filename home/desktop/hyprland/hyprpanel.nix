@@ -138,7 +138,7 @@
   "menus.media.displayTimeTooltip": true,
   "menus.media.displayTime": true,
   "wallpaper.enable": false,
-  "wallpaper.image": "/nix/store/cyzxg5il5dnmhjs031li0mbzlswmnpgx-waifu_pink.png",
+  "wallpaper.image": "/home/w/.config/wallpaper/active",
   "theme.matugen_settings.mode": "dark",
   "menus.dashboard.shortcuts.left.shortcut1.command": "set-wallpaper init",
   "menus.dashboard.shortcuts.left.shortcut1.tooltip": "Roll a Wallpaper",

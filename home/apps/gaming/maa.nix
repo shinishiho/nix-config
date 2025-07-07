@@ -104,6 +104,16 @@ in
         params = { credit_fight = true, select_formation = 4 }
 
 
+        #----------------------------- Infrast ----------------------------#
+        [[tasks]]
+        type = "Infrast"
+
+        [tasks.params]
+        facility = [
+          "Reception",
+        ]
+
+
         #----------------------------- Recruit ----------------------------#
         [[tasks]]
         type = "Recruit"

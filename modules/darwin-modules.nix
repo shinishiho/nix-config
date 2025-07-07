@@ -1,33 +1,8 @@
-{
-  lib,
-  ...
-}:
-
-with lib;
+_:
 
 {
   imports = [
     ./shared
     ./darwin
   ];
-
-  options.myModules = {
-    darwin = {
-      system = {
-        enable = mkEnableOption "Darwin system defaults";
-      };
-      wm = {
-        enable = mkEnableOption "AeroSpace window manager";
-      };
-      goodies = {
-        enable = mkEnableOption "Additional goodies and packages";
-      };
-    };
-
-    shared = {
-      fonts = {
-        enable = mkEnableOption "Shared font configuration";
-      };
-    };
-  };
 }

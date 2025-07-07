@@ -14,6 +14,7 @@
       extraGroups = [
         "adbusers"
         "docker"
+        "input"
         "networkmanager"
         "video"
         "wheel"

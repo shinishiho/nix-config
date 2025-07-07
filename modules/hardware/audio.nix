@@ -8,9 +8,13 @@
 with lib;
 
 let
-  cfg = config.myModules.nixos.hardware.audio;
+  cfg = config.myModules.hardware.audio;
 in
 {
+  options.myModules.hardware.audio = {
+    enable = mkEnableOption "Audio configuration with PipeWire";
+  };
+
   config = mkIf cfg.enable {
     services.pulseaudio.enable = false;
     security.rtkit.enable = true;

@@ -11,6 +11,10 @@ let
   cfg = config.myModules.shared.fonts;
 in
 {
+  options.myModules.shared.fonts = {
+    enable = mkEnableOption "Shared font configuration";
+  };
+
   config = mkIf cfg.enable {
     fonts.packages = with pkgs; [
       # Terminal and coding fonts

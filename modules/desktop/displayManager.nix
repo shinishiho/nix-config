@@ -8,9 +8,13 @@
 with lib;
 
 let
-  cfg = config.myModules.nixos.desktop.displayManager;
+  cfg = config.myModules.desktop.displayManager;
 in
 {
+  options.myModules.desktop.displayManager = {
+    enable = mkEnableOption "Display manager configuration";
+  };
+
   config = mkIf cfg.enable {
     services = {
       displayManager = {

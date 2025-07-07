@@ -16,39 +16,37 @@
     ./misc.nix
     ./networking.nix
     ./user.nix
+    ./fan.nix
   ];
 
-  # Enable the modules that were previously imported directly
   myModules = {
     shared = {
       fonts.enable = true;
     };
 
-    nixos = {
-      desktop = {
-        displayManager.enable = true;
-        gaming.enable = true;
-        gnome.enable = false;
-        hyprland.enable = true;
+    desktop = {
+      displayManager.enable = true;
+      gaming.enable = true;
+      gnome.enable = false;
+      hyprland.enable = true;
+    };
+    hardware = {
+      audio.enable = true;
+      bluetooth.enable = true;
+    };
+    services = {
+      networking.enable = true;
+      ssh.enable = true;
+    };
+    system = {
+      boot.enable = true;
+      locale = {
+        enable = true;
+        fcitx5.enable = true;
       };
-      hardware = {
-        audio.enable = true;
-        bluetooth.enable = true;
-      };
-      services = {
-        networking.enable = true;
-        ssh.enable = true;
-      };
-      system = {
-        boot.enable = true;
-        locale = {
-          enable = true;
-          fcitx5.enable = true;
-        };
-        nix.enable = true;
-        programs.enable = true;
-        security.enable = true;
-      };
+      nix.enable = true;
+      programs.enable = true;
+      security.enable = true;
     };
   };
 

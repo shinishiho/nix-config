@@ -16,19 +16,12 @@
         ".gnupg"
         ".ssh"
         ".nixops"
-        ".config/fcitx5"
-        ".config/goa-1.0"
+        # ".config/fcitx5"
         ".local/share/direnv"
         ".local/share/keyrings"
-        {
-          directory = ".local/share/Steam";
-          method = "symlink";
-        }
         ".local/share/zoxide"
         ".local/share/fish"
-        ".miktex"
         ".vim/undodir"
-        ".steam"
       ];
       files = [
         # ".zsh_history"

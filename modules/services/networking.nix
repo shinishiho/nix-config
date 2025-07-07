@@ -8,9 +8,13 @@
 with lib;
 
 let
-  cfg = config.myModules.nixos.services.networking;
+  cfg = config.myModules.services.networking;
 in
 {
+  options.myModules.services.networking = {
+    enable = mkEnableOption "Networking configuration";
+  };
+
   config = mkIf cfg.enable {
     networking = {
       resolvconf.enable = pkgs.lib.mkForce false;

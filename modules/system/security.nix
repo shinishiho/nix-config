@@ -8,9 +8,13 @@
 with lib;
 
 let
-  cfg = config.myModules.nixos.system.security;
+  cfg = config.myModules.system.security;
 in
 {
+  options.myModules.system.security = {
+    enable = mkEnableOption "Security configuration";
+  };
+
   config = mkIf cfg.enable {
     security.sudo = {
       execWheelOnly = true;

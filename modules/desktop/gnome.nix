@@ -8,9 +8,13 @@
 with lib;
 
 let
-  cfg = config.myModules.nixos.desktop.gnome;
+  cfg = config.myModules.desktop.gnome;
 in
 {
+  options.myModules.desktop.gnome = {
+    enable = mkEnableOption "GNOME desktop environment";
+  };
+
   config = mkIf cfg.enable {
     services = {
       desktopManager.gnome.enable = true;

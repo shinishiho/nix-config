@@ -7,9 +7,13 @@
 with lib;
 
 let
-  cfg = config.myModules.nixos.hardware.bluetooth;
+  cfg = config.myModules.hardware.bluetooth;
 in
 {
+  options.myModules.hardware.bluetooth = {
+    enable = mkEnableOption "Bluetooth configuration";
+  };
+
   config = mkIf cfg.enable {
     services.blueman.enable = true;
 

@@ -8,9 +8,13 @@
 with lib;
 
 let
-  cfg = config.myModules.nixos.system.boot;
+  cfg = config.myModules.system.boot;
 in
 {
+  options.myModules.system.boot = {
+    enable = mkEnableOption "Boot configuration";
+  };
+
   config = mkIf cfg.enable {
     boot = {
       loader = {
@@ -20,7 +24,8 @@ in
       };
 
       initrd.systemd.enable = true;
-      kernelPackages = pkgs.linuxPackages_zen;
+      # kernelPackages = pkgs.linuxPackages_cachyos.cachyOverride { mArch = "GENERIC_V3"; };
+      kernelPackages = pkgs.linuxPackages_cachyos;
 
       consoleLogLevel = 0;
       kernelParams = [

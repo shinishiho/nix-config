@@ -10,9 +10,13 @@ with lib;
 
 let
   pkgs-unstable = inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
-  cfg = config.myModules.nixos.desktop.hyprland;
+  cfg = config.myModules.desktop.hyprland;
 in
 {
+  options.myModules.desktop.hyprland = {
+    enable = mkEnableOption "Hyprland desktop environment";
+  };
+
   config = mkIf cfg.enable {
     programs.hyprland = {
       enable = true;

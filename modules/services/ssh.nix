@@ -7,9 +7,13 @@
 with lib;
 
 let
-  cfg = config.myModules.nixos.services.ssh;
+  cfg = config.myModules.services.ssh;
 in
 {
+  options.myModules.services.ssh = {
+    enable = mkEnableOption "SSH configuration";
+  };
+
   config = mkIf cfg.enable {
     services = {
       openssh = {

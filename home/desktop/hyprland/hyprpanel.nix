@@ -37,6 +37,7 @@
       ],
       "right": [
         "media",
+        "cputemp",
         "volume",
         "network",
         "bluetooth",
@@ -143,6 +144,9 @@
   "menus.dashboard.shortcuts.left.shortcut1.command": "set-wallpaper init",
   "menus.dashboard.shortcuts.left.shortcut1.tooltip": "Roll a Wallpaper",
   "menus.dashboard.shortcuts.left.shortcut1.icon": "",
+  "menus.dashboard.shortcuts.left.shortcut2.command": "fan",
+  "menus.dashboard.shortcuts.left.shortcut2.tooltip": "Toggle Fan",
+  "menus.dashboard.shortcuts.left.shortcut2.icon": "󰈐",
   "menus.dashboard.shortcuts.left.shortcut3.command": "charge-upto 60",
   "menus.dashboard.shortcuts.left.shortcut3.tooltip": "Limit Battery Charge",
   "menus.dashboard.shortcuts.left.shortcut3.icon": "󱈏",

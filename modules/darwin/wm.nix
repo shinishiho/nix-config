@@ -11,6 +11,10 @@ let
   cfg = config.myModules.darwin.wm;
 in
 {
+  options.myModules.darwin.wm = {
+    enable = mkEnableOption "AeroSpace window manager";
+  };
+
   config = mkIf cfg.enable {
     services.aerospace = {
       enable = true;

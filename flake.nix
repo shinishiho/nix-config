@@ -2,8 +2,8 @@
   description = "Ultra reproducible from IAmW";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/master";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/master";
+    nixpkgs.url = "github:nixos/nixpkgs/e5ff26920394c396c91c6998b3cd05a68fd014dd";
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     nix-darwin.url = "github:nix-darwin/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
@@ -38,6 +38,13 @@
 
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    plover-flake.url = "github:openstenoproject/plover-flake";
+
+    nbfc-linux = {
+      url = "github:nbfc-linux/nbfc-linux";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

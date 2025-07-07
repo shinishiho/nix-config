@@ -10,6 +10,10 @@ let
   cfg = config.myModules.darwin.system;
 in
 {
+  options.myModules.darwin.system = {
+    enable = mkEnableOption "Darwin system defaults";
+  };
+
   config = mkIf cfg.enable {
     system.defaults = {
       dock = {

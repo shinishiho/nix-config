@@ -8,7 +8,7 @@
     settings = {
       "$mod" = "SUPER";
       "$term" = "kitty";
-      "$editor" = "code";
+      "$editor" = "kitty fish -c \"zellij a neovim || zellij -s neovim\"";
       "$file" = "dolphin";
       "$browser" = "zen-twilight";
 
@@ -26,22 +26,13 @@
 
         # Application shortcuts
         "Alt, Return, exec, uwsm app -- $term"
-        "$mod, E, exec, uwsm app -- $file"
-        "$mod, C, exec, uwsm app -- $editor"
-        "$mod, F, exec, uwsm app -- $browser"
 
         # Rofi menus
         "$mod, space, exec, pkill -x rofi || rofi -show combi -combi-modes \"run,drun\" -run-command \"uwsm app -- {cmd}\""
         "Alt, space, exec, pkill -x rofi || rofi -show combi -combi-modes \"run,drun\" -run-command \"uwsm app -- {cmd}\""
-        "$mod+Shift, W, exec, set-wallpaper select"
         "$mod, Tab, exec, pkill -x rofi || rofi -show window"
-
-        # Move/Change window focus
-        "$mod, Left, movefocus, l"
-        "$mod, Right, movefocus, r"
-        "$mod, Up, movefocus, u"
-        "$mod, Down, movefocus, d"
-        "Alt, Tab, movefocus, d"
+        "Alt, Tab, exec, pkill -x rofi || rofi -show window"
+        "$mod+Shift, W, exec, set-wallpaper select"
 
         # Switch workspaces
         "Alt, 1, workspace, 1"

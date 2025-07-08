@@ -1,6 +1,5 @@
 {
   lib,
-  pkgs,
   platform ? "linux",
   ...
 }:
@@ -9,7 +8,6 @@
     ./assets
     ./shell
     ./terminal
-    ./utilities
   ];
 
   xdg = {

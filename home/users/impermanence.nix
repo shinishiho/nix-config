@@ -21,6 +21,7 @@
         ".local/share/keyrings"
         ".local/share/zoxide"
         ".local/share/fish"
+        ".gemini"
         ".vim/undodir"
       ];
       files = [

@@ -29,6 +29,7 @@ in
       
       "Machine Configuration" = {
         machine_type = "Keyboard";
+        auto_start = true;
       };
       
       "Output Configuration" = {

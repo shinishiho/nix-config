@@ -1,4 +1,8 @@
-_:
+{
+  pkgs,
+  ...
+}:
+
 {
   programs = {
     # Development environment and data processing
@@ -13,4 +17,8 @@ _:
       enable = true;
     };
   };
+
+  home.packages = with pkgs; [
+    gemini-cli
+  ];
 }

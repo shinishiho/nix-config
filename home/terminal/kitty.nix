@@ -4,7 +4,7 @@ _:
     enable = true;
     font = {
       name = "CaskaydiaCove Nerd Font Mono";
-      size = 25;
+      size = 20;
     };
 
     # themeFile = "Catppuccin-Mocha";

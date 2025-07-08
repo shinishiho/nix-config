@@ -8,7 +8,7 @@
     windowrulev2 = [
       "workspace 1, title:.*GitHub - Zen Twilight.*"
       "workspace 2, title:.*VGU.*"
-      "workspace 3, class:code"
+      "workspace 3, title: .*(neovim).*"
       "workspace 4, class:(signal|Caprine)"
       "workspace 5, title:.*(YouTube|Facebook) — Zen Twilight.*"
       "workspace 6, class:steam"

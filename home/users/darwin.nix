@@ -8,10 +8,19 @@
     inputs.nixvim.homeManagerModules.default
     inputs.nix-index-database.hmModules.nix-index
     inputs.agenix.homeManagerModules.default
-    inputs.zen-browser.homeModules.twilight
 
-    ../home.nix
+    ../utilities/archives.nix
+    ../utilities/development.nix
+    ../utilities/git.nix
+    ../utilities/network.nix
+    ../utilities/nix-tools.nix
+    # ./plover.nix
+    # ./rclone.nix
+    ../utilities/security.nix
+    # ./xdg.nix
     
+    ../home.nix
+
     ../apps
   ];
 

@@ -8,13 +8,14 @@
     ./plugins/colorscheme.nix
     ./plugins/column.nix
     # ./plugins/coderunner.nix
-    #./plugins/harpoon.nix
+    ./plugins/harpoon.nix
     #./plugins/linter.nix
     ./plugins/lsp.nix
-    ./plugins/obsidian.nix
+    # ./plugins/obsidian.nix
     ./plugins/oil.nix
     ./plugins/noice.nix
     ./plugins/snippets.nix
+    ./plugins/sniprun.nix
     ./plugins/telescope.nix
     ./plugins/treesitter.nix
     ./plugins/trouble.nix

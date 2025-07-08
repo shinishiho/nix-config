@@ -10,6 +10,16 @@
     inputs.nix-index-database.hmModules.nix-index
     inputs.agenix.homeManagerModules.default
 
+    ../utilities/archives.nix
+    ../utilities/development.nix
+    ../utilities/git.nix
+    ../utilities/network.nix
+    ../utilities/nix-tools.nix
+    ../utilities/plover.nix
+    # ./rclone.nix
+    ../utilities/security.nix
+    # ./xdg.nix
+
     ../home.nix
     
     ../apps

@@ -33,7 +33,7 @@
       zeditor.enable = false;
       cursor.enable = false;
       vscode.enable = true;
-      nvim.enable = false;
+      nvim.enable = true;
     };
 
     browsers = {

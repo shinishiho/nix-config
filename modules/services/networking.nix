@@ -13,6 +13,7 @@ in
 {
   options.myModules.services.networking = {
     enable = mkEnableOption "Networking configuration";
+    tailscale.enable = mkEnableOption "Tailscale network";
   };
 
   config = mkIf cfg.enable {
@@ -22,6 +23,11 @@ in
       nameservers = [
         "127.0.0.1"
         "::1"
+      ] ++ optionals cfg.tailscale.enable [
+        "100.100.100.100"
+      ];
+      search = optionals cfg.tailscale.enable [
+        "cuscus-typhon.ts.net"
       ];
     };
 
@@ -60,6 +66,8 @@ in
       };
 
       resolved.enable = true;
+
+      tailscale.enable = cfg.tailscale.enable;
     };
   };
 }

@@ -109,9 +109,17 @@ in
         type = "Infrast"
 
         [tasks.params]
-        facility = [
-          "Reception",
-        ]
+        mode = 20000
+        facility = []
+
+
+        #------------------------- Infrast (bugfix) -----------------------#
+        [[tasks]]
+        type = "Infrast"
+
+        [tasks.params]
+        mode = 20000
+        facility = []
 
 
         #----------------------------- Recruit ----------------------------#

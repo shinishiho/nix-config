@@ -35,7 +35,10 @@
       bluetooth.enable = true;
     };
     services = {
-      networking.enable = true;
+      networking = {
+        enable = true;
+        tailscale.enable = true;
+      };
       ssh.enable = true;
     };
     system = {

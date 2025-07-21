@@ -12,6 +12,10 @@ let
   cfg = config.my-apps.media.mpv;
 in
 {
+  options.my-apps.media.mpv = {
+    enable = mkEnableOption "MPV Media Player";
+  };
+
   config = mkIf cfg.enable ({
     programs.mpv = {
       enable = true;

@@ -54,8 +54,9 @@
     };
 
     gaming = {
-      parsec.enable = true;
       maa.enable = false;
+      osu.enable = false;
+      streaming.enable = true;
     };
 
     communication = {

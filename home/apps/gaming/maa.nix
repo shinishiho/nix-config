@@ -12,6 +12,10 @@ let
   cfg = config.my-apps.gaming.maa;
 in
 {
+  options.my-apps.gaming.maa = {
+    enable = mkEnableOption "MaaAssistantArknights";
+  };
+
   config.home = mkIf cfg.enable ({
     packages = with pkgs; [
       maa-cli
@@ -144,11 +148,6 @@ in
         mail = true
         orundum = true
         specialaccess = true
-
-
-        #--------------------------- Close Game ---------------------------#
-        [[tasks]]
-        type = "CloseDown"
       '';
 
       ".config/maa/profiles/default.toml".text = ''

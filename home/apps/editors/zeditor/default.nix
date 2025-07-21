@@ -11,6 +11,10 @@ let
   cfg = config.my-apps.editors.zeditor;
 in
 {
+  options.my-apps.editors.zeditor = {
+    enable = mkEnableOption "Zed Editor";
+  };
+
   imports = [
       ./settings.nix
       ./keymap.nix

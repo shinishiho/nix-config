@@ -10,6 +10,10 @@ let
   cfg = config.my-apps.editors.nvim;
 in
 {
+  options.my-apps.editors.nvim = {
+    enable = mkEnableOption "Neovim";
+  };
+
   imports = [
     ./keymap.nix
     ./opts.nix

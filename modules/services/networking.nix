@@ -69,5 +69,9 @@ in
 
       tailscale.enable = cfg.tailscale.enable;
     };
+
+    environment.persistence."/persistent".directories = mkIf cfg.tailscale.enable [
+      "/var/lib/tailscale"
+    ];
   };
 }

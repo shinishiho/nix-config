@@ -40,6 +40,7 @@
         tailscale.enable = true;
       };
       ssh.enable = true;
+      waydroid.enable = false;
     };
     system = {
       boot.enable = true;

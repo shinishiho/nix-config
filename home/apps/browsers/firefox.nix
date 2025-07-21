@@ -12,6 +12,10 @@ let
   cfg = config.my-apps.browsers.firefox;
 in
 {
+  options.my-apps.browsers.firefox = {
+    enable = mkEnableOption "Firefox";
+  };
+
   config = mkIf cfg.enable ({
     programs.firefox = {
       enable = true;

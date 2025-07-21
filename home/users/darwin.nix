@@ -47,7 +47,7 @@
     };
 
     gaming = {
-      parsec.enable = false;
+      streaming.enable = false;
       maa.enable = true;
     };
 

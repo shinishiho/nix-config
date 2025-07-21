@@ -13,6 +13,10 @@ let
   cfg = config.my-apps.browsers.zen;
 in
 {
+  options.my-apps.browsers.zen = {
+    enable = mkEnableOption "Zen Browser";
+  };
+
   imports = [
     inputs.zen-browser.homeModules.twilight
   ];

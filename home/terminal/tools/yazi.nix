@@ -12,7 +12,7 @@
     };
 
     keymap = {
-      manager = {
+      mgr = {
         keymap = [
           {
             on = "<Esc>";

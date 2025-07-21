@@ -21,14 +21,10 @@ in
       lutris # Game manager for Linux
     ];
 
-    environment.persistence."/persistent".users = {
-      w = {
-        directories = [
-          ".local/share/Steam"
-          ".steam"
-        ];
-      };
-    };
+    environment.persistence."/persistent".users.w.directories = [
+      ".local/share/Steam"
+      ".steam"
+    ];
 
     programs.gamescope = {
       enable = true;

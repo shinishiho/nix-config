@@ -16,12 +16,11 @@
         ".gnupg"
         ".ssh"
         ".nixops"
-        # ".config/fcitx5"
+        ".gemini"
         ".local/share/direnv"
         ".local/share/keyrings"
         ".local/share/zoxide"
         ".local/share/fish"
-        ".gemini"
         ".vim/undodir"
       ];
       files = [

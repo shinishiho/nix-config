@@ -3,6 +3,7 @@ _:
 {
   imports = [
     ./networking.nix
-    ./ssh.nix
+        ./ssh.nix
+    ./waydroid.nix
   ];
 }

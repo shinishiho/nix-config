@@ -8,10 +8,10 @@ _:
     ./hyprland.nix
   ];
 
-  services.udev.extraHwdb = ''
-    evdev:atkbd:*
-      KEYBOARD_KEY_3a=leftctrl
-  '';
+  # services.udev.extraHwdb = ''
+  #   evdev:atkbd:*
+  #     KEYBOARD_KEY_3a=leftctrl
+  # '';
 
   environment = {
     sessionVariables = {

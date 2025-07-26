@@ -801,16 +801,16 @@
     },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1751586483,
-        "narHash": "sha256-wdDDQLGiF9VP6iJMcW3RNjD8I8QC3JY7sznuq/4JoeI=",
-        "owner": "shinishiho",
+        "lastModified": 1753122741,
+        "narHash": "sha256-nFxE8lk9JvGelxClCmwuJYftbHqwnc01dRN4DVLUroM=",
+        "owner": "NixOS",
         "repo": "nixos-hardware",
-        "rev": "1828627b087329e5324be0909892ec7337d55f14",
+        "rev": "cc66fddc6cb04ab479a1bb062f4d4da27c936a22",
         "type": "github"
       },
       "original": {
-        "owner": "shinishiho",
-        "ref": "patch-1",
+        "owner": "NixOS",
+        "ref": "master",
         "repo": "nixos-hardware",
         "type": "github"
       }

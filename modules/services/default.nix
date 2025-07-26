@@ -2,8 +2,9 @@ _:
 
 {
   imports = [
+    ./keyd.nix
     ./networking.nix
-        ./ssh.nix
+    ./ssh.nix
     ./waydroid.nix
   ];
 }

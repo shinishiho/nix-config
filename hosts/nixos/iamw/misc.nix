@@ -25,6 +25,7 @@
   services = {
     power-profiles-daemon.enable = true;
     upower.enable = true;
+    udisks2.enable = true;
     printing.enable = true;
   };
 

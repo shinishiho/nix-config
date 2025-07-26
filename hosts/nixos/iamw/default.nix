@@ -35,6 +35,7 @@
       bluetooth.enable = true;
     };
     services = {
+      keyd.enable = true;
       networking = {
         enable = true;
         tailscale.enable = true;

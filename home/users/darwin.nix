@@ -17,6 +17,7 @@
     # ./plover.nix
     # ./rclone.nix
     ../utilities/security.nix
+    ../utilities/syncthing-darwin.nix
     # ./xdg.nix
     
     ../home.nix

@@ -18,7 +18,7 @@
     ../utilities/plover.nix
     # ./rclone.nix
     ../utilities/security.nix
-    ../utilities/syncthing.nix
+    ../utilities/syncthing-nixos.nix
     # ./xdg.nix
 
     ../home.nix

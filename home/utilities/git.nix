@@ -1,4 +1,3 @@
-# Git configuration with useful aliases and settings
 {
   pkgs,
   ...

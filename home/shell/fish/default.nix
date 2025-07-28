@@ -13,6 +13,7 @@
     ./functions/ffe.nix
     ./functions/ffec.nix
     ./functions/fan.nix
+    ./functions/yazi.nix
   ];
 
   programs.fish = {

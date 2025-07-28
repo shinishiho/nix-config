@@ -18,6 +18,7 @@
     ../utilities/plover.nix
     # ./rclone.nix
     ../utilities/security.nix
+    ../utilities/syncthing.nix
     # ./xdg.nix
 
     ../home.nix
@@ -35,17 +36,21 @@
   _module.args = { inherit platform; };
 
   my-apps = {
+    browsers = {
+      chromium.enable = false;
+      firefox.enable = false;
+      zen.enable = true;
+    };
+
+    communication = {
+      thunderbird.enable = false;
+    };
+
     editors = {
       zeditor.enable = false;
       cursor.enable = false;
       vscode.enable = true;
       nvim.enable = true;
-    };
-
-    browsers = {
-      chromium.enable = false;
-      firefox.enable = false;
-      zen.enable = true;
     };
 
     media = {
@@ -57,10 +62,6 @@
       maa.enable = false;
       osu.enable = false;
       streaming.enable = true;
-    };
-
-    communication = {
-      thunderbird.enable = false;
     };
   };
 

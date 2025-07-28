@@ -5,11 +5,11 @@
 
 {
   imports = [
-    ./editors
     ./browsers
+    ./communication
+    ./editors
     ./media
     ./gaming
-    ./communication
   ];
 
   options.my-apps = {

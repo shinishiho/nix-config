@@ -21,9 +21,9 @@
       "2, on-created-empty: ${pkgs.uwsm}/bin/uwsm app -- $browser --new-window https://library.vgu.edu.vn/booking/"
       "3, on-created-empty: ${pkgs.uwsm}/bin/uwsm app -- $editor"
       "4, on-created-empty: ${pkgs.uwsm}/bin/uwsm app -- signal-desktop"
-      "5, on-created-empty: ${pkgs.uwsm}/bin/uwsm app -- $browser --new-window https://www.youtube.com https://www.facebook.com"
+      "5, on-created-empty: ${pkgs.uwsm}/bin/uwsm app -- $browser --new-window https://www.youtube.com"
       "6, rounding:false, decorate:false, gapsin:0, gapsout:0, border:false"
-      "7, on-created-empty: ${pkgs.uwsm}/bin/uwsm app -- $term"
+      "7, on-created-empty: ${pkgs.uwsm}/bin/uwsm app -- $term fish -c \"zellij\""
       "9, on-created-empty: ${pkgs.uwsm}/bin/uwsm app -- ${pkgs.parsec-bin}/bin/parsecd"
     ];
   };

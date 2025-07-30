@@ -13,6 +13,7 @@
       ];
       extraGroups = [
         "adbusers"
+        "dialout"
         "docker"
         "input"
         "networkmanager"

@@ -1,6 +1,7 @@
 {
   lib,
   inputs,
+  pkgs,
   platform ? "linux",
   ...
 }:
@@ -71,5 +72,8 @@
     username = "w";
     homeDirectory = "/home/w";
     stateVersion = lib.mkForce "25.11";
+    packages = with pkgs; [
+      arduino-ide
+    ];
   };
 }

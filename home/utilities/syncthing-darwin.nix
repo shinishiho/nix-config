@@ -9,6 +9,17 @@
         };
       };
 
+      folders = {
+        "/Users/w/W" = {
+          id = "wdata";
+          devices = [ "iamw" ];
+          versioning = {
+            type = "simple";
+            params.keep = "10";
+          };
+        };
+      };
+
       gui = {
         theme = "black";
       };

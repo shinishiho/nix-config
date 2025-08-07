@@ -25,7 +25,8 @@ in
 
       initrd.systemd.enable = true;
       # kernelPackages = pkgs.linuxPackages_cachyos.cachyOverride { mArch = "GENERIC_V3"; };
-      kernelPackages = pkgs.linuxPackages_cachyos;
+      # kernelPackages = pkgs.linuxPackages_cachyos;
+      kernelPackages = pkgs.linuxPackages_zen;
 
       consoleLogLevel = 0;
       kernelParams = [

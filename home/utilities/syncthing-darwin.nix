@@ -5,7 +5,7 @@
       devices = {
         iamw = {
           name = "iamw";
-          id = "CVHWLIS-PQFY2KD-KOHKBR4-C6QJYTP-JNB33CD-F2T3N5G-LQ3ELNE-NNNNKQW";
+          id = "FJXQNGG-DC6BLDT-MBGCUWQ-GOG5D2U-J4ZW25T-6IFVYJS-AURJOU2-Z35XLAN";
         };
       };
 

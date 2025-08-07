@@ -5,7 +5,7 @@
 }:
 {
   imports = [
-    inputs.nixvim.homeManagerModules.default
+    inputs.nixvim.homeModules.default
     inputs.nix-index-database.homeModules.nix-index
     inputs.agenix.homeManagerModules.default
 

@@ -2,7 +2,7 @@
   description = "Ultra reproducible from IAmW";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/e5ff26920394c396c91c6998b3cd05a68fd014dd";
+    nixpkgs.url = "github:nixos/nixpkgs/master";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     nix-darwin.url = "github:nix-darwin/nix-darwin/master";

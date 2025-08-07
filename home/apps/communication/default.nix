@@ -15,7 +15,7 @@
 
   home = ({
     packages = with pkgs; [
-      caprine
+      caprine-bin
       signal-desktop-bin
     ];
   } // lib.optionalAttrs (platform == "linux") {

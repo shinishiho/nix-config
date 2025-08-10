@@ -1,0 +1,33 @@
+# MaaCore install and update  configurations
+[core]
+channel = "Beta" # update channel, can be "Stable", "Beta" or "Alpha"
+test_time = 0 # the time to test download mirrors in seconds, 0 to skip
+# the url to query the latest version of MaaCore, leave it to empty to use default url
+apit_url = "https://github.com/MaaAssistantArknights/maa-cli/raw/version/"
+[core.components]
+library = true # whether install MaaCore library
+resource = true # whether install resource resource
+
+# CLI update configurations
+[cli]
+channel = "Beta" # update channel, can be "Stable", "Beta" or "Alpha"
+# the url to query the latest version of maa-cli, leave it to empty to use default url
+api_url = "https://github.com/MaaAssistantArknights/maa-cli/raw/version/"
+# the url to download prebuilt binary, leave it to empty to use default url
+download_url = "https://github.com/MaaAssistantArknights/maa-cli/releases/download/"
+
+[cli.components]
+binary = true # whether install maa-cli binary
+
+
+# hot update resource configurations
+[resource]
+auto_update = true # whether auto update resource before running task
+warn_on_update_failure = true # Whether to warn on update failure instead of panic
+backend = "git" # the backend of resource, can be "libgit2" or "git"
+
+# the remote of resource
+[resource.remote]
+branch = "main" # Branch of remote resource repository
+# URL of remote resource repository, leave it empty to use the default URL
+# url = "git@github.com:MaaAssistantArknights/MaaResource.git"

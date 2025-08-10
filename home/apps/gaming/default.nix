@@ -13,7 +13,7 @@ let
 in
 {
   imports = [
-    ./maa.nix
+    ./maa
     ./streaming.nix
   ];
 

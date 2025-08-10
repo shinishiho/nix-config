@@ -1,0 +1,74 @@
+#----------------------------- StartUp ----------------------------#
+[[tasks]]
+type = "StartUp"
+params = { client_type = "YoStarEN", start_game_enabled = true }
+
+
+#------------------------------ Fight -----------------------------#
+
+[[tasks]]
+type = "Fight"
+
+[tasks.params]
+expiring_medicine = 1000
+stage = "1-7"
+series = 6
+
+
+#------------------------------ Mall ------------------------------#
+[[tasks]]
+type = "Mall"
+
+[tasks.params]
+shopping = false
+
+[[tasks.variants]]
+condition = { type = "Time", start = "18:00:00", end = "21:00:00" }
+params = { credit_fight = true, select_formation = 4 }
+
+
+#----------------------------- Infrast ----------------------------#
+[[tasks]]
+type = "Infrast"
+
+[tasks.params]
+mode = 10000
+facility = ["Trade", "Reception", "Mfg", "Control", "Power", "Office", "Dorm"]
+dorm_trust_enabled = false
+filename = "242_4Gold.json"
+
+[[tasks.variants]]
+condition = { type = "Time", start = "19:00:00", end = "03:00:00" }
+params = { plan_index = 2 }
+
+[[tasks.variants]]
+condition = { type = "Time", end = "11:00:00" }
+params = { plan_index = 0 }
+
+[[tasks.variants]]
+condition = { type = "Time", start = "11:00:00" }
+params = { plan_index = 1 }
+
+
+#----------------------------- Recruit ----------------------------#
+[[tasks]]
+type = "Recruit"
+
+[tasks.params]
+refresh = true
+times = 4
+select = [4, 5]
+confirm = [3, 4, 5]
+skip_robot = false
+recruitment_time = { '3' = 460 }
+
+
+#------------------------------ Award -----------------------------#
+[[tasks]]
+type = "Award"
+
+[tasks.params]
+award = true
+mail = true
+orundum = true
+specialaccess = true

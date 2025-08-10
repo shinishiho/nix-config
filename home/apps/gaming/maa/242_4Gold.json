@@ -1,0 +1,640 @@
+{
+  "author": "w",
+  "description": "",
+  "id": 1754798433901358,
+  "title": "252_4Gold",
+  "buildingType": 243,
+  "planTimes": "3班",
+  "plans": [
+    {
+      "name": "Pozy_Automation_Rhine",
+      "description": "AltCC",
+      "description_post": "",
+      "Fiammetta": {
+        "enable": true,
+        "target": "但书",
+        "order": "pre"
+      },
+      "drones": {
+        "room": "trading",
+        "index": 2,
+        "enable": true,
+        "order": "pre"
+      },
+      "rooms": {
+        "trading": [
+          {
+            "skip": false,
+            "product": "LMD",
+            "operators": [
+              "鸿雪",
+              "拉普兰德",
+              "德克萨斯"
+            ],
+            "sort": false,
+            "autofill": false
+          },
+          {
+            "skip": false,
+            "product": "LMD",
+            "operators": [
+              "图耶",
+              "但书"
+            ],
+            "sort": false,
+            "autofill": false
+          }
+        ],
+        "manufacture": [
+          {
+            "skip": false,
+            "product": "Battle Record",
+            "operators": [
+              "断罪者",
+              "食铁兽"
+            ],
+            "sort": false,
+            "autofill": false
+          },
+          {
+            "skip": false,
+            "product": "Pure Gold",
+            "operators": [
+              "砾",
+              "斑点"
+            ],
+            "sort": false,
+            "autofill": false
+          },
+          {
+            "skip": false,
+            "product": "Pure Gold",
+            "operators": [
+              "温蒂",
+              "森蚺",
+              "清流"
+            ],
+            "sort": false,
+            "autofill": false
+          },
+          {
+            "skip": false,
+            "product": "Pure Gold",
+            "operators": [
+              "水月",
+              "苍苔"
+            ],
+            "sort": false,
+            "autofill": false
+          },
+          {
+            "skip": false,
+            "product": "Pure Gold",
+            "operators": [
+              "多萝西",
+              "赫默",
+              "白面鸮"
+            ],
+            "sort": false,
+            "autofill": false
+          }
+        ],
+        "power": [
+          {
+            "skip": false,
+            "operators": [
+              "承曦格雷伊"
+            ],
+            "sort": false,
+            "autofill": false
+          },
+          {
+            "skip": false,
+            "operators": [
+              "缪尔赛思"
+            ],
+            "sort": false,
+            "autofill": false
+          }
+        ],
+        "dormitory": [
+          {
+            "skip": false,
+            "operators": [
+              "霜叶",
+              "夜烟",
+              "斥罪",
+              "歌蕾蒂娅",
+              "麒麟R夜刀"
+            ],
+            "sort": false,
+            "autofill": false
+          },
+          {
+            "skip": false,
+            "operators": [
+              "澄闪",
+              "格雷伊",
+              "白雪",
+              "红豆",
+              "杜林"
+            ],
+            "sort": false,
+            "autofill": false
+          },
+          {
+            "skip": false,
+            "operators": [
+              "火龙S黑角",
+              "忍冬",
+              "铃兰",
+              "铅踝",
+              "杰西卡"
+            ],
+            "sort": false,
+            "autofill": false
+          },
+          {
+            "skip": false,
+            "operators": [
+              "桃金娘",
+              "至简",
+              "特克诺",
+              "菲亚梅塔"
+            ],
+            "sort": false,
+            "autofill": false
+          }
+        ],
+        "control": [
+          {
+            "skip": false,
+            "operators": [
+              "维什戴尔",
+              "魔王",
+              "阿米娅",
+              "凯尔希",
+              "焰影苇草"
+            ],
+            "sort": false,
+            "autofill": false
+          }
+        ],
+        "meeting": [
+          {
+            "skip": false,
+            "operators": [
+              "跃跃",
+              "陈"
+            ],
+            "sort": false,
+            "autofill": false
+          }
+        ],
+        "hire": [
+          {
+            "skip": false,
+            "operators": [
+              "艾雅法拉"
+            ],
+            "sort": false,
+            "autofill": false
+          }
+        ],
+        "processing": [
+          {
+            "skip": false,
+            "operators": [
+              "麦哲伦"
+            ],
+            "sort": false,
+            "autofill": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "Shamare_Automation_Rhine",
+      "description": "AltCC",
+      "description_post": "",
+      "Fiammetta": {
+        "enable": true,
+        "target": "但书",
+        "order": "pre"
+      },
+      "drones": {
+        "room": "trading",
+        "index": 2,
+        "enable": true,
+        "order": "pre"
+      },
+      "rooms": {
+        "trading": [
+          {
+            "skip": false,
+            "product": "LMD",
+            "operators": [
+              "巫恋",
+              "柏喙",
+              "龙舌兰"
+            ],
+            "sort": false,
+            "autofill": false
+          },
+          {
+            "skip": false,
+            "product": "LMD",
+            "operators": [
+              "但书",
+              "能天使"
+            ],
+            "sort": false,
+            "autofill": false
+          }
+        ],
+        "manufacture": [
+          {
+            "skip": false,
+            "product": "Battle Record",
+            "operators": [
+              "霜叶",
+              "食铁兽"
+            ],
+            "sort": false,
+            "autofill": false
+          },
+          {
+            "skip": false,
+            "product": "Pure Gold",
+            "operators": [
+              "砾",
+              "夜烟"
+            ],
+            "sort": false,
+            "autofill": false
+          },
+          {
+            "skip": false,
+            "product": "Battle Record",
+            "operators": [
+              "温蒂",
+              "森蚺",
+              "Castle-3"
+            ],
+            "sort": false,
+            "autofill": false
+          },
+          {
+            "skip": false,
+            "product": "Battle Record",
+            "operators": [
+              "白雪",
+              "红豆"
+            ],
+            "sort": false,
+            "autofill": false
+          },
+          {
+            "skip": false,
+            "product": "Battle Record",
+            "operators": [
+              "多萝西",
+              "赫默",
+              "白面鸮"
+            ],
+            "sort": false,
+            "autofill": false
+          }
+        ],
+        "power": [
+          {
+            "skip": false,
+            "operators": [
+              "承曦格雷伊"
+            ],
+            "sort": false,
+            "autofill": false
+          },
+          {
+            "skip": false,
+            "operators": [
+              "缪尔赛思"
+            ],
+            "sort": false,
+            "autofill": false
+          }
+        ],
+        "dormitory": [
+          {
+            "skip": false,
+            "operators": [
+              "鸿雪",
+              "图耶",
+              "德克萨斯",
+              "拉普兰德",
+              "杜林"
+            ],
+            "sort": false,
+            "autofill": false
+          },
+          {
+            "skip": false,
+            "operators": [
+              "断罪者",
+              "斑点",
+              "安哲拉",
+              "乌尔比安",
+              "艾雅法拉"
+            ],
+            "sort": false,
+            "autofill": false
+          },
+          {
+            "skip": false,
+            "operators": [
+              "跃跃",
+              "陈",
+              "苍苔",
+              "水月",
+              "清流"
+            ],
+            "sort": false,
+            "autofill": false
+          },
+          {
+            "skip": false,
+            "operators": [
+              "菲亚梅塔",
+              "重岳",
+              "令",
+              "幽灵鲨",
+              "斯卡蒂"
+            ],
+            "sort": false,
+            "autofill": false
+          }
+        ],
+        "control": [
+          {
+            "skip": false,
+            "operators": [
+              "维什戴尔",
+              "魔王",
+              "阿米娅",
+              "凯尔希",
+              "焰影苇草"
+            ],
+            "sort": false,
+            "autofill": false
+          }
+        ],
+        "meeting": [
+          {
+            "skip": false,
+            "operators": [
+              "铃兰",
+              "忍冬"
+            ],
+            "sort": false,
+            "autofill": false
+          }
+        ],
+        "hire": [
+          {
+            "skip": false,
+            "operators": [
+              "斥罪"
+            ],
+            "sort": false,
+            "autofill": false
+          }
+        ],
+        "processing": [
+          {
+            "skip": false,
+            "operators": [
+              "麦哲伦"
+            ],
+            "sort": false,
+            "autofill": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "Pozy_AH",
+      "description": "AHCC",
+      "description_post": "",
+      "Fiammetta": {
+        "enable": true,
+        "target": "但书",
+        "order": "pre"
+      },
+      "drones": {
+        "room": "trading",
+        "index": 2,
+        "enable": true,
+        "order": "pre"
+      },
+      "rooms": {
+        "trading": [
+          {
+            "skip": false,
+            "product": "LMD",
+            "operators": [
+              "鸿雪",
+              "拉普兰德",
+              "德克萨斯"
+            ],
+            "sort": false,
+            "autofill": false
+          },
+          {
+            "skip": false,
+            "product": "LMD",
+            "operators": [
+              "图耶",
+              "但书"
+            ],
+            "sort": false,
+            "autofill": false
+          }
+        ],
+        "manufacture": [
+          {
+            "skip": false,
+            "product": "Battle Record",
+            "operators": [
+              "断罪者",
+              "霜叶"
+            ],
+            "sort": false,
+            "autofill": false
+          },
+          {
+            "skip": false,
+            "product": "Pure Gold",
+            "operators": [
+              "斑点",
+              "夜烟"
+            ],
+            "sort": false,
+            "autofill": false
+          },
+          {
+            "skip": false,
+            "product": "Pure Gold",
+            "operators": [
+              "乌尔比安",
+              "安哲拉",
+              "苍苔"
+            ],
+            "sort": false,
+            "autofill": false
+          },
+          {
+            "skip": false,
+            "product": "Pure Gold",
+            "operators": [
+              "水月",
+              "杰西卡"
+            ],
+            "sort": false,
+            "autofill": false
+          },
+          {
+            "skip": false,
+            "product": "Pure Gold",
+            "operators": [
+              "斯卡蒂",
+              "幽灵鲨",
+              "铅踝"
+            ],
+            "sort": false,
+            "autofill": false
+          }
+        ],
+        "power": [
+          {
+            "skip": false,
+            "operators": [
+              "格雷伊"
+            ],
+            "sort": false,
+            "autofill": false
+          },
+          {
+            "skip": false,
+            "operators": [
+              "澄闪"
+            ],
+            "sort": false,
+            "autofill": false
+          }
+        ],
+        "dormitory": [
+          {
+            "skip": false,
+            "operators": [
+              "多萝西",
+              "赫默",
+              "白面鸮",
+              "砾",
+              "食铁兽"
+            ],
+            "sort": false,
+            "autofill": false
+          },
+          {
+            "skip": false,
+            "operators": [
+              "温蒂",
+              "森蚺",
+              "缪尔赛思",
+              "承曦格雷伊",
+              "Castle-3"
+            ],
+            "sort": false,
+            "autofill": false
+          },
+          {
+            "skip": false,
+            "operators": [
+              "巫恋",
+              "柏喙",
+              "龙舌兰",
+              "能天使",
+              "菲亚梅塔"
+            ],
+            "sort": false,
+            "autofill": false
+          },
+          {
+            "skip": false,
+            "operators": [
+              "维什戴尔",
+              "魔王",
+              "阿米娅",
+              "凯尔希",
+              "焰影苇草"
+            ],
+            "sort": false,
+            "autofill": false
+          }
+        ],
+        "control": [
+          {
+            "skip": false,
+            "operators": [
+              "歌蕾蒂娅",
+              "令",
+              "重岳",
+              "麒麟R夜刀",
+              "火龙S黑角"
+            ],
+            "sort": false,
+            "autofill": false
+          }
+        ],
+        "meeting": [
+          {
+            "skip": false,
+            "operators": [
+              "跃跃",
+              "陈"
+            ],
+            "sort": false,
+            "autofill": false
+          }
+        ],
+        "hire": [
+          {
+            "skip": false,
+            "operators": [
+              "斥罪"
+            ],
+            "sort": false,
+            "autofill": false
+          }
+        ],
+        "processing": [
+          {
+            "skip": false,
+            "operators": [
+              "麦哲伦"
+            ],
+            "sort": false,
+            "autofill": false
+          }
+        ]
+      }
+    }
+  ],
+  "scheduleType": {
+    "planTimes": 3,
+    "trading": 2,
+    "manufacture": 5,
+    "power": 2,
+    "dormitory": 4
+  }
+}

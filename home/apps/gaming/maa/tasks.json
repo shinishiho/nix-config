@@ -1,0 +1,11 @@
+{
+  "StartToVisit": {
+    "templThreshold": 0.7
+  },
+  "InfrastEnteredFlag": {
+    "templThreshold": 0.94
+  },
+  "GetSelfClue": {
+    "templThreshold": 0.75
+  }
+}

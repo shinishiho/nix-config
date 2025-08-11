@@ -1,7 +1,7 @@
 {
   "author": "w",
   "description": "",
-  "id": 1754798433901358,
+  "id": 1754919731146330,
   "title": "252_4Gold",
   "buildingType": 243,
   "planTimes": "3班",
@@ -146,10 +146,10 @@
             "skip": false,
             "operators": [
               "火龙S黑角",
-              "忍冬",
-              "铃兰",
               "铅踝",
-              "杰西卡"
+              "杰西卡",
+              "巫恋",
+              "柏喙"
             ],
             "sort": false,
             "autofill": false
@@ -160,7 +160,8 @@
               "桃金娘",
               "至简",
               "特克诺",
-              "菲亚梅塔"
+              "菲亚梅塔",
+              "龙舌兰"
             ],
             "sort": false,
             "autofill": false
@@ -343,8 +344,7 @@
               "断罪者",
               "斑点",
               "安哲拉",
-              "乌尔比安",
-              "艾雅法拉"
+              "乌尔比安"
             ],
             "sort": false,
             "autofill": false
@@ -442,9 +442,9 @@
             "skip": false,
             "product": "LMD",
             "operators": [
-              "鸿雪",
-              "拉普兰德",
-              "德克萨斯"
+              "巫恋",
+              "柏喙",
+              "龙舌兰"
             ],
             "sort": false,
             "autofill": false
@@ -453,8 +453,8 @@
             "skip": false,
             "product": "LMD",
             "operators": [
-              "图耶",
-              "但书"
+              "但书",
+              "能天使"
             ],
             "sort": false,
             "autofill": false
@@ -560,11 +560,10 @@
           {
             "skip": false,
             "operators": [
-              "巫恋",
-              "柏喙",
-              "龙舌兰",
-              "能天使",
-              "菲亚梅塔"
+              "菲亚梅塔",
+              "铃兰",
+              "忍冬",
+              "艾雅法拉"
             ],
             "sort": false,
             "autofill": false

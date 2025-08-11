@@ -12,6 +12,10 @@ let
   cfg = config.my-apps.gaming.maa;
 in
 {
+  imports = lib.optionals (platform == "darwin") [
+    ./launchd.nix
+  ];
+
   options.my-apps.gaming.maa = {
     enable = mkEnableOption "MaaAssistantArknights";
   };
@@ -27,7 +31,7 @@ in
       ".config/maa/tasks/rock.toml".source = ./rock.toml;
       ".config/maa/profiles/default.toml".source = ./profile.toml;
       ".config/maa/resource/tasks.json".source = ./tasks.json;
-      ".config/maa/infrast/242_4Gold.json".source = ./242_4Gold.json;
+      ".config/maa/infrast/252_4Gold.json".source = ./252_4Gold.json;
     };
   } // lib.optionalAttrs (platform == "linux") {
     persistence."/persistent/home/w".directories = [

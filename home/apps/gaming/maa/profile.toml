@@ -1,17 +1,16 @@
 [connection]
-preset = "PlayCover"
+preset = "MuMuPro"
 
 [resource]
 global_resource = "YoStarEN"
-platform_diff_resource = "iOS"
-user_resource = true
+user_resource = false
 
 [static_options]
 cpu_ocr = false
 gpu_ocr = 1
 
 [instance_options]
-touch_mode = "MacPlayTools"
+touch_mode = "MaaTouch"
 deployment_with_pause = false
 adb_lite_enabled = false
 kill_adb_on_exit = false

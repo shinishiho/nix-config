@@ -12,7 +12,7 @@ type = "Fight"
 [tasks.params]
 expiring_medicine = 1000
 stage = "1-7"
-series = 6
+series = 0
 
 
 #------------------------------ Mall ------------------------------#

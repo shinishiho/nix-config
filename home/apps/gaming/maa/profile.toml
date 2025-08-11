@@ -1,5 +1,7 @@
 [connection]
 preset = "MuMuPro"
+address = "127.0.0.1:5555"
+adb_path = "/Applications/MuMuPlayer\\ Pro.app/Contents/MacOS/MuMu\\ Android\\ Device.app/Contents/MacOS/tools/adb"
 
 [resource]
 global_resource = "YoStarEN"

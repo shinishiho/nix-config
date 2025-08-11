@@ -35,7 +35,7 @@ type = "Infrast"
 mode = 10000
 facility = ["Trade", "Reception", "Mfg", "Control", "Power", "Office", "Dorm"]
 dorm_trust_enabled = false
-filename = "242_4Gold.json"
+filename = "252_4Gold.json"
 
 [[tasks.variants]]
 condition = { type = "Time", start = "19:00:00", end = "03:00:00" }
@@ -72,3 +72,8 @@ award = true
 mail = true
 orundum = true
 specialaccess = true
+
+
+#------------------------------ Close  -----------------------------#
+[[tasks]]
+type = "CloseDown"

@@ -13,7 +13,7 @@ let
 in
 {
   imports = lib.optionals (platform == "darwin") [
-    ./launchd.nix
+    # ./launchd.nix
   ];
 
   options.my-apps.gaming.maa = {

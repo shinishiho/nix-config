@@ -172,7 +172,7 @@ in
           }
           {
             "if" = {
-              app-id = "com.YoStarEN.Arknights";
+              app-id = "com.netease.mumu.nemux-global.emulator";
             };
             run = [
               "move-node-to-workspace 6"

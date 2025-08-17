@@ -41,8 +41,8 @@
 
     plover-flake.url = "github:openstenoproject/plover-flake";
 
-    nbfc-linux = {
-      url = "github:nbfc-linux/nbfc-linux";
+    nix-darwin-linking = {
+      url = "github:dwt/nix-darwin/application-linking-done-right";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

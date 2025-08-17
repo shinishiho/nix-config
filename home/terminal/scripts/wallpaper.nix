@@ -29,6 +29,8 @@ let
         "${wallpapers.tokyo_pink}"
         "${wallpapers.waifu_angel}"
         "${wallpapers.waifu_pink}"
+        "${wallpapers.shinshi}"
+        "${wallpapers.shinshi_2}"
     )
     
     # Create state directory if it doesn't exist

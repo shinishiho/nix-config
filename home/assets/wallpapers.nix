@@ -19,6 +19,8 @@ let
     tokyo_pink = ./wallpapers/tokyo_pink.png;
     waifu_angel = ./wallpapers/waifu_angel.jpg;
     waifu_pink = ./wallpapers/waifu_pink.png;
+    shinshi = ./wallpapers/shinshi.jpg;
+    shinshi_2 = ./wallpapers/shinshi_2.jpg;
   };
 in
 {

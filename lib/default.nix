@@ -5,33 +5,17 @@
 }:
 
 {
-  mkNixosConfig = { system, hostname, username ? "w" }: nixpkgs.lib.nixosSystem {
+  mkNixosConfig = { system, hostname }: nixpkgs.lib.nixosSystem {
     inherit system;
     specialArgs = { inherit inputs; inherit (inputs.self) outputs; };
     modules = [
-      ../hosts/nixos/${hostname}
+      ../hosts/${system}/${hostname}
       inputs.home-manager.nixosModules.home-manager
       inputs.chaotic.nixosModules.default
-      {
-        home-manager = {
-          useGlobalPkgs = true;
-          useUserPackages = true;
-          extraSpecialArgs = {
-            inherit inputs;
-            inherit (inputs.self) outputs;
-            platform = "linux";
-          };
-          users.${username} = {
-            imports = [
-              ../home/users/nixos.nix
-            ];
-          };
-        };
-      }
     ];
   };
 
-  mkDarwinConfig = { system, hostname, username ? "w" }: inputs.nix-darwin.lib.darwinSystem {
+  mkDarwinConfig = { system, hostname }: inputs.nix-darwin.lib.darwinSystem {
     inherit system;
     specialArgs = { inherit inputs; inherit (inputs.self) outputs; };
     modules = [
@@ -39,24 +23,8 @@
       { disabledModules = [ "system/applications.nix" ]; }
       "${inputs.nix-darwin-linking}/modules/system/applications.nix"
 
-      ../hosts/darwin/${hostname}
+      ../hosts/${system}/${hostname}
       inputs.home-manager.darwinModules.home-manager
-      {
-        home-manager = {
-          useGlobalPkgs = true;
-          useUserPackages = true;
-          extraSpecialArgs = {
-            inherit inputs;
-            inherit (inputs.self) outputs;
-            platform = "darwin";
-          };
-          users.${username} = {
-            imports = [
-              ../home/users/darwin.nix
-            ];
-          };
-        };
-      }
     ];
   };
 }

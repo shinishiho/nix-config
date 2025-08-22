@@ -29,7 +29,6 @@
     };
 
     media = {
-      mpv.enable = false;
       obs.enable = false;
     };
 

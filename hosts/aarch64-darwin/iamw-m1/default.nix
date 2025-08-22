@@ -16,9 +16,6 @@
     darwin = {
       system.enable = true;
       wm.enable = true;
-      goodies = {
-        enable = true;
-      };
     };
   };
 

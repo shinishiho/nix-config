@@ -1,5 +1,5 @@
 {
   imports = [
-    ./utilities
+    ./utilities/syncthing.nix
   ];
 }

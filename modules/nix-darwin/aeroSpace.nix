@@ -172,7 +172,7 @@ in
           }
           {
             "if" = {
-              app-id = "com.netease.mumu.nemux-global.emulator";
+              app-id = "com.now.gg.BlueStacks";
             };
             run = [
               "move-node-to-workspace 6"

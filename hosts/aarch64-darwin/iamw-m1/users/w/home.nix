@@ -30,6 +30,7 @@
 
     media = {
       obs.enable = false;
+      mpv.enable = true;
     };
 
     gaming = {

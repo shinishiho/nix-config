@@ -9,6 +9,14 @@ with lib;
 
 let
   cfg = config.my-apps.media.mpv;
+  mpvScripts = with pkgs.mpvScripts; [
+    uosc
+    thumbfast
+    sponsorblock
+    quality-menu
+  ] ++ optionals (!pkgs.stdenv.isDarwin) [
+      mpris
+    ];
 in
   {
   options.my-apps.media.mpv = {
@@ -18,13 +26,7 @@ in
   config = mkIf cfg.enable {
     programs.mpv = {
       enable = true;
-      scripts = with pkgs.mpvScripts; [
-        uosc
-        thumbfast
-        sponsorblock
-        quality-menu
-        mpris
-      ];
+      scripts = mpvScripts;
       scriptOpts = {
         thumbfast = {
           network = "yes";
@@ -45,35 +47,15 @@ in
     home.packages = with pkgs; [
       (ytfzf.override {
         mpv = mpv.override {
-          scripts = with pkgs.mpvScripts; [
-            uosc
-            thumbfast
-            sponsorblock
-            quality-menu
-            mpris
-          ];
+          scripts = mpvScripts;
         };
       })
 
       (ani-cli.override {
         mpv = mpv.override {
-          scripts = with pkgs.mpvScripts; [
-            uosc
-            thumbfast
-            sponsorblock
-            quality-menu
-            mpris
-          ];
+          scripts = mpvScripts;
         };
       })
     ];
-
-    home.persistence = {
-      "/persistent/home/w" = {
-        directories = [
-          ".config/mpv"
-        ];
-      };
-    };
   };
 }

@@ -1,96 +1,76 @@
-# Multi-Platform Nix Configuration
+# I use Nix BTW
 
-This repository contains my personal Nix configuration, designed to work across multiple platforms including NixOS (Linux) and nix-darwin (macOS).
+Welcome to my NixOS configuration!
+
+## Features
+
+- Multi-platform (NixOS + nix-darwin)
+- Modular structure
+
+## What I use
+
+| Category    | App                  | Category   | App       |
+| ----------- | -------------------- | ---------- | --------- |
+| WM          | Hyprland             | Launcher   | rofi      |
+| Browser     | Firefox, Zen Browser | Terminal   | kitty     |
+| Editor      | neovim, code         | Shell      | fish      |
+| Mail        | thunderbird          | Media      | mpv       |
+| Chat        | signal-desktop       | Screenshot | Flameshot |
+| File Mgr    | yazi                 | PDF        | zathura   |
+| WM (darwin) | Aerospace            | Nix helper | nh        |
 
 ## Structure
 
-The configuration is organized as follows:
-
 ```
 .
-├── flake.nix           # Main flake configuration
-├── flake.lock          # Locked dependencies
-├── hosts/              # Host-specific configurations
-│   ├── nixos/          # NixOS host configurations
-│   │   └── iamw/       # Configuration for 'iamw' NixOS host
-│   └── darwin/         # Darwin (macOS) host configurations
-│       └── template/   # Template for Darwin hosts
-├── home/               # Home-manager configurations
-│   ├── apps/           # Application configurations
-│   ├── terminal/       # Terminal configurations (shell, tools, misc, scripts)
-│   └── platforms/      # Platform-specific configurations
-│       ├── nixos/      # NixOS-specific home configurations
-│       │   ├── desktop/    # Desktop environments (gnome, hyprland, etc.)
-│       │   ├── dev/        # Development tools and environments
-│       │   ├── productivity/ # Productivity tools
-│       │   └── users/      # User-specific configurations
-│       └── darwin/     # Darwin-specific home configurations
-│           └── users/      # User-specific configurations
-├── modules/            # System-level modules
-│   ├── nixos/          # NixOS-specific modules
-│   └── darwin/         # Darwin-specific modules
-└── pkgs/               # Custom packages
+├── flake.nix
+├── flake.lock
+├── hosts/
+│   ├── aarch64-darwin/
+│   │   └── iamw-m1/
+│   └── x86_64-linux/
+│       └── iamw/
+├── home/
+│   ├── common/
+│   └── platform/
+│       ├── aarch64-darwin/
+│       └── x86_64-linux/
+├── modules/
+│   ├── common/         # Will be apply to all platforms
+│   ├── nix-darwin/
+│   └── nixos/
+└── pkgs/
 ```
 
-## Adding a New System
+## Usage Guide
 
-### Adding a NixOS System
+### Modifying hosts
 
-1. Create a new directory under `hosts/nixos/<hostname>` with your system configuration
-2. Add your system to the `nixosConfigurations` in `flake.nix`:
+1. Create a new directory under `hosts/<platform>/<hostname>` with your system configuration
+2. Add your system to the `nixosConfigurations` or `darwinConfiguration` in `flake.nix`:
 
 ```nix
-nixosConfigurations = {
-  # Existing systems
-  iamw = lib.mkNixosConfig {
-    system = "x86_64-linux";
-    hostname = "iamw";
-  };
-  
-  # Your new system
-  new-system = lib.mkNixosConfig {
-    system = "x86_64-linux"; # or "aarch64-linux"
-    hostname = "new-system";
-    username = "your-username"; # Optional, defaults to "w"
+nixosConfigurations = { # or darwinConfiguration = {
+  your_host = lib.mkNixosConfig {
+    system = "x86_64-linux"; # or "aarch64-linux" for nixOS, "aarch64-darwin" or "x86_64-darwin" for nix-darwin
+    hostname = "your_host";
+    username = "your_username";
   };
 };
 ```
 
-### Adding a Darwin (macOS) System
-
-1. Create a new directory under `hosts/darwin/<hostname>` with your system configuration
-2. Add your system to the `darwinConfigurations` in `flake.nix`:
-
-```nix
-darwinConfigurations = {
-  macbook = lib.mkDarwinConfig {
-    system = "aarch64-darwin"; # or "x86_64-darwin"
-    hostname = "macbook";
-    username = "your-username"; # Optional, defaults to "w"
-  };
-};
-```
-
-## Usage
+## Applying configuration
 
 ### NixOS
 
 ```bash
-# Build and switch to configuration
-sudo nixos-rebuild switch --flake .#hostname
-
-# Build and test configuration without switching
-sudo nixos-rebuild test --flake .#hostname
+nh os switch -a . -H hostname
 ```
 
 ### Darwin (macOS)
 
 ```bash
-# Build and switch to configuration
-darwin-rebuild switch --flake .#hostname
-
-# Build and test configuration without switching
-darwin-rebuild build --flake .#hostname
+nh darwin switch -a . -H hostname
 ```
 
 ## License

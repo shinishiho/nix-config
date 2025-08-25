@@ -114,45 +114,9 @@
     };
 
     extraConfig = ''
-      # Media control
-      bindl  = , XF86AudioPlay, exec, playerctl play-pause # toggle between media play and pause
-      bindl  = , XF86AudioPause, exec, playerctl play-pause # toggle between media play and pause
-      bindl  = , XF86AudioNext, exec, playerctl next # media next
-      bindl  = , XF86AudioPrev, exec, playerctl previous # media previous
-
-      # Move between grouped windows
-      bind = $mod CTRL , H, changegroupactive, b
-      bind = $mod CTRL , L, changegroupactive, f
-
-      # Screenshot/Screencapture
-      bind = $mod, P, exec, $scrPath/screenshot.sh s # partial screenshot capture
-      bind = $mod+Ctrl, P, exec, $scrPath/screenshot.sh sf # partial screenshot capture (frozen screen)
-      bind = $mod+Alt, P, exec, $scrPath/screenshot.sh m # monitor screenshot capture
-      bind = , Print, exec, $scrPath/screenshot.sh p # all monitors screenshot capture
-
-      # Custom scripts
-      bind = $mod+Alt, G, exec, $scrPath/gamemode.sh # disable hypr effects for gamemode
-      bind = $mod+Alt, Right, exec, $scrPath/swwwallpaper.sh -n # next wallpaper
-      bind = $mod+Alt, Left, exec, $scrPath/swwwallpaper.sh -p # previous wallpaper
-      bind = $mod+Shift, R, exec, pkill -x rofi || $scrPath/wallbashtoggle.sh -m # launch wallbash mode select menu
-      bind = $mod+Shift, T, exec, pkill -x rofi || $scrPath/themeselect.sh # launch theme select menu
-      bind = $mod+Shift, A, exec, pkill -x rofi || $scrPath/rofiselect.sh # launch select menu
-      bind = $mod, V, exec, pkill -x rofi || $scrPath/cliphist.sh c # launch clipboard
-      bind = $mod, K, exec, $scrPath/keyboardswitch.sh # switch keyboard layout
-      bind = $mod, slash, exec, pkill -x rofi || $scrPath/keybinds_hint.sh c # launch keybinds hint
-
-      # Move active window around current workspace with mod + SHIFT + CTRL [←→↑↓]
-      $moveactivewindow=grep -q \"true\" <<< $(hyprctl activewindow -j | jq -r .floating) && hyprctl dispatch moveactive
-      binded = $mod SHIFT $CONTROL, left,Move activewindow to the right,exec, $moveactivewindow -30 0 || hyprctl dispatch movewindow l
-      binded = $mod SHIFT $CONTROL, right,Move activewindow to the right,exec, $moveactivewindow 30 0 || hyprctl dispatch movewindow r
-      binded = $mod SHIFT $CONTROL, up,Move activewindow to the right,exec, $moveactivewindow  0 -30 || hyprctl dispatch movewindow u
-      binded = $mod SHIFT $CONTROL, down,Move activewindow to the right,exec, $moveactivewindow 0 30 || hyprctl dispatch movewindow d
-
-      # Move/Resize focused window
-      bindm = $mod, mouse:272, movewindow
-      bindm = $mod, mouse:273, resizewindow
-      bindm = $mod, Z, movewindow
-      bindm = $mod, X, resizewindow
+      submap = disabled
+      bind = $mod, escape, submap, reset
+      submap = reset
     '';
   };
 }

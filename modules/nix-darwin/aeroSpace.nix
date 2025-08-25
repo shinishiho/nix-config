@@ -163,6 +163,14 @@ in
           }
           {
             "if" = {
+              app-id = "com.apple.Music";
+            };
+            run = [
+              "move-node-to-workspace 5"
+            ];
+          }
+          {
+            "if" = {
               app-id = "com.apple.Safari";
               window-title-regex-substring = "Leisure";
             };

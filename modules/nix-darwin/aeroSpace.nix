@@ -180,6 +180,14 @@ in
           }
           {
             "if" = {
+              app-id = "io.mpv";
+            };
+            run = [
+              "move-node-to-workspace 5"
+            ];
+          }
+          {
+            "if" = {
               app-id = "com.now.gg.BlueStacks";
             };
             run = [

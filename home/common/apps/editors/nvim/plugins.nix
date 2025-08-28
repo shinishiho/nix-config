@@ -14,6 +14,7 @@
     # ./plugins/obsidian.nix
     ./plugins/oil.nix
     ./plugins/noice.nix
+    ./plugins/smart-splits.nix
     ./plugins/snippets.nix
     ./plugins/sniprun.nix
     ./plugins/telescope.nix
@@ -23,7 +24,6 @@
 
   home.packages = with pkgs; [
     luajitPackages.magick
-    verible
   ];
 
   programs.nixvim.plugins = {
@@ -35,7 +35,7 @@
     markdown-preview.enable = true;
     nvim-autopairs.enable = true;
     rainbow-delimiters.enable = true;
-    tmux-navigator.enable = true;
+    tmux-navigator.enable = false;
     twilight.enable = true;
     undotree.enable = true;
     web-devicons.enable = true;

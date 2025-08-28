@@ -4,7 +4,7 @@
       {
         mode = "n";
         key = "-";
-        action = "<cmd>Oil<CR>";
+        action = "<CMD>Oil<CR>";
       }
       {
         mode = "v";
@@ -79,49 +79,44 @@
       }
       {
         mode = "n";
-        key = "<C-f>";
-        action = "<cmd>silent !tmux neww tmux-sessionizer<CR>";
-      }
-      {
-        mode = "n";
         key = "<leader>fo";
         action = "vim.lsp.buf.format";
       }
       {
         mode = "n";
         key = "<C-k>";
-        action = "<cmd>cnext<CR>zz";
+        action = "<CMD>cnext<CR>zz";
       }
       {
         mode = "n";
         key = "<C-j>";
-        action = "<cmd>cprev<CR>zz";
+        action = "<CMD>cprev<CR>zz";
       }
       {
         mode = "n";
         key = "<leader>k";
-        action = "<cmd>lnext<CR>zz";
+        action = "<CMD>lnext<CR>zz";
       }
       {
         mode = "n";
         key = "<leader>j";
-        action = "<cmd>lprev<CR>zz";
+        action = "<CMD>lprev<CR>zz";
       }
       {
         mode = "n";
         key = "<leader>r";
-        action = ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>";
+        action = '':%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>'';
       }
       {
         mode = "n";
         key = "<leader>x";
-        action = "<cmd>!chmod +x %<CR>";
+        action = "<CMD>!chmod +x %<CR>";
         options.silent = true;
       }
       {
         mode = "n";
         key = "<leader>run";
-        action = "<cmd>RunCode<CR>";
+        action = "<CMD>RunCode<CR>";
       }
       {
         mode = "n";

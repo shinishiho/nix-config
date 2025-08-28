@@ -1,7 +1,7 @@
 {
-  config,
-  lib,
-  ...
+config,
+lib,
+...
 }:
 
 with lib;
@@ -9,7 +9,7 @@ with lib;
 let
   cfg = config.my-apps.editors.nvim;
 in
-{
+  {
   options.my-apps.editors.nvim = {
     enable = mkEnableOption "Neovim";
   };
@@ -22,17 +22,17 @@ in
 
   config = mkIf cfg.enable {
     programs.nixvim = {
-        enable = true;
-        defaultEditor = true;
-        vimdiffAlias = true;
-        viAlias = true;
-        vimAlias = true;
-        withNodeJs = true;
+      enable = true;
+      defaultEditor = true;
+      vimdiffAlias = true;
+      viAlias = true;
+      vimAlias = true;
+      withNodeJs = true;
 
-        globals = {
+      globals = {
         mapleader = " ";
         #markdown_folding = 1;
-        };
+      };
     };
   };
 }

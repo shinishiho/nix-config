@@ -72,8 +72,3 @@ award = true
 mail = true
 orundum = true
 specialaccess = true
-
-
-#------------------------------ Close  -----------------------------#
-[[tasks]]
-type = "CloseDown"

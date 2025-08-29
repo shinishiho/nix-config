@@ -40,11 +40,6 @@
     };
 
     plover-flake.url = "github:openstenoproject/plover-flake";
-
-    nix-darwin-linking = {
-      url = "github:dwt/nix-darwin/application-linking-done-right";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =

@@ -23,6 +23,11 @@
             params.keep = "10";
           };
         };
+
+        "/home/w/nix-config" = {
+          id = "nix-config";
+          devices = [ "nakxkri" ];
+        };
       };
 
       gui = {

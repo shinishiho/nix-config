@@ -1,9 +1,6 @@
 {
   imports = [
     ./plugins.nix
-    ./functions/ffcd.nix
-    ./functions/ffe.nix
-    ./functions/ffec.nix
     ./functions/yazi.nix
   ];
 

@@ -23,6 +23,11 @@
             params.keep = "10";
           };
         };
+
+        "/Users/w/nix-config" = {
+          id = "nix-config";
+          devices = [ "iamw" ];
+        };
       };
 
       gui = {

@@ -4,6 +4,7 @@
 }:
 {
   home.packages = with pkgs; [
+    libfido2
     pinentry-curses
   ];
 

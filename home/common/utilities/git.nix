@@ -8,7 +8,6 @@
     git = {
       enable = true;
       
-      # User configuration merged from terminal/tools/git.nix
       userEmail = "59284549+shinishiho@users.noreply.github.com";
       userName = "ShiniShiho";
       
@@ -19,10 +18,13 @@
         pull.rebase = false;
         push.autoSetupRemote = true;
         
-        # Better diff highlighting
         diff = {
           algorithm = "patience";
           compactionHeuristic = true;
+        };
+
+        url = {
+          "git@github.com:".insteadOf = "https://github.com/";
         };
         
         # Signing commits (optional)
@@ -69,7 +71,6 @@
       ];
     };
 
-    # GitHub CLI configuration merged from terminal/tools/git.nix
     gh = {
       enable = true;
       extensions = with pkgs; [
@@ -90,6 +91,10 @@
         side-by-side = true;
         line-numbers = true;
       };
+    };
+
+    lazygit = {
+      enable = true;
     };
   };
 }

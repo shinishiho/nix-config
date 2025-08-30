@@ -16,6 +16,7 @@
     ../../../../../home/platform/x86_64-linux/terminal/scripts
     ../../../../../home/platform/x86_64-linux/utilities
 
+    ./authentication.nix
     ./impermanence.nix
   ];
 

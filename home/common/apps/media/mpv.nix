@@ -16,7 +16,7 @@ let
     quality-menu
   ] ++ optionals (!pkgs.stdenv.isDarwin) [
       mpris
-    ];
+  ];
 in
   {
   options.my-apps.media.mpv = {
@@ -56,6 +56,8 @@ in
           scripts = mpvScripts;
         };
       })
+
+      open-in-mpv
     ];
   };
 }

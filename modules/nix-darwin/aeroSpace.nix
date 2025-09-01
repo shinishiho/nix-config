@@ -113,7 +113,7 @@ in
         on-window-detected = [
           {
             "if" = {
-              app-id = "com.apple.Safari";
+              app-id = "app.zen-browser.zen";
               window-title-regex-substring = "W";
             };
             run = [
@@ -122,7 +122,7 @@ in
           }
           {
             "if" = {
-              app-id = "com.apple.Safari";
+              app-id = "app.zen-browser.zen";
               window-title-regex-substring = "VGU";
             };
             run = [
@@ -164,15 +164,6 @@ in
           {
             "if" = {
               app-id = "com.apple.Music";
-            };
-            run = [
-              "move-node-to-workspace 5"
-            ];
-          }
-          {
-            "if" = {
-              app-id = "com.apple.Safari";
-              window-title-regex-substring = "Leisure";
             };
             run = [
               "move-node-to-workspace 5"

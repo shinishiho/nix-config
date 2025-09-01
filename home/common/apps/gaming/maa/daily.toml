@@ -15,7 +15,7 @@ expiring_medicine = 1000
 # On any side story open, fight given side story stage
 [[tasks.variants]]
 condition = { type = "OnSideStory", client = "YoStarEN" }
-params = { stage = "HS-9", series = 0 }
+params = { stage = "EA-3", series = 0 }
 
 # Otherwise, fight PR-A-2 on Monday, PR-B-2 on Tuesday, PR-D-2 on Wednesday,
 # PR-C-1 on Thursday, 1-7 for the rest of the week
@@ -52,22 +52,22 @@ params = { credit_fight = true, select_formation = 4 }
 type = "Infrast"
 
 [tasks.params]
-mode = 10000
+mode = 20000
 facility = ["Trade", "Reception", "Mfg", "Control", "Power", "Office", "Dorm"]
-dorm_trust_enabled = false
-filename = "242_4Gold.json"
-
-[[tasks.variants]]
-condition = { type = "Time", start = "19:00:00", end = "03:00:00" }
-params = { plan_index = 2 }
-
-[[tasks.variants]]
-condition = { type = "Time", end = "11:00:00" }
-params = { plan_index = 0 }
-
-[[tasks.variants]]
-condition = { type = "Time", start = "11:00:00" }
-params = { plan_index = 1 }
+# dorm_trust_enabled = false
+# filename = "252_4Gold.json"
+#
+# [[tasks.variants]]
+# condition = { type = "Time", start = "19:00:00", end = "03:00:00" }
+# params = { plan_index = 2 }
+#
+# [[tasks.variants]]
+# condition = { type = "Time", end = "11:00:00" }
+# params = { plan_index = 0 }
+#
+# [[tasks.variants]]
+# condition = { type = "Time", start = "11:00:00" }
+# params = { plan_index = 1 }
 
 
 #----------------------------- Recruit ----------------------------#

@@ -32,22 +32,22 @@ params = { credit_fight = true, select_formation = 4 }
 type = "Infrast"
 
 [tasks.params]
-mode = 10000
+mode = 20000
 facility = ["Trade", "Reception", "Mfg", "Control", "Power", "Office", "Dorm"]
-dorm_trust_enabled = false
-filename = "252_4Gold.json"
-
-[[tasks.variants]]
-condition = { type = "Time", start = "19:00:00", end = "03:00:00" }
-params = { plan_index = 2 }
-
-[[tasks.variants]]
-condition = { type = "Time", end = "11:00:00" }
-params = { plan_index = 0 }
-
-[[tasks.variants]]
-condition = { type = "Time", start = "11:00:00" }
-params = { plan_index = 1 }
+# dorm_trust_enabled = false
+# filename = "252_4Gold.json"
+#
+# [[tasks.variants]]
+# condition = { type = "Time", start = "19:00:00", end = "03:00:00" }
+# params = { plan_index = 2 }
+#
+# [[tasks.variants]]
+# condition = { type = "Time", end = "11:00:00" }
+# params = { plan_index = 0 }
+#
+# [[tasks.variants]]
+# condition = { type = "Time", start = "11:00:00" }
+# params = { plan_index = 1 }
 
 
 #----------------------------- Recruit ----------------------------#

@@ -23,10 +23,6 @@
           compactionHeuristic = true;
         };
 
-        url = {
-          "git@github.com:".insteadOf = "https://github.com/";
-        };
-        
         # Signing commits (optional)
         # commit.gpgsign = true;
         # gpg.program = "gpg2";

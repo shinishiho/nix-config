@@ -5,6 +5,7 @@
 }:
 {
   imports = [
+    ./gestures.nix
     ./keybindings.nix
     ./peripherals.nix
     ./style.nix

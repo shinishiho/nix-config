@@ -19,10 +19,5 @@
       #name = "epic mouse V1";
       #sensitivity = -0.5;
     };
-
-    gestures = {
-      workspace_swipe = false;
-      workspace_swipe_fingers = 3;
-    };
   };
 }

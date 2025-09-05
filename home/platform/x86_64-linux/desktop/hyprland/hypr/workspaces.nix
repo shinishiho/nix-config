@@ -18,12 +18,14 @@
 
     workspace = [
       "1, on-created-empty: ${pkgs.uwsm}/bin/uwsm app -- $browser --new-window https://github.com"
-      "2, on-created-empty: ${pkgs.uwsm}/bin/uwsm app -- $browser --new-window https://library.vgu.edu.vn/booking/"
+      "2, on-created-empty: ${pkgs.uwsm}/bin/uwsm app -- $browser --new-window https://mail.google.com"
       "3, on-created-empty: ${pkgs.uwsm}/bin/uwsm app -- $editor"
       "4, on-created-empty: ${pkgs.uwsm}/bin/uwsm app -- signal-desktop"
+      "5, rounding:false, decorate:false, gapsin:0, gapsout:0, border:false"
       "6, rounding:false, decorate:false, gapsin:0, gapsout:0, border:false"
       "7, on-created-empty: ${pkgs.uwsm}/bin/uwsm app -- $term fish -c \"zellij\""
       "9, on-created-empty: ${pkgs.uwsm}/bin/uwsm app -- ${pkgs.parsec-bin}/bin/parsecd"
+      "10, monitor:HDMI-A-1,default:true"
     ];
   };
 }

@@ -113,10 +113,12 @@
       ];
     };
 
-    extraConfig = ''
-      submap = disabled
-      bind = $mod, escape, submap, reset
-      submap = reset
-    '';
+    submaps = {
+      disabled = {
+        settings.bind = [
+          "$mod, escape, submap, reset"
+        ];
+      };
+    };
   };
 }

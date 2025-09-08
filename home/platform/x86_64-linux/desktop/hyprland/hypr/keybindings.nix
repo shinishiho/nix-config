@@ -86,6 +86,10 @@
         ", Print, exec, GRIMBLAST_HIDE_CURSOR=1 grimblast copysave area"
       ];
 
+      bindm = [
+        "$mod+Control_L, mouse:272, movewindow"
+      ];
+
       binde = [
         # Resize windows
         "$mod+Shift, Right, resizeactive, 30 0"

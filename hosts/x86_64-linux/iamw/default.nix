@@ -39,7 +39,7 @@
       bluetooth.enable = true;
     };
     services = {
-      docker.enable = true;
+      docker.enable = false;
       keyd.enable = true;
       networking.enable = true;
       ssh.enable = true;

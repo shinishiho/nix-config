@@ -16,7 +16,7 @@ in
       search = [ "cuscus-typhon.ts.net" ];
     };
 
-    environment.persistence."/persistent".directories = mkIf cfg.enable [
+    environment.persistence."/persistent".directories = [
       "/var/lib/tailscale"
     ];
   };

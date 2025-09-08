@@ -28,11 +28,6 @@
   ];
 
   programs = {
-    # JavaScript/Node.js runtime
-    bun = {
-      enable = true;
-    };
-
     # Fuzzy finder
     fzf = {
       enable = true;

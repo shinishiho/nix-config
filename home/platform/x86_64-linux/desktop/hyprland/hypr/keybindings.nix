@@ -20,9 +20,6 @@
         "$mod, W, togglefloating,"
         "$mod, G, togglegroup,"
         "$mod+Ctrl, F, fullscreen,"
-        "$mod, L, exec, swaylock"
-        "$mod+Shift, F, exec, $scrPath/windowpin.sh"
-        "$mod, Backspace, exec, $scrPath/logoutlaunch.sh"
 
         # Application shortcuts
         "Alt, Return, exec, uwsm app -- $term"
@@ -45,13 +42,6 @@
         "Alt, 8, workspace, 8"
         "Alt, 9, workspace, 9"
         "Alt, 0, workspace, 10"
-
-        # Switch workspaces to a relative workspace
-        "$mod+Ctrl, Right, workspace, r+1"
-        "$mod+Ctrl, Left, workspace, r-1"
-
-        # Move to the first empty workspace
-        "$mod+Ctrl, Down, workspace, empty"
 
         # Move focused window to a workspace
         "Alt+Shift, 1, movetoworkspace, 1"

@@ -10,7 +10,7 @@ Welcome to my NixOS configuration!
 ## What I use
 
 | Category    | App                  | Category   | App       |
-| ----------- | -------------------- | ---------- | --------- |
+|-------------|----------------------|------------|-----------|
 | WM          | Hyprland             | Launcher   | rofi      |
 | Browser     | Firefox, Zen Browser | Terminal   | kitty     |
 | Editor      | neovim, code         | Shell      | fish      |

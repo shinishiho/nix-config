@@ -12,12 +12,22 @@
           name = "TabUltraC";
           id = "QL7XQFZ-2DDQ54U-G37KOOQ-SD6EW6C-UL43DAN-ZUKDXNZ-M37XNKY-K3GLWQT";
         };
+
+        rpiamw = {
+          name = "rpiamw";
+          id = "62XI2DU-K442XC6-27N2QFS-BF3ONCR-JAPKYDI-LXL6TCE-Y5XT2M2-IFEONQO";
+        };
+
+        vivo = {
+          name = "vivo";
+          id = "IKDMWME-EFPJC2F-PEA3WZN-H44OX57-JBH7XOO-PV7MKB3-GXGFJR2-5YDBWAO";
+        };
       };
 
       folders = {
         "/home/w/W" = {
           id = "wdata";
-          devices = [ "nakxkri" "boox" ];
+          devices = [ "nakxkri" "boox" "rpiamw" "vivo" ];
           versioning = {
             type = "simple";
             params.keep = "10";

@@ -35,7 +35,7 @@
 
     gaming = {
       streaming.enable = false;
-      maa.enable = true;
+      maa.enable = false;
     };
 
     communication = {

@@ -21,27 +21,6 @@ in
     );
 
     settings = {
-      "Gemini PR" = {};
-      
-      "Logging Configuration" = {
-        log_file = "strokes.log";
-      };
-      
-      "Machine Configuration" = {
-        machine_type = "Keyboard";
-        auto_start = true;
-      };
-      
-      "Output Configuration" = {
-        undo_levels = 100;
-      };
-      
-      "Plugins" = {};
-      
-      "Startup" = {
-        "start minimized" = true;
-      };
-      
       "System" = {
         name = "Lapwing";
       };
@@ -61,10 +40,6 @@ in
           {enabled = true; path = "lapwing-proper-nouns.json";}
           {enabled = true; path = "lapwing-base.json";}
         ];
-      };
-      
-      "Translation Frame" = {
-        opacity = 100;
       };
     };
   };

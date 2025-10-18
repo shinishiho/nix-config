@@ -1,6 +1,7 @@
 {
   lib,
   inputs,
+  pkgs,
   ...
 }:
 {
@@ -16,7 +17,7 @@
     ../../../../../home/platform/x86_64-linux/terminal/scripts
     ../../../../../home/platform/x86_64-linux/utilities
 
-    ./authentication.nix
+    ./ssh.nix
     ./impermanence.nix
   ];
 
@@ -56,5 +57,9 @@
     username = "w";
     homeDirectory = "/home/w";
     stateVersion = lib.mkForce "25.11";
+    packages = with pkgs; [
+      inputs.winboat.winboat
+      freerdp
+    ];
   };
 }

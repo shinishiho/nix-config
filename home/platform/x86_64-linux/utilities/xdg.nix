@@ -14,20 +14,18 @@
       enable = true;
       extraPortals = with pkgs; [
         xdg-desktop-portal-gtk
-        # xdg-desktop-portal-hyprland # Bundled in Hyprland module
         xdg-desktop-portal-wlr
-        xdg-desktop-portal-gnome
+        kdePackages.xdg-desktop-portal-kde
       ];
       configPackages = with pkgs; [
         xdg-desktop-portal-gtk
-        # xdg-desktop-portal-hyprland
         xdg-desktop-portal-wlr
-        xdg-desktop-portal-gnome
+        kdePackages.xdg-desktop-portal-kde
       ];
-      config.common = {
-        default = ["gnome" "hyprland" "gtk"];
-        "org.freedesktop.impl.portal.Settings" = "gnome";
-      };
+      # config.common = {
+      #   default = ["gnome" "hyprland" "gtk"];
+      #   "org.freedesktop.impl.portal.Settings" = "gnome";
+      # };
     };
   };
 }

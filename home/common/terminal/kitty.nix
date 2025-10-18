@@ -7,7 +7,6 @@ _:
       size = 12;
     };
 
-    # themeFile = "Catppuccin-Mocha";
     shellIntegration.enableZshIntegration = true;
     shellIntegration.enableFishIntegration = true;
 

@@ -40,6 +40,8 @@
     };
 
     plover-flake.url = "github:openstenoproject/plover-flake";
+
+    winboat.url = "github:TibixDev/winboat";
   };
 
   outputs =

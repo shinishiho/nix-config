@@ -1,5 +1,4 @@
 {
-  lib,
   pkgs,
   wallpapers,
   ...
@@ -134,7 +133,7 @@ let
         selected=$(
             while IFS= read -r wallpaper; do
                 generate_rofi_entry "$wallpaper"
-            done <<< "$wallpapers_list" | ${pkgs.rofi-wayland}/bin/rofi -dmenu -display-column-separator ":::" -theme ~/.config/rofi/selector.rasi -display-columns 1 -i -p "Select Wallpaper" -no-custom -select $(basename "$(get_current_wallpaper)")
+            done <<< "$wallpapers_list" | ${pkgs.rofi}/bin/rofi -dmenu -display-column-separator ":::" -theme ~/.config/rofi/selector.rasi -display-columns 1 -i -p "Select Wallpaper" -no-custom -select $(basename "$(get_current_wallpaper)")
         )
         
         if [[ -n "$selected" ]]; then

@@ -7,5 +7,8 @@
     # Network utilities
     curl
     wget
+    
+    # Send files over network
+    localsend
   ];
 }

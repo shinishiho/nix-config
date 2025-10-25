@@ -1,4 +1,5 @@
 {
+  config,
   pkgs,
   ...
 }:
@@ -33,34 +34,35 @@
     };
   };
 
-  home.file = {
-    ".config/uwsm/env".text = ''
-      export QT_QPA_PLATFORM=wayland;xcb
-      export QT_QPA_PLATFORMTHEME=qt6ct
-      export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
-      export QT_AUTO_SCREEN_SCALE_FACTOR=1
-      export MOZ_ENABLE_WAYLAND=1
-      export GDK_SCALE=1
-    '';
-  };
+  # home.file = {
+  #   ".config/uwsm/env".text = ''
+  #     export QT_QPA_PLATFORM=wayland;xcb
+  #     export QT_QPA_PLATFORMTHEME=qt6ct
+  #     export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+  #     export QT_AUTO_SCREEN_SCALE_FACTOR=1
+  #     export MOZ_ENABLE_WAYLAND=1
+  #     export GDK_SCALE=1
+  #   '';
+  # };
 
-  xdg.portal = {
-    enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gtk
-      # xdg-desktop-portal-hyprland # Bundled in Hyprland module
-      xdg-desktop-portal-wlr
-      xdg-desktop-portal-gnome
-    ];
-    configPackages = with pkgs; [
-      xdg-desktop-portal-gtk
-      # xdg-desktop-portal-hyprland
-      xdg-desktop-portal-wlr
-      xdg-desktop-portal-gnome
-    ];
-    config.common = {
-      default = ["gnome" "hyprland" "gtk"];
-      "org.freedesktop.impl.portal.Settings" = "gnome";
-    };
-  };
+  # xdg.portal = {
+  #   enable = true;
+  #   extraPortals = with pkgs; [
+  #     xdg-desktop-portal-gtk
+  #     # xdg-desktop-portal-hyprland # Bundled in Hyprland module
+  #     xdg-desktop-portal-wlr
+  #     kdePackages.xdg-desktop-portal-kde
+  #   ];
+  #   configPackages = with pkgs; [
+  #     xdg-desktop-portal-gtk
+  #     # xdg-desktop-portal-hyprland
+  #     xdg-desktop-portal-wlr
+  #     kdePackages.xdg-desktop-portal-kde
+  #   ];
+  #   # config.common = {
+  #   #   default = ["gnome" "hyprland" "gtk"];
+  #   #   "org.freedesktop.impl.portal.Settings" = "gnome";
+  #   # };
+  # };
+  xdg.configFile."uwsm/env".source = "${config.home.sessionVariablesPackage}/etc/profile.d/hm-session-vars.sh"; 
 }

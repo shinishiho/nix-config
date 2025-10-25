@@ -1,18 +1,14 @@
 {
   imports = [
-    ./displayManager.nix
-    ./gaming.nix
+    ./autoLogin.nix
     ./gnome.nix
     ./hyprland.nix
   ];
 
   environment = {
+    # Wayland, please become stable someday so I can remove this option.
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
     };
-    pathsToLink = [
-      "/share/xdg-desktop-portal"
-      "/share/applications"
-    ];
   };
 }

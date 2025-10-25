@@ -1,38 +1,25 @@
 {
-  config,
-  lib,
   pkgs,
   ...
 }:
 
-with lib;
-
-let
-  cfg = config.myModules.common.fonts;
-in
 {
-  options.myModules.common.fonts = {
-    enable = mkEnableOption "Shared font configuration";
-  };
+  fonts.packages = with pkgs; [
+    # Terminal and coding fonts
+    nerd-fonts.mononoki
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.caskaydia-cove
+    maple-mono.NF
+    noto-fonts-cjk-sans
 
-  config = mkIf cfg.enable {
-    fonts.packages = with pkgs; [
-      # Terminal and coding fonts
-      nerd-fonts.mononoki
-      nerd-fonts.jetbrains-mono
-      nerd-fonts.caskaydia-cove
-      maple-mono.NF
-      noto-fonts-cjk-sans
+    # System fonts
+    inter
+    roboto
+    source-serif-pro
+    source-sans-pro
 
-      # System fonts
-      inter
-      roboto
-      source-serif-pro
-      source-sans-pro
-      
-      # Icon fonts
-      font-awesome
-      material-design-icons
-    ];
-  };
+    # Icon fonts
+    font-awesome
+    material-design-icons
+  ];
 }

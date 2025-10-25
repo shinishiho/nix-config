@@ -45,7 +45,7 @@
   };
 
   outputs =
-    { nixpkgs, ... }@inputs:
+    { nixpkgs, nix-darwin, home-manager, chaotic, ... }@inputs:
     let
       supportedSystems = [
         "x86_64-linux"
@@ -53,77 +53,34 @@
         "aarch64-darwin"
         "x86_64-darwin"
       ];
-      forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
-
-      # Import our library functions
-      lib = import ./lib { inherit inputs nixpkgs; inherit (nixpkgs) lib; };
-    in
-    {
-      packages = forAllSystems (system: 
+      forAllSystems = nixpkgs.lib.genAttrs supportedSystems (system:
         let
           pkgs = import nixpkgs {
             inherit system;
             config.allowUnfree = true;
-            overlays = [
-              (import ./pkgs)
-            ];
+            overlays = [ (import ./pkgs) ];
           };
-        in
-        {
-          # Custom packages available through flake
-          # Only expose orchis-theme on Linux systems since it's desktop-specific
-        } // nixpkgs.lib.optionalAttrs (nixpkgs.lib.hasPrefix "linux" system || system == "x86_64-linux" || system == "aarch64-linux") {
-          inherit (pkgs) orchis-theme;
-        });
+        in { inherit pkgs; });
+    in {
+      packages = forAllSystems;      
 
-      # Development shell for maintaining this flake
-      devShells = forAllSystems (system:
-        let
-          pkgs = nixpkgs.legacyPackages.${system};
-        in
-        {
-          default = pkgs.mkShell {
-            name = "nix-config";
-            buildInputs = with pkgs; [
-              nixd # Nix language server
-              nil # Another Nix language server
-              nixpkgs-fmt # Nix formatter
-              deadnix # Find dead Nix code
-              statix # Lints and suggestions for Nix
-            ];
-            shellHook = ''
-              echo "🚀 Welcome to the nix-config development environment!"
-              echo "Available tools:"
-              echo "  - nixd/nil: Language servers for Nix"
-              echo "  - nixpkgs-fmt: Format Nix files"
-              echo "  - deadnix: Find unused Nix code"
-              echo "  - statix: Lint Nix files"
-            '';
-          };
-        });
-
-      # overlays = import ./pkgs;
-
-      nixosConfigurations = {
-        iamw = lib.mkNixosConfig {
-          system = "x86_64-linux";
-          hostname = "iamw";
-        };
-
-        # Add more NixOS configurations here using the helper function
-        # example-aarch64 = lib.mkNixosConfig {
-        #   system = "aarch64-linux";
-        #   hostname = "example-aarch64";
-        #   username = "differentuser"; # optional
-        # };
+      nixosConfigurations.iamw = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit nixpkgs home-manager chaotic inputs; hostname = "iamw"; };
+        modules = [
+          ./hosts/x86_64-linux/iamw
+          home-manager.nixosModules.home-manager
+          chaotic.nixosModules.default
+        ];
       };
 
-      # Darwin configurations
-      darwinConfigurations = {
-        iamw-m1 = lib.mkDarwinConfig {
-          system = "aarch64-darwin";
-          hostname = "iamw-m1";
-        };
+      darwinConfigurations.iamw-m1 = nix-darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        specialArgs = { inherit nixpkgs home-manager inputs; hostname = "iamw-m1"; };
+        modules = [
+          ./hosts/aarch64-darwin/iamw-m1
+          home-manager.darwinModules.home-manager
+        ];
       };
     };
 }

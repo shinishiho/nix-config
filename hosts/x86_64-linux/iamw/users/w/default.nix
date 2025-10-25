@@ -3,6 +3,7 @@
   pkgs,
   ...
 }:
+
 {
   users.mutableUsers = false;
   users.users = {
@@ -27,6 +28,19 @@
 
   programs = {
     fish.enable = true;
+    weylus = {
+      enable = true;
+      users = [ "w" ];
+      openFirewall = true;
+    };
+
+    appimage = {
+      enable = true;
+      binfmt = true;
+    };
+
+    adb.enable = true;
+    fuse.userAllowOther = true;
   };
 
   home-manager = {

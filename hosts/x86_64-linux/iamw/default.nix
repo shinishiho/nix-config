@@ -15,6 +15,7 @@
 
     ./disko.nix
     ./filesystems.nix
+    ./gaming.nix
     ./hardware.nix
     ./inputMethod.nix
     ./networking.nix
@@ -23,34 +24,23 @@
   ];
 
   myModules = {
-    common = {
-      fonts.enable = true;
-      tailscale.enable = true;
-    };
-
     desktop = {
-      displayManager.enable = true;
-      gaming.enable = true;
       gnome.enable = false;
       hyprland.enable = true;
     };
+
     hardware = {
       audio.enable = true;
       bluetooth.enable = true;
     };
+
     services = {
       docker.enable = true;
       keyd.enable = true;
       networking.enable = true;
       ssh.enable = true;
+      tailscale.enable = true;
       waydroid.enable = false;
-    };
-    system = {
-      boot.enable = true;
-      locale.enable = true;
-      nix.enable = true;
-      programs.enable = true;
-      security.enable = true;
     };
   };
 

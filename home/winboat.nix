@@ -1,14 +1,13 @@
 {
   config,
-  inputs,
   pkgs,
   ...
 }:
 
 {
-  home.packages = [
-    inputs.winboat.winboat
-    pkgs.freerdp
+  home.packages = with pkgs; [
+    winboat
+    freerdp
   ];
 
   home.persistence."/persistent/home/${config.home.username}".directories = [

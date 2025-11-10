@@ -1,4 +1,9 @@
 {
+  config,
+  ...
+}:
+
+{
   programs.wallust = {
     enable = true;
     settings = {
@@ -129,4 +134,8 @@ mark3_foreground {{ color6 | saturate(0.2) }}
 }
     '';
   };
+
+  home.persistence."/persistent/home/${config.home.username}".directories = [
+    ".config/hypr/colors.conf"
+  ];
 }

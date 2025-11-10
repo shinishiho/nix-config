@@ -40,8 +40,6 @@
     };
 
     plover-flake.url = "github:openstenoproject/plover-flake";
-
-    winboat.url = "github:TibixDev/winboat";
   };
 
   outputs =
@@ -68,7 +66,7 @@
         system = "x86_64-linux";
         specialArgs = { inherit nixpkgs home-manager chaotic inputs; hostname = "iamw"; };
         modules = [
-          ./hosts/x86_64-linux/iamw
+          ./hosts/iamw
           home-manager.nixosModules.home-manager
           chaotic.nixosModules.default
         ];

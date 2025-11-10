@@ -16,35 +16,36 @@
     # ../../../../../home/x86_64-linux/terminal/scripts
     # ../../../../../home/x86_64-linux/utilities
 
-    ../../../../../home/.config/Code
-    ../../../../../home/.config/fastfetch
-    ../../../../../home/.config/fish
-    ../../../../../home/.config/hypr
-    ../../../../../home/.config/nvim
-    ../../../../../home/.config/plover
-    ../../../../../home/.config/rofi
-    ../../../../../home/.config/wallpaper
-    ../../../../../home/.config/yazi
+    ../../../../home/.config/Code
+    ../../../../home/.config/fastfetch
+    ../../../../home/.config/fish
+    ../../../../home/.config/hypr
+    ../../../../home/.config/nvim
+    ../../../../home/.config/plover
+    ../../../../home/.config/rofi
+    ../../../../home/.config/wallpaper
+    ../../../../home/.config/yazi
 
-    ../../../../../home/.config/cava.nix
-    ../../../../../home/.config/gh-dash.nix
-    ../../../../../home/.config/gh.nix
-    ../../../../../home/.config/git.nix
-    ../../../../../home/.config/hyprpanel.nix
-    ../../../../../home/.config/kitty.nix
-    ../../../../../home/.config/mpv.nix
-    ../../../../../home/.config/shellAliases.nix
-    ../../../../../home/.config/starship.nix
-    ../../../../../home/.config/tmux.nix
-    ../../../../../home/.config/wallust.nix
-    ../../../../../home/.config/zellij.nix
-    ../../../../../home/.config/zsh.nix
+    ../../../../home/.config/aria2.nix
+    ../../../../home/.config/cava.nix
+    ../../../../home/.config/gh-dash.nix
+    ../../../../home/.config/gh.nix
+    ../../../../home/.config/git.nix
+    ../../../../home/.config/hyprpanel.nix
+    ../../../../home/.config/kitty.nix
+    ../../../../home/.config/mpv.nix
+    ../../../../home/.config/shellAliases.nix
+    ../../../../home/.config/starship.nix
+    ../../../../home/.config/tmux.nix
+    ../../../../home/.config/wallust.nix
+    ../../../../home/.config/zellij.nix
+    ../../../../home/.config/zsh.nix
 
-    ../../../../../home/.local/state/syncthing.nix
+    ../../../../home/.local/state/syncthing.nix
 
-    ../../../../../home/programs.nix
-    ../../../../../home/winboat.nix
-    ../../../../../home/zen.nix
+    ../../../../home/programs.nix
+    ../../../../home/winboat.nix
+    ../../../../home/zen.nix
                                 
     ./ssh.nix
     ./impermanence.nix

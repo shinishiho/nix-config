@@ -19,6 +19,8 @@
     
     tldr
 
+    ariang
+
     zip
     unzip
     p7zip
@@ -32,6 +34,8 @@
 
     libfido2
     pinentry-curses
+
+    bottles
   ];
 
   programs = {
@@ -92,7 +96,8 @@
   home.persistence."/persistent/home/${config.home.username}".directories = [
     ".local/share/direnv"
     ".local/share/zoxide"
-    ".ssh"
+    ".gemini"
     ".gnupg"
+    ".ssh"
   ];
 }

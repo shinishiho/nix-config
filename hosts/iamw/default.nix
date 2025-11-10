@@ -8,8 +8,8 @@
     inputs.disko.nixosModules.default
     inputs.impermanence.nixosModules.impermanence
 
-    ../../../modules/common
-    ../../../modules/nixos
+    ../../modules/common
+    ../../modules/nixos
 
     ./hardware-configuration.nix
 

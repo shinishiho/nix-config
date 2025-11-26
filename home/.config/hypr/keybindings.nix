@@ -26,7 +26,7 @@
 
         # Rofi menus
         "$mod, space, exec, pkill -x rofi || rofi -show combi -combi-modes \"run,drun\" -run-command \"uwsm app -- {cmd}\""
-        # "Alt, space, exec, pkill -x rofi || rofi -show combi -combi-modes \"run,drun\" -run-command \"uwsm app -- {cmd}\""
+        "Alt, space, exec, pkill -x rofi || rofi -show combi -combi-modes \"run,drun\" -run-command \"uwsm app -- {cmd}\""
         "$mod, Tab, exec, pkill -x rofi || rofi -show window"
         "Alt, Tab, exec, pkill -x rofi || rofi -show window"
         "$mod+Shift, W, exec, set-wallpaper select"

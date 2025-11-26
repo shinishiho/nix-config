@@ -12,7 +12,7 @@ _:
 
     settings = {
       background = "#000000";
-      background_opacity = 0.8;
+      background_opacity = 0.9;
       enable_audio_bell = false;
       hide_window_decorations = true;
       include = "colors.conf";

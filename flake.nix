@@ -40,6 +40,8 @@
     };
 
     plover-flake.url = "github:openstenoproject/plover-flake";
+
+    helium.url = "github:FKouhai/helium2nix/main";
   };
 
   outputs =
@@ -72,13 +74,13 @@
         ];
       };
 
-      darwinConfigurations.iamw-m1 = nix-darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
-        specialArgs = { inherit nixpkgs home-manager inputs; hostname = "iamw-m1"; };
-        modules = [
-          ./hosts/aarch64-darwin/iamw-m1
-          home-manager.darwinModules.home-manager
-        ];
-      };
+      # darwinConfigurations.iamw-m1 = nix-darwin.lib.darwinSystem {
+      #   system = "aarch64-darwin";
+      #   specialArgs = { inherit nixpkgs home-manager inputs; hostname = "iamw-m1"; };
+      #   modules = [
+      #     ./hosts/aarch64-darwin/iamw-m1
+      #     home-manager.darwinModules.home-manager
+      #   ];
+      # };
     };
 }

@@ -28,8 +28,4 @@
       };
     };
   };
-
-  home.persistence."/persistent/home/${config.home.username}".directories = [
-    ".local/share/nvim/file_frecency.bin"
-  ];
 }

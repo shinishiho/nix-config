@@ -35,7 +35,7 @@
     libfido2
     pinentry-curses
 
-    bottles
+    inputs.helium.defaultPackage.${system}
   ];
 
   programs = {

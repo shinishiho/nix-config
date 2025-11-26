@@ -1,4 +1,9 @@
 {
+  config,
+  ...
+}:
+
+{
   programs.nixvim.plugins.telescope = {
     enable = true;
     extensions = {
@@ -23,4 +28,8 @@
       };
     };
   };
+
+  home.persistence."/persistent/home/${config.home.username}".files = [
+    ".local/share/nvim/file_frecency.bin"
+  ];
 }

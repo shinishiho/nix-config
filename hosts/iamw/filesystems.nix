@@ -1,7 +1,6 @@
 {
   fileSystems = {
     "/" = {
-      device = "none";
       fsType = "tmpfs";
       options = [
         "defaults"

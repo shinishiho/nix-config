@@ -15,7 +15,7 @@
     procs
 
     duf
-    du-dust
+    dust
     
     tldr
 
@@ -35,7 +35,7 @@
     libfido2
     pinentry-curses
 
-    inputs.helium.defaultPackage.${system}
+    inputs.helium.defaultPackage.${stdenv.hostPlatform.system}
   ];
 
   programs = {

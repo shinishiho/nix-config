@@ -41,9 +41,7 @@
   };
 
   home.packages = with pkgs; [
-    grim
     grimblast
-    slurp
     swappy
     # swww
     wf-recorder

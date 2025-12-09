@@ -5,20 +5,20 @@
 
 {
   wayland.windowManager.hyprland.settings = {
-    windowrulev2 = [
-      "workspace 1, title:.*GitHub - Zen Twilight.*"
-      "workspace 2, title:.*VGU.*"
-      "workspace 3, title: .*(neovim).*"
-      "workspace 4, class:(signal|Caprine)"
-      "workspace 5, class:mpv"
-      "workspace 6, class:steam"
-      "workspace 7, class:kitty"
-      "workspace 9, title:Parsec"
+    windowrule = [
+      "workspace 1, match:title .*GitHub - Zen Twilight.*"
+      "workspace 2, match:title .*VGU.*"
+      "workspace 3, match:title .*(neovim).*"
+      "workspace 4, match:class (signal|Caprine)"
+      "workspace 5, match:class mpv"
+      "workspace 6, match:class steam"
+      "workspace 7, match:class kitty"
+      "workspace 9, match:title Parsec"
     ];
 
     workspace = [
-      "1, on-created-empty: ${pkgs.uwsm}/bin/uwsm-app -- $browser --new-window https://github.com"
-      "2, on-created-empty: ${pkgs.uwsm}/bin/uwsm-app -- $browser --new-window https://mail.google.com"
+      "1, on-created-empty: ${pkgs.uwsm}/bin/uwsm-app -- $browser --new-window"
+      "2, on-created-empty: ${pkgs.uwsm}/bin/uwsm-app -- $browser --new-window"
       "3, on-created-empty: ${pkgs.uwsm}/bin/uwsm-app -- $editor"
       "4, on-created-empty: ${pkgs.uwsm}/bin/uwsm-app -- signal-desktop"
       "5, rounding:false, decorate:false, gapsin:0, gapsout:0, border:false"

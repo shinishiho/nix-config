@@ -9,13 +9,6 @@
     agenix.homeManagerModules.default
     impermanence.homeManagerModules.impermanence
 
-    # ../../../../../home/common
-
-    # ../../../../../home/x86_64-linux/desktop/hyprland
-    # ../../../../../home/x86_64-linux/impermanence.nix
-    # ../../../../../home/x86_64-linux/terminal/scripts
-    # ../../../../../home/x86_64-linux/utilities
-
     ../../../../home/.config/Code
     ../../../../home/.config/fastfetch
     ../../../../home/.config/fish
@@ -44,42 +37,11 @@
     ../../../../home/.local/state/syncthing.nix
 
     ../../../../home/programs.nix
-    ../../../../home/winboat.nix
     ../../../../home/zen.nix
                                 
     ./ssh.nix
     ./impermanence.nix
   ];
-
-  # my-apps = {
-  #   browsers = {
-  #     chromium.enable = false;
-  #     firefox.enable = false;
-  #     zen.enable = true;
-  #   };
-  #
-  #   communication = {
-  #     thunderbird.enable = false;
-  #   };
-  #
-  #   editors = {
-  #     zeditor.enable = false;
-  #     cursor.enable = false;
-  #     vscode.enable = true;
-  #     nvim.enable = true;
-  #   };
-  #
-  #   media = {
-  #     mpv.enable = true;
-  #     obs.enable = false;
-  #   };
-  #
-  #   gaming = {
-  #     maa.enable = false;
-  #     osu.enable = false;
-  #     streaming.enable = true;
-  #   };
-  # };
 
   programs.home-manager.enable = true;
 

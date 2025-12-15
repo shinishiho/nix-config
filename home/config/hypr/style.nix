@@ -75,6 +75,7 @@
     };
 
     windowrule = [
+      "match:class waydroid.com.YoStarEN.Arknights, fullscreen on"
       # "float,class:^(org.kde.dolphin)$,title:^(Progress Dialog — Dolphin)$"
       # "float,class:^(org.kde.dolphin)$,title:^(Copying — Dolphin)$"
       # "float,title:^(About Mozilla Firefox)$"

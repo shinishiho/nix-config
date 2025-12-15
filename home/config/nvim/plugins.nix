@@ -10,6 +10,7 @@
     # ./plugins/coderunner.nix
     ./plugins/harpoon.nix
     #./plugins/linter.nix
+    ./plugins/leap.nix
     ./plugins/lsp.nix
     # ./plugins/obsidian.nix
     ./plugins/oil.nix
@@ -31,7 +32,6 @@
     fugitive.enable = true;
     image.enable = true;
     indent-blankline.enable = true;
-    leap.enable = true;
     markdown-preview.enable = true;
     nvim-autopairs.enable = true;
     rainbow-delimiters.enable = true;

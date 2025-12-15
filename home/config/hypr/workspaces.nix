@@ -17,7 +17,7 @@
     ];
 
     workspace = [
-      "1, on-created-empty: ${pkgs.uwsm}/bin/uwsm-app -- $browser --new-window"
+      # "1, on-created-empty: ${pkgs.uwsm}/bin/uwsm-app -- $browser --new-window"
       "2, on-created-empty: ${pkgs.uwsm}/bin/uwsm-app -- $browser --new-window"
       "3, on-created-empty: ${pkgs.uwsm}/bin/uwsm-app -- $editor"
       "4, on-created-empty: ${pkgs.uwsm}/bin/uwsm-app -- signal-desktop"

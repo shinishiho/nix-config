@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }:
 
@@ -15,7 +16,10 @@ in
   };
 
   config = mkIf cfg.enable {
-    virtualisation.waydroid.enable = true;
+    virtualisation.waydroid = {
+      enable = true;
+      package = pkgs.waydroid-nftables;
+    };
 
     environment.persistence."/persistent".directories = [
       "/var/lib/waydroid"

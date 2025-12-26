@@ -35,7 +35,9 @@
     libfido2
     pinentry-curses
 
-    inputs.helium.defaultPackage.${stdenv.hostPlatform.system}
+    # inputs.helium.defaultPackage.${stdenv.hostPlatform.system}
+
+    caprine-bin
   ];
 
   programs = {

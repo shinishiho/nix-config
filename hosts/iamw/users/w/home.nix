@@ -28,6 +28,7 @@
     ../../../../home/config/hyprpanel.nix
     ../../../../home/config/kitty.nix
     ../../../../home/config/mpv.nix
+    ../../../../home/config/orca-slicer.nix
     ../../../../home/config/shellAliases.nix
     ../../../../home/config/starship.nix
     ../../../../home/config/tmux.nix

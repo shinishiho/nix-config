@@ -135,7 +135,7 @@ mark3_foreground {{ color6 | saturate(0.2) }}
     '';
   };
 
-  home.persistence."/persistent/home/${config.home.username}".files = [
+  home.persistence."/persistent".files = [
     ".config/hypr/colors.conf"
   ];
 }

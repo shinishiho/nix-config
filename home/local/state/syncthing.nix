@@ -47,7 +47,7 @@
   };
 
   home.persistence = {
-    "/persistent/home/w" = {
+    "/persistent" = {
       directories = [
         ".local/state/syncthing"
       ];

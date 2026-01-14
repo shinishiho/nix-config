@@ -1,15 +1,15 @@
+
 {
-  config,
   pkgs,
   ...
 }:
 
 {
   home.packages = [
-    pkgs.orca-slicer
+    pkgs.gopeed
   ];
 
   home.persistence."/persistent".directories = [
-    ".config/OrcaSlicer"
+    ".local/share/com.gopeed.gopeed"
   ];
 }

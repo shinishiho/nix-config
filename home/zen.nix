@@ -60,7 +60,7 @@
     };
   };
 
-  home.persistence."/persistent/home/${config.home.username}".directories = [
+  home.persistence."/persistent".directories = [
     ".zen"
   ];
 }

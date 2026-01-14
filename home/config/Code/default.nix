@@ -10,7 +10,7 @@
     package = pkgs.vscode;
   };
 
-  home.persistence."/persistent/home/${config.home.username}".directories = [
+  home.persistence."/persistent".directories = [
     ".config/Code/User"
     ".vscode"
   ];

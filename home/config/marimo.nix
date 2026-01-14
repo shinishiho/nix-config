@@ -1,15 +1,10 @@
 {
   config,
-  pkgs,
   ...
 }:
 
 {
-  home.packages = [
-    pkgs.orca-slicer
-  ];
-
   home.persistence."/persistent".directories = [
-    ".config/OrcaSlicer"
+    ".config/marimo"
   ];
 }

@@ -15,7 +15,7 @@ in
     inputs.impermanence.homeManagerModules.impermanence
   ];
 
-  home.persistence."/persistent/home/${config.home.username}" = {
+  home.persistence."/persistent" = {
     directories = []
     # Browsers
     ++ optionals (cfg.browsers.chromium.enable) [ ".config/chromium" ]

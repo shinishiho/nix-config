@@ -1,6 +1,4 @@
 {
-  config,
-  inputs,
   pkgs,
   ...
 }:
@@ -35,9 +33,9 @@
     libfido2
     pinentry-curses
 
-    # inputs.helium.defaultPackage.${stdenv.hostPlatform.system}
+    android-tools
 
-    caprine-bin
+    # inputs.helium.defaultPackage.${stdenv.hostPlatform.system}
   ];
 
   programs = {
@@ -95,7 +93,7 @@
     };
   };
     
-  home.persistence."/persistent/home/${config.home.username}".directories = [
+  home.persistence."/persistent".directories = [
     ".local/share/direnv"
     ".local/share/zoxide"
     ".gemini"

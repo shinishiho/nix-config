@@ -1,11 +1,10 @@
 {
-  home.persistence."/persistent/home/w" = {
+  home.persistence."/persistent" = {
     directories = [
       "nix-config"
       "W"
     ];
     files = [
     ];
-    allowOther = true;
   };
 }

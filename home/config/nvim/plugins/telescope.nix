@@ -29,7 +29,7 @@
     };
   };
 
-  home.persistence."/persistent/home/${config.home.username}".files = [
+  home.persistence."/persistent".files = [
     ".local/share/nvim/file_frecency.bin"
   ];
 }

@@ -7,7 +7,7 @@
     };
 
     firewall = {
-      enable = false;
+      enable = true;
       allowedUDPPorts = [
         7011
         6001
@@ -18,6 +18,10 @@
         7000
         7001
       ];
+    };
+
+    nftables = {
+      enable = true;
     };
   };
 }

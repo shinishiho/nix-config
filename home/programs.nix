@@ -35,7 +35,13 @@
 
     android-tools
 
+    # nixGL for graphics support on non-NixOS
+    nixgl.nixGLIntel
+    nixgl.nixVulkanIntel
+
     # inputs.helium.defaultPackage.${stdenv.hostPlatform.system}
+
+    gpu-screen-recorder
   ];
 
   programs = {

@@ -23,6 +23,7 @@ in
         "127.0.0.1"
         "::1"
       ];
+      networkmanager.dns = "none";
     };
 
     services = {
@@ -58,8 +59,6 @@ in
           workstation = true;
         };
       };
-
-      resolved.enable = true;
     };
   };
 }

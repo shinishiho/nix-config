@@ -18,6 +18,8 @@
         "dialout"
         "docker"
         "input"
+        "kvm"
+        "libvirtd"
         "networkmanager"
         "video"
         "wheel"
@@ -39,7 +41,6 @@
       binfmt = true;
     };
 
-    adb.enable = true;
     fuse.userAllowOther = true;
   };
 

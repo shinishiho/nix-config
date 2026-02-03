@@ -40,6 +40,12 @@ in
       };
     })
 
+    (youtube-tui.override {
+      mpv = mpv.override {
+        scripts = mpvScripts;
+      };
+    })
+
     (ani-cli.override {
       mpv = mpv.override {
         scripts = mpvScripts;

@@ -42,6 +42,17 @@
     plover-flake.url = "github:openstenoproject/plover-flake";
 
     helium.url = "github:FKouhai/helium2nix/main";
+
+    NixVirt = {
+      url = "https://flakehub.com/f/AshleyYakeley/NixVirt/*.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    dw-proton.url = "github:Momoyaan/dwproton-flake";
+
+    nixgl.url = "github:nix-community/nixGL";
+    nixgl.inputs.nixpkgs.follows = "nixpkgs";
+    
   };
 
   outputs =
@@ -60,7 +71,11 @@
             config.allowUnfree = true;
             overlays = [ (import ./pkgs) ];
           };
-        in { inherit pkgs; });
+        in {
+          inherit pkgs;
+          maa = pkgs.maa;
+          orchis-theme = pkgs.orchis-theme;
+        });
     in {
       packages = forAllSystems;      
 
@@ -82,5 +97,50 @@
       #     home-manager.darwinModules.home-manager
       #   ];
       # };
+
+      # Standalone Home Manager configuration for non-NixOS systems (Arch, etc.)
+      homeConfigurations.w = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = { inherit inputs; };
+        modules = [
+          {
+            nixpkgs.config.allowUnfree = true;
+            nixpkgs.overlays = [
+              (import ./pkgs)
+              inputs.nixgl.overlay
+            ];
+          }
+          # Stub for impermanence - makes home.persistence a no-op on non-NixOS
+          {
+            options.home.persistence = nixpkgs.lib.mkOption {
+              type = nixpkgs.lib.types.attrsOf (nixpkgs.lib.types.anything);
+              default = {};
+              description = "Persistence configuration (no-op on non-NixOS)";
+            };
+          }
+          ./hosts/iamw/users/w/home.nix
+        ];
+      };
+
+      devShells = nixpkgs.lib.genAttrs supportedSystems (
+        system:
+        let
+          pkgs = (forAllSystems.${system}).pkgs;
+        in
+        {
+          default = pkgs.mkShellNoCC {
+            packages = with pkgs; [
+              nixd
+              cachix
+              # lorri
+              # niv
+              nixfmt
+              statix
+              # vulnix
+              # haskellPackages.dhall-nix
+            ];
+          };
+        }
+      );
     };
 }

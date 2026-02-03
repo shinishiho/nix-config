@@ -1,6 +1,6 @@
 {
   services.syncthing = {
-    enable = true;
+    enable = false;
     settings = {
       devices = {
         nakxkri = {
@@ -27,7 +27,7 @@
       folders = {
         "/home/w/W" = {
           id = "wdata";
-          devices = [ "nakxkri" "boox" "rpiamw" "vivo" ];
+          devices = [ "nakxkri" "boox" "vivo" ];
           versioning = {
             type = "simple";
             params.keep = "10";

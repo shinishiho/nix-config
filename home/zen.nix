@@ -63,4 +63,8 @@
   home.persistence."/persistent".directories = [
     ".zen"
   ];
+
+  xdg.mimeApps.associations.added = {
+    "application/pdf" = [ "zen-twilight.desktop" ];
+  };
 }

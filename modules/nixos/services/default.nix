@@ -1,6 +1,7 @@
 {
   imports = [
     ./docker.nix
+    ./gaming.nix
     ./keyd.nix
     ./networking.nix
     ./ssh.nix

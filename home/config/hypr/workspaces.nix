@@ -12,6 +12,7 @@
       "workspace 4, match:class (signal|Caprine)"
       "workspace 5, match:class mpv"
       "workspace 6, match:class steam"
+      "workspace 6, match:class [W|w]aydroid.*"
       "workspace 7, match:class kitty"
       "workspace 9, match:title Parsec"
     ];

@@ -14,10 +14,12 @@
     initrd.systemd.enable = true;
     kernelPackages = pkgs.linuxPackages_zen;
 
-    consoleLogLevel = 0;
+    # consoleLogLevel = 0;
     kernelParams = [
-      "quiet"
-      "udev.log_level=0"
+      "loglevel=7"
+      "drm.debug=0x1e"
+      # "quiet"
+      # "udev.log_level=0"
     ];
   };
 }

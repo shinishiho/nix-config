@@ -15,13 +15,11 @@ in
   };
 
   config = mkIf cfg.enable {
-    services.tailscale = {
-      enable = true;
-    };
-
-    networking = {
-      nameservers = [ "100.100.100.100" ];
-      search = [ "cuscus-typhon.ts.net" ];
+    services = {
+      tailscale = {
+        enable = true;
+        extraUpFlags = [ "--accept-dns=false" ];
+      };
     };
 
     environment.persistence."/persistent".directories = [

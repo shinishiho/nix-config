@@ -20,6 +20,10 @@
     ];
   };
 
+  boot.initrd.kernelModules = [
+    "xe"
+  ];
+
   hardware.asus.battery.chargeUpto = 60;
 
   services = {

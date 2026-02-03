@@ -7,7 +7,6 @@
     nixvim.homeModules.default
     nix-index-database.homeModules.nix-index
     agenix.homeManagerModules.default
-    impermanence.homeManagerModules.impermanence
 
     ../../../../home/config/Code
     ../../../../home/config/fastfetch
@@ -27,6 +26,7 @@
     ../../../../home/config/git.nix
     ../../../../home/config/hyprpanel.nix
     ../../../../home/config/kitty.nix
+    ../../../../home/config/marimo.nix
     ../../../../home/config/mpv.nix
     ../../../../home/config/orca-slicer.nix
     ../../../../home/config/shellAliases.nix
@@ -37,6 +37,8 @@
     ../../../../home/config/zsh.nix
 
     ../../../../home/local/state/syncthing.nix
+
+    ../../../../home/local/share/gopeed.nix
 
     ../../../../home/programs.nix
     ../../../../home/zen.nix

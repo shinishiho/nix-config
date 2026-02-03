@@ -6,10 +6,11 @@
 }:
 
 {
+  nixpkgs.overlays = [ (import ../../../pkgs) ];
   nixpkgs.config = {
     allowUnfree = true;
     packageOverrides = pkgs: {
-      nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
+      nur = import (pkgs.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
         inherit pkgs;
       };
     };
@@ -34,6 +35,7 @@
           "https://hyprland.cachix.org"
           "https://nix-community.cachix.org"
           "https://chaotic-nyx.cachix.org"
+          "https://cache.nixos-cuda.org"
         ];
         trusted-substituters = [
           "https://cache.nixos.org"
@@ -46,6 +48,7 @@
           "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
           "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
           "chaotic-nyx.cachix.org-1:HfnXSw4pj95iI/n17rIDy40agHj12WfF+Gqk6SonIT8="
+          "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M="
         ];
       };
 

@@ -15,16 +15,19 @@
 
     ./disko.nix
     ./filesystems.nix
-    ./gaming.nix
+    # ./gaming.nix
     ./hardware.nix
-    ./inputMethod.nix
+    # ./inputMethod.nix
     ./networking.nix
+    ./nvidia.nix
+    ./virt
 
     ./users/w
   ];
 
   myModules = {
     desktop = {
+      autoLogin.enable = true;
       gnome.enable = false;
       hyprland.enable = true;
     };
@@ -35,12 +38,17 @@
     };
 
     services = {
-      docker.enable = true;
+      docker.enable = false;
+      gaming.enable = true;
       keyd.enable = true;
       networking.enable = true;
       ssh.enable = true;
       tailscale.enable = true;
-      waydroid.enable = false;
+      waydroid.enable = true;
+    };
+
+    system = {
+      inputMethod.enable = true;
     };
   };
 

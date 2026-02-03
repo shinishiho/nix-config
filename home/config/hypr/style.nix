@@ -75,7 +75,13 @@
     };
 
     windowrule = [
-      "match:class [W|w]aydroid*, fullscreen on"
+      "match:class [W|w]aydroid.*, fullscreen on"
+      "match:title BongoCat, no_blur on"
+      "match:title BongoCat, no_shadow on"
+      "match:title BongoCat, float on"
+      "match:title BongoCat, pin on"
+      "match:title BongoCat, no_focus on"
+      "match:title BongoCat, suppress_event fullscreen maximize"
       # "float,class:^(org.kde.dolphin)$,title:^(Progress Dialog — Dolphin)$"
       # "float,class:^(org.kde.dolphin)$,title:^(Copying — Dolphin)$"
       # "float,title:^(About Mozilla Firefox)$"

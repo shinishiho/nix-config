@@ -15,15 +15,14 @@
     duf
     dust
     
-    tldr
-
-    ariang
+    tealdeer
 
     zip
     unzip
     p7zip
 
     gemini-cli
+    opencode
 
     curl
     wget
@@ -42,6 +41,11 @@
     # inputs.helium.defaultPackage.${stdenv.hostPlatform.system}
 
     gpu-screen-recorder
+
+    caprine
+    vesktop
+
+    parsec-bin
   ];
 
   programs = {
@@ -95,6 +99,7 @@
   services = {
     gpg-agent = {
       enable = true;
+      enableSshSupport = true;
       pinentry.package = pkgs.pinentry-curses;
     };
   };

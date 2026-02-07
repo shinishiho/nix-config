@@ -34,12 +34,6 @@ in
   };
 
   home.packages = with pkgs; [
-    (ytfzf.override {
-      mpv = mpv.override {
-        scripts = mpvScripts;
-      };
-    })
-
     (youtube-tui.override {
       mpv = mpv.override {
         scripts = mpvScripts;

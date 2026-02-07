@@ -52,6 +52,9 @@
 
     nixgl.url = "github:nix-community/nixGL";
     nixgl.inputs.nixpkgs.follows = "nixpkgs";
+
+    niri.url = "github:sodiboo/niri-flake";
+    niri.inputs.nixpkgs.follows = "nixpkgs";
     
   };
 
@@ -69,7 +72,10 @@
           pkgs = import nixpkgs {
             inherit system;
             config.allowUnfree = true;
-            overlays = [ (import ./pkgs) ];
+            overlays = [ 
+              (import ./pkgs)
+              inputs.niri.overlays.niri
+            ];
           };
         in {
           inherit pkgs;

@@ -13,6 +13,7 @@
     ../../../../home/config/fish
     ../../../../home/config/hypr
     ../../../../home/config/maa
+    # ../../../../home/config/niri
     ../../../../home/config/nvim
     ../../../../home/config/plover
     ../../../../home/config/rofi

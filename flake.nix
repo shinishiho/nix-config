@@ -41,25 +41,24 @@
 
     plover-flake.url = "github:openstenoproject/plover-flake";
 
-    helium.url = "github:FKouhai/helium2nix/main";
-
-    NixVirt = {
-      url = "https://flakehub.com/f/AshleyYakeley/NixVirt/*.tar.gz";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     dw-proton.url = "github:Momoyaan/dwproton-flake";
 
-    nixgl.url = "github:nix-community/nixGL";
-    nixgl.inputs.nixpkgs.follows = "nixpkgs";
+    nixGL.url = "github:nix-community/nixGL";
+    nixGL.inputs.nixpkgs.follows = "nixpkgs";
 
     niri.url = "github:sodiboo/niri-flake";
     niri.inputs.nixpkgs.follows = "nixpkgs";
-    
+
   };
 
   outputs =
-    { nixpkgs, nix-darwin, home-manager, chaotic, ... }@inputs:
+    {
+      nixpkgs,
+      nix-darwin,
+      home-manager,
+      chaotic,
+      ...
+    }@inputs:
     let
       supportedSystems = [
         "x86_64-linux"
@@ -67,27 +66,39 @@
         "aarch64-darwin"
         "x86_64-darwin"
       ];
-      forAllSystems = nixpkgs.lib.genAttrs supportedSystems (system:
+      forAllSystems = nixpkgs.lib.genAttrs supportedSystems (
+        system:
         let
           pkgs = import nixpkgs {
             inherit system;
             config.allowUnfree = true;
-            overlays = [ 
+            overlays = [
               (import ./pkgs)
               inputs.niri.overlays.niri
             ];
           };
-        in {
+        in
+        {
           inherit pkgs;
           maa = pkgs.maa;
           orchis-theme = pkgs.orchis-theme;
-        });
-    in {
-      packages = forAllSystems;      
+        }
+      );
+    in
+    {
+      packages = forAllSystems;
 
       nixosConfigurations.iamw = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = { inherit nixpkgs home-manager chaotic inputs; hostname = "iamw"; };
+        specialArgs = {
+          inherit
+            nixpkgs
+            home-manager
+            chaotic
+            inputs
+            ;
+          hostname = "iamw";
+        };
         modules = [
           ./hosts/iamw
           home-manager.nixosModules.home-manager
@@ -113,16 +124,20 @@
             nixpkgs.config.allowUnfree = true;
             nixpkgs.overlays = [
               (import ./pkgs)
-              inputs.nixgl.overlay
+              # inputs.nixGL.overlay
             ];
           }
           # Stub for impermanence - makes home.persistence a no-op on non-NixOS
           {
             options.home.persistence = nixpkgs.lib.mkOption {
               type = nixpkgs.lib.types.attrsOf (nixpkgs.lib.types.anything);
-              default = {};
+              default = { };
               description = "Persistence configuration (no-op on non-NixOS)";
             };
+          }
+          {
+            targets.genericLinux.enable = true;
+            targets.genericLinux.nixGL.packages = inputs.nixGL.packages;
           }
           ./hosts/iamw/users/w/home.nix
         ];

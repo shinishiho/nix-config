@@ -1,4 +1,5 @@
 {
+  config,
   pkgs,
   ...
 }:
@@ -7,14 +8,14 @@
     ripgrep
     fd
     yq-go
-    
+
     htop
     gotop
     procs
 
     duf
     dust
-    
+
     tealdeer
 
     zip
@@ -26,7 +27,7 @@
 
     curl
     wget
-    
+
     localsend
 
     libfido2
@@ -34,18 +35,12 @@
 
     android-tools
 
-    # nixGL for graphics support on non-NixOS
-    nixgl.nixGLIntel
-    nixgl.nixVulkanIntel
-
-    # inputs.helium.defaultPackage.${stdenv.hostPlatform.system}
-
     gpu-screen-recorder
 
-    caprine
-    vesktop
+    (config.lib.nixGL.wrap caprine)
+    (config.lib.nixGL.wrap vesktop)
 
-    parsec-bin
+    (config.lib.nixGL.wrap parsec-bin)
   ];
 
   programs = {
@@ -56,7 +51,7 @@
         style = "numbers,changes,header";
       };
     };
-    
+
     direnv = {
       enable = true;
       enableBashIntegration = true;
@@ -103,7 +98,7 @@
       pinentry.package = pkgs.pinentry-curses;
     };
   };
-    
+
   home.persistence."/persistent".directories = [
     ".local/share/direnv"
     ".local/share/zoxide"

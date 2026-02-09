@@ -1,7 +1,13 @@
-_:
+{
+  config,
+  pkgs,
+  ...
+}:
+
 {
   programs.kitty = {
     enable = true;
+    package = (config.lib.nixGL.wrap pkgs.kitty);
     font = {
       name = "CaskaydiaCove Nerd Font Mono";
       size = 12;

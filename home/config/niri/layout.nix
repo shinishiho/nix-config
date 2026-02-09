@@ -1,0 +1,46 @@
+{
+  inputs,
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+
+{
+  programs.niri.settings = {
+    prefer-no-csd = true;
+    screenshot-path = null;
+
+    # Layout Settings
+    layout = {
+      gaps = 8;
+      center-focused-column = "never";
+      
+      preset-column-widths = [
+        { proportion = 0.98; }
+        { proportion = 0.33333; }
+        { proportion = 0.5; }
+        { proportion = 0.66667; }
+      ];
+
+      focus-ring = {
+        width = 3;
+        active.color = "#00ac89";
+        inactive.color = "#505050";
+      };
+
+      shadow = {
+        softness = 30.0;
+        spread = 5.0;
+        offset = {
+          x = 0;
+          y = 5;
+        };
+        color = "#0007";
+      };
+
+      struts = {};
+      background-color = "transparent";
+    };
+  };
+}

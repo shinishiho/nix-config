@@ -6,7 +6,6 @@
 {
   imports = [
     ./plugins.nix
-    ./functions/yazi.nix
   ];
 
   programs.fish = {

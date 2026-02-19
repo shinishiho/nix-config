@@ -45,8 +45,5 @@
     # Network Tools
     ping = "ping -c 5";
     wget = "wget -c";
-
-    # Misc
-    anime = "ANI_CLI_PLAYER=mpv ani-cli";
   };
 }

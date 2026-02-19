@@ -49,6 +49,8 @@
     niri.url = "github:sodiboo/niri-flake";
     niri.inputs.nixpkgs.follows = "nixpkgs";
 
+    viu.url = "github:viu-media/viu";
+
   };
 
   outputs =

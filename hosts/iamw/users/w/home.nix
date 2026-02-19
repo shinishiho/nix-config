@@ -38,8 +38,6 @@
 
     ../../../../home/local/state/syncthing.nix
 
-    ../../../../home/local/share/gopeed.nix
-
     ../../../../home/programs.nix
     ../../../../home/zen.nix
                                 

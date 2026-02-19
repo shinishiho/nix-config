@@ -25,13 +25,14 @@ in
       };
     };
     config = {
+      audio-display = "no";
       osd-bar = "no";
       border = "no";
       hwdec = "vaapi";
-      vo = "gpu";
+      gpu-context = "wayland";
       ytdl-format = "bv[height<=?1440]+ba/best";
       ytdl-raw-options = "sub-lang=\"en.*\",write-sub=,write-auto-sub=";
-      force-window = "immediate";
+      # force-window = "immediate";
       input-ipc-server = "/tmp/mpvsocket";
       cache = "yes";
       cache-pause = "yes";
@@ -55,6 +56,5 @@ in
     })
 
     inputs.viu.packages.${pkgs.system}.default
-    open-in-mpv
   ];
 }

@@ -1,6 +1,7 @@
 {
   config,
   inputs,
+  pkgs,
   ...
 }:
 
@@ -11,6 +12,7 @@
 
   programs.zen-browser = {
     enable = true;
+    nixGL.enable = true;
 
     # Common policies for privacy and security
     policies = {

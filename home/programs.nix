@@ -28,7 +28,7 @@
     curl
     wget
 
-    localsend
+    (config.lib.nixGL.wrap localsend)
 
     libfido2
     pinentry-curses

@@ -6,7 +6,7 @@
 
 {
   home.packages = [
-    pkgs.orca-slicer
+    (config.lib.nixGL.wrap pkgs.orca-slicer)
   ];
 
   home.persistence."/persistent".directories = [

@@ -34,8 +34,9 @@
     ../../../../home/config/shellAliases.nix
     ../../../../home/config/starship.nix
     # ../../../../home/config/tmux.nix
+    ../../../../home/config/viu.nix
     ../../../../home/config/wallust.nix
-    # ../../../../home/config/zellij.nix
+    ../../../../home/config/zellij.nix
     # ../../../../home/config/zsh.nix
 
     ../../../../home/local/state/syncthing.nix

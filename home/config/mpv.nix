@@ -1,6 +1,5 @@
 {
   pkgs,
-  inputs,
   ...
 }:
 
@@ -43,7 +42,7 @@ in
       demuxer-readahead-secs = "120";
     };
     bindings = {
-      "F"     = "script-binding quality_menu/video_formats_toggle #! Stream Quality > Video";
+      "F" = "script-binding quality_menu/video_formats_toggle #! Stream Quality > Video";
       "Alt+f" = "script-binding quality_menu/audio_formats_toggle #! Stream Quality > Audio";
     };
   };
@@ -54,7 +53,5 @@ in
         scripts = mpvScripts;
       };
     })
-
-    inputs.viu.packages.${pkgs.system}.default
   ];
 }

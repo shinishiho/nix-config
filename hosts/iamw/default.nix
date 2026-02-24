@@ -7,6 +7,7 @@
   imports = [
     inputs.disko.nixosModules.default
     inputs.impermanence.nixosModules.impermanence
+    inputs.agenix.nixosModules.default
 
     ../../modules/common
     ../../modules/nixos

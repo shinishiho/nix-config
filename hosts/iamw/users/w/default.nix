@@ -8,7 +8,7 @@
   users.mutableUsers = false;
   users.users = {
     w = {
-      initialPassword = "iamw";
+      hashedPassword = "$y$j9T$6SivXfiRqM0PSlgKvZtUX0$btXti2PEXQr8pXE23NhrIiIQze3JECtNVwXBb5q3gw2";
       isNormalUser = true;
       openssh.authorizedKeys.keys = [
         # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect

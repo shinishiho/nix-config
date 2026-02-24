@@ -2,77 +2,24 @@
 
 Welcome to my NixOS configuration!
 
-## Features
-
-- Multi-platform (NixOS + nix-darwin)
-- Modular structure
-
 ## What I use
 
-| Category    | App                  | Category   | App       |
-|-------------|----------------------|------------|-----------|
-| WM          | Hyprland             | Launcher   | rofi      |
-| Browser     | Firefox, Zen Browser | Terminal   | kitty     |
-| Editor      | neovim, code         | Shell      | fish      |
-| Mail        | thunderbird          | Media      | mpv       |
-| Chat        | signal-desktop       | Screenshot | Flameshot |
-| File Mgr    | yazi                 | PDF        | zathura   |
-| WM (darwin) | Aerospace            | Nix helper | nh        |
+### OS
 
-## Structure
+- CachyOS + Home-manager (current)
+- NixOS (I'm tired with non-FHS)
+- Nix-darwin (I don't actively use my Mac machine anymore)
 
-```
-.
-├── flake.nix
-├── flake.lock
-├── hosts/
-│   ├── aarch64-darwin/
-│   │   └── iamw-m1/
-│   └── x86_64-linux/
-│       └── iamw/
-├── home/
-│   ├── common/
-│   └── platform/
-│       ├── aarch64-darwin/
-│       └── x86_64-linux/
-├── modules/
-│   ├── common/         # Will be apply to all platforms
-│   ├── nix-darwin/
-│   └── nixos/
-└── pkgs/
-```
+### Environment & tools
 
-## Usage Guide
+- Niri
+- DankMaterialShell
+- kitty
+- fish
+- zellij
+- neovim
+- zen-browser
 
-### Modifying hosts
+And more. Config is XDG-spec compliant under `home/config/`
 
-1. Create a new directory under `hosts/<platform>/<hostname>` with your system configuration
-2. Add your system to the `nixosConfigurations` or `darwinConfiguration` in `flake.nix`:
-
-```nix
-nixosConfigurations = { # or darwinConfiguration = {
-  your_host = lib.mkNixosConfig {
-    system = "x86_64-linux"; # or "aarch64-linux" for nixOS, "aarch64-darwin" or "x86_64-darwin" for nix-darwin
-    hostname = "your_host";
-    username = "your_username";
-  };
-};
-```
-
-## Applying configuration
-
-### NixOS
-
-```bash
-nh os switch -a . -H hostname
-```
-
-### Darwin (macOS)
-
-```bash
-nh darwin switch -a . -H hostname
-```
-
-## License
-
-See the [LICENSE](LICENSE) file for details.
+Lilith wallpapers included. (The NOexistenceN of you AND me)

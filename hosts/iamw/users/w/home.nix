@@ -6,9 +6,10 @@
 {
   imports = with inputs; [
     nix-index-database.homeModules.nix-index
-    agenix.homeManagerModules.default
 
+    ../../../../home/config/agenix
     ../../../../home/config/Code
+    ../../../../home/config/DankMaterialShell
     ../../../../home/config/fastfetch
     ../../../../home/config/fish
     # ../../../../home/config/hypr
@@ -21,6 +22,7 @@
     ../../../../home/config/yazi
 
     ../../../../home/config/cava.nix
+    ../../../../home/config/dsearch.nix
     ../../../../home/config/gh-dash.nix
     ../../../../home/config/gh.nix
     ../../../../home/config/git.nix

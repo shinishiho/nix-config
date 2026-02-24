@@ -39,6 +39,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-firefox-addons.url = "github:osipog/nix-firefox-addons";
+
     plover-flake.url = "github:openstenoproject/plover-flake";
 
     dw-proton.url = "github:Momoyaan/dwproton-flake";
@@ -91,6 +93,7 @@
             overlays = [
               (import ./pkgs)
               inputs.niri.overlays.niri
+              inputs.nix-firefox-addons.overlays.default
             ];
           };
         in
@@ -141,6 +144,7 @@
             nixpkgs.overlays = [
               (import ./pkgs)
               # inputs.nixGL.overlay
+              inputs.nix-firefox-addons.overlays.default
             ];
           }
           # Stub for impermanence - makes home.persistence a no-op on non-NixOS

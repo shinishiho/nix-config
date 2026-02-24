@@ -41,8 +41,8 @@
     ../../../../home/local/state/syncthing.nix
 
     ../../../../home/programs.nix
-    ../../../../home/zen.nix
-                                
+    ../../../../home/config/zen
+
     ./ssh.nix
     ./impermanence.nix
   ];

@@ -33,10 +33,11 @@
 
     libfido2
     pinentry-curses
+    yubikey-manager
 
     android-tools
 
-    gpu-screen-recorder
+    gpu-screen-recorder-gtk
 
     (config.lib.nixGL.wrap caprine)
     (config.lib.nixGL.wrap vesktop)
@@ -81,6 +82,7 @@
     nh.enable = true;
     nix-index-database.comma.enable = true;
     nix-index.enable = true;
+    password-store.enable = true;
     pay-respects.enable = true;
     ssh.enable = true;
 
@@ -95,9 +97,11 @@
   services = {
     gpg-agent = {
       enable = true;
-      enableSshSupport = true;
+      enableSshSupport = false;
       pinentry.package = pkgs.pinentry-curses;
     };
+
+    ssh-agent.enable = true;
   };
 
   home.persistence."/persistent".directories = [
@@ -105,6 +109,7 @@
     ".local/share/zoxide"
     ".gemini"
     ".gnupg"
+    ".password-store"
     ".ssh"
   ];
 }

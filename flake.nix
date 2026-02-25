@@ -146,7 +146,6 @@
       #   ];
       # };
 
-      # Standalone Home Manager configuration for non-NixOS systems (Arch, etc.)
       homeConfigurations.w = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = { inherit inputs; };
@@ -155,16 +154,14 @@
             nixpkgs.config.allowUnfree = true;
             nixpkgs.overlays = [
               (import ./pkgs)
-              # inputs.nixGL.overlay
               inputs.nix-firefox-addons.overlays.default
             ];
           }
-          # Stub for impermanence - makes home.persistence a no-op on non-NixOS
           {
             options.home.persistence = nixpkgs.lib.mkOption {
               type = nixpkgs.lib.types.attrsOf (nixpkgs.lib.types.anything);
               default = { };
-              description = "Persistence configuration (no-op on non-NixOS)";
+              description = "Impermanence no-op on non-NixOS";
             };
           }
           {

@@ -23,11 +23,5 @@
 
   home.packages = with pkgs; [
     inputs.agenix.packages.${pkgs.system}.default
-
-    age-plugin-yubikey
-    age-plugin-openpgp-card
-    pcsclite
-    pcsc-tools
-    yubikey-manager
   ];
 }

@@ -1,4 +1,7 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  ...
+}:
 
 {
   programs.zen-browser.profiles."Default (release)".extensions.packages = with pkgs.firefoxAddons; [
@@ -8,6 +11,7 @@
     languagetool
     minimalist-open-in-mpv
     multi-account-containers
+    passff
     privacy-redirect
     proton-pass
     qr-code-address-bar
@@ -18,5 +22,9 @@
     video-downloadhelper
     vimium-ff
     youtube-recommended-videos
+  ];
+
+  programs.zen-browser.nativeMessagingHosts = with pkgs; [
+    passff-host
   ];
 }

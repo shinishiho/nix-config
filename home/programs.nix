@@ -32,7 +32,6 @@
     (config.lib.nixGL.wrap localsend)
 
     libfido2
-    pinentry-curses
     yubikey-manager
 
     android-tools
@@ -98,7 +97,9 @@
     gpg-agent = {
       enable = true;
       enableSshSupport = false;
-      pinentry.package = pkgs.pinentry-curses;
+      pinentry.package = pkgs.pinentry-gnome3;
+      defaultCacheTtl = 28800;
+      maxCacheTtl = 28800;
     };
 
     ssh-agent.enable = true;

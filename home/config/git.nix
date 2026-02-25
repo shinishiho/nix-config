@@ -4,8 +4,11 @@
       enable = true;
       
       settings = {
-        user.email = "59284549+shinishiho@users.noreply.github.com";
-        user.name = "ShiniShiho";
+        user = {
+          email = "59284549+shinishiho@users.noreply.github.com";
+          name = "ShiniShiho";
+          signingkey = "4B6D513C8F5D34C4";
+        };
 
         aliases = {
           st = "status";
@@ -29,9 +32,8 @@
             compactionHeuristic = true;
           };
 
-          # Signing commits (optional)
-          # commit.gpgsign = true;
-          # gpg.program = "gpg2";
+          commit.gpgsign = true;
+          gpg.program = "gpg2";
         };
       };
       

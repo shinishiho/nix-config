@@ -9,7 +9,7 @@ with lib;
 
 let
   cfg = config.myModules.desktop.autoLogin;
-  command = "uwsm start -- hyprland-uwsm.desktop";
+  command = "niri";
 in
 
 {

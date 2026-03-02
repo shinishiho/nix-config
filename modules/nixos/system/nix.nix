@@ -6,7 +6,11 @@
 }:
 
 {
-  nixpkgs.overlays = [ (import ../../../pkgs) ];
+  nixpkgs.overlays = [  
+    (import ../../../pkgs)
+    inputs.niri.overlays.niri
+    inputs.nix-firefox-addons.overlays.default
+  ];
   nixpkgs.config = {
     allowUnfree = true;
     packageOverrides = pkgs: {

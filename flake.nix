@@ -79,6 +79,11 @@
       url = "github:AvengeMedia/danksearch";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    niri-float-sticky = {
+      url = "github:probeldev/niri-float-sticky";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -141,22 +146,30 @@
       #   system = "aarch64-darwin";
       #   specialArgs = { inherit nixpkgs home-manager inputs; hostname = "iamw-m1"; };
       #   modules = [
-      #     ./hosts/aarch64-darwin/iamw-m1
+      #     ./hosts/iamw-m1
       #     home-manager.darwinModules.home-manager
       #   ];
       # };
 
       homeConfigurations.w = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        pkgs = import nixpkgs {
+          system = "x86_64-linux";
+          config.allowUnfree = true;
+          overlays = [
+            (import ./pkgs)
+            inputs.niri.overlays.niri
+            inputs.nix-firefox-addons.overlays.default
+          ];
+        };
         extraSpecialArgs = { inherit inputs; };
         modules = [
-          {
-            nixpkgs.config.allowUnfree = true;
-            nixpkgs.overlays = [
-              (import ./pkgs)
-              inputs.nix-firefox-addons.overlays.default
-            ];
-          }
+          # {
+          #   nixpkgs.config.allowUnfree = true;
+          #   nixpkgs.overlays = [
+          #     (import ./pkgs)
+          #     inputs.nix-firefox-addons.overlays.default
+          #   ];
+          # }
           {
             options.home.persistence = nixpkgs.lib.mkOption {
               type = nixpkgs.lib.types.attrsOf (nixpkgs.lib.types.anything);
@@ -168,7 +181,7 @@
             targets.genericLinux.enable = true;
             targets.genericLinux.nixGL.packages = inputs.nixGL.packages;
           }
-          ./hosts/iamw/users/w/home.nix
+          ./hosts/iamw/home.nix
         ];
       };
 

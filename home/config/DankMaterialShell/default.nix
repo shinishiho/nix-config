@@ -10,7 +10,7 @@
   imports = [
     inputs.dms.homeModules.dank-material-shell
     inputs.dms-plugin-registry.modules.default
-    # inputs.dms.homeModules.niri
+    inputs.dms.homeModules.niri
 
     ./plugins
   ];
@@ -29,9 +29,9 @@
     enableCalendarEvents = false;
     enableClipboardPaste = true;
 
-    systemd = {
-      enable = true;
-      restartIfChanged = true;
+    niri = {
+      enableKeybinds = false;
+      enableSpawn = true;
     };
  
     # systemd.user.services.niri-flake-polkit.enable = false;

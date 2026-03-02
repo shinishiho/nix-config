@@ -11,75 +11,95 @@
     # Keybindings
     binds = {
       "Mod+Shift+Escape".action.show-hotkey-overlay = {};
-      
+
       # Applications
       "Mod+Return" = {
         action.spawn = [ "kitty" ];
         hotkey-overlay.title = "Open Terminal: kitty";
       };
       "Mod+Space" = {
-        action.spawn = [ "sh" "-c" "qs -c noctalia-shell ipc call launcher toggle" ];
-        hotkey-overlay.title = "Open App Launcher: wofi";
+        action.spawn = [ "dms" "ipc" "call" "spotlight" "toggle" ];
+        hotkey-overlay.title = "Application Launcher";
       };
       "Mod+B" = {
-        action.spawn = [ "zen-browser" ];
-        hotkey-overlay.title = "Open Browser: firefox";
-      };
-      "Mod+Alt+L" = {
-        action.spawn = [ "sh" "-c" "qs -c noctalia-shell ipc call sessionMenu lockAndSuspend" ];
-        hotkey-overlay.title = "Lock and Sleep";
+        action.spawn = [ "zen-twilight" ];
+        hotkey-overlay.title = "Open Browser: zen";
       };
       "Mod+E" = {
         action.spawn = [ "nautilus" ];
         hotkey-overlay.title = "File Manager: Nautilus";
       };
+      "Mod+V" = {
+        action.spawn = [ "dms" "ipc" "call" "clipboard" "toggle" ];
+        hotkey-overlay.title = "Clipboard Manager";
+      };
+      "Mod+M" = {
+        action.spawn = [ "dms" "ipc" "call" "processlist" "focusOrToggle" ];
+        hotkey-overlay.title = "Task Manager";
+      };
+      "Mod+Shift+Comma" = {
+        action.spawn = [ "dms" "ipc" "call" "settings" "focusOrToggle" ];
+        hotkey-overlay.title = "Settings";
+      };
+      "Mod+N" = {
+        action.spawn = [ "dms" "ipc" "call" "notifications" "toggle" ];
+        hotkey-overlay.title = "Notification Center";
+      };
+      "Mod+Y" = {
+        action.spawn = [ "dms" "ipc" "call" "dankdash" "wallpaper" ];
+        hotkey-overlay.title = "Browse Wallpapers";
+      };
+      "Mod+Alt+L" = {
+        action.spawn = [ "dms" "ipc" "call" "lock" "lock" ];
+        hotkey-overlay.title = "Lock Screen";
+      };
 
       # Audio Controls
       "XF86AudioRaiseVolume" = {
-        action.spawn = [ "sh" "-c" "qs -c noctalia-shell ipc call volume increase" ];
+        action.spawn = [ "dms" "ipc" "call" "audio" "increment" "3" ];
         allow-when-locked = true;
       };
       "XF86AudioLowerVolume" = {
-        action.spawn = [ "sh" "-c" "qs -c noctalia-shell ipc call volume decrease" ];
+        action.spawn = [ "dms" "ipc" "call" "audio" "decrement" "3" ];
         allow-when-locked = true;
       };
       "XF86AudioMute" = {
-        action.spawn = [ "sh" "-c" "qs -c noctalia-shell ipc call volume muteOutput" ];
+        action.spawn = [ "dms" "ipc" "call" "audio" "mute" ];
         allow-when-locked = true;
       };
       "XF86AudioMicMute" = {
-        action.spawn = [ "sh" "-c" "qs -c noctalia-shell ipc call volume muteInput" ];
+        action.spawn = [ "dms" "ipc" "call" "audio" "mute" ];
         allow-when-locked = true;
       };
       "XF86AudioNext" = {
-        action.spawn = [ "sh" "-c" "qs -c noctalia-shell ipc call media next" ];
+        action.spawn = [ "playerctl" "next" ];
         allow-when-locked = true;
       };
       "XF86AudioPause" = {
-        action.spawn = [ "sh" "-c" "qs -c noctalia-shell ipc call media playPause" ];
+        action.spawn = [ "playerctl" "play-pause" ];
         allow-when-locked = true;
       };
       "XF86AudioPlay" = {
-        action.spawn = [ "sh" "-c" "qs -c noctalia-shell ipc call media playPause" ];
+        action.spawn = [ "playerctl" "play-pause" ];
         allow-when-locked = true;
       };
       "XF86AudioPrev" = {
-        action.spawn = [ "sh" "-c" "qs -c noctalia-shell ipc call media previous" ];
+        action.spawn = [ "playerctl" "previous" ];
         allow-when-locked = true;
       };
 
       "XF86MonBrightnessUp" = {
-        action.spawn = [ "sh" "-c" "qs -c noctalia-shell ipc call brightness increase" ];
+        action.spawn = [ "dms" "ipc" "call" "brightness" "increment" "5" "" ];
         allow-when-locked = true;
       };
       "XF86MonBrightnessDown" = {
-        action.spawn = [ "sh" "-c" "qs -c noctalia-shell ipc call brightness decrease" ];
+        action.spawn = [ "dms" "ipc" "call" "brightness" "decrement" "5" "" ];
         allow-when-locked = true;
       };
 
       # Window Management
       "Mod+Q".action.close-window = {};
-      
+
       "Mod+Left".action.focus-column-left = {};
       "Mod+H".action.focus-column-left = {};
       "Mod+Right".action.focus-column-right = {};
@@ -110,6 +130,9 @@
       "Mod+Shift+Right".action.focus-monitor-right = {};
       "Mod+Shift+Up".action.focus-monitor-up = {};
       "Mod+Shift+Down".action.focus-monitor-down = {};
+
+      "Mod+Shift+K".action.focus-workspace-up = {};
+      "Mod+Shift+J".action.focus-workspace-down = {};
 
       "Mod+Shift+Ctrl+Left".action.move-column-to-monitor-left = {};
       "Mod+Shift+Ctrl+Right".action.move-column-to-monitor-right = {};
@@ -184,8 +207,8 @@
 
       # Screenshots
       "Print".action.screenshot = {};
-      "Ctrl+Shift+2".action.screenshot-screen = {};
-      "Ctrl+Shift+3".action.screenshot-window = {};
+      "Alt+Print".action.screenshot-screen = {};
+      "Shift+Print".action.screenshot-window = {};
 
       # Emergency Escape Key
       "Mod+Escape" = {
@@ -195,18 +218,16 @@
 
       # Exit / Power
       "Ctrl+Alt+Delete" = {
-        action.spawn = [ "sh" "-c" "qs -c noctalia-shell ipc call sessionMenu toggle" ];
+        action.spawn = [ "dms" "ipc" "call" "powermenu" "toggle" ];
         hotkey-overlay.title = "Power Menu";
       };
-      "Mod+Shift+P".action.power-off-monitors = {};
+      "Mod+Shift+W" = {
+        action.spawn = [ "dms" "ipc" "call" "dankdash" "wallpaper" ];
+        hotkey-overlay.title = "Change wallpaper";
+      };
       "Mod+O" = {
         action.toggle-overview = {};
         repeat = false;
-      };
-
-      "Mod+Shift+W" = {
-        action.spawn = [ "sh" "-c" "qs -c noctalia-shell ipc call wallpaper toggle" ];
-        hotkey-overlay.title = "Change wallpaper";
       };
     };
   };

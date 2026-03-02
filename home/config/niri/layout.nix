@@ -11,7 +11,6 @@
     prefer-no-csd = true;
     screenshot-path = null;
 
-    # Layout Settings
     layout = {
       gaps = 8;
       center-focused-column = "never";
@@ -22,6 +21,8 @@
         { proportion = 0.5; }
         { proportion = 0.66667; }
       ];
+
+      default-column-width = { proportion = 0.98; };
 
       focus-ring = {
         width = 3;

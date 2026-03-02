@@ -31,10 +31,10 @@
             algorithm = "patience";
             compactionHeuristic = true;
           };
-
-          commit.gpgsign = true;
-          gpg.program = "gpg2";
         };
+
+        commit.gpgsign = true;
+        gpg.program = "gpg2";
       };
       
       lfs.enable = true;

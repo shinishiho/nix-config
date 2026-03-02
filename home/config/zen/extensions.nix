@@ -8,6 +8,7 @@
     darkreader
     dearrow
     enhancer-for-youtube
+    gabut-extentions
     languagetool
     minimalist-open-in-mpv
     multi-account-containers

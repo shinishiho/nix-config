@@ -41,13 +41,21 @@ let
       isEssential = true;
       position = 101;
     };
+    "Claude" = {
+      id = "9da65306-7170-465e-b44a-4ba097113beb";
+      container = container.id;
+      workspace = space.id;
+      url = "https://claude.ai/";
+      isEssential = true;
+      position = 102;
+    };
     "ChatGPT" = {
       id = "7d68c54d-1e5f-4e45-82a1-35723429d83c";
       container = container.id;
       workspace = space.id;
       url = "https://chatgpt.com/";
       isEssential = true;
-      position = 102;
+      position = 103;
     };
   };
 in

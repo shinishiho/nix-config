@@ -23,14 +23,14 @@
     ./nvidia.nix
     ./virt
 
-    ./users/w
+    ./user.nix
   ];
 
   myModules = {
     desktop = {
       autoLogin.enable = true;
       gnome.enable = false;
-      hyprland.enable = true;
+      hyprland.enable = false;
     };
 
     hardware = {

@@ -1,9 +1,9 @@
 {
   imports = [
-    ../../../modules/common
-    ../../../modules/nix-darwin
+    ../../modules/common
+    ../../modules/darwin
 
-    ./users/w
+    ./user.nix
   ];
 
   networking.hostName = "NakXKri";

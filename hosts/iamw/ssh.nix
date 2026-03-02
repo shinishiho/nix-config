@@ -13,7 +13,7 @@
           serverAliveCountMax = 3;
           compression = false;
           addKeysToAgent = "yes";
-          identityFile = [ "~/.ssh/id_ed25519_sk_rk" ];
+          identityFile = [ "~/.ssh/id_ed25519_sk" ];
           hashKnownHosts = false;
           userKnownHostsFile = "~/.ssh/known_hosts";
           controlMaster = "no";

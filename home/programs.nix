@@ -24,7 +24,6 @@
     p7zip
 
     gemini-cli
-    opencode
 
     curl
     wget

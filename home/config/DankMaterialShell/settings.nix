@@ -119,13 +119,13 @@
   showWorkspaceName = true;
   showWorkspacePadding = false;
   workspaceScrolling = false;
-  showWorkspaceApps = false;
+  showWorkspaceApps = true;
   workspaceDragReorder = true;
   maxWorkspaceIcons = 3;
   workspaceAppIconSizeOffset = 0;
   groupWorkspaceApps = true;
   workspaceFollowFocus = false;
-  showOccupiedWorkspacesOnly = false;
+  showOccupiedWorkspacesOnly = true;
   reverseScrolling = false;
   dwlShowAllTags = false;
   workspaceColorMode = "default";
@@ -412,16 +412,8 @@
       innerPadding = 4;
       leftWidgets = [
         {
-          id = "launcherButton";
           enabled = true;
-        }
-        {
           id = "workspaceSwitcher";
-          enabled = true;
-        }
-        {
-          id = "focusedWindow";
-          enabled = true;
         }
         {
           id = "cpuUsage";
@@ -429,14 +421,18 @@
           minimumWidth = true;
         }
         {
-          id = "cpuTemp";
           enabled = true;
+          id = "cpuTemp";
           minimumWidth = true;
         }
         {
           id = "memUsage";
           enabled = true;
           minimumWidth = true;
+        }
+        {
+          id = "powerUsagePlugin";
+          enabled = true;
         }
       ];
       maximizeDetection = true;

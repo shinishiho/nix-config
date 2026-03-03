@@ -17,16 +17,17 @@ in
 
   config = mkIf cfg.enable {
     networking = {
-      resolvconf.enable = pkgs.lib.mkForce false;
+      # resolvconf.enable = pkgs.lib.mkForce false;
+      # networkmanager.dns = "none";
       dhcpcd.extraConfig = "nohook resolv.conf";
       nameservers = [
         "127.0.0.1"
         "::1"
       ];
-      networkmanager.dns = "none";
     };
 
     services = {
+      resolved.enable = true;
       dnscrypt-proxy = {
         enable = true;
         settings = {
@@ -42,7 +43,6 @@ in
             minisign_key = "RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3";
           };
 
-          # Default DNS server - can be overridden in host-specific config
           server_names = [ "adguard-dns-doh" ];
         };
       };

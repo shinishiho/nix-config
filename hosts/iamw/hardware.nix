@@ -6,28 +6,23 @@
 
 {
   imports = [
-    # inputs.nixos-hardware.nixosModules.common-cpu-intel
+    inputs.nixos-hardware.nixosModules.common-cpu-intel
     inputs.nixos-hardware.nixosModules.common-pc-ssd
-    inputs.nixos-hardware.nixosModules.common-pc-laptop
 
     inputs.nixos-hardware.nixosModules.asus-battery
   ];
 
-  hardware.graphics = {
-    extraPackages = with pkgs; [
-      intel-media-driver
-      intel-ocl
-    ];
+  hardware.intelgpu = {
+    driver = "xe";
   };
 
-  boot.initrd.kernelModules = [
-    "xe"
-  ];
-
-  hardware.asus.battery.chargeUpto = 60;
+  hardware.asus.battery.chargeUpto = 80;
 
   services = {
-    power-profiles-daemon.enable = true;
+    tlp = {
+      enable = true;
+      pd.enable = true;
+    };
     upower.enable = true;
     udisks2.enable = true;
     printing.enable = true;

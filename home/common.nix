@@ -13,6 +13,8 @@
     ./config/plover
     ./config/wallpaper
     ./config/yazi
+    ./config/zed-editor
+    ./config/zen
 
     ./config/gh-dash.nix
     ./config/gh.nix

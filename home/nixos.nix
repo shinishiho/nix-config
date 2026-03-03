@@ -5,13 +5,13 @@
 
     ./config/agenix
     ./config/DankMaterialShell
+    # ./config/hypr
     ./config/niri
     # ./config/rofi
-    ./config/zen
 
     ./config/cava.nix
     ./config/dsearch.nix
-    # ./config/hypr
+    ./config/matugen.nix
     # ./config/hyprpanel.nix
     # ./config/wallust.nix
   ];

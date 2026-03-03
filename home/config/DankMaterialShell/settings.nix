@@ -22,6 +22,7 @@
   mangoLayoutGapsOverride = -1;
   mangoLayoutRadiusOverride = -1;
   mangoLayoutBorderSize = -1;
+  firstDayOfWeek = -1;
   use24HourClock = true;
   showSeconds = false;
   padHours12Hour = false;
@@ -36,6 +37,15 @@
   modalAnimationSpeed = 1;
   modalCustomAnimationDuration = 150;
   enableRippleEffects = true;
+  m3ElevationEnabled = true;
+  m3ElevationIntensity = 12;
+  m3ElevationOpacity = 30;
+  m3ElevationColorMode = "default";
+  m3ElevationLightDirection = "top";
+  m3ElevationCustomColor = "#000000";
+  modalElevationEnabled = true;
+  popoutElevationEnabled = true;
+  barElevationEnabled = false;
   wallpaperFillMode = "Fill";
   blurredWallpaperLayer = false;
   blurWallpaperOnOverview = false;
@@ -312,9 +322,14 @@
   lockAtStartup = false;
   enableFprint = false;
   maxFprintTries = 15;
+  enableU2f = false;
+  u2fMode = "or";
   lockScreenActiveMonitor = "all";
   lockScreenInactiveColor = "#000000";
   lockScreenNotificationMode = 0;
+  lockScreenVideoEnabled = false;
+  lockScreenVideoPath = "";
+  lockScreenVideoCycling = false;
   hideBrightnessSlider = false;
   notificationTimeoutLow = 5000;
   notificationTimeoutNormal = 5000;
@@ -412,8 +427,8 @@
       innerPadding = 4;
       leftWidgets = [
         {
-          enabled = true;
           id = "workspaceSwitcher";
+          enabled = true;
         }
         {
           id = "cpuUsage";
@@ -421,14 +436,18 @@
           minimumWidth = true;
         }
         {
-          enabled = true;
           id = "cpuTemp";
+          enabled = true;
           minimumWidth = true;
         }
         {
           id = "memUsage";
           enabled = true;
           minimumWidth = true;
+        }
+        {
+          id = "network_speed_monitor";
+          enabled = true;
         }
         {
           id = "powerUsagePlugin";
@@ -578,5 +597,5 @@
   clipboardEnterToPaste = true;
   launcherPluginVisibility = { };
   launcherPluginOrder = [ ];
-  configVersion = 5;
+  configVersion = 6;
 }

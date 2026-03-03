@@ -34,10 +34,12 @@
       enableSpawn = true;
     };
  
-    # systemd.user.services.niri-flake-polkit.enable = false;
-
     settings = import ./settings.nix;
     session = import ./session.nix;
     clipboardSettings = import ./clsettings.nix;
   };
+
+  home.persistence."/persistent".files = [
+    ".local/state/DankMaterialShell/session.json"
+  ];
 }

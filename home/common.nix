@@ -16,6 +16,7 @@
     ./config/zed-editor
     ./config/zen
 
+    ./config/gemini-cli.nix
     ./config/gh-dash.nix
     ./config/gh.nix
     ./config/git.nix

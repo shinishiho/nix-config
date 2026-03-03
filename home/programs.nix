@@ -23,8 +23,6 @@
     unzip
     p7zip
 
-    gemini-cli
-
     curl
     wget
 
@@ -102,13 +100,16 @@
     };
 
     ssh-agent.enable = true;
+    ollama = {
+      enable = true;
+    };
   };
 
   home.persistence."/persistent".directories = [
     ".local/share/direnv"
     ".local/share/zoxide"
-    ".gemini"
     ".gnupg"
+    ".parsec"
     ".password-store"
     ".ssh"
   ];

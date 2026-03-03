@@ -42,6 +42,7 @@
     };
 
     fuse.userAllowOther = true;
+    dconf.enable = true;
   };
 
   home-manager = {

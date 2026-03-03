@@ -13,6 +13,7 @@
     ./config/dsearch.nix
     ./config/matugen.nix
     # ./config/hyprpanel.nix
+    ./config/gtk.nix
     # ./config/wallust.nix
   ];
 }

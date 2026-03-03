@@ -57,6 +57,14 @@ let
       isEssential = true;
       position = 103;
     };
+    "Tuta" = {
+      id = "d77e3935-7ff7-483e-a8b9-5e8992dd2fac";
+      container = container.id;
+      workspace = space.id;
+      url = "https://app.tuta.com/";
+      isEssential = true;
+      position = 104;
+    };
   };
 in
 

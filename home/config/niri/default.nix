@@ -1,5 +1,6 @@
 {
   inputs,
+  lib,
   pkgs,
   ...
 }:
@@ -20,5 +21,14 @@
   programs.niri = {
     enable = true;
     package = pkgs.niri-unstable;
+
+    settings.xwayland-satellite = {
+      enable = true;
+      path = lib.getExe pkgs.xwayland-satellite-unstable;
+    };
   };
+
+  home.packages = with pkgs; [
+    wl-clipboard
+  ];
 }

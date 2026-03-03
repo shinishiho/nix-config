@@ -185,25 +185,29 @@
         ];
       };
 
-      # devShells = nixpkgs.lib.genAttrs supportedSystems (
-      #   system:
-      #   let
-      #     pkgs = (forAllSystems.${system}).pkgs;
-      #   in
-      #   {
-      #     default = pkgs.mkShellNoCC {
-      #       packages = with pkgs; [
-      #         nixd
-      #         cachix
-      #         # lorri
-      #         # niv
-      #         nixfmt
-      #         statix
-      #         # vulnix
-      #         # haskellPackages.dhall-nix
-      #       ];
-      #     };
-      #   }
-      # );
+      devShells = nixpkgs.lib.genAttrs supportedSystems (
+        system:
+        let
+          pkgs = import nixpkgs {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        in
+        {
+          default = pkgs.mkShellNoCC {
+            packages = with pkgs; [
+              nixd
+              nil
+              cachix
+              # lorri
+              # niv
+              nixfmt
+              statix
+              # vulnix
+              # haskellPackages.dhall-nix
+            ];
+          };
+        }
+      );
     };
 }

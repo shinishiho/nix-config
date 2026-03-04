@@ -15,7 +15,6 @@
     };
     darwin = {
       system.enable = true;
-      wm.enable = true;
     };
   };
 

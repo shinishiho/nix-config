@@ -8,7 +8,12 @@
 {
   imports = [
     inputs.zen-browser.homeModules.twilight
-    ./profile.nix
+
+    ./contexts
+    ./extensions.nix
+    ./policies.nix
+    ./search.nix
+    ./settings.nix
   ];
 
   programs.zen-browser = {

@@ -1,4 +1,5 @@
 {
+  lib,
   pkgs,
   ...
 }:
@@ -25,7 +26,16 @@
     youtube-recommended-videos
   ];
 
-  programs.zen-browser.nativeMessagingHosts = with pkgs; [
-    passff-host
+  # On Linux, pass through wrapFirefox (the only supported mechanism for zen on Linux).
+  # On Darwin, wrapFirefox embeds store paths as strings into the wrapper binary which
+  # triggers disallowedRequisites = [ stdenv.cc ] because passff-host's closure includes
+  # clang-wrapper. Use the shared Mozilla NativeMessagingHosts path instead, which is
+  # what the standard firefox HM module does and what all gecko browsers read on macOS.
+  programs.zen-browser.nativeMessagingHosts = lib.optionals pkgs.stdenv.isLinux [
+    pkgs.passff-host
+  ];
+
+  mozilla.firefoxNativeMessagingHosts = lib.optionals pkgs.stdenv.isDarwin [
+    pkgs.passff-host
   ];
 }

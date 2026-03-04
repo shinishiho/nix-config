@@ -1,5 +1,6 @@
 {
   config,
+  lib,
   pkgs,
   ...
 }:
@@ -33,13 +34,13 @@
 
     android-tools
 
-    gpu-screen-recorder-gtk
-
     (config.lib.nixGL.wrap caprine)
     (config.lib.nixGL.wrap vesktop)
-
-    (config.lib.nixGL.wrap parsec-bin)
-  ];
+  ]
+    ++ lib.optionals pkgs.stdenv.isLinux [
+      gpu-screen-recorder-gtk
+      (config.lib.nixGL.wrap parsec-bin)
+    ];
 
   programs = {
     bat = {
@@ -89,20 +90,16 @@
 
   };
 
-  services = {
-    gpg-agent = {
-      enable = true;
-      enableSshSupport = false;
-      pinentry.package = pkgs.pinentry-gnome3;
-      defaultCacheTtl = 28800;
-      maxCacheTtl = 28800;
-    };
-
-    ssh-agent.enable = true;
-    ollama = {
-      enable = true;
-    };
+  services.gpg-agent = {
+    enable = true;
+    enableSshSupport = false;
+    defaultCacheTtl = 28800;
+    maxCacheTtl = 28800;
   };
+
+  services.ollama.enable = true;
+  services.gpg-agent.pinentry.package = lib.mkIf pkgs.stdenv.isLinux pkgs.pinentry-all;
+  services.ssh-agent.enable = lib.mkIf pkgs.stdenv.isLinux true;
 
   home.persistence."/persistent".directories = [
     ".local/share/direnv"

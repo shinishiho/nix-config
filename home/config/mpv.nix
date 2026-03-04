@@ -4,13 +4,14 @@
 }:
 
 let
-  mpvScripts = with pkgs.mpvScripts; [
-    mpris
-    quality-menu
-    sponsorblock
-    thumbfast
-    uosc
-  ];
+  mpvScripts = with pkgs.mpvScripts;
+    [
+      quality-menu
+      sponsorblock
+      thumbfast
+      uosc
+    ]
+    ++ (pkgs.lib.optionals pkgs.stdenv.isLinux [ mpris ]);
 in
 {
   programs.mpv = {

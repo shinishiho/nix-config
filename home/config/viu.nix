@@ -7,9 +7,9 @@
 
 let
   mpvScripts = with pkgs.mpvScripts; [
-    mpris
     uosc
-  ];
+  ]
+    ++ (pkgs.lib.optionals pkgs.stdenv.isLinux [ mpris ]);
 
   viuPackage = inputs.viu.packages.${pkgs.system}.default.overrideAttrs (old: {
     makeWrapperArgs = [

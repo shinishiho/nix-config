@@ -101,17 +101,18 @@
         "aarch64-darwin"
         "x86_64-darwin"
       ];
+      nixpkgsOverlays = [
+        (import ./pkgs)
+        inputs.niri.overlays.niri
+        inputs.nix-firefox-addons.overlays.default
+      ];
       forAllSystems = nixpkgs.lib.genAttrs supportedSystems (
         system:
         let
           pkgs = import nixpkgs {
             inherit system;
             config.allowUnfree = true;
-            overlays = [
-              (import ./pkgs)
-              inputs.niri.overlays.niri
-              inputs.nix-firefox-addons.overlays.default
-            ];
+            overlays = nixpkgsOverlays;
           };
         in
         {
@@ -142,34 +143,23 @@
         ];
       };
 
-      # darwinConfigurations.iamw-m1 = nix-darwin.lib.darwinSystem {
-      #   system = "aarch64-darwin";
-      #   specialArgs = { inherit nixpkgs home-manager inputs; hostname = "iamw-m1"; };
-      #   modules = [
-      #     ./hosts/iamw-m1
-      #     home-manager.darwinModules.home-manager
-      #   ];
-      # };
+      darwinConfigurations.iamw-m1 = nix-darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        specialArgs = { inherit nixpkgs home-manager inputs; hostname = "iamw-m1"; };
+        modules = [
+          ./hosts/iamw-m1
+          home-manager.darwinModules.home-manager
+        ];
+      };
 
       homeConfigurations.w = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
           system = "x86_64-linux";
           config.allowUnfree = true;
-          overlays = [
-            (import ./pkgs)
-            inputs.niri.overlays.niri
-            inputs.nix-firefox-addons.overlays.default
-          ];
+          overlays = nixpkgsOverlays;
         };
         extraSpecialArgs = { inherit inputs; };
         modules = [
-          # {
-          #   nixpkgs.config.allowUnfree = true;
-          #   nixpkgs.overlays = [
-          #     (import ./pkgs)
-          #     inputs.nix-firefox-addons.overlays.default
-          #   ];
-          # }
           {
             options.home.persistence = nixpkgs.lib.mkOption {
               type = nixpkgs.lib.types.attrsOf (nixpkgs.lib.types.anything);

@@ -7,7 +7,7 @@
 
 {
   nixpkgs.overlays = [  
-    (import ../../../pkgs)
+    (import ../../pkgs)
     inputs.niri.overlays.niri
     inputs.nix-firefox-addons.overlays.default
   ];
@@ -25,13 +25,12 @@
       flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
     in
       {
+      optimise.automatic = true;
       settings = {
-        auto-optimise-store = true;
         experimental-features = [
           "nix-command"
           "flakes"
         ];
-        flake-registry = "";
         nix-path = config.nix.nixPath;
 
         substituters = [

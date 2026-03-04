@@ -16,9 +16,7 @@
 
     ./disko.nix
     ./filesystems.nix
-    # ./gaming.nix
     ./hardware.nix
-    # ./inputMethod.nix
     ./networking.nix
     ./nvidia.nix
     ./virt

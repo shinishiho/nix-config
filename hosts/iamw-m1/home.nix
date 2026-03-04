@@ -10,37 +10,9 @@
 
   programs.home-manager.enable = true;
 
-  # my-apps = {
-  #   editors = {
-  #     zeditor.enable = false;
-  #     cursor.enable = false;
-  #     vscode.enable = true;
-  #     nvim.enable = true;
-  #   };
-  #
-  #   browsers = {
-  #     chromium.enable = false;
-  #     firefox.enable = false;
-  #   };
-  #
-  #   media = {
-  #     obs.enable = false;
-  #     mpv.enable = true;
-  #   };
-  #
-  #   gaming = {
-  #     streaming.enable = false;
-  #     maa.enable = false;
-  #   };
-  #
-  #   communication = {
-  #     thunderbird.enable = false;
-  #   };
-  # };
-
   home = {
     username = "w";
     homeDirectory = "/Users/w";
-    stateVersion = "25.11";
+    stateVersion = "26.05";
   };
 }

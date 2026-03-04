@@ -9,10 +9,6 @@
   networking.hostName = "NakXKri";
 
   myModules = {
-    common = {
-      fonts.enable = true;
-      tailscale.enable = true;
-    };
     darwin = {
       system.enable = true;
     };

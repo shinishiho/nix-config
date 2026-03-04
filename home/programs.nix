@@ -80,7 +80,6 @@
     nix-index.enable = true;
     password-store.enable = true;
     pay-respects.enable = true;
-    ssh.enable = true;
 
     zoxide = {
       enable = true;

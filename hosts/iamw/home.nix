@@ -11,7 +11,6 @@
 
     ../../home/local/state/syncthing.nix
 
-    ./ssh.nix
     ./impermanence.nix
   ];
 

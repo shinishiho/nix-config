@@ -26,6 +26,7 @@
     ./config/opencode.nix
     ./config/orca-slicer.nix
     ./config/shellAliases.nix
+    ./config/ssh.nix
     ./config/starship.nix
     ./config/viu.nix
     ./config/zellij.nix

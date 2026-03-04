@@ -9,7 +9,6 @@ with lib;
 
 let
   cfg = config.myModules.desktop.autoLogin;
-  command = "niri";
 in
 
 {
@@ -17,8 +16,11 @@ in
     enable = mkEnableOption "Auto-login with greetd";
     user = mkOption {
       type = types.str;
-      default = "w";
       description = "User to automatically log in";
+    };
+    command = mkOption {
+      type = types.str;
+      description = "Command to start";
     };
   };
 
@@ -28,11 +30,11 @@ in
         enable = true;
         settings = {
           initial_session = {
-            command = "${command}";
+            command = cfg.command;
             user = cfg.user;
           };
           default_session = {
-            command = "${pkgs.tuigreet}/bin/tuigreet --greeting 'Welcome To NixOS' --asterisks --remember --remember-user-session --time --cmd '${command}'";
+            command = "${pkgs.tuigreet}/bin/tuigreet --greeting 'Welcome To NixOS' --asterisks --remember --remember-user-session --time --cmd '${cfg.command}'";
             user = "greeter";
           };
         };

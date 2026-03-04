@@ -28,7 +28,11 @@
 
   myModules = {
     desktop = {
-      autoLogin.enable = true;
+      autoLogin = {
+        enable = true;
+        user = "w";
+        command = "niri";
+      };
       gnome.enable = false;
       hyprland.enable = false;
     };

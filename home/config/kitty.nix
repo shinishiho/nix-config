@@ -10,7 +10,7 @@
     package = (config.lib.nixGL.wrap pkgs.kitty);
     font = {
       name = "CaskaydiaCove Nerd Font Mono";
-      size = 12;
+      size = 22;
     };
 
     shellIntegration.enableZshIntegration = true;

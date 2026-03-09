@@ -6,7 +6,7 @@
 }:
 
 {
-  nixpkgs.overlays = [  
+  nixpkgs.overlays = [
     (import ../../pkgs)
     inputs.niri.overlays.niri
     inputs.nix-firefox-addons.overlays.default
@@ -27,6 +27,7 @@
       {
       optimise.automatic = true;
       settings = {
+        trusted-users = [ "w" ];
         experimental-features = [
           "nix-command"
           "flakes"

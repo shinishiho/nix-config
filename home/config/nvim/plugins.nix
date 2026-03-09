@@ -13,8 +13,9 @@
     ./plugins/leap.nix
     ./plugins/lsp.nix
     # ./plugins/obsidian.nix
-    ./plugins/oil.nix
+    ./plugins/mpv.nix
     ./plugins/noice.nix
+    ./plugins/oil.nix
     ./plugins/smart-splits.nix
     ./plugins/snippets.nix
     ./plugins/sniprun.nix

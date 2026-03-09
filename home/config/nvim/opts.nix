@@ -1,4 +1,9 @@
 {
+  config,
+  ...
+}:
+
+{
   programs.nixvim = {
     opts = {
       guicursor = "";
@@ -18,7 +23,7 @@
 
       swapfile = false;
       backup = false;
-      undodir = "/home/w/.vim/undodir"; # Hardcoded lmao
+      undodir = "${config.home.homeDirectory}/.vim/undodir";
       undofile = true;
 
       hlsearch = false;

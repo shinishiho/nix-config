@@ -1,3 +1,5 @@
+{ hostName, ... }:
+
 {
   imports = [
     ../../modules/common
@@ -6,11 +8,15 @@
     ./user.nix
   ];
 
-  networking.hostName = "NakXKri";
+  networking.hostName = hostName;
 
   myModules = {
     darwin = {
+      goodies.enable = true;
       system.enable = true;
+    };
+    services = {
+      tailscale.enable = true;
     };
   };
 
@@ -18,4 +24,4 @@
     primaryUser = "w";
     stateVersion = 6;
   };
-} 
+}

@@ -17,9 +17,6 @@ in
 
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
-      raycast
     ];
-
-    services.tailscale.enable = cfg.tailscale.enable;
   };
 }

@@ -40,6 +40,9 @@
     ++ lib.optionals pkgs.stdenv.isLinux [
       gpu-screen-recorder-gtk
       (config.lib.nixGL.wrap parsec-bin)
+    ]
+    ++ lib.optionals pkgs.stdenv.isDarwin [
+      stats
     ];
 
   programs = {

@@ -127,15 +127,7 @@
 
       nixosConfigurations.iamw = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = {
-          inherit
-            nixpkgs
-            home-manager
-            chaotic
-            inputs
-            ;
-          hostname = "iamw";
-        };
+        specialArgs = { inherit nixpkgs home-manager chaotic inputs; };
         modules = [
           ./hosts/iamw
           home-manager.nixosModules.home-manager
@@ -143,9 +135,18 @@
         ];
       };
 
-      darwinConfigurations.iamw-m1 = nix-darwin.lib.darwinSystem {
+      darwinConfigurations.iamw-m1mini = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
-        specialArgs = { inherit nixpkgs home-manager inputs; hostname = "iamw-m1"; };
+        specialArgs = { inherit nixpkgs home-manager inputs; hostName = "iamw-m1mini"; };
+        modules = [
+          ./hosts/iamw-m1
+          home-manager.darwinModules.home-manager
+        ];
+      };
+
+      darwinConfigurations.iamw-m1air = nix-darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        specialArgs = { inherit nixpkgs home-manager inputs; hostName = "iamw-m1air"; };
         modules = [
           ./hosts/iamw-m1
           home-manager.darwinModules.home-manager

@@ -37,6 +37,12 @@ in
         # Disable press-and-hold for keys in favor of key repeat
         ApplePressAndHoldEnabled = false;
         NSWindowShouldDragOnGesture = true;
+        NSAutomaticWindowAnimationsEnabled = false;
+      };
+
+      trackpad = {
+        Clicking = true;
+        Dragging = true;
       };
     };
   };

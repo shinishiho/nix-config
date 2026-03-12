@@ -1,0 +1,56 @@
+{
+  programs.tealdeer = {
+    enable = true;
+
+    settings = {
+      style = {
+        description = {
+          underline = false;
+          bold = true;
+          italic = false;
+        };
+
+        command_name = {
+          foreground = "cyan";
+          underline = false;
+          bold = false;
+          italic = false;
+        };
+
+        example_text = {
+          foreground = "green";
+          underline = false;
+          bold = false;
+          italic = false;
+        };
+
+        example_code = {
+          foreground = "cyan";
+          underline = false;
+          bold = false;
+          italic = false;
+        };
+
+        example_variable = {
+          foreground = "cyan";
+          underline = true;
+          bold = false;
+          italic = false;
+        };
+      };
+
+      display = {
+        compact = true;
+        use_pager = false;
+        show_title = false;
+      };
+
+      updates = {
+        auto_update = false;
+        auto_update_interval_hours = 720;
+        archive_source = "https://github.com/tldr-pages/tldr/releases/latest/download/";
+        tls_backend = "rustls-with-webpki-roots";
+      };
+    };
+  };
+}

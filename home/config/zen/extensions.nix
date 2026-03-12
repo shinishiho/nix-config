@@ -4,15 +4,24 @@
   ...
 }:
 
+let
+  ffExtension = with pkgs; [
+    passff-host
+    open-in-mpv
+  ];
+in
+
 {
   programs.zen-browser.profiles."Default (release)".extensions.packages = with pkgs.firefoxAddons; [
     darkreader
     dearrow
     enhancer-for-youtube
+    folx-5
     gabut-extentions
     languagetool
     minimalist-open-in-mpv
     multi-account-containers
+    open-in-iina-x
     passff
     privacy-redirect
     proton-pass
@@ -31,11 +40,7 @@
   # triggers disallowedRequisites = [ stdenv.cc ] because passff-host's closure includes
   # clang-wrapper. Use the shared Mozilla NativeMessagingHosts path instead, which is
   # what the standard firefox HM module does and what all gecko browsers read on macOS.
-  programs.zen-browser.nativeMessagingHosts = lib.optionals pkgs.stdenv.isLinux [
-    pkgs.passff-host
-  ];
+  programs.zen-browser.nativeMessagingHosts = lib.optionals pkgs.stdenv.isLinux ffExtension;
 
-  mozilla.firefoxNativeMessagingHosts = lib.optionals pkgs.stdenv.isDarwin [
-    pkgs.passff-host
-  ];
+  mozilla.firefoxNativeMessagingHosts = lib.optionals pkgs.stdenv.isDarwin ffExtension;
 }

@@ -18,8 +18,6 @@
     duf
     dust
 
-    tealdeer
-
     zip
     unzip
     p7zip
@@ -34,7 +32,7 @@
 
     android-tools
 
-    (config.lib.nixGL.wrap caprine)
+    # (config.lib.nixGL.wrap caprine)
     (config.lib.nixGL.wrap vesktop)
   ]
     ++ lib.optionals pkgs.stdenv.isLinux [

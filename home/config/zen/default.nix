@@ -19,7 +19,6 @@
   programs.zen-browser = {
     enable = true;
     nixGL.enable = true;
-    suppressXdgMigrationWarning = true;
   };
 
   xdg.mimeApps =

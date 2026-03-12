@@ -54,5 +54,7 @@ in
         scripts = mpvScripts;
       };
     })
+
+    yt-dlp
   ];
 }

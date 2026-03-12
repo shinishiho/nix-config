@@ -49,22 +49,6 @@ let
       isEssential = true;
       position = 102;
     };
-    "ChatGPT" = {
-      id = "7d68c54d-1e5f-4e45-82a1-35723429d83c";
-      container = container.id;
-      workspace = space.id;
-      url = "https://chatgpt.com/";
-      isEssential = true;
-      position = 103;
-    };
-    "Tuta" = {
-      id = "d77e3935-7ff7-483e-a8b9-5e8992dd2fac";
-      container = container.id;
-      workspace = space.id;
-      url = "https://app.tuta.com/";
-      isEssential = true;
-      position = 104;
-    };
   };
 in
 

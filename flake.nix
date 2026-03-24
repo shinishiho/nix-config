@@ -176,6 +176,29 @@
         ];
       };
 
+      homeConfigurations.bootstrap = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs {
+          system = "x86_64-linux";
+          config.allowUnfree = true;
+          overlays = nixpkgsOverlays;
+        };
+        extraSpecialArgs = { inherit inputs; };
+        modules = [
+          {
+            options.home.persistence = nixpkgs.lib.mkOption {
+              type = nixpkgs.lib.types.attrsOf (nixpkgs.lib.types.anything);
+              default = { };
+              description = "Impermanence no-op on non-NixOS";
+            };
+          }
+          {
+            targets.genericLinux.enable = true;
+            targets.genericLinux.nixGL.packages = inputs.nixGL.packages;
+          }
+          ./hosts/iamw/bootstrap.nix
+        ];
+      };
+
       devShells = nixpkgs.lib.genAttrs supportedSystems (
         system:
         let

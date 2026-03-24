@@ -1,10 +1,6 @@
 {
   imports = [
-    ../../home/nixos.nix
-
-    ../../home/local/state/syncthing.nix
-
-    ./impermanence.nix
+    ../../modules/common/nix.nix
   ];
 
   programs.home-manager.enable = true;

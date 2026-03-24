@@ -16,7 +16,7 @@
       system.enable = true;
     };
     services = {
-      tailscale.enable = true;
+      tailscale.enable = false;
     };
   };
 

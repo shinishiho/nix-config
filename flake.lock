@@ -975,11 +975,11 @@
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {
-        "lastModified": 1773203257,
-        "narHash": "sha256-rIJ+OMrYFefTiXGVyBzjn+SJU465pt4n4Zx6knWYslI=",
+        "lastModified": 1774326935,
+        "narHash": "sha256-p9rPkP4x9pBQ3dwtaKYAZr1AwgjrlG42WBNnrbWpJpU=",
         "owner": "osipog",
         "repo": "nix-firefox-addons",
-        "rev": "e7f7d46c1176654d0ad3f488775b778d197a686f",
+        "rev": "946795f611a63847d671665e7ea060f5c9b15965",
         "type": "github"
       },
       "original": {

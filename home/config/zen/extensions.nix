@@ -13,21 +13,18 @@ in
 
 {
   programs.zen-browser.profiles."Default (release)".extensions.packages = with pkgs.firefoxAddons; [
+    clearurls
     darkreader
     dearrow
+    decentraleyes
     enhancer-for-youtube
-    folx-5
-    gabut-extentions
+    iina-open-in-mpv
     languagetool
-    minimalist-open-in-mpv
     multi-account-containers
-    open-in-iina-x
     passff
     privacy-redirect
-    proton-pass
     qr-code-address-bar
     sponsorblock
-    turbo-download-manager
     ublock-origin
     user-agent-string-switcher
     video-downloadhelper

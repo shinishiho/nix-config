@@ -1,16 +1,8 @@
 {
-  inputs,
-  pkgs,
-  lib,
-  config,
-  ...
-}:
-
-{
   programs.niri.settings = {
     # Environment Variables
     environment = {
-      DISPLAY = ":1";
+      DISPLAY = ":0";
       ELECTRON_OZONE_PLATFORM_HINT = "auto";
       QT_QPA_PLATFORM = "wayland";
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";

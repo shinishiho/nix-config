@@ -53,7 +53,7 @@ let
 in
 
 {
-  programs.zen-browser.profiles."Default (release)" = {
+  programs.zen-browser.profiles.default = {
     containers.Relax = container;
     spaces.Leisure = space;
     inherit pins;

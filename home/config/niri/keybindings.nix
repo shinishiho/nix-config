@@ -22,7 +22,7 @@
         hotkey-overlay.title = "Application Launcher";
       };
       "Mod+B" = {
-        action.spawn = [ "zen-twilight" ];
+        action.spawn = [ "zen-beta" ];
         hotkey-overlay.title = "Open Browser: zen";
       };
       "Mod+E" = {

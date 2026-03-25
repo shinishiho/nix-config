@@ -7,7 +7,7 @@
     ./leisure.nix
   ];
 
-  programs.zen-browser.profiles."Default (release)" = {
+  programs.zen-browser.profiles.default = {
     containersForce = true;
     spacesForce = true;
     pinsForce = true;

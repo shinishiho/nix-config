@@ -12,7 +12,7 @@ let
 in
 
 {
-  programs.zen-browser.profiles."Default (release)".extensions.packages = with pkgs.firefoxAddons; [
+  programs.zen-browser.profiles.default.extensions.packages = with pkgs.firefoxAddons; [
     clearurls
     darkreader
     dearrow

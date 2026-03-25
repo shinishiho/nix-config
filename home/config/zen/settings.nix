@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  programs.zen-browser.profiles."Default (release)".settings = {
+  programs.zen-browser.profiles.default.settings = {
     # Tab behaviour
     "browser.ctrlTab.sortByRecentlyUsed" = true;
 

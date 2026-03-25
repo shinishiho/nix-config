@@ -4,7 +4,7 @@
 }:
 
 {
-  programs.zen-browser.profiles."Default (release)".search = {
+  programs.zen-browser.profiles.default.search = {
     force = true;
     default = "ddg";
     engines = {

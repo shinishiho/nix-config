@@ -46,7 +46,6 @@
     swappy
     # swww
     wf-recorder
-    wl-clipboard
   ];
 
   xdg.configFile."uwsm/env".source = "${config.home.sessionVariablesPackage}/etc/profile.d/hm-session-vars.sh"; 

@@ -1,12 +1,4 @@
 {
-  inputs,
-  pkgs,
-  lib,
-  config,
-  ...
-}:
-
-{
   programs.niri.settings = {
     # Window Rules
     window-rules = [
@@ -65,7 +57,7 @@
 
       {
         matches = [
-          { app-id = "^showmethekey-gtk$"; }
+          { app-id = "^one.alynx.showmethekey$"; }
         ];
         open-floating = true;
         open-focused = false;

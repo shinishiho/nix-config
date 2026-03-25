@@ -33,6 +33,7 @@
       };
       gnome.enable = false;
       hyprland.enable = false;
+      niri.enable = true;
     };
 
     hardware = {

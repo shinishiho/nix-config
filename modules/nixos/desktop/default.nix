@@ -1,8 +1,14 @@
 {
+  pkgs,
+  ...
+}:
+
+{
   imports = [
     ./autoLogin.nix
     ./gnome.nix
     ./hyprland.nix
+    ./niri.nix
   ];
 
   environment = {
@@ -10,5 +16,10 @@
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
     };
+
+    systemPackages = with pkgs; [
+      adwaita-icon-theme
+      wl-clipboard
+    ];
   };
 }

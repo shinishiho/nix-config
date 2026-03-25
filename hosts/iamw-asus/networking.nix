@@ -1,6 +1,6 @@
 {
   networking = {
-    hostName = "iamw";
+    hostName = "iamw-asus";
     networkmanager = {
       enable = true;
       wifi.macAddress = "random";

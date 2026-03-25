@@ -1,4 +1,13 @@
 {
+  inputs,
+  ...
+}:
+
+{
+  imports = [
+    inputs.impermanence.nixosModules.impermanence
+  ];
+
   fileSystems = {
     "/" = {
       fsType = "tmpfs";

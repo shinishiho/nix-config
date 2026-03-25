@@ -5,8 +5,6 @@
 }:
 {
   imports = [
-    inputs.disko.nixosModules.default
-    inputs.impermanence.nixosModules.impermanence
     inputs.agenix.nixosModules.default
 
     ../../modules/common
@@ -14,8 +12,6 @@
 
     ./hardware-configuration.nix
 
-    ./disko.nix
-    ./filesystems.nix
     ./hardware.nix
     ./networking.nix
     ./nvidia.nix
@@ -29,7 +25,7 @@
       autoLogin = {
         enable = true;
         user = "w";
-        command = "niri";
+        command = "niri-session";
       };
       gnome.enable = false;
       hyprland.enable = false;

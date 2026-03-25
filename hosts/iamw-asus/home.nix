@@ -3,8 +3,6 @@
     ../../home/nixos.nix
 
     ../../home/local/state/syncthing.nix
-
-    ./impermanence.nix
   ];
 
   programs.home-manager.enable = true;

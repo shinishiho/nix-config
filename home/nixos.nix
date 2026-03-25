@@ -18,4 +18,14 @@
     ./config/viu.nix
     # ./config/wallust.nix
   ];
+
+  home.persistence."/persistent" = {
+    directories = [
+      "nix-config"
+      "W"
+    ];
+
+    files = [
+    ];
+  };
 }

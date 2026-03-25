@@ -1,9 +1,4 @@
 {
-  pkgs,
-  ...
-}:
-
-{
   security = {
     polkit.enable = true;
     sudo = {

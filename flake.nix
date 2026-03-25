@@ -125,11 +125,21 @@
     {
       packages = forAllSystems;
 
-      nixosConfigurations.iamw = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.iamw-asus = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit nixpkgs home-manager chaotic inputs; };
         modules = [
-          ./hosts/iamw
+          ./hosts/iamw-asus
+          home-manager.nixosModules.home-manager
+          chaotic.nixosModules.default
+        ];
+      };
+
+      nixosConfigurations.iamw-nixos = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit nixpkgs home-manager chaotic inputs; };
+        modules = [
+          ./hosts/iamw-nixos
           home-manager.nixosModules.home-manager
           chaotic.nixosModules.default
         ];

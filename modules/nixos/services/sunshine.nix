@@ -2,7 +2,6 @@
   config,
   lib,
   pkgs,
-  inputs,
   ...
 }:
 
@@ -20,9 +19,16 @@ in
   config = mkIf cfg.enable {
     services.sunshine = {
       enable = true;
+      package = pkgs.sunshine.override {
+        cudaSupport = true;
+      };
 
       capSysAdmin = true;
       openFirewall = true;
     };
+
+    environment.persistence."/persistent".users.w.directories = [
+      ".config/sunshine"
+    ];
   };
 }

@@ -41,7 +41,6 @@
       "/var/log"
       "/var/lib/bluetooth"
       "/var/lib/nixos"
-      "/var/lib/sbctl"
       "/var/lib/systemd/coredump"
       "/etc/NetworkManager/system-connections"
       {

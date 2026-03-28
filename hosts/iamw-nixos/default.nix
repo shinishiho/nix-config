@@ -50,6 +50,7 @@
 
     system = {
       inputMethod.enable = true;
+      secureBoot.enable = true;
     };
   };
 

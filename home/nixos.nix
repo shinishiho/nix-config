@@ -17,6 +17,8 @@
     ./config/orca-slicer.nix
     ./config/viu.nix
     # ./config/wallust.nix
+
+    ./local/state/syncthing.nix
   ];
 
   home.persistence."/persistent" = {

@@ -1,8 +1,6 @@
 {
   imports = [
     ../../home/nixos.nix
-
-    ../../home/local/state/syncthing.nix
   ];
 
   programs.home-manager.enable = true;

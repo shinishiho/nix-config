@@ -2,6 +2,7 @@
   programs.zen-browser.policies = {
     # Disable automatic updates (managed by Nix)
     DisableAppUpdate = true;
+    ExtensionUpdate = false;
 
     # Privacy settings
     DisableTelemetry = true;

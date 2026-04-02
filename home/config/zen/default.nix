@@ -10,6 +10,7 @@
 
     ./contexts
     ./extensions.nix
+    ./mods.nix
     ./policies.nix
     ./search.nix
     ./settings.nix

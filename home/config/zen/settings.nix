@@ -35,5 +35,8 @@
     "zen.view.use-single-toolbar" = false;
     "zen.view.compact.enable-at-startup" = false;
     "zen.welcome-screen.seen" = true;
+
+    # Extensions
+    "extensions.autoDisableScopes" = 0;
   };
 }

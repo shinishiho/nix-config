@@ -16,13 +16,13 @@ in
     clearurls
     darkreader
     dearrow
-    decentraleyes
     enhancer-for-youtube
     iina-open-in-mpv
     languagetool
+    libredirect
+    localcdn-fork-of-decentraleyes
     multi-account-containers
     passff
-    privacy-redirect
     qr-code-address-bar
     sponsorblock
     ublock-origin

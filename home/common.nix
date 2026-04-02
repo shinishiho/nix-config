@@ -12,7 +12,7 @@
     # ./config/plover         # Has issues with inputs
     ./config/wallpaper
     ./config/yazi
-    # ./config/zed-editor     # I'll stick with nvim for now
+    ./config/zed-editor
     ./config/zen
 
     ./config/gemini-cli.nix

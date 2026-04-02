@@ -32,6 +32,11 @@
 
     android-tools
 
+    termpdfpy
+
+    nil
+    nixd
+
     # (config.lib.nixGL.wrap caprine)
     (config.lib.nixGL.wrap vesktop)
   ]
@@ -41,6 +46,7 @@
     ]
     ++ lib.optionals pkgs.stdenv.isDarwin [
       stats
+      # mactop
     ];
 
   programs = {

@@ -10,7 +10,7 @@
       enableDefaultConfig = false;
       matchBlocks = {
         "*" = {
-          forwardAgent = false;
+          forwardAgent = true;
           serverAliveInterval = 0;
           serverAliveCountMax = 3;
           compression = false;

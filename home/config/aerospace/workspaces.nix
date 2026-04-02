@@ -13,6 +13,15 @@
     }
     {
       "if" = {
+        app-id = "com.apple.Safari";
+        window-title-regex-substring = "VGU —";
+      };
+      run = [
+        "move-node-to-workspace 1"
+      ];
+    }
+    {
+      "if" = {
         app-id = "app.zen-browser.zen";
       };
       run = [

@@ -21,6 +21,8 @@
     ./local/state/syncthing.nix
   ];
 
+  programs.home-manager.enable = true;
+
   home.persistence."/persistent" = {
     directories = [
       "nix-config"
@@ -29,5 +31,11 @@
 
     files = [
     ];
+  };
+
+  home = {
+    username = "w";
+    homeDirectory = "/home/w";
+    stateVersion = "26.05";
   };
 }

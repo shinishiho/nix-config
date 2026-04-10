@@ -5,6 +5,8 @@
 
 {
   imports = [
+    ./functions
+
     ./completions.nix
     ./plugins.nix
   ];

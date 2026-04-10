@@ -1,6 +1,5 @@
 {
   inputs,
-  lib,
   pkgs,
   ...
 }:
@@ -26,14 +25,7 @@
     };
     users.w = {
       imports = [
-        ./home.nix
-        {
-          options.home.persistence = lib.mkOption {
-            type = lib.types.attrsOf (lib.types.anything);
-            default = { };
-            description = "Impermanence no-op on non-NixOS";
-          };
-        }
+        ../../home/darwin.nix
       ];
     };
   };

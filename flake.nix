@@ -93,11 +93,11 @@
 
   outputs =
     {
-      nixpkgs,
-      nix-darwin,
-      home-manager,
-      chaotic,
-      ...
+    nixpkgs,
+    nix-darwin,
+    home-manager,
+    chaotic,
+    ...
     }@inputs:
     let
       supportedSystems = [
@@ -120,14 +120,14 @@
             overlays = nixpkgsOverlays;
           };
         in
-        {
+          {
           inherit pkgs;
           maa = pkgs.maa;
           orchis-theme = pkgs.orchis-theme;
         }
       );
     in
-    {
+      {
       packages = forAllSystems;
 
       nixosConfigurations.iamw-asus = nixpkgs.lib.nixosSystem {
@@ -187,11 +187,11 @@
             targets.genericLinux.enable = true;
             targets.genericLinux.nixGL.packages = inputs.nixGL.packages;
           }
-          ./hosts/iamw/home.nix
+          ./home/nixos.nix
         ];
       };
 
-      homeConfigurations.bootstrap = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations.headless-w = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
           system = "x86_64-linux";
           config.allowUnfree = true;
@@ -210,33 +210,8 @@
             targets.genericLinux.enable = true;
             targets.genericLinux.nixGL.packages = inputs.nixGL.packages;
           }
-          ./hosts/iamw/bootstrap.nix
+          ./home/headless.nix
         ];
       };
-
-      devShells = nixpkgs.lib.genAttrs supportedSystems (
-        system:
-        let
-          pkgs = import nixpkgs {
-            inherit system;
-            config.allowUnfree = true;
-          };
-        in
-        {
-          default = pkgs.mkShellNoCC {
-            packages = with pkgs; [
-              nixd
-              nil
-              cachix
-              # lorri
-              # niv
-              nixfmt
-              statix
-              # vulnix
-              # haskellPackages.dhall-nix
-            ];
-          };
-        }
-      );
     };
 }

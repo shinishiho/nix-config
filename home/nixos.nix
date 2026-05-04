@@ -15,7 +15,6 @@
     # ./config/hyprpanel.nix
     ./config/matugen.nix
     ./config/orca-slicer.nix
-    ./config/viu.nix
     # ./config/wallust.nix
 
     ./local/state/syncthing.nix

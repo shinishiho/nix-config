@@ -63,8 +63,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    viu.url = "github:viu-media/viu";
-
     dms = {
       url = "github:shinishiho/DankMaterialShell";
       inputs.nixpkgs.follows = "nixpkgs";

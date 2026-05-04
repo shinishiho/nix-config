@@ -9,7 +9,6 @@
     ./config/cava.nix
     ./config/gemini-cli.nix
     ./config/git.nix
-    ./config/viu.nix
     ./config/shellAliases.nix
     ./config/starship.nix
     ./config/tealdeer.nix

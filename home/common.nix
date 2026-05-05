@@ -12,10 +12,11 @@
     # ./config/plover         # Has issues with inputs
     ./config/wallpaper
     ./config/yazi
-    ./config/zed-editor
+    # ./config/zed-editor
     ./config/zen
 
-    ./config/gemini-cli.nix
+    # ./config/claude-code.nix
+    # ./config/gemini-cli.nix
     # ./config/gh-dash.nix    # What
     # ./config/gh.nix         # are these two?
     ./config/git.nix

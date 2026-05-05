@@ -32,11 +32,6 @@
 
     android-tools
 
-    termpdfpy
-
-    nil
-    nixd
-
     # (config.lib.nixGL.wrap caprine)
     (config.lib.nixGL.wrap vesktop)
   ]
@@ -104,7 +99,6 @@
     maxCacheTtl = 28800;
   };
 
-  services.ollama.enable = true;
   services.gpg-agent.pinentry.package = lib.mkIf pkgs.stdenv.isLinux pkgs.pinentry-all;
   services.ssh-agent.enable = lib.mkIf pkgs.stdenv.isLinux true;
 

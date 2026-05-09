@@ -54,7 +54,7 @@
     };
     users.w = {
       imports = [
-        ../../home/nixos.nix
+        ../../home/platform/nixos.nix
       ];
     };
   };

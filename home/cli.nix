@@ -1,11 +1,35 @@
 {
-  config,
+  inputs,
   lib,
   pkgs,
   ...
 }:
 
 {
+  imports = [
+    inputs.nix-index-database.homeModules.nix-index
+
+    ./config/fastfetch
+    ./config/fish
+    ./config/nvim
+    ./config/yazi
+
+    # ./config/cava.nix
+    ./config/claude-code.nix
+    # ./config/gemini-cli.nix
+    # ./config/gh-dash.nix    # What
+    # ./config/gh.nix         # are these two?
+    ./config/git.nix
+    # ./config/marimo.nix     # I'm done, bye
+    ./config/mcp.nix
+    ./config/opencode.nix
+    ./config/shellAliases.nix
+    ./config/ssh.nix
+    ./config/starship.nix
+    ./config/tealdeer.nix
+    ./config/zellij.nix
+  ];
+
   home.packages = with pkgs; [
     ripgrep
     fd
@@ -25,22 +49,11 @@
     curl
     wget
 
-    (config.lib.nixGL.wrap localsend)
-
     libfido2
     yubikey-manager
 
     android-tools
-
-    # (config.lib.nixGL.wrap caprine)
-    (config.lib.nixGL.wrap vesktop)
-  ]
-    ++ lib.optionals pkgs.stdenv.isLinux [
-      gpu-screen-recorder-gtk
-      (config.lib.nixGL.wrap parsec-bin)
-    ]
-    ++ lib.optionals pkgs.stdenv.isDarwin [
-      stats
+  ] ++ lib.optionals pkgs.stdenv.isDarwin [
       # mactop
     ];
 
@@ -89,7 +102,6 @@
       options = [ "--cmd cd" ];
       enableFishIntegration = true;
     };
-
   };
 
   services.gpg-agent = {
@@ -99,14 +111,12 @@
     maxCacheTtl = 28800;
   };
 
-  services.gpg-agent.pinentry.package = lib.mkIf pkgs.stdenv.isLinux pkgs.pinentry-all;
   services.ssh-agent.enable = lib.mkIf pkgs.stdenv.isLinux true;
 
   home.persistence."/persistent".directories = [
     ".local/share/direnv"
     ".local/share/zoxide"
     ".gnupg"
-    ".parsec"
     ".password-store"
     ".ssh"
   ];

@@ -25,7 +25,7 @@
     };
     users.w = {
       imports = [
-        ../../home/darwin.nix
+        ../../home/platform/darwin.nix
       ];
     };
   };

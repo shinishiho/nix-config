@@ -5,9 +5,10 @@
 
 {
   imports = [
-    ./common.nix
+    ../cli.nix
+    ../gui.nix
 
-    ./config/aerospace
+    ../config/aerospace
   ];
 
   config = {

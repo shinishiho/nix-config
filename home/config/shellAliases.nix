@@ -12,8 +12,6 @@
     gco = "git checkout";
     gcb = "git checkout -b";
     
-    # File System & Navigation
-
     # Directory navigation
     ".." = "cd ..";
     "..." = "cd ../..";
@@ -40,7 +38,8 @@
     # System & Utilities
     clr = "clear";
     ff = "fastfetch";
-    reload-shell = "exec $SHELL";
+    reload = "exec $SHELL";
+    tmp = "cd $(mktemp -d)";
     
     # Network Tools
     ping = "ping -c 5";

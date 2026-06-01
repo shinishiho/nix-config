@@ -16,6 +16,7 @@
     ./plugins/mpv.nix
     ./plugins/noice.nix
     ./plugins/oil.nix
+    ./plugins/vimtex.nix
     ./plugins/smart-splits.nix
     ./plugins/snippets.nix
     ./plugins/sniprun.nix

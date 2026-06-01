@@ -8,20 +8,18 @@
     ssh = {
       enable = true;
       enableDefaultConfig = false;
-      matchBlocks = {
-        "*" = {
-          forwardAgent = true;
-          serverAliveInterval = 0;
-          serverAliveCountMax = 3;
-          compression = false;
-          addKeysToAgent = "yes";
-          # identityFile = [ "~/.ssh/id_ed25519_sk" "~/.ssh/id_ed25519_sk_rk" ];
-          hashKnownHosts = false;
-          userKnownHostsFile = "~/.ssh/known_hosts";
-          controlMaster = "no";
-          controlPath = "~/.ssh/master-%r@%n:%p";
-          controlPersist = "no";
-        };
+      settings."*" = {
+        ForwardAgent = true;
+        ServerAliveInterval = 0;
+        ServerAliveCountMax = 3;
+        Compression = false;
+        AddKeysToAgent = "yes";
+        # identityFile = [ "~/.ssh/id_ed25519_sk" "~/.ssh/id_ed25519_sk_rk" ];
+        HashKnownHosts = false;
+        UserKnownHostsFile = "~/.ssh/known_hosts";
+        ControlMaster = "no";
+        ControlPath = "~/.ssh/master-%r@%n:%p";
+        ControlPersist = "no";
       };
     };
   };

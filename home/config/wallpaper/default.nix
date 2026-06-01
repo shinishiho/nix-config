@@ -1,9 +1,8 @@
 {
-  pkgs,
   lib,
-  config,
   ...
 }:
+
 let
   wallpaperDir = "Pictures/Wallpapers";
 
@@ -35,10 +34,6 @@ let
     "lilith_sofa.png" = ./lilith_sofa.png;
     "lilith_wonderland.png" = ./lilith_wonderland.png;
   };
-
-  wallpaperPaths = lib.mapAttrsToList (
-    name: _: "${config.home.homeDirectory}/${wallpaperDir}/${name}"
-  ) wallpapers;
 in
 {
   home.file = lib.mapAttrs' (

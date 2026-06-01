@@ -39,18 +39,18 @@
 
       cursorline = true;
 
-      conceallevel = 2;
+      conceallevel = 0;
     };
 
-    files = {
-      "after/ftplugin/cpp.lua" = {
-        opts = {
-          expandtab = true;
-          shiftwidth = 4;
-          softtabstop = 4;
-          tabstop = 4;
-        };
-      };
-    };
+    # files = {
+    #   "after/ftplugin/cpp.lua" = {
+    #     opts = {
+    #       expandtab = true;
+    #       shiftwidth = 4;
+    #       softtabstop = 4;
+    #       tabstop = 4;
+    #     };
+    #   };
+    # };
   };
 }

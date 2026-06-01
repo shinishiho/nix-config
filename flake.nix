@@ -5,18 +5,11 @@
     nixpkgs.url = "github:nixos/nixpkgs/master";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
-    nix-darwin = {
-      url = "github:nix-darwin/nix-darwin/master";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nix-darwin.url = "github:nix-darwin/nix-darwin/master";
+    home-manager.url = "github:nix-community/home-manager/master";
 
     disko = {
       url = "github:nix-community/disko";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    home-manager = {
-      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -28,13 +21,17 @@
     };
 
     hyprland.url = "github:hyprwm/Hyprland";
-    hyprpanel = {
-      url = "github:Jas-SinghFSU/HyprPanel";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+
+    niri.url = "github:sodiboo/niri-flake";
+
+    dms.url = "github:shinishiho/DankMaterialShell";
+    dms-plugin-registry.url = "github:AvengeMedia/dms-plugin-registry";
+    dsearch.url = "github:AvengeMedia/danksearch";
+
+    niri-float-sticky.url = "github:probeldev/niri-float-sticky";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -42,11 +39,7 @@
 
     agenix.url = "github:ryantm/agenix";
 
-    zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
     nix-firefox-addons.url = "github:osipog/nix-firefox-addons";
 
     plover-flake.url = "github:openstenoproject/plover-flake";

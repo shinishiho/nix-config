@@ -53,40 +53,14 @@
 
     dw-proton.url = "github:Momoyaan/dwproton-flake";
 
-    nixGL = {
-      url = "github:nix-community/nixGL";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    niri = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    dms = {
-      url = "github:shinishiho/DankMaterialShell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    dms-plugin-registry = {
-      url = "github:AvengeMedia/dms-plugin-registry";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    dsearch = {
-      url = "github:AvengeMedia/danksearch";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    niri-float-sticky = {
-      url = "github:probeldev/niri-float-sticky";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nixGL.url = "github:nix-community/nixGL";
 
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v1.0.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    llm-agents.url = "github:numtide/llm-agents.nix";
   };
 
   outputs =

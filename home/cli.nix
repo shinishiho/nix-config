@@ -15,14 +15,15 @@
     ./config/yazi
 
     # ./config/cava.nix
-    ./config/claude-code.nix
+    # ./config/claude-code.nix# Welp
     # ./config/gemini-cli.nix
     # ./config/gh-dash.nix    # What
     # ./config/gh.nix         # are these two?
     ./config/git.nix
     # ./config/marimo.nix     # I'm done, bye
     ./config/mcp.nix
-    ./config/opencode.nix
+    # ./config/opencode.nix   # Hmm, I try pi coding agent
+    ./config/pi.nix
     ./config/shellAliases.nix
     ./config/ssh.nix
     ./config/starship.nix
@@ -53,6 +54,8 @@
     yubikey-manager
 
     android-tools
+
+    inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.ccusage
   ] ++ lib.optionals pkgs.stdenv.isDarwin [
       # mactop
     ];
@@ -83,9 +86,8 @@
       icons = "auto";
     };
 
-    fzf = {
+    skim  = {
       enable = true;
-      tmux.enableShellIntegration = true;
     };
 
     gpg.enable = true;
@@ -100,7 +102,6 @@
     zoxide = {
       enable = true;
       options = [ "--cmd cd" ];
-      enableFishIntegration = true;
     };
   };
 

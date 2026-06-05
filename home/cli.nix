@@ -15,7 +15,7 @@
     ./config/yazi
 
     # ./config/cava.nix
-    # ./config/claude-code.nix# Welp
+    ./config/claude-code.nix  # I'm sold
     # ./config/gemini-cli.nix
     # ./config/gh-dash.nix    # What
     # ./config/gh.nix         # are these two?

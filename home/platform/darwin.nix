@@ -8,7 +8,8 @@
     ../cli.nix
     ../gui.nix
 
-    ../config/aerospace
+    # ../config/aerospace  # temporarily disabled in favor of paneru
+    ../config/paneru
   ];
 
   config = {

@@ -21,8 +21,7 @@
     window_swap_last = "cmd + shift - end";
 
     # Width presets: grow / shrink
-    window_resize = "cmd - r";
-    window_shrink = "cmd + shift - r";
+    window_resize = "cmd + alt - r";
 
     # Layout actions (alt, to avoid shadowing macOS Copy/Find/New-Tab)
     window_center = "alt - c";

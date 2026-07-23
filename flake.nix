@@ -2,7 +2,7 @@
   description = "Ultra reproducible from IAmW";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/master";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     nix-darwin = {
@@ -18,10 +18,7 @@
 
     impermanence.url = "github:nix-community/impermanence";
 
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nixvim.url = "github:nix-community/nixvim";
 
     hyprland.url = "github:hyprwm/Hyprland";
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
@@ -160,7 +157,7 @@
             targets.genericLinux.enable = true;
             targets.genericLinux.nixGL.packages = inputs.nixGL.packages;
           }
-          ./home/nixos.nix
+          ./home/platform/nixos.nix
         ];
       };
 
@@ -183,7 +180,7 @@
             targets.genericLinux.enable = true;
             targets.genericLinux.nixGL.packages = inputs.nixGL.packages;
           }
-          ./home/headless.nix
+          ./home/platform/headless.nix
         ];
       };
     };

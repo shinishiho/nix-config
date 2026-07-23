@@ -24,6 +24,7 @@
       (config.lib.nixGL.wrap parsec-bin)
     ] ++ lib.optionals pkgs.stdenv.isDarwin [
       stats
+      codexbar
     ];
 
   services.gpg-agent.pinentry.package = lib.mkIf pkgs.stdenv.isLinux pkgs.pinentry-all;

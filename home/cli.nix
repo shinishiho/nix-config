@@ -52,7 +52,7 @@
 
     android-tools
   ] ++ lib.optionals pkgs.stdenv.isDarwin [
-      # mactop
+      mactop
     ];
 
   programs = {
@@ -82,6 +82,10 @@
     };
 
     skim  = {
+      enable = true;
+    };
+
+    fzf  = {
       enable = true;
     };
 

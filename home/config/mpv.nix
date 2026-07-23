@@ -1,7 +1,10 @@
 {
+  lib,
   pkgs,
   ...
 }:
+
+with lib;
 
 let
   mpvScripts = with pkgs.mpvScripts;
@@ -28,8 +31,8 @@ in
       audio-display = "no";
       osd-bar = "no";
       border = "no";
-      hwdec = "vaapi";
-      gpu-context = "wayland";
+      hwdec = mkIf pkgs.stdenv.isLinux "vaapi";
+      gpu-context = mkIf pkgs.stdenv.isLinux "wayland";
       ytdl-format = "bv[height<=?1440]+ba/best";
       ytdl-raw-options = "sub-lang=\"en.*\",write-sub=,write-auto-sub=";
       # force-window = "immediate";
@@ -49,12 +52,6 @@ in
   };
 
   home.packages = with pkgs; [
-    (youtube-tui.override {
-      mpv = mpv.override {
-        scripts = mpvScripts;
-      };
-    })
-
     yt-dlp
   ];
 }

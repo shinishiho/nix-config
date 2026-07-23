@@ -1,14 +1,7 @@
 {
-  # programs.nixvim.extraConfigLuaPost = ''
-  #   local signs = { Error = " ", Warn = " ", Hint = "󰌵", Info = " " }
-  #   for type, icon in pairs(signs) do
-  #     local hl = "DiagnosticSign" .. type
-  #     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-  #   end
-  # '';
   programs.nixvim = {
     diagnostic.settings = {
-      virtual_lines = true;
+      virtual_text = true;
       signs = {
         text.__raw = ''
         {

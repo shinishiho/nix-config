@@ -67,14 +67,17 @@
     lsp = {
       enable = true;
       servers = {
-        clangd.enable = true;
-        clangd.settings.compile_flags = "-std=c++20";
+        clangd = {
+          enable = true;
+          settings.compile_flags = "-std=c++20";
+        };
         cmake.enable = true;
         nixd.enable = true;
-        pylyzer.enable = true;
+        basedpyright.enable = true;
         ruff.enable = true;
         ts_ls.enable = true;
         lua_ls.enable = true;
+        vale_ls.enable = true;
       };
     };
 

@@ -7,9 +7,10 @@
     ./plugins/cloak.nix
     ./plugins/colorscheme.nix
     ./plugins/column.nix
+    ./plugins/conform.nix
     # ./plugins/coderunner.nix
     ./plugins/harpoon.nix
-    #./plugins/linter.nix
+    ./plugins/linter.nix
     ./plugins/leap.nix
     ./plugins/lsp.nix
     # ./plugins/obsidian.nix

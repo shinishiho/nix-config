@@ -5,4 +5,4 @@
     ./systemDefaults.nix
     ./tailscale.nix
   ];
-} 
+}

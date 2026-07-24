@@ -23,13 +23,13 @@ in
         orientation = "bottom";
         tilesize = 60;
       };
-      
+
       finder = {
         AppleShowAllExtensions = true;
         ShowPathbar = true;
         ShowStatusBar = true;
       };
-      
+
       NSGlobalDomain = {
         AppleShowAllExtensions = true;
         InitialKeyRepeat = 14;

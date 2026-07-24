@@ -12,7 +12,7 @@ let
   pkgs-unstable = inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
   cfg = config.myModules.desktop.hyprland;
 in
-  {
+{
   options.myModules.desktop.hyprland = {
     enable = mkEnableOption "Hyprland desktop environment";
   };
@@ -21,7 +21,8 @@ in
     programs.hyprland = {
       enable = true;
       package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-      portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+      portalPackage =
+        inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
       withUWSM = true;
     };
 

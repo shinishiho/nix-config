@@ -27,4 +27,3 @@
   # Force use nix binary
   home.packages = [ pkgs.openssh ];
 }
-

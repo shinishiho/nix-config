@@ -7,7 +7,8 @@
 with lib;
 
 let
-  mpvScripts = with pkgs.mpvScripts;
+  mpvScripts =
+    with pkgs.mpvScripts;
     [
       quality-menu
       sponsorblock

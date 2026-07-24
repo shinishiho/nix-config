@@ -10,11 +10,10 @@ with lib;
 let
   cfg = config.myModules.system.inputMethod;
 in
-  {
+{
   options.myModules.system.inputMethod = {
     enable = mkEnableOption "Input method configuration with fcitx5";
   };
-
 
   config = mkIf cfg.enable {
     i18n.inputMethod = {

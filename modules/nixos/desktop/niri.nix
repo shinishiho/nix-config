@@ -11,7 +11,7 @@ with lib;
 let
   cfg = config.myModules.desktop.niri;
 in
-  {
+{
   options.myModules.desktop.niri = {
     enable = mkEnableOption "Niri desktop environment";
   };

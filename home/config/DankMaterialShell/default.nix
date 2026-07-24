@@ -18,8 +18,7 @@
   programs.dank-material-shell = {
     enable = true;
     quickshell.package = (
-      config.lib.nixGL.wrap inputs.dms.packages.
-      ${pkgs.stdenv.hostPlatform.system}.quickshell
+      config.lib.nixGL.wrap inputs.dms.packages.${pkgs.stdenv.hostPlatform.system}.quickshell
     );
 
     enableSystemMonitoring = true;
@@ -33,7 +32,7 @@
       enableKeybinds = false;
       enableSpawn = true;
     };
- 
+
     settings = import ./settings.nix;
     session = import ./session.nix;
     clipboardSettings = import ./clsettings.nix;

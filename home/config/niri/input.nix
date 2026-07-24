@@ -16,12 +16,12 @@
         };
         numlock = true;
       };
-      
+
       touchpad = {
         tap = true;
         natural-scroll = true;
       };
-      
+
       focus-follows-mouse = {
         max-scroll-amount = "25%";
       };

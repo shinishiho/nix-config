@@ -54,10 +54,10 @@
       tmuxPlugins.battery
     ];
 
-      # set -g base-index 1
-      # set -g pane-base-index 1
-      # set-window-option -g pane-base-index 1
-      # set-option -g renumber-windows on
+    # set -g base-index 1
+    # set -g pane-base-index 1
+    # set-window-option -g pane-base-index 1
+    # set-option -g renumber-windows on
     extraConfig = ''
       set -g set-clipboard on
       set -g status-position top
@@ -93,5 +93,5 @@
       bind v if-shell "$is_vim" 'send-keys C-w v' 'split-window -h -c "#{pane_current_path}"'
     '';
   };
-  
+
 }

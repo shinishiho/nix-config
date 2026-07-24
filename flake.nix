@@ -63,11 +63,11 @@
 
   outputs =
     {
-    nixpkgs,
-    nix-darwin,
-    home-manager,
-    chaotic,
-    ...
+      nixpkgs,
+      nix-darwin,
+      home-manager,
+      chaotic,
+      ...
     }@inputs:
     let
       supportedSystems = [
@@ -90,19 +90,38 @@
             overlays = nixpkgsOverlays;
           };
         in
-          {
+        {
           inherit pkgs;
           maa = pkgs.maa;
           orchis-theme = pkgs.orchis-theme;
         }
       );
     in
-      {
+    {
       packages = forAllSystems;
+
+      formatter = nixpkgs.lib.genAttrs supportedSystems (
+        system:
+        let
+          pkgs = import nixpkgs {
+            inherit system;
+            config.allowUnfree = true;
+            overlays = nixpkgsOverlays;
+          };
+        in
+        pkgs.nixfmt-tree
+      );
 
       nixosConfigurations.iamw-asus = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = { inherit nixpkgs home-manager chaotic inputs; };
+        specialArgs = {
+          inherit
+            nixpkgs
+            home-manager
+            chaotic
+            inputs
+            ;
+        };
         modules = [
           ./hosts/iamw-asus
           home-manager.nixosModules.home-manager
@@ -112,7 +131,14 @@
 
       nixosConfigurations.iamw-nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = { inherit nixpkgs home-manager chaotic inputs; };
+        specialArgs = {
+          inherit
+            nixpkgs
+            home-manager
+            chaotic
+            inputs
+            ;
+        };
         modules = [
           ./hosts/iamw-nixos
           home-manager.nixosModules.home-manager
@@ -122,7 +148,10 @@
 
       darwinConfigurations.iamw-m1mini = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
-        specialArgs = { inherit nixpkgs home-manager inputs; hostName = "iamw-m1mini"; };
+        specialArgs = {
+          inherit nixpkgs home-manager inputs;
+          hostName = "iamw-m1mini";
+        };
         modules = [
           ./hosts/iamw-m1
           home-manager.darwinModules.home-manager
@@ -131,7 +160,10 @@
 
       darwinConfigurations.iamw-m1air = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
-        specialArgs = { inherit nixpkgs home-manager inputs; hostName = "iamw-m1air"; };
+        specialArgs = {
+          inherit nixpkgs home-manager inputs;
+          hostName = "iamw-m1air";
+        };
         modules = [
           ./hosts/iamw-m1
           home-manager.darwinModules.home-manager
@@ -148,7 +180,7 @@
         modules = [
           {
             options.home.persistence = nixpkgs.lib.mkOption {
-              type = nixpkgs.lib.types.attrsOf (nixpkgs.lib.types.anything);
+              type = nixpkgs.lib.types.attrsOf nixpkgs.lib.types.anything;
               default = { };
               description = "Impermanence no-op on non-NixOS";
             };
@@ -171,7 +203,7 @@
         modules = [
           {
             options.home.persistence = nixpkgs.lib.mkOption {
-              type = nixpkgs.lib.types.attrsOf (nixpkgs.lib.types.anything);
+              type = nixpkgs.lib.types.attrsOf nixpkgs.lib.types.anything;
               default = { };
               description = "Impermanence no-op on non-NixOS";
             };

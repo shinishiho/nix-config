@@ -10,7 +10,7 @@
   programs.niri.settings = {
     # Keybindings
     binds = {
-      "Mod+Shift+Escape".action.show-hotkey-overlay = {};
+      "Mod+Shift+Escape".action.show-hotkey-overlay = { };
 
       # Applications
       "Mod+Return" = {
@@ -18,7 +18,13 @@
         hotkey-overlay.title = "Open Terminal: kitty";
       };
       "Mod+Space" = {
-        action.spawn = [ "dms" "ipc" "call" "spotlight" "toggle" ];
+        action.spawn = [
+          "dms"
+          "ipc"
+          "call"
+          "spotlight"
+          "toggle"
+        ];
         hotkey-overlay.title = "Application Launcher";
       };
       "Mod+B" = {
@@ -30,142 +36,232 @@
         hotkey-overlay.title = "File Manager: Nautilus";
       };
       "Mod+V" = {
-        action.spawn = [ "dms" "ipc" "call" "clipboard" "toggle" ];
+        action.spawn = [
+          "dms"
+          "ipc"
+          "call"
+          "clipboard"
+          "toggle"
+        ];
         hotkey-overlay.title = "Clipboard Manager";
       };
       "Mod+M" = {
-        action.spawn = [ "dms" "ipc" "call" "processlist" "focusOrToggle" ];
+        action.spawn = [
+          "dms"
+          "ipc"
+          "call"
+          "processlist"
+          "focusOrToggle"
+        ];
         hotkey-overlay.title = "Task Manager";
       };
       "Mod+Shift+Comma" = {
-        action.spawn = [ "dms" "ipc" "call" "settings" "focusOrToggle" ];
+        action.spawn = [
+          "dms"
+          "ipc"
+          "call"
+          "settings"
+          "focusOrToggle"
+        ];
         hotkey-overlay.title = "Settings";
       };
       "Mod+N" = {
-        action.spawn = [ "dms" "ipc" "call" "notifications" "toggle" ];
+        action.spawn = [
+          "dms"
+          "ipc"
+          "call"
+          "notifications"
+          "toggle"
+        ];
         hotkey-overlay.title = "Notification Center";
       };
       "Mod+Y" = {
-        action.spawn = [ "dms" "ipc" "call" "dankdash" "wallpaper" ];
+        action.spawn = [
+          "dms"
+          "ipc"
+          "call"
+          "dankdash"
+          "wallpaper"
+        ];
         hotkey-overlay.title = "Browse Wallpapers";
       };
       "Mod+Alt+L" = {
-        action.spawn = [ "dms" "ipc" "call" "lock" "lock" ];
+        action.spawn = [
+          "dms"
+          "ipc"
+          "call"
+          "lock"
+          "lock"
+        ];
         hotkey-overlay.title = "Lock Screen";
       };
 
       # Audio Controls
       "XF86AudioRaiseVolume" = {
-        action.spawn = [ "dms" "ipc" "call" "audio" "increment" "3" ];
+        action.spawn = [
+          "dms"
+          "ipc"
+          "call"
+          "audio"
+          "increment"
+          "3"
+        ];
         allow-when-locked = true;
       };
       "XF86AudioLowerVolume" = {
-        action.spawn = [ "dms" "ipc" "call" "audio" "decrement" "3" ];
+        action.spawn = [
+          "dms"
+          "ipc"
+          "call"
+          "audio"
+          "decrement"
+          "3"
+        ];
         allow-when-locked = true;
       };
       "XF86AudioMute" = {
-        action.spawn = [ "dms" "ipc" "call" "audio" "mute" ];
+        action.spawn = [
+          "dms"
+          "ipc"
+          "call"
+          "audio"
+          "mute"
+        ];
         allow-when-locked = true;
       };
       "XF86AudioMicMute" = {
-        action.spawn = [ "dms" "ipc" "call" "audio" "mute" ];
+        action.spawn = [
+          "dms"
+          "ipc"
+          "call"
+          "audio"
+          "mute"
+        ];
         allow-when-locked = true;
       };
       "XF86AudioNext" = {
-        action.spawn = [ "playerctl" "next" ];
+        action.spawn = [
+          "playerctl"
+          "next"
+        ];
         allow-when-locked = true;
       };
       "XF86AudioPause" = {
-        action.spawn = [ "playerctl" "play-pause" ];
+        action.spawn = [
+          "playerctl"
+          "play-pause"
+        ];
         allow-when-locked = true;
       };
       "XF86AudioPlay" = {
-        action.spawn = [ "playerctl" "play-pause" ];
+        action.spawn = [
+          "playerctl"
+          "play-pause"
+        ];
         allow-when-locked = true;
       };
       "XF86AudioPrev" = {
-        action.spawn = [ "playerctl" "previous" ];
+        action.spawn = [
+          "playerctl"
+          "previous"
+        ];
         allow-when-locked = true;
       };
 
       "XF86MonBrightnessUp" = {
-        action.spawn = [ "dms" "ipc" "call" "brightness" "increment" "5" "" ];
+        action.spawn = [
+          "dms"
+          "ipc"
+          "call"
+          "brightness"
+          "increment"
+          "5"
+          ""
+        ];
         allow-when-locked = true;
       };
       "XF86MonBrightnessDown" = {
-        action.spawn = [ "dms" "ipc" "call" "brightness" "decrement" "5" "" ];
+        action.spawn = [
+          "dms"
+          "ipc"
+          "call"
+          "brightness"
+          "decrement"
+          "5"
+          ""
+        ];
         allow-when-locked = true;
       };
 
       # Window Management
-      "Mod+Q".action.close-window = {};
+      "Mod+Q".action.close-window = { };
 
-      "Mod+Left".action.focus-column-left = {};
-      "Mod+H".action.focus-column-left = {};
-      "Mod+Right".action.focus-column-right = {};
-      "Mod+L".action.focus-column-right = {};
-      "Mod+Up".action.focus-window-up = {};
-      "Mod+K".action.focus-window-up = {};
-      "Mod+Down".action.focus-window-down = {};
-      "Mod+J".action.focus-window-down = {};
+      "Mod+Left".action.focus-column-left = { };
+      "Mod+H".action.focus-column-left = { };
+      "Mod+Right".action.focus-column-right = { };
+      "Mod+L".action.focus-column-right = { };
+      "Mod+Up".action.focus-window-up = { };
+      "Mod+K".action.focus-window-up = { };
+      "Mod+Down".action.focus-window-down = { };
+      "Mod+J".action.focus-window-down = { };
 
-      "Mod+Ctrl+Left".action.move-column-left = {};
-      "Mod+Ctrl+H".action.move-column-left = {};
-      "Mod+Ctrl+Right".action.move-column-right = {};
-      "Mod+Ctrl+L".action.move-column-right = {};
-      "Mod+Ctrl+Up".action.move-window-up = {};
-      "Mod+Ctrl+K".action.move-window-up = {};
-      "Mod+Ctrl+Down".action.move-window-down = {};
-      "Mod+Ctrl+J".action.move-window-down = {};
+      "Mod+Ctrl+Left".action.move-column-left = { };
+      "Mod+Ctrl+H".action.move-column-left = { };
+      "Mod+Ctrl+Right".action.move-column-right = { };
+      "Mod+Ctrl+L".action.move-column-right = { };
+      "Mod+Ctrl+Up".action.move-window-up = { };
+      "Mod+Ctrl+K".action.move-window-up = { };
+      "Mod+Ctrl+Down".action.move-window-down = { };
+      "Mod+Ctrl+J".action.move-window-down = { };
 
-      "Mod+Comma".action.consume-or-expel-window-left = {};
-      "Mod+Period".action.consume-or-expel-window-right = {};
+      "Mod+Comma".action.consume-or-expel-window-left = { };
+      "Mod+Period".action.consume-or-expel-window-right = { };
 
-      "Mod+Home".action.focus-column-first = {};
-      "Mod+End".action.focus-column-last = {};
-      "Mod+Ctrl+Home".action.move-column-to-first = {};
-      "Mod+Ctrl+End".action.move-column-to-last = {};
+      "Mod+Home".action.focus-column-first = { };
+      "Mod+End".action.focus-column-last = { };
+      "Mod+Ctrl+Home".action.move-column-to-first = { };
+      "Mod+Ctrl+End".action.move-column-to-last = { };
 
-      "Mod+Shift+Left".action.focus-monitor-left = {};
-      "Mod+Shift+Right".action.focus-monitor-right = {};
-      "Mod+Shift+Up".action.focus-monitor-up = {};
-      "Mod+Shift+Down".action.focus-monitor-down = {};
+      "Mod+Shift+Left".action.focus-monitor-left = { };
+      "Mod+Shift+Right".action.focus-monitor-right = { };
+      "Mod+Shift+Up".action.focus-monitor-up = { };
+      "Mod+Shift+Down".action.focus-monitor-down = { };
 
-      "Mod+Shift+K".action.focus-workspace-up = {};
-      "Mod+Shift+J".action.focus-workspace-down = {};
+      "Mod+Shift+K".action.focus-workspace-up = { };
+      "Mod+Shift+J".action.focus-workspace-down = { };
 
-      "Mod+Shift+Ctrl+Left".action.move-column-to-monitor-left = {};
-      "Mod+Shift+Ctrl+Right".action.move-column-to-monitor-right = {};
-      "Mod+Shift+Ctrl+Up".action.move-column-to-monitor-up = {};
-      "Mod+Shift+Ctrl+Down".action.move-column-to-monitor-down = {};
+      "Mod+Shift+Ctrl+Left".action.move-column-to-monitor-left = { };
+      "Mod+Shift+Ctrl+Right".action.move-column-to-monitor-right = { };
+      "Mod+Shift+Ctrl+Up".action.move-column-to-monitor-up = { };
+      "Mod+Shift+Ctrl+Down".action.move-column-to-monitor-down = { };
 
       # Workspace Switching
       "Mod+WheelScrollDown" = {
-        action.focus-workspace-down = {};
+        action.focus-workspace-down = { };
         cooldown-ms = 150;
       };
       "Mod+WheelScrollUp" = {
-        action.focus-workspace-up = {};
+        action.focus-workspace-up = { };
         cooldown-ms = 150;
       };
       "Mod+Ctrl+WheelScrollDown" = {
-        action.move-column-to-workspace-down = {};
+        action.move-column-to-workspace-down = { };
         cooldown-ms = 150;
       };
       "Mod+Ctrl+WheelScrollUp" = {
-        action.move-column-to-workspace-up = {};
+        action.move-column-to-workspace-up = { };
         cooldown-ms = 150;
       };
 
-      "Mod+WheelScrollRight".action.focus-column-right = {};
-      "Mod+WheelScrollLeft".action.focus-column-left = {};
-      "Mod+Ctrl+WheelScrollRight".action.move-column-right = {};
-      "Mod+Ctrl+WheelScrollLeft".action.move-column-left = {};
+      "Mod+WheelScrollRight".action.focus-column-right = { };
+      "Mod+WheelScrollLeft".action.focus-column-left = { };
+      "Mod+Ctrl+WheelScrollRight".action.move-column-right = { };
+      "Mod+Ctrl+WheelScrollLeft".action.move-column-left = { };
 
-      "Mod+Shift+WheelScrollDown".action.focus-column-right = {};
-      "Mod+Shift+WheelScrollUp".action.focus-column-left = {};
-      "Mod+Ctrl+Shift+WheelScrollDown".action.move-column-right = {};
-      "Mod+Ctrl+Shift+WheelScrollUp".action.move-column-left = {};
+      "Mod+Shift+WheelScrollDown".action.focus-column-right = { };
+      "Mod+Shift+WheelScrollUp".action.focus-column-left = { };
+      "Mod+Ctrl+Shift+WheelScrollDown".action.move-column-right = { };
+      "Mod+Ctrl+Shift+WheelScrollUp".action.move-column-left = { };
 
       # Workspace numbers
       "Mod+1".action.focus-workspace = 1;
@@ -188,45 +284,57 @@
       "Mod+Shift+8".action.move-column-to-workspace = 8;
       "Mod+Shift+9".action.move-column-to-workspace = 9;
 
-      "Mod+Tab".action.focus-workspace-previous = {};
+      "Mod+Tab".action.focus-workspace-previous = { };
 
       # Layout Controls
-      "Mod+F".action.expand-column-to-available-width = {};
-      "Mod+C".action.center-column = {};
-      "Mod+Ctrl+C".action.center-visible-columns = {};
+      "Mod+F".action.expand-column-to-available-width = { };
+      "Mod+C".action.center-column = { };
+      "Mod+Ctrl+C".action.center-visible-columns = { };
       "Mod+Minus".action.set-column-width = "-10%";
       "Mod+Equal".action.set-column-width = "+10%";
       "Mod+Shift+Minus".action.set-window-height = "-10%";
       "Mod+Shift+Equal".action.set-window-height = "+10%";
 
       # Modes
-      "Mod+T".action.toggle-window-floating = {};
-      "Mod+Shift+F".action.fullscreen-window = {};
-      "Mod+W".action.toggle-column-tabbed-display = {};
-      "Mod+R".action.switch-preset-column-width = {};
+      "Mod+T".action.toggle-window-floating = { };
+      "Mod+Shift+F".action.fullscreen-window = { };
+      "Mod+W".action.toggle-column-tabbed-display = { };
+      "Mod+R".action.switch-preset-column-width = { };
 
       # Screenshots
-      "Print".action.screenshot = {};
-      "Alt+Print".action.screenshot-screen = {};
-      "Shift+Print".action.screenshot-window = {};
+      "Print".action.screenshot = { };
+      "Alt+Print".action.screenshot-screen = { };
+      "Shift+Print".action.screenshot-window = { };
 
       # Emergency Escape Key
       "Mod+Escape" = {
-        action.toggle-keyboard-shortcuts-inhibit = {};
+        action.toggle-keyboard-shortcuts-inhibit = { };
         allow-inhibiting = false;
       };
 
       # Exit / Power
       "Ctrl+Alt+Delete" = {
-        action.spawn = [ "dms" "ipc" "call" "powermenu" "toggle" ];
+        action.spawn = [
+          "dms"
+          "ipc"
+          "call"
+          "powermenu"
+          "toggle"
+        ];
         hotkey-overlay.title = "Power Menu";
       };
       "Mod+Shift+W" = {
-        action.spawn = [ "dms" "ipc" "call" "dankdash" "wallpaper" ];
+        action.spawn = [
+          "dms"
+          "ipc"
+          "call"
+          "dankdash"
+          "wallpaper"
+        ];
         hotkey-overlay.title = "Change wallpaper";
       };
       "Mod+O" = {
-        action.toggle-overview = {};
+        action.toggle-overview = { };
         repeat = false;
       };
     };

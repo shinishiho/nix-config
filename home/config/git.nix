@@ -2,7 +2,7 @@
   programs = {
     git = {
       enable = true;
-      
+
       settings = {
         user = {
           email = "59284549+shinishiho@users.noreply.github.com";
@@ -38,25 +38,25 @@
         commit.gpgsign = true;
         gpg.program = "gpg2";
       };
-      
+
       lfs.enable = true;
-      
+
       ignores = [
         # macOS
         ".DS_Store"
         "._*"
-        
+
         # Linux
         "*~"
         ".fuse_hidden*"
         ".Trash-*"
-        
+
         # Editors
         ".vscode/"
         "*.swp"
         "*.swo"
         "*~"
-        
+
         # Common build artifacts
         "node_modules/"
         "dist/"
@@ -80,36 +80,36 @@
   };
 
   home.file.".gitmessage".text = ''
-# <type>[optional scope]: <description>
-# |<----  Max 50 chars (subject line)  ---->|
-#
-# feat:     new feature (MINOR in semver)
-# fix:      bug fix (PATCH in semver)
-# docs:     documentation only
-# style:    formatting, missing semicolons, etc (no logic change)
-# refactor: code change that is neither fix nor feature
-# perf:     performance improvement
-# test:     adding or updating tests
-# build:    build system or dependency changes
-# ci:       CI configuration changes
-# chore:    other changes that don't modify src or test files
-# revert:   reverts a previous commit
-#
-# BREAKING CHANGE: append ! after type/scope, e.g. feat!: or feat(api)!:
-# This triggers a MAJOR version bump in semver.
+    # <type>[optional scope]: <description>
+    # |<----  Max 50 chars (subject line)  ---->|
+    #
+    # feat:     new feature (MINOR in semver)
+    # fix:      bug fix (PATCH in semver)
+    # docs:     documentation only
+    # style:    formatting, missing semicolons, etc (no logic change)
+    # refactor: code change that is neither fix nor feature
+    # perf:     performance improvement
+    # test:     adding or updating tests
+    # build:    build system or dependency changes
+    # ci:       CI configuration changes
+    # chore:    other changes that don't modify src or test files
+    # revert:   reverts a previous commit
+    #
+    # BREAKING CHANGE: append ! after type/scope, e.g. feat!: or feat(api)!:
+    # This triggers a MAJOR version bump in semver.
 
-# [optional body]
-# |<----  Wrap at 72 chars  (body)  ---------------------------------------->|
-#
-# Explain *what* and *why*, not *how*.
-# Separate from subject with a blank line.
+    # [optional body]
+    # |<----  Wrap at 72 chars  (body)  ---------------------------------------->|
+    #
+    # Explain *what* and *why*, not *how*.
+    # Separate from subject with a blank line.
 
-# [optional footer(s)]
-# |<----  Wrap at 72 chars  (footer) ---------------------------------------->|
-#
-# BREAKING CHANGE: <description>
-# Fixes #<issue>
-# Refs #<issue>
-# Co-authored-by: Name <email>
+    # [optional footer(s)]
+    # |<----  Wrap at 72 chars  (footer) ---------------------------------------->|
+    #
+    # BREAKING CHANGE: <description>
+    # Fixes #<issue>
+    # Refs #<issue>
+    # Co-authored-by: Name <email>
   '';
 }

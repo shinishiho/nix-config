@@ -14,7 +14,7 @@
     layout = {
       gaps = 8;
       center-focused-column = "never";
-      
+
       preset-column-widths = [
         { proportion = 0.98; }
         { proportion = 0.33333; }
@@ -22,7 +22,9 @@
         { proportion = 0.66667; }
       ];
 
-      default-column-width = { proportion = 0.98; };
+      default-column-width = {
+        proportion = 0.98;
+      };
 
       focus-ring = {
         width = 3;
@@ -40,7 +42,7 @@
         color = "#0007";
       };
 
-      struts = {};
+      struts = { };
       background-color = "transparent";
     };
   };

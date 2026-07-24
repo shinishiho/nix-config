@@ -2,7 +2,14 @@
   programs.zed-editor = {
     enable = true;
 
-    extensions = [ "nix" "toml" "html" "make" "latex" "catppuccin-icons" ];
+    extensions = [
+      "nix"
+      "toml"
+      "html"
+      "make"
+      "latex"
+      "catppuccin-icons"
+    ];
 
     mutableUserDebug = true;
     mutableUserKeymaps = true;

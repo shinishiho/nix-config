@@ -24,7 +24,7 @@
     let
       flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
     in
-      {
+    {
       optimise.automatic = true;
       settings = {
         trusted-users = [ "w" ];

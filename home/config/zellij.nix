@@ -5,7 +5,7 @@ let
   };
   vimZellijNavigatorUri = "file:${vimZellijNavigatorPath}";
 in
-  {
+{
   programs.zellij = {
     enable = true;
     settings = {
@@ -39,7 +39,7 @@ in
                 bind = {
                   _args = [ "c" ];
                   _children = [
-                    { NewTab = {}; }
+                    { NewTab = { }; }
                     { SwitchToMode._args = [ "normal" ]; }
                   ];
                 };
@@ -48,7 +48,7 @@ in
                 bind = {
                   _args = [ "d" ];
                   _children = [
-                    { Detach = {}; }
+                    { Detach = { }; }
                     { SwitchToMode._args = [ "normal" ]; }
                   ];
                 };
@@ -57,7 +57,7 @@ in
                 bind = {
                   _args = [ "x" ];
                   _children = [
-                    { CloseFocus = {}; }
+                    { CloseFocus = { }; }
                     { SwitchToMode._args = [ "normal" ]; }
                   ];
                 };
@@ -84,55 +84,82 @@ in
               {
                 bind = {
                   _args = [ "1" ];
-                  _children = [ { GoToTab._args = [ 1 ]; } { SwitchToMode._args = [ "normal" ]; } ];
+                  _children = [
+                    { GoToTab._args = [ 1 ]; }
+                    { SwitchToMode._args = [ "normal" ]; }
+                  ];
                 };
               }
               {
                 bind = {
                   _args = [ "2" ];
-                  _children = [ { GoToTab._args = [ 2 ]; } { SwitchToMode._args = [ "normal" ]; } ];
+                  _children = [
+                    { GoToTab._args = [ 2 ]; }
+                    { SwitchToMode._args = [ "normal" ]; }
+                  ];
                 };
               }
               {
                 bind = {
                   _args = [ "3" ];
-                  _children = [ { GoToTab._args = [ 3 ]; } { SwitchToMode._args = [ "normal" ]; } ];
+                  _children = [
+                    { GoToTab._args = [ 3 ]; }
+                    { SwitchToMode._args = [ "normal" ]; }
+                  ];
                 };
               }
               {
                 bind = {
                   _args = [ "4" ];
-                  _children = [ { GoToTab._args = [ 4 ]; } { SwitchToMode._args = [ "normal" ]; } ];
+                  _children = [
+                    { GoToTab._args = [ 4 ]; }
+                    { SwitchToMode._args = [ "normal" ]; }
+                  ];
                 };
               }
               {
                 bind = {
                   _args = [ "5" ];
-                  _children = [ { GoToTab._args = [ 5 ]; } { SwitchToMode._args = [ "normal" ]; } ];
+                  _children = [
+                    { GoToTab._args = [ 5 ]; }
+                    { SwitchToMode._args = [ "normal" ]; }
+                  ];
                 };
               }
               {
                 bind = {
                   _args = [ "6" ];
-                  _children = [ { GoToTab._args = [ 6 ]; } { SwitchToMode._args = [ "normal" ]; } ];
+                  _children = [
+                    { GoToTab._args = [ 6 ]; }
+                    { SwitchToMode._args = [ "normal" ]; }
+                  ];
                 };
               }
               {
                 bind = {
                   _args = [ "7" ];
-                  _children = [ { GoToTab._args = [ 7 ]; } { SwitchToMode._args = [ "normal" ]; } ];
+                  _children = [
+                    { GoToTab._args = [ 7 ]; }
+                    { SwitchToMode._args = [ "normal" ]; }
+                  ];
                 };
               }
               {
                 bind = {
                   _args = [ "8" ];
-                  _children = [ { GoToTab._args = [ 8 ]; } { SwitchToMode._args = [ "normal" ]; } ];
+                  _children = [
+                    { GoToTab._args = [ 8 ]; }
+                    { SwitchToMode._args = [ "normal" ]; }
+                  ];
                 };
               }
               {
                 bind = {
                   _args = [ "9" ];
-                  _children = [ { GoToTab._args = [ 9 ]; } { SwitchToMode._args = [ "normal" ]; } ];
+                  _children = [
+                    { GoToTab._args = [ 9 ]; }
+                    { SwitchToMode._args = [ "normal" ]; }
+                  ];
                 };
               }
             ];
@@ -149,7 +176,7 @@ in
                   bind = {
                     _args = [ "Ctrl q" ];
                     _children = [
-                      { Quit = {}; }
+                      { Quit = { }; }
                     ];
                   };
                 }
@@ -161,7 +188,10 @@ in
                       {
                         MessagePlugin = {
                           _args = [ vimZellijNavigatorUri ];
-                          _children = [ { name._args = [ "move_focus_or_tab" ]; } { payload._args = [ "left" ]; } ];
+                          _children = [
+                            { name._args = [ "move_focus_or_tab" ]; }
+                            { payload._args = [ "left" ]; }
+                          ];
                         };
                       }
                     ];
@@ -174,7 +204,10 @@ in
                       {
                         MessagePlugin = {
                           _args = [ vimZellijNavigatorUri ];
-                          _children = [ { name._args = [ "move_focus" ]; } { payload._args = [ "down" ]; } ];
+                          _children = [
+                            { name._args = [ "move_focus" ]; }
+                            { payload._args = [ "down" ]; }
+                          ];
                         };
                       }
                     ];
@@ -187,7 +220,10 @@ in
                       {
                         MessagePlugin = {
                           _args = [ vimZellijNavigatorUri ];
-                          _children = [ { name._args = [ "move_focus" ]; } { payload._args = [ "up" ]; } ];
+                          _children = [
+                            { name._args = [ "move_focus" ]; }
+                            { payload._args = [ "up" ]; }
+                          ];
                         };
                       }
                     ];
@@ -200,7 +236,10 @@ in
                       {
                         MessagePlugin = {
                           _args = [ vimZellijNavigatorUri ];
-                          _children = [ { name._args = [ "move_focus_or_tab" ]; } { payload._args = [ "right" ]; } ];
+                          _children = [
+                            { name._args = [ "move_focus_or_tab" ]; }
+                            { payload._args = [ "right" ]; }
+                          ];
                         };
                       }
                     ];
@@ -215,7 +254,10 @@ in
                       {
                         MessagePlugin = {
                           _args = [ vimZellijNavigatorUri ];
-                          _children = [ { name._args = [ "resize" ]; } { payload._args = [ "left" ]; } ];
+                          _children = [
+                            { name._args = [ "resize" ]; }
+                            { payload._args = [ "left" ]; }
+                          ];
                         };
                       }
                     ];
@@ -228,7 +270,10 @@ in
                       {
                         MessagePlugin = {
                           _args = [ vimZellijNavigatorUri ];
-                          _children = [ { name._args = [ "resize" ]; } { payload._args = [ "down" ]; } ];
+                          _children = [
+                            { name._args = [ "resize" ]; }
+                            { payload._args = [ "down" ]; }
+                          ];
                         };
                       }
                     ];
@@ -241,7 +286,10 @@ in
                       {
                         MessagePlugin = {
                           _args = [ vimZellijNavigatorUri ];
-                          _children = [ { name._args = [ "resize" ]; } { payload._args = [ "up" ]; } ];
+                          _children = [
+                            { name._args = [ "resize" ]; }
+                            { payload._args = [ "up" ]; }
+                          ];
                         };
                       }
                     ];
@@ -250,7 +298,7 @@ in
                 {
                   bind = {
                     _args = [ "Alt f" ];
-                    _children = [ { ToggleFloatingPanes = {}; } ];
+                    _children = [ { ToggleFloatingPanes = { }; } ];
                   };
                 }
                 {
@@ -260,7 +308,10 @@ in
                       {
                         MessagePlugin = {
                           _args = [ vimZellijNavigatorUri ];
-                          _children = [ { name._args = [ "resize" ]; } { payload._args = [ "right" ]; } ];
+                          _children = [
+                            { name._args = [ "resize" ]; }
+                            { payload._args = [ "right" ]; }
+                          ];
                         };
                       }
                     ];
@@ -273,11 +324,17 @@ in
           {
             # shared_except "normal" "locked"
             shared_except = {
-              _args = [ "normal" "locked" ];
+              _args = [
+                "normal"
+                "locked"
+              ];
               _children = [
                 {
                   bind = {
-                    _args = [ "Enter" "Esc" ];
+                    _args = [
+                      "Enter"
+                      "Esc"
+                    ];
                     _children = [ { SwitchToMode._args = [ "Normal" ]; } ];
                   };
                 }

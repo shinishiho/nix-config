@@ -11,36 +11,36 @@
     gb = "git branch";
     gco = "git checkout";
     gcb = "git checkout -b";
-    
+
     # Directory navigation
     ".." = "cd ..";
     "..." = "cd ../..";
     "...." = "cd ../../..";
-    
+
     # Directory listing (eza replacements)
     l = "eza -la --group-directories-first";
     ls = "eza --group-directories-first";
     ll = "eza -l --group-directories-first";
     la = "eza -la --group-directories-first";
     lt = "eza --tree";
-    
+
     # File operations with safety
     rm = "rm -i";
     cp = "cp -i";
     mv = "mv -i";
     mkdir = "mkdir -p";
-    
+
     # Development & Editing
     v = "nvim";
     vi = "nvim";
     vim = "nvim";
-    
+
     # System & Utilities
     clr = "clear";
     ff = "fastfetch";
     reload = "exec $SHELL";
     tmp = "cd $(mktemp -d)";
-    
+
     # Network Tools
     ping = "ping -c 5";
     wget = "wget -c";

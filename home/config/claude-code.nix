@@ -12,7 +12,7 @@
 
     skills = ./skills;
   };
-  
+
   home.persistence."/persistent".directories = [
     ".claude"
   ];

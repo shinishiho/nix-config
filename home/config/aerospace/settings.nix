@@ -14,7 +14,7 @@
     default-root-container-orientation = "auto";
 
     # Mouse follows focus when focused monitor changes
-    on-focused-monitor-changed = ["move-mouse monitor-lazy-center"];
+    on-focused-monitor-changed = [ "move-mouse monitor-lazy-center" ];
 
     # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
     automatically-unhide-macos-hidden-apps = false;

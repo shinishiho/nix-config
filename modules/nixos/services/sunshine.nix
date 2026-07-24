@@ -11,7 +11,7 @@ let
   cfg = config.myModules.services.sunshine;
 in
 
-  {
+{
   options.myModules.services.sunshine = {
     enable = mkEnableOption "Sunshine and Moonlight";
   };

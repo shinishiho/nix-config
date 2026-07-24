@@ -28,21 +28,21 @@
     printing.enable = true;
 
     udev.extraRules = ''
-    KERNEL=="uinput", GROUP="input", MODE="0660", OPTIONS+="static_node=uinput"
+      KERNEL=="uinput", GROUP="input", MODE="0660", OPTIONS+="static_node=uinput"
     '';
   };
 
   environment.systemPackages = with pkgs; [
     (writeShellScriptBin "fan" ''
-#!${pkgs.bash}/bin/bash
+      #!${pkgs.bash}/bin/bash
 
-current_state=$(cat /sys/devices/platform/asus-nb-wmi/hwmon/hwmon?/pwm1_enable)
+      current_state=$(cat /sys/devices/platform/asus-nb-wmi/hwmon/hwmon?/pwm1_enable)
 
-if [ "$current_state" = "0" ]; then
-  echo 2 | sudo tee /sys/devices/platform/asus-nb-wmi/hwmon/hwmon?/pwm1_enable > /dev/null
-else
-  echo 0 | sudo tee /sys/devices/platform/asus-nb-wmi/hwmon/hwmon?/pwm1_enable > /dev/null
-fi
+      if [ "$current_state" = "0" ]; then
+        echo 2 | sudo tee /sys/devices/platform/asus-nb-wmi/hwmon/hwmon?/pwm1_enable > /dev/null
+      else
+        echo 0 | sudo tee /sys/devices/platform/asus-nb-wmi/hwmon/hwmon?/pwm1_enable > /dev/null
+      fi
     '')
   ];
 

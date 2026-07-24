@@ -13,12 +13,12 @@
       swtpm.enable = true;
 
       verbatimConfig = ''
-cgroup_device_acl = [
-    "/dev/null", "/dev/full", "/dev/zero",
-    "/dev/random", "/dev/urandom",
-    "/dev/ptmx", "/dev/kvm",
-    "/dev/kvmfr0"
-]'';
+        cgroup_device_acl = [
+            "/dev/null", "/dev/full", "/dev/zero",
+            "/dev/random", "/dev/urandom",
+            "/dev/ptmx", "/dev/kvm",
+            "/dev/kvmfr0"
+        ]'';
     };
   };
 
@@ -34,7 +34,7 @@ cgroup_device_acl = [
       "$@"
     '')
   ];
-  
+
   environment.persistence."/persistent".directories = [
     "/var/lib/libvirt/images"
     "/var/lib/libvirt/qemu"

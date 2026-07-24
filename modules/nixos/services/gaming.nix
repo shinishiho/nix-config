@@ -12,7 +12,7 @@ let
   cfg = config.myModules.services.gaming;
 in
 
-  {
+{
   options.myModules.services.gaming = {
     enable = mkEnableOption "Enable Steam and some gaming companions";
   };

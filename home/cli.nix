@@ -15,7 +15,7 @@
     ./config/yazi
 
     # ./config/cava.nix
-    ./config/claude-code.nix  # I'm sold
+    ./config/claude-code.nix # I'm sold
     # ./config/gemini-cli.nix
     # ./config/gh-dash.nix
     ./config/gh.nix
@@ -28,30 +28,33 @@
     ./config/zellij.nix
   ];
 
-  home.packages = with pkgs; [
-    ripgrep
-    fd
-    yq-go
+  home.packages =
+    with pkgs;
+    [
+      ripgrep
+      fd
+      yq-go
 
-    htop
-    gotop
-    procs
+      htop
+      gotop
+      procs
 
-    duf
-    dust
+      duf
+      dust
 
-    zip
-    unzip
-    p7zip
+      zip
+      unzip
+      p7zip
 
-    curl
-    wget
+      curl
+      wget
 
-    libfido2
-    yubikey-manager
+      libfido2
+      yubikey-manager
 
-    android-tools
-  ] ++ lib.optionals pkgs.stdenv.isDarwin [
+      android-tools
+    ]
+    ++ lib.optionals pkgs.stdenv.isDarwin [
       mactop
     ];
 
@@ -81,11 +84,11 @@
       icons = "auto";
     };
 
-    skim  = {
+    skim = {
       enable = true;
     };
 
-    fzf  = {
+    fzf = {
       enable = true;
     };
 

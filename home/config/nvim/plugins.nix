@@ -5,6 +5,7 @@
 {
   imports = [
     ./plugins/cloak.nix
+    ./plugins/cmp.nix
     ./plugins/colorscheme.nix
     ./plugins/column.nix
     ./plugins/conform.nix

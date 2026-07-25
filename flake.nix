@@ -189,6 +189,7 @@
             targets.genericLinux.enable = true;
             targets.genericLinux.nixGL.packages = inputs.nixGL.packages;
           }
+          inputs.niri.homeModules.config
           ./home/platform/nixos.nix
         ];
       };

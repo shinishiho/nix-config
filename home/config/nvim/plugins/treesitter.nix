@@ -1,11 +1,11 @@
 {
-  pkgs,
+  config,
   ...
 }:
 {
   programs.nixvim.plugins.treesitter = {
     enable = true;
-    grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+    grammarPackages = with config.programs.nixvim.plugins.treesitter.package.builtGrammars; [
       bash
       cpp
       css
@@ -29,7 +29,6 @@
 
     settings = {
       highlight.enable = true;
-      indent.enable = true;
     };
   };
 }

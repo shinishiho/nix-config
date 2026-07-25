@@ -17,8 +17,6 @@
       shiftwidth = 2;
       expandtab = true;
 
-      smartindent = true;
-
       wrap = false;
 
       swapfile = false;

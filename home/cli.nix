@@ -21,6 +21,9 @@
     ./config/gh.nix
     ./config/git.nix
     # ./config/marimo.nix     # I'm done, bye
+    ./config/mcp.nix
+    ./config/opencode.nix
+    ./config/pi.nix
     ./config/shellAliases.nix
     ./config/ssh.nix
     ./config/starship.nix

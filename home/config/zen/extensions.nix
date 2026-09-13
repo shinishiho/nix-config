@@ -37,7 +37,7 @@ in
   # triggers disallowedRequisites = [ stdenv.cc ] because passff-host's closure includes
   # clang-wrapper. Use the shared Mozilla NativeMessagingHosts path instead, which is
   # what the standard firefox HM module does and what all gecko browsers read on macOS.
-  programs.zen-browser.nativeMessagingHosts = lib.optionals pkgs.stdenv.isLinux ffExtension;
+  programs.zen-browser.nativeMessagingHosts = lib.optionals pkgs.stdenv.hostPlatform.isLinux ffExtension;
 
-  mozilla.firefoxNativeMessagingHosts = lib.optionals pkgs.stdenv.isDarwin ffExtension;
+  mozilla.firefoxNativeMessagingHosts = lib.optionals pkgs.stdenv.hostPlatform.isDarwin ffExtension;
 }

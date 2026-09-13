@@ -57,7 +57,7 @@
 
       android-tools
     ]
-    ++ lib.optionals pkgs.stdenv.isDarwin [
+    ++ lib.optionals pkgs.stdenv.hostPlatform.isDarwin [
       mactop
     ];
 
@@ -117,7 +117,7 @@
     maxCacheTtl = 28800;
   };
 
-  services.ssh-agent.enable = lib.mkIf pkgs.stdenv.isLinux true;
+  services.ssh-agent.enable = lib.mkIf pkgs.stdenv.hostPlatform.isLinux true;
 
   home.persistence."/persistent".directories = [
     ".local/share/direnv"

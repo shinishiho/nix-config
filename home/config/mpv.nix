@@ -15,7 +15,7 @@ let
       thumbfast
       uosc
     ]
-    ++ (pkgs.lib.optionals pkgs.stdenv.isLinux [ mpris ]);
+    ++ (pkgs.lib.optionals pkgs.stdenv.hostPlatform.isLinux [ mpris ]);
 in
 {
   programs.mpv = {
@@ -32,8 +32,8 @@ in
       audio-display = "no";
       osd-bar = "no";
       border = "no";
-      hwdec = mkIf pkgs.stdenv.isLinux "vaapi";
-      gpu-context = mkIf pkgs.stdenv.isLinux "wayland";
+      hwdec = mkIf pkgs.stdenv.hostPlatform.isLinux "vaapi";
+      gpu-context = mkIf pkgs.stdenv.hostPlatform.isLinux "wayland";
       ytdl-format = "bv[height<=?1440]+ba/best";
       ytdl-raw-options = "sub-lang=\"en.*\",write-sub=,write-auto-sub=";
       # force-window = "immediate";

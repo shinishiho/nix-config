@@ -10,7 +10,7 @@
           signingkey = "4B6D513C8F5D34C4";
         };
 
-        aliases = {
+        alias = {
           st = "status";
           co = "checkout";
           br = "branch";
@@ -22,15 +22,15 @@
           last = "log -1 HEAD";
           unstage = "reset HEAD --";
           visual = "!gitk";
+        };
 
-          init.defaultBranch = "main";
-          pull.rebase = false;
-          push.autoSetupRemote = true;
+        init.defaultBranch = "main";
+        pull.rebase = false;
+        push.autoSetupRemote = true;
 
-          diff = {
-            algorithm = "patience";
-            compactionHeuristic = true;
-          };
+        diff = {
+          algorithm = "patience";
+          compactionHeuristic = true;
         };
 
         commit.template = "~/.gitmessage";

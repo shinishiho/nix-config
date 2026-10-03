@@ -23,7 +23,8 @@
     hyprland.url = "github:hyprwm/Hyprland";
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
 
-    niri.url = "github:sodiboo/niri-flake";
+    # Fork: upstream sodiboo/niri-flake stalled (2026-08-04)
+    niri.url = "github:epireyn/niri-flake";
 
     dms.url = "github:shinishiho/DankMaterialShell";
     dms-plugin-registry.url = "github:AvengeMedia/dms-plugin-registry";

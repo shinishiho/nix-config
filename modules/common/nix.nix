@@ -1,7 +1,7 @@
 {
-  config,
   inputs,
   lib,
+  pkgs,
   ...
 }:
 
@@ -23,6 +23,7 @@
   nix =
     let
       flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
+      flakeNixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
     in
     {
       optimise.automatic = true;
@@ -32,7 +33,7 @@
           "nix-command"
           "flakes"
         ];
-        nix-path = config.nix.nixPath;
+        nix-path = flakeNixPath;
 
         substituters = [
           "https://cache.nixos.org"
@@ -59,6 +60,7 @@
       channel.enable = false;
 
       registry = lib.mapAttrs (_: flake: { inherit flake; }) flakeInputs;
-      nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
+      # NixOS renamed nix.nixPath to nix.settings.nix-path; nix-darwin still needs it for NIX_PATH.
+      nixPath = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin flakeNixPath;
     };
 }

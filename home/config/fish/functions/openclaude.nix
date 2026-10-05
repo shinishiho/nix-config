@@ -4,19 +4,22 @@
         'u/base-url=' \
         'm/model=' \
         'p/pass=' \
+        'c/context=' \
         'h/help' \
         -- $argv
     or return 2
 
     if set -q _flag_help
         echo "Usage:"
-        echo "  openclaude --base-url URL --model MODEL [--pass ENTRY] [-- CLAUDE_ARGS...]"
+        echo "  openclaude --base-url URL --model MODEL [--pass ENTRY] [--context TOKENS] [-- CLAUDE_ARGS...]"
         echo
         echo "Options:"
         echo "  -u, --base-url URL   Provider API base URL"
         echo "  -m, --model MODEL    Model name"
         echo "  -p, --pass ENTRY     Read API token from pass"
         echo "                       Defaults to: sk-lmao"
+        echo "  -c, --context TOKENS The server's real context window (e.g. 262144);"
+        echo "                       auto-compact keeps the session inside it"
         echo "  -h, --help           Show this help"
         return 0
     end
@@ -45,6 +48,15 @@
 
     set -lx ANTHROPIC_BASE_URL "$_flag_base_url"
     set -lx ANTHROPIC_AUTH_TOKEN "$token"
+
+    if set -q _flag_context
+        if not string match -qr '^[0-9]+$' -- "$_flag_context"
+            echo "Error: --context takes a token count, e.g. 262144." >&2
+            return 2
+        end
+        set -fx CLAUDE_CODE_AUTO_COMPACT_WINDOW "$_flag_context"
+        set -fx CLAUDE_CODE_MAX_CONTEXT_TOKENS "$_flag_context"
+    end
 
     set -l settings (string join "" \
         '{"env":{' \

@@ -1,4 +1,4 @@
-{ ... }:
+_:
 
 {
   # Floating app rules migrated from aerospace on-window-detected "layout floating".

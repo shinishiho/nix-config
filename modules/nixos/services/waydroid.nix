@@ -20,16 +20,18 @@ in
       enable = true;
     };
 
-    environment.systemPackages = with pkgs; [
-      waydroid-helper
-    ];
+    environment = {
+      systemPackages = with pkgs; [
+        waydroid-helper
+      ];
 
-    environment.persistence."/persistent".directories = [
-      "/var/lib/waydroid"
-    ];
+      persistence."/persistent".directories = [
+        "/var/lib/waydroid"
+      ];
 
-    environment.persistence."/persistent".users.w.directories = [
-      ".local/share/waydroid"
-    ];
+      persistence."/persistent".users.w.directories = [
+        ".local/share/waydroid"
+      ];
+    };
   };
 }

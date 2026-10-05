@@ -2,7 +2,6 @@
   inputs,
   pkgs,
   config,
-  lib,
   ...
 }:
 
@@ -17,9 +16,7 @@
 
   programs.dank-material-shell = {
     enable = true;
-    quickshell.package = (
-      config.lib.nixGL.wrap inputs.dms.packages.${pkgs.stdenv.hostPlatform.system}.quickshell
-    );
+    quickshell.package = config.lib.nixGL.wrap inputs.dms.packages.${pkgs.stdenv.hostPlatform.system}.quickshell;
 
     enableSystemMonitoring = true;
     enableVPN = true;

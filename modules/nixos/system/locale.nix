@@ -33,8 +33,8 @@ in
 
   config = {
     time = {
-      timeZone = cfg.timeZone;
-      hardwareClockInLocalTime = cfg.hardwareClockInLocalTime;
+      inherit (cfg) timeZone;
+      inherit (cfg) hardwareClockInLocalTime;
     };
 
     i18n = {

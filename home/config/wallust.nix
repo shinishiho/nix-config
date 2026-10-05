@@ -1,7 +1,4 @@
-{
-  config,
-  ...
-}:
+_:
 
 {
   programs.wallust = {

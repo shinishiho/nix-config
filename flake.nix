@@ -93,8 +93,8 @@
         in
         {
           inherit pkgs;
-          maa = pkgs.maa;
-          orchis-theme = pkgs.orchis-theme;
+          inherit (pkgs) maa;
+          inherit (pkgs) orchis-theme;
         }
       );
     in

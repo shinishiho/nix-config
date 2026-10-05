@@ -11,9 +11,6 @@ let
   };
 
   # Extract contents to get the icon and .desktop file
-  appimageContents = pkgs.appimageTools.extract {
-    inherit pname version src;
-  };
 
 in
 pkgs.appimageTools.wrapType2 {

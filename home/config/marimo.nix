@@ -1,7 +1,4 @@
-{
-  config,
-  ...
-}:
+_:
 
 {
   home.persistence."/persistent".directories = [

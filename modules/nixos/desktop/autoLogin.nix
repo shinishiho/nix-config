@@ -30,8 +30,8 @@ in
         enable = true;
         settings = {
           initial_session = {
-            command = cfg.command;
-            user = cfg.user;
+            inherit (cfg) command;
+            inherit (cfg) user;
           };
           default_session = {
             command = "${pkgs.tuigreet}/bin/tuigreet --greeting 'Welcome To NixOS' --asterisks --remember --remember-user-session --time --cmd '${cfg.command}'";

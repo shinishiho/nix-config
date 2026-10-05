@@ -23,7 +23,7 @@
   };
 
   options.home.persistence = lib.mkOption {
-    type = lib.types.attrsOf (lib.types.anything);
+    type = lib.types.attrsOf lib.types.anything;
     default = { };
     description = "Impermanence no-op on non-NixOS";
   };

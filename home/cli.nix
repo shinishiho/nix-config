@@ -16,7 +16,8 @@
 
     # ./config/cava.nix
     ./config/claude-code.nix # I'm sold
-    # ./config/gemini-cli.nix
+    ./config/codex.nix
+    # ./config/antigravity-cli.nix
     # ./config/gh-dash.nix
     ./config/gh.nix
     ./config/git.nix

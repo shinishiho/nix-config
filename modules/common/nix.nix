@@ -35,26 +35,22 @@
         ];
         nix-path = flakeNixPath;
 
-        substituters = [
-          "https://cache.nixos.org"
+        extra-substituters = [
           "https://hyprland.cachix.org"
           "https://nix-community.cachix.org"
           "https://chaotic-nyx.cachix.org"
           "https://cache.nixos-cuda.org"
+          "https://cache.numtide.com"
         ];
-        trusted-substituters = [
-          "https://cache.nixos.org"
-          "https://hyprland.cachix.org"
-          "https://nix-community.cachix.org"
-          "https://chaotic-nyx.cachix.org"
-        ];
-        trusted-public-keys = [
-          "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+
+        extra-trusted-public-keys = [
           "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
           "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
           "chaotic-nyx.cachix.org-1:HfnXSw4pj95iI/n17rIDy40agHj12WfF+Gqk6SonIT8="
           "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M="
+          "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="
         ];
+
       };
 
       channel.enable = false;

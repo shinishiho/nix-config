@@ -1,11 +1,149 @@
-_:
+{ config, ... }:
 
+let
+  readOnlyShell =
+    map
+      (resource: {
+        action = "shell";
+        inherit resource;
+        effect = "allow";
+      })
+      [
+        "git status"
+        "git status --short"
+        "git diff --no-ext-diff --no-textconv"
+        "git diff --no-ext-diff --no-textconv --stat"
+        "codegraph explore *"
+      ];
+in
 {
   programs.opencode = {
     enable = true;
     enableMcpIntegration = true;
+    mutableSettings = true;
+    # shortcut: full schema validation needs real provider output limits; validate safety settings separately until known.
 
     settings = {
+      permissions = [
+        {
+          action = "*";
+          resource = "*";
+          effect = "ask";
+        }
+      ]
+      ++
+        map
+          (action: {
+            inherit action;
+            resource = "*";
+            effect = "allow";
+          })
+          [
+            "read"
+            "edit"
+            "glob"
+            "grep"
+            "question"
+            "webfetch"
+            "websearch"
+            "skill"
+            "execute"
+            "context7_*"
+          ]
+      ++ [
+        {
+          action = "read";
+          resource = "*.env";
+          effect = "ask";
+        }
+        {
+          action = "read";
+          resource = "*.env.*";
+          effect = "ask";
+        }
+        {
+          action = "read";
+          resource = "*.env.example";
+          effect = "allow";
+        }
+      ]
+      ++ readOnlyShell;
+
+      # Policies apply after agent overrides and saved approvals; shell still needs approval.
+      policies =
+        builtins.concatMap
+          (
+            action:
+            map
+              (path: {
+                action = "tool.use";
+                resource = "${action}:${path}";
+                effect = "deny";
+              })
+              [
+                "*.ssh/*"
+                "*.gnupg/*"
+                "*.password-store/*"
+                "*.aws/*"
+                "*.codex/auth.json"
+                "*.claude/.credentials.json"
+                "*.local/share/opencode/auth.json"
+              ]
+          )
+          [
+            "read"
+            "edit"
+          ];
+
+      agents = {
+        plan.permissions = [
+          {
+            action = "edit";
+            resource = "*";
+            effect = "deny";
+          }
+          {
+            action = "edit";
+            resource = "${config.home.homeDirectory}/.opencode/plan/*";
+            effect = "allow";
+          }
+          {
+            action = "shell";
+            resource = "*";
+            effect = "deny";
+          }
+          {
+            action = "subagent";
+            resource = "*";
+            effect = "deny";
+          }
+          {
+            action = "subagent";
+            resource = "explore";
+            effect = "allow";
+          }
+        ]
+        ++ readOnlyShell;
+        explore.permissions = [
+          {
+            action = "edit";
+            resource = "*";
+            effect = "deny";
+          }
+          {
+            action = "shell";
+            resource = "*";
+            effect = "deny";
+          }
+          {
+            action = "subagent";
+            resource = "*";
+            effect = "deny";
+          }
+        ]
+        ++ readOnlyShell;
+      };
+
       provider = {
         routera = {
           npm = "@ai-sdk/openai-compatible";

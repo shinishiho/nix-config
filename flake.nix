@@ -78,7 +78,6 @@
         "x86_64-darwin"
       ];
       nixpkgsOverlays = [
-        (import ./pkgs)
         inputs.niri.overlays.niri
         inputs.nix-firefox-addons.overlays.default
       ];
@@ -93,7 +92,6 @@
         in
         {
           inherit pkgs;
-          inherit (pkgs) orchis-theme;
         }
       );
     in

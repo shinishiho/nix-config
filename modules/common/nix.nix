@@ -7,7 +7,6 @@
 
 {
   nixpkgs.overlays = [
-    (import ../../pkgs)
     inputs.niri.overlays.niri
     inputs.nix-firefox-addons.overlays.default
   ];

@@ -16,14 +16,16 @@
 
   programs.dank-material-shell = {
     enable = true;
-    quickshell.package = config.lib.nixGL.wrap inputs.dms.packages.${pkgs.stdenv.hostPlatform.system}.quickshell;
+    package = (inputs.dms.lib.mkDmsShell pkgs).override {
+      extraQtPackages = [ pkgs.kdePackages.qtwebsockets ]; # Home Assistant plugin
+    };
+    quickshell.package = config.lib.nixGL.wrap pkgs.quickshell;
 
     enableSystemMonitoring = true;
     enableVPN = true;
     enableDynamicTheming = true;
     enableAudioWavelength = true;
     enableCalendarEvents = false;
-    enableClipboardPaste = true;
 
     niri = {
       enableKeybinds = false;
@@ -31,11 +33,9 @@
     };
 
     settings = import ./settings.nix;
-    session = import ./session.nix;
-    clipboardSettings = import ./clsettings.nix;
   };
 
-  home.persistence."/persistent".files = [
-    ".local/state/DankMaterialShell/session.json"
+  home.persistence."/persistent".directories = [
+    ".local/state/dms"
   ];
 }

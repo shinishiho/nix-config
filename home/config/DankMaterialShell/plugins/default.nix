@@ -1,7 +1,8 @@
 {
   imports = [
     ./dankActions.nix
-    ./dankBatteryAlerts.nix
+    # Dropped from dms-plugin-registry (locked 2026-10-03), no `src`. Re-enable when it returns.
+    # ./dankBatteryAlerts.nix
     ./dankPomodoroTimer.nix
     ./dmsPass.nix
     ./homeAssistantMonitor.nix

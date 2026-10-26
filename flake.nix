@@ -26,9 +26,9 @@
     # Fork: upstream sodiboo/niri-flake stalled (2026-08-04)
     niri.url = "github:epireyn/niri-flake";
 
-    dms.url = "github:shinishiho/DankMaterialShell";
-    dms-plugin-registry.url = "github:AvengeMedia/dms-plugin-registry";
-    dsearch.url = "github:AvengeMedia/danksearch";
+    dms.url = "github:duxlabs-dev/dux-shell/stable";
+    dms-plugin-registry.url = "github:duxlabs-dev/dux-plugin-registry";
+    dsearch.url = "github:duxlabs-dev/dux-search";
 
     niri-float-sticky.url = "github:probeldev/niri-float-sticky";
 

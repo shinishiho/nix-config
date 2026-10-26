@@ -74,7 +74,8 @@ _:
           "dms"
           "ipc"
           "call"
-          "dankdash"
+          "dash"
+          "toggle"
           "wallpaper"
         ];
         hotkey-overlay.title = "Browse Wallpapers";
@@ -322,7 +323,8 @@ _:
           "dms"
           "ipc"
           "call"
-          "dankdash"
+          "dash"
+          "toggle"
           "wallpaper"
         ];
         hotkey-overlay.title = "Change wallpaper";

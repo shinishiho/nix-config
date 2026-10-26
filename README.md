@@ -24,7 +24,7 @@ Welcome to my Nix configuration!
 #### Linux
 
 - Niri
-- DankMaterialShell
+- Dux Shell (DMS)
 
 #### MacOS
 

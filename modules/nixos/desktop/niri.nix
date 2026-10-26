@@ -26,6 +26,9 @@ in
       package = pkgs.niri-unstable;
     };
 
+    # Dux Shell provides the polkit agent.
+    systemd.user.services.niri-flake-polkit.enable = false;
+
     environment.systemPackages = with pkgs; [
       adwaita-icon-theme
       xwayland-satellite-unstable

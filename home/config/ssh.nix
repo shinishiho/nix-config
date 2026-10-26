@@ -9,7 +9,6 @@
       enable = true;
       enableDefaultConfig = false;
       settings."*" = {
-        ForwardAgent = true;
         ServerAliveInterval = 0;
         ServerAliveCountMax = 3;
         Compression = false;

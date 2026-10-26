@@ -129,7 +129,7 @@ _:
           "ipc"
           "call"
           "audio"
-          "mute"
+          "micmute"
         ];
         allow-when-locked = true;
       };

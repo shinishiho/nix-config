@@ -27,7 +27,7 @@
             };
           };
           luks = {
-            end = "254";
+            end = "256G";
             content = {
               type = "luks";
               name = "crypted";

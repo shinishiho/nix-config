@@ -6,7 +6,8 @@
     ../config/agenix
     ../config/DankMaterialShell
     # ../config/hypr
-    ../config/maa
+    # Enable after nixpkgs includes MaaCore 6.20.0 (NixOS/nixpkgs#575756).
+    # ../config/maa
     ../config/niri
     # ./config/rofi
 

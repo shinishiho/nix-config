@@ -93,7 +93,6 @@
         in
         {
           inherit pkgs;
-          inherit (pkgs) maa;
           inherit (pkgs) orchis-theme;
         }
       );

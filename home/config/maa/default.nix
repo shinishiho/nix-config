@@ -5,7 +5,7 @@
 
 {
   home.packages = with pkgs; [
-    maa
+    maa-cli
   ];
 
   home.file = {

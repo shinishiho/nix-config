@@ -37,7 +37,6 @@
     fugitive.enable = true;
     image.enable = true;
     indent-blankline.enable = true;
-    markdown-preview.enable = true;
     nvim-autopairs.enable = true;
     rainbow-delimiters.enable = true;
     tmux-navigator.enable = false;

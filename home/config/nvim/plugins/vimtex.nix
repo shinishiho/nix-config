@@ -6,6 +6,6 @@
 {
   programs.nixvim.plugins.vimtex = {
     enable = true;
-    texlivePackage = pkgs.texliveFull;
+    texlivePackage = pkgs.texliveSmall.withPackages (ps: [ ps.latexmk ]);
   };
 }

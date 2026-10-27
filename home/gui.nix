@@ -25,10 +25,6 @@
     ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [
       gpu-screen-recorder-gtk
       (config.lib.nixGL.wrap parsec-bin)
-    ]
-    ++ lib.optionals pkgs.stdenv.hostPlatform.isDarwin [
-      # stats
-      codexbar
     ];
 
   services.gpg-agent.pinentry.package = lib.mkIf pkgs.stdenv.hostPlatform.isLinux pkgs.pinentry-all;

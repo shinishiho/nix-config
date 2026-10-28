@@ -38,7 +38,7 @@ in
       sandbox = {
         enabled = true;
         failIfUnavailable = true;
-        autoAllowBashIfSandboxed = false;
+        autoAllowBashIfSandboxed = true;
         filesystem.denyRead = credentialDirectories ++ credentialFiles;
       };
     };

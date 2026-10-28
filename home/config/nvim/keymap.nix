@@ -84,12 +84,12 @@
       }
       {
         mode = "n";
-        key = "<C-k>";
+        key = "]q";
         action = "<CMD>cnext<CR>zz";
       }
       {
         mode = "n";
-        key = "<C-j>";
+        key = "[q";
         action = "<CMD>cprev<CR>zz";
       }
       {

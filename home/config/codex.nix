@@ -9,6 +9,7 @@
     enable = true;
     package = inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.codex;
     enableMcpIntegration = true;
+    mutableSettings = true;
     settings = {
       approval_policy = "on-request";
       sandbox_mode = "workspace-write";

@@ -4,66 +4,87 @@
 }:
 
 {
-  programs.nixvim.plugins.conform-nvim = {
-    enable = true;
+  programs.nixvim = {
+    plugins.conform-nvim = {
+      enable = true;
 
-    settings = {
-      formatters_by_ft = {
-        python = [ "ruff_format" ];
+      settings = {
+        formatters_by_ft = {
+          python = [ "ruff_format" ];
 
-        c = [ "clang-format" ];
-        cpp = [ "clang-format" ];
+          c = [ "clang-format" ];
+          cpp = [ "clang-format" ];
 
-        javascript = {
-          __unkeyed-1 = "prettierd";
-          __unkeyed-2 = "prettier";
-          stop_after_first = true;
+          javascript = {
+            __unkeyed-1 = "prettierd";
+            __unkeyed-2 = "prettier";
+            stop_after_first = true;
+          };
+
+          javascriptreact = {
+            __unkeyed-1 = "prettierd";
+            __unkeyed-2 = "prettier";
+            stop_after_first = true;
+          };
+
+          typescript = {
+            __unkeyed-1 = "prettierd";
+            __unkeyed-2 = "prettier";
+            stop_after_first = true;
+          };
+
+          typescriptreact = {
+            __unkeyed-1 = "prettierd";
+            __unkeyed-2 = "prettier";
+            stop_after_first = true;
+          };
+
+          markdown = {
+            __unkeyed-1 = "prettierd";
+            __unkeyed-2 = "prettier";
+            stop_after_first = true;
+          };
+
+          nix = [ "nixfmt" ];
+
+          "_" = [
+            "trim_whitespace"
+            "trim_newlines"
+          ];
         };
 
-        javascriptreact = {
-          __unkeyed-1 = "prettierd";
-          __unkeyed-2 = "prettier";
-          stop_after_first = true;
-        };
-
-        typescript = {
-          __unkeyed-1 = "prettierd";
-          __unkeyed-2 = "prettier";
-          stop_after_first = true;
-        };
-
-        typescriptreact = {
-          __unkeyed-1 = "prettierd";
-          __unkeyed-2 = "prettier";
-          stop_after_first = true;
-        };
-
-        markdown = {
-          __unkeyed-1 = "prettierd";
-          __unkeyed-2 = "prettier";
-          stop_after_first = true;
-        };
-
-        nix = [ "nixfmt" ];
-
-        "_" = [
-          "trim_whitespace"
-          "trim_newlines"
-        ];
-      };
-
-      format_on_save = {
-        timeout_ms = 5000;
-        lsp_format = "fallback";
+        default_format_opts.lsp_format = "fallback";
       };
     };
-  };
 
-  programs.nixvim.extraPackages = with pkgs; [
-    ruff
-    clang-tools
-    prettierd
-    prettier
-    nixfmt
-  ];
+    keymaps = [
+      {
+        mode = [
+          "n"
+          "x"
+        ];
+        key = "<leader>fo";
+        action.__raw = ''
+          function()
+            require("conform").format({ async = true })
+          end
+        '';
+        options.desc = "Format buffer or selection";
+      }
+      {
+        mode = "n";
+        key = "<leader>fi";
+        action = "<cmd>ConformInfo<cr>";
+        options.desc = "Show formatter info";
+      }
+    ];
+
+    extraPackages = with pkgs; [
+      ruff
+      clang-tools
+      prettierd
+      prettier
+      nixfmt
+    ];
+  };
 }

@@ -79,11 +79,6 @@
       }
       {
         mode = "n";
-        key = "<leader>fo";
-        action = "vim.lsp.buf.format";
-      }
-      {
-        mode = "n";
         key = "]q";
         action = "<CMD>cnext<CR>zz";
       }

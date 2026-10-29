@@ -30,8 +30,9 @@
   };
 
   programs.nixvim.extraPackages = with pkgs; [
+    deadnix
+    eslint_d
     rumdl
     statix
-    deadnix
   ];
 }

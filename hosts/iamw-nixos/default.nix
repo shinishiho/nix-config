@@ -45,7 +45,6 @@
       sunshine.enable = true;
       tailscale.enable = false;
       waydroid.enable = false;
-      zerotierone.enable = true;
     };
 
     system = {

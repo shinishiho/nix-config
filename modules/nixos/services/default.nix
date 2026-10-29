@@ -8,6 +8,5 @@
     ./sunshine.nix
     ./tailscale.nix
     ./waydroid.nix
-    ./zerotierone.nix
   ];
 }

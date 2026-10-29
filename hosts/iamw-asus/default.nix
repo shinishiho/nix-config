@@ -45,7 +45,6 @@
       ssh.enable = true;
       tailscale.enable = false;
       waydroid.enable = true;
-      zerotierone.enable = true;
     };
 
     system = {

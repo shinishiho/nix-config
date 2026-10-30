@@ -8,7 +8,7 @@
 {
   imports = [
     ./config/wallpaper
-    # ./config/zen
+    ./config/zen
 
     ./config/kitty.nix
     ./config/mpv.nix

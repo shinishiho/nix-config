@@ -1734,7 +1734,8 @@
         "nixvim": "nixvim",
         "paneru": "paneru",
         "plover-flake": "plover-flake",
-        "zen-browser": "zen-browser"
+        "zen-browser": "zen-browser",
+        "zen-browser-profiles-ini": "zen-browser-profiles-ini"
       }
     },
     "rtf-tokenize": {
@@ -2022,6 +2023,23 @@
       "original": {
         "owner": "0xc000022070",
         "repo": "zen-browser-flake",
+        "type": "github"
+      }
+    },
+    "zen-browser-profiles-ini": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1791940915,
+        "narHash": "sha256-dFkgTqNH4WgSZwmJhdHnvxqrnueLJjs3Lc4Pnl4G5A8=",
+        "owner": "0xc000022070",
+        "repo": "zen-browser-flake",
+        "rev": "168c82a0889ac97298e7c374b3e4a31e53dea5f9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "0xc000022070",
+        "repo": "zen-browser-flake",
+        "rev": "168c82a0889ac97298e7c374b3e4a31e53dea5f9",
         "type": "github"
       }
     }

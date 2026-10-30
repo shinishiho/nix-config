@@ -8,7 +8,7 @@ let
   };
 
   space = {
-    id = "{0d2b4fbf-af59-40c6-9c23-d27e59628b8a}";
+    id = "0d2b4fbf-af59-40c6-9c23-d27e59628b8a";
     icon = "📚️";
     container = container.id;
     position = 2000;

@@ -41,6 +41,11 @@
     agenix.url = "github:ryantm/agenix";
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    # PR #401: use its writable profiles.ini module with the current Zen package.
+    zen-browser-profiles-ini = {
+      url = "github:0xc000022070/zen-browser-flake/168c82a0889ac97298e7c374b3e4a31e53dea5f9";
+      flake = false;
+    };
     nix-firefox-addons.url = "github:osipog/nix-firefox-addons";
 
     plover-flake.url = "github:openstenoproject/plover-flake";

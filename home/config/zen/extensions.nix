@@ -1,15 +1,7 @@
 {
-  lib,
   pkgs,
   ...
 }:
-
-let
-  ffExtension = with pkgs; [
-    passff-host
-    open-in-mpv
-  ];
-in
 
 {
   programs.zen-browser.profiles.default.extensions.packages = with pkgs.firefoxAddons; [
@@ -32,12 +24,8 @@ in
     youtube-recommended-videos
   ];
 
-  # On Linux, pass through wrapFirefox (the only supported mechanism for zen on Linux).
-  # On Darwin, wrapFirefox embeds store paths as strings into the wrapper binary which
-  # triggers disallowedRequisites = [ stdenv.cc ] because passff-host's closure includes
-  # clang-wrapper. Use the shared Mozilla NativeMessagingHosts path instead, which is
-  # what the standard firefox HM module does and what all gecko browsers read on macOS.
-  programs.zen-browser.nativeMessagingHosts = lib.optionals pkgs.stdenv.hostPlatform.isLinux ffExtension;
-
-  mozilla.firefoxNativeMessagingHosts = lib.optionals pkgs.stdenv.hostPlatform.isDarwin ffExtension;
+  programs.zen-browser.nativeMessagingHosts = with pkgs; [
+    passff-host
+    open-in-mpv
+  ];
 }

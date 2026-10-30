@@ -7,6 +7,7 @@
 {
   imports = [
     inputs.zen-browser.homeModules.beta
+    (inputs.zen-browser-profiles-ini + "/hm-module/profiles-ini.nix")
 
     ./contexts
     ./extensions.nix

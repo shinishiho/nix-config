@@ -17,6 +17,14 @@ let
     "~/.claude/.credentials.json"
     "~/.local/share/opencode/auth.json"
   ];
+  statusline = pkgs.writeShellApplication {
+    name = "claude-statusline";
+    runtimeInputs = [
+      pkgs.jq
+      pkgs.git
+    ];
+    text = builtins.readFile ./claude-statusline.sh;
+  };
 in
 {
   programs.claude-code = {
@@ -25,6 +33,11 @@ in
     enableMcpIntegration = true;
     mutableSettings = true;
     settings = {
+      statusLine = {
+        type = "command";
+        command = lib.getExe statusline;
+        refreshInterval = 60; # keeps the reset/cache countdowns ticking while idle
+      };
       permissions = {
         defaultMode = "auto";
         ask = [

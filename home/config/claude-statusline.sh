@@ -35,7 +35,9 @@ left() { # epoch -> 4d15h / 2h13m / 42m
   else echo "$((s / 60))m"; fi
 }
 
-l1="${grey}$(id -un)@${HOSTNAME%%.*}${r}  ${e}[34m${dir/#$HOME/\~}${r}"
+d=${dir/#$HOME/\~} max=40 # path chars; longer paths keep their tail: …/deep/nested/dir
+((${#d} <= max)) || d="…${d: -(max - 1)}"
+l1="${grey}$(id -un)@${HOSTNAME%%.*}${r}  ${e}[34m${d}${r}"
 [ -n "$branch" ] && l1+="  ${grey}${branch}${r}${dirty:+${e}[36m*${r}}"
 l1+="  ${e}[33m$(j .model.display_name)${r}${grey}${effort:+ $effort}${r}"
 if [ -n "$pr" ]; then

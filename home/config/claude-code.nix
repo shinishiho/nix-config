@@ -38,6 +38,7 @@ in
         enabled = true;
         failIfUnavailable = true;
         autoAllowBashIfSandboxed = true;
+        network.allowLocalBinding = true;
         excludedCommands = [ "nix *" ];
         filesystem.denyRead = credentialDirectories ++ credentialFiles;
       };

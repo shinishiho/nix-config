@@ -61,10 +61,10 @@
 
     llm-agents.url = "github:numtide/llm-agents.nix";
 
-    paneru = {
-      url = "github:karinushka/paneru";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # No `nixpkgs.follows`: no binary cache upstream, so following our nixpkgs
+    # changes rustc on every bump and rebuilds paneru plus all its crates.
+    # Its own pinned nixpkgs only moves when paneru bumps it.
+    paneru.url = "github:karinushka/paneru";
   };
 
   outputs =
